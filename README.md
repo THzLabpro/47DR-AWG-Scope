@@ -68,4 +68,4 @@ addpath('host/matlab');
 test_awg_eth_app;
 ```
 
-测试临时数据统一写入根目录 `过程文件/`，不写入正常 `host/app_data/`。本地工程已整理，远端仓库尚未创建或推送。
+测试临时数据统一写入根目录 `过程文件/`，不写入正常 `host/app_data/`。
