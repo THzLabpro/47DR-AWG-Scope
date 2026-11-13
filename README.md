@@ -4,6 +4,8 @@
 
 本地接入已经完成，Python 与原生 MATLAB 的回环模拟器测试通过。**这次集成尚未上板验证，也没有测得真实传输速度。** 详细范围见 [本地验收记录](docs/VALIDATION_20261113.md)。
 
+远程共享板卡的 Python 控制服务、命令行和 MATLAB 界面已完成本机模拟测试，使用方式及限制见 [远程控制服务](docs/REMOTE_SERVICE.md)；尚未在实验室部署和实板测试。
+
 ## 启动
 
 双击 [host/Start_AWG_Scope.cmd](host/Start_AWG_Scope.cmd)，或在 MATLAB 中运行 [host/matlab/launch_awg_scope.m](host/matlab/launch_awg_scope.m)。需要 MATLAB（本次验证为 R2023b）和 Python 3.10+；界面的 UDP 后端只使用 Python 标准库。启动界面不会连接板卡。
@@ -66,6 +68,7 @@ MATLAB 测试运行真实界面和生产 Python 后端，但板卡端使用本�
 ```matlab
 addpath('host/matlab');
 test_awg_eth_app;
+test_awg_remote_app;
 ```
 
 测试临时数据统一写入根目录 `过程文件/`，不写入正常 `host/app_data/`。

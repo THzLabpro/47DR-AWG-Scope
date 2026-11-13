@@ -9,6 +9,7 @@ classdef AWGBridge < handle
         PendingAction = ''
         Started
         Counter = 0
+        Timeout = 120
     end
     methods
         function obj=AWGBridge(root,dataRoot)
@@ -21,9 +22,11 @@ classdef AWGBridge < handle
             assert(isfile(cfg.python),'Python executable not found: %s',cfg.python);
             obj.Session=tempname(fullfile(obj.DataRoot,'sessions')); mkdir(obj.Session);
             AWGBridge.writeFields(fullfile(obj.Session,'config.txt'),struct( ...
-                'fpga_ip',cfg.fpga_ip,'port',cfg.port,'words_per_packet',cfg.words_per_packet));
+                'fpga_ip',cfg.fpga_ip,'port',cfg.port,'words_per_packet',cfg.words_per_packet, ...
+                'remote_host',cfg.remote_host,'remote_port',cfg.remote_port));
             obj.heartbeat;
             if nargin<3, entryScript=fullfile(obj.Root,'tools','awg_eth','gui_bridge.py'); end
+            if strcmp(cfg.transport,'remote'), obj.Timeout=900; else, obj.Timeout=120; end
             obj.Process=AWGBridge.launch(cfg.python,{'-X','utf8',entryScript,obj.Session}, ...
                 fullfile(obj.Session,'backend.log'),obj.Session);
             obj.Pending=fullfile(obj.Session,'hello.res'); obj.PendingAction='connect'; obj.Started=tic;
@@ -49,7 +52,7 @@ classdef AWGBridge < handle
                 ready=true; response=struct('ok','0','message',['40GbE backend exited. Log: ' fullfile(obj.Session,'backend.log')]);
                 obj.Pending=''; obj.PendingAction='';
             elseif ~isempty(obj.Pending)
-                limit=120; if strcmp(action,'connect'), limit=15; end
+                limit=obj.Timeout; if strcmp(action,'connect'), limit=30; end
                 if toc(obj.Started)>limit
                     ready=true; response=struct('ok','0','message','Backend timed out; connection released. Hardware state must be checked.');
                     obj.terminate;
