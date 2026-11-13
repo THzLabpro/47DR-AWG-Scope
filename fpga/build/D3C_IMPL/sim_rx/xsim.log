@@ -1,0 +1,68 @@
+#-----------------------------------------------------------
+# xsim v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Thu Nov 12 04:58:23 2026
+# Process ID         : 9168
+# Current directory  : D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/sim_rx
+# Command line       : xsim.exe -mode tcl -source {xsim.dir/tb_awg_rx_d3c/xsim_script.tcl}
+# Log file           : D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/sim_rx/xsim.log
+# Journal file       : D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/sim_rx\xsim.jou
+# Running On         : DESKTOP-CLMQL7K
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 19045
+# Processor Detail   : 12th Gen Intel(R) Core(TM) i7-12700
+# CPU Frequency      : 2112 MHz
+# CPU Physical cores : 12
+# CPU Logical cores  : 20
+# Host memory        : 34088 MB
+# Swap memory        : 5100 MB
+# Total Virtual      : 39188 MB
+# Available Virtual  : 19920 MB
+#-----------------------------------------------------------
+source xsim.dir/tb_awg_rx_d3c/xsim_script.tcl
+# xsim {tb_awg_rx_d3c} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+R1_VERIFY words=1 start_mod14=480 compared=192 PASS
+R1_VERIFY words=100 start_mod14=5928 compared=19200 PASS
+R1_VERIFY words=2730 start_mod14=13840 compared=524160 PASS
+R1_MANUAL_LENGTHS PASS words=1,100,2730 all_channels=8
+R3_BUSY_ARM_IGNORED_AND_READ_REJECTED PASS cap_words=100
+R4_VALID_PAUSE PASS words=20 dropped_adc_beat=1 skipped_pair_per_channel=1 captured_samples=480
+R5_ABORT PASS busy=0 armed=0 done=0
+R5_REARM PASS
+R2_TRIAL trial=0 phase_ps=713 latency_ns=11.952 latency_cycles=2 tx_word_delta=17 PASS
+R2_TRIAL trial=1 phase_ps=2436 latency_ns=10.416 latency_cycles=2 tx_word_delta=10 PASS
+R2_TRIAL trial=2 phase_ps=4159 latency_ns=11.952 latency_cycles=2 tx_word_delta=5 PASS
+R2_TRIAL trial=3 phase_ps=1382 latency_ns=10.224 latency_cycles=2 tx_word_delta=16 PASS
+R2_TRIAL trial=4 phase_ps=3105 latency_ns=10.224 latency_cycles=2 tx_word_delta=10 PASS
+R2_TRIAL trial=5 phase_ps=328 latency_ns=11.952 latency_cycles=2 tx_word_delta=17 PASS
+R2_TRIAL trial=6 phase_ps=2051 latency_ns=11.952 latency_cycles=2 tx_word_delta=11 PASS
+R2_TRIAL trial=7 phase_ps=3774 latency_ns=13.488 latency_cycles=2 tx_word_delta=6 PASS
+R2_TRIAL trial=8 phase_ps=997 latency_ns=10.224 latency_cycles=2 tx_word_delta=16 PASS
+R2_TRIAL trial=9 phase_ps=2720 latency_ns=10.224 latency_cycles=2 tx_word_delta=10 PASS
+R2_TRIAL trial=10 phase_ps=4443 latency_ns=11.760 latency_cycles=2 tx_word_delta=5 PASS
+R2_TRIAL trial=11 phase_ps=1666 latency_ns=11.760 latency_cycles=2 tx_word_delta=14 PASS
+R2_TRIAL trial=12 phase_ps=3389 latency_ns=13.296 latency_cycles=2 tx_word_delta=9 PASS
+R2_TRIAL trial=13 phase_ps=612 latency_ns=11.568 latency_cycles=2 tx_word_delta=4 PASS
+R2_TRIAL trial=14 phase_ps=2335 latency_ns=10.032 latency_cycles=2 tx_word_delta=13 PASS
+R2_TRIAL trial=15 phase_ps=4058 latency_ns=10.032 latency_cycles=2 tx_word_delta=7 PASS
+R2_TRIAL trial=16 phase_ps=1281 latency_ns=10.032 latency_cycles=2 tx_word_delta=16 PASS
+R2_TRIAL trial=17 phase_ps=3004 latency_ns=13.296 latency_cycles=2 tx_word_delta=9 PASS
+R2_TRIAL trial=18 phase_ps=227 latency_ns=11.760 latency_cycles=2 tx_word_delta=17 PASS
+R2_TRIAL trial=19 phase_ps=1950 latency_ns=11.760 latency_cycles=2 tx_word_delta=11 PASS
+R2_TX_WORD_ERROR max_words=17 limit=24
+R2_LATENCY_DISTRIBUTION trials=20 min_ns=10.032 max_ns=13.488 mean_ns=11.395 cycles_2=20 cycles_3=0 PASS
+R1_VERIFY words=4 start_mod14=588 compared=768 PASS
+R6_TRIAL release_rx_high=0 pair_update_after_rx_rise_ns=2.400 start_to_first_sample=12 PASS
+R1_VERIFY words=4 start_mod14=624 compared=768 PASS
+R6_TRIAL release_rx_high=1 pair_update_after_rx_rise_ns=2.400 start_to_first_sample=12 PASS
+R6_RESET_PHASE PASS latency_samples=12 pair_update_offset_ns=2.400
+RESULT name=tb_awg_rx PASS compared=545088 mismatches=0 x_count=0 pass_items=29 fail_items=0
+$finish called at time : 2781105010 ps : File "D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/sim/rx/tb_awg_rx.sv" Line 620
+run: Time (s): cpu = 00:00:00 ; elapsed = 00:00:21 . Memory (MB): peak = 228.191 ; gain = 0.000
+exit
+INFO: xsimkernel Simulation Memory Usage: 11424 KB (Peak: 11424 KB), Simulation CPU Usage: 21077 ms
+INFO: [Common 17-206] Exiting xsim at Thu Nov 12 04:58:46 2026...

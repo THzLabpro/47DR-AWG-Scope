@@ -1,0 +1,44 @@
+{
+  "task": "D2_RX",
+  "status": "NEEDS_PARENT_JUDGMENT",
+  "acceptance": {
+    "R1_R4": {
+      "status": "PASS",
+      "compared": 543552,
+      "mismatches": 0,
+      "x_count": 0,
+      "R2_trials": 20
+    },
+    "bram_limit": {
+      "status": "PASS",
+      "ramb36": 224,
+      "ramb18": 8,
+      "ramb36_equivalent": 228,
+      "limit_ramb36_equivalent": 240
+    },
+    "ooc_implementation": {
+      "status": "PASS",
+      "part": "xczu47dr-fsve1156-2-i",
+      "wns_ns": {
+        "adc_clk": 0.144,
+        "rx_clk": 0.418,
+        "host_clk": 4.966,
+        "adc_to_rx": 0.289
+      },
+      "whs_ns": {
+        "adc_clk": 0.039,
+        "rx_clk": 0.055,
+        "host_clk": 0.066,
+        "adc_to_rx": 0.023
+      },
+      "lut": 1089,
+      "ff": 7128,
+      "routed_nets": 15773,
+      "routing_errors": 0
+    }
+  },
+  "coordination_required": [
+    "tx_play_word is a binary asynchronous bus without tx_clk, a source-side Gray encoding, or a handshake; coherent hardware sampling requires an upstream interface decision."
+  ],
+  "report": "reports/D2/report.md"
+}

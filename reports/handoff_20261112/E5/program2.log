@@ -1,0 +1,20 @@
+
+****** Software Commandline Tool (XSCT) v2025.2.0
+  **** SW Build 6298600 on Thu Nov 13 01:12:30 MST 2025
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+
+Warning: XSCT is deprecated and will be removed in future releases.
+We recommend using the new Python command-line tool for project management and debugging:
+- Run "vitis -i" for interactive mode.
+- Run "vitis -s <script>" for script mode.
+WARNING: If the reset is being triggered after powering on the device,
+ 
+         write bootloop at reset vector address (0xffff0000), or use
+ 
+         -clear-registers option, to avoid unpredictable behavior.
+ 
+         Further warnings will be suppressed
+LMK clocks are stable; programming the matching PL before RFDC initialization.
+RF initializer is running. Wait for AWG READY on PS UART before JTAG wave commands.

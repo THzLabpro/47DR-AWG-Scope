@@ -1,0 +1,18 @@
+{
+  "task": "E5",
+  "status": "PASS_WITH_ISSUES",
+  "package": {"bit_sha256": "F9DC662409A7071430A78BFAB17AD2FE8AB195829203DCC13EA5ECFA459BE638", "elf": "build/F1/rf_awg_init.elf"},
+  "init": {"runs": 2, "init_stage": 99, "config_done": 1, "dac_gsps": 9.8, "adc_gsps": 5.0, "mts_dac_latency_t1": 288, "mts_adc_latency_t1": 112},
+  "eth": {"ping": "OK", "id": "0x41574732", "abi": "0x00030001", "max_udp_payload_accepted_bytes": 1424, "max_udp_payload_rejected_bytes": 1496},
+  "load": {"channels": 8, "samples_per_channel": 131072, "crc_all_match": true, "seconds": 0.818, "mb_per_s": 2.56},
+  "bench_mb_per_s": {"write": [4.28, 5.86], "read": [4.68, 6.31]},
+  "capture": {"channels": 8, "samples": 65520, "trigger": "start", "start_onset_samples": [468, 470, 478, 480, 486]},
+  "loopback": {"dac_channel": 0, "adc_channel": 0, "freq_offset_hz": 0, "amplitude_lsb": 7100, "phase_constant": true, "noise_floor_lsb": 25, "sinad_db": [36.8, 39.8], "interference": "27-39 MHz bursts on ADC0 also with DAC stopped"},
+  "issues": [
+    "A: MAC ctl_rx_max_packet_len=1518 (optical_port2_exdes.v:577), no jumbo frames",
+    "B: CAP_RD_CH write does not rewind read pointer (awg_control_v2.sv:245); host workaround applied",
+    "C: CAP_RD_DATA with pointer >= 32760 hangs the AXI bus (no SLVERR)",
+    "D: external interference on CH0 loopback cable"
+  ],
+  "hardware_operations": "JTAG program x2, JTAG memory reads, UDP to 192.168.42.2 (user approved E5)"
+}

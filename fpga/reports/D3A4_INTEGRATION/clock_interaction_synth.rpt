@@ -1,0 +1,68 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version      : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+| Date              : Wed Nov 11 17:23:17 2026
+| Host              : DESKTOP-CLMQL7K running 64-bit major release  (build 9200)
+| Command           : report_clock_interaction -file D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/reports/D3A4_INTEGRATION/clock_interaction_synth.rpt
+| Design            : awg_eth_top
+| Device            : xczu47dr-fsve1156
+| Speed File        : -2  PRODUCTION 1.32 01-31-2021
+| Design State      : Synthesized
+| Temperature Grade : I
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+Clock Interaction Report
+
+Clock Interaction Table
+-----------------------
+
+                                                                        WNS                            TNS Failing  TNS Total    WNS Path         Clock-Pair           Inter-Clock                  
+From Clock                          To Clock                            Clock Edges  WNS(ns)  TNS(ns)    Endpoints    Endpoints  Requirement(ns)  Classification       Constraints                  
+----------------------------------  ----------------------------------  -----------  -------  -------  -----------  -----------  ---------------  -------------------  ---------------------------  
+GTYE4_CHANNEL_TXOUTCLKPCS[0]_1      GTYE4_CHANNEL_TXOUTCLKPCS[0]_1      rise - rise     2.35     0.00            0           37             3.10  Clean                Timed                        
+GTYE4_CHANNEL_TXOUTCLKPCS[1]_1      GTYE4_CHANNEL_TXOUTCLKPCS[1]_1      rise - rise     2.35     0.00            0           37             3.10  Clean                Timed                        
+GTYE4_CHANNEL_TXOUTCLKPCS[2]_1      GTYE4_CHANNEL_TXOUTCLKPCS[2]_1      rise - rise     2.35     0.00            0           37             3.10  Clean                Timed                        
+GTYE4_CHANNEL_TXOUTCLKPCS[3]_1      GTYE4_CHANNEL_TXOUTCLKPCS[3]_1      rise - rise     2.35     0.00            0           37             3.10  Clean                Timed                        
+RFADC0_CLK                          clk_pl_0                                                                     0            8                   Ignored              False Path                   
+RFADC1_CLK                          clk_pl_0                                                                     0            8                   Ignored              False Path                   
+RFADC2_CLK                          clk_pl_0                                                                     0            8                   Ignored              False Path                   
+RFADC3_CLK                          clk_pl_0                                                                     0            8                   Ignored              False Path                   
+RFDAC0_CLK                          clk_pl_0                                                                     0            8                   Ignored              False Path                   
+RFDAC1_CLK                          clk_pl_0                                                                     0            8                   Ignored              False Path                   
+RFDAC2_CLK                          clk_pl_0                                                                     0            8                   Ignored              False Path                   
+RFDAC3_CLK                          clk_pl_0                                                                     0            8                   Ignored              False Path                   
+clk_out1_demo_management_clock_1    clk_out1_demo_management_clock_1    rise - rise     8.72     0.00            0          454            10.00  Clean                Partial False Path           
+clk_out1_demo_management_clock_1    rxoutclk_out[0]_1                                                            0            5                   Ignored              False Path                   
+clk_out1_demo_management_clock_1    txoutclk_out[0]_1                                                            0            5                   Ignored              False Path                   
+clk_out1_system_clk_wiz_0_0         clk_out1_system_clk_wiz_0_0         rise - rise     0.46     0.00            0         5724             1.63  Clean                Timed                        
+clk_out1_system_clk_wiz_0_0         clk_pl_0                                                                     0           21                   Ignored              False Path                   
+clk_out1_system_clk_wiz_0_0         rx_clk                                                                       0            1                   Ignored              False Path                   
+clk_out1_system_clk_wiz_0_0         tx_clk                              rise - rise     0.57     0.00            0           30             1.63  Clean                Timed                        
+clk_out1_system_clk_wiz_adc_0       clk_out1_system_clk_wiz_adc_0       rise - rise     1.01     0.00            0        11653             2.40  Clean                Timed                        
+clk_out1_system_clk_wiz_adc_0       clk_pl_0                                                                     0           49                   Ignored              False Path                   
+clk_out1_system_clk_wiz_adc_0       rx_clk                              rise - rise     1.21     0.00            0         5663             2.40  Clean                Timed                        
+clk_pl_0                            clk_out1_demo_management_clock_1                                             0            5                   Ignored              False Path                   
+clk_pl_0                            clk_out1_system_clk_wiz_0_0                                                  0           10                   Ignored              False Path                   
+clk_pl_0                            clk_out1_system_clk_wiz_adc_0                                                0           17                   Ignored              False Path                   
+clk_pl_0                            clk_pl_0                            rise - rise     5.74     0.00            0        35219            10.00  Clean                Partial False Path           
+clk_pl_0                            rx_clk                                                                       0           15                   Ignored              False Path                   
+clk_pl_0                            tx_clk                              rise - rise    -0.89   -28.92           33           47       Unexpanded  No Common Clock      Partial False Path (unsafe)  
+clk_pl_0                            txoutclk_out[0]_1                                                            0           32                   Ignored              Asynchronous Groups          
+pl_clk_p                            clk_out1_system_clk_wiz_0_0         rise - rise     1.40     0.00            0            1             1.63  Ignored              Max Delay Datapath Only      
+pl_clk_p                            clk_out1_system_clk_wiz_adc_0       rise - rise     2.16     0.00            0            1             2.40  Ignored              Max Delay Datapath Only      
+rx_clk                              clk_pl_0                                                                     0           26                   Ignored              False Path                   
+rx_clk                              rx_clk                              rise - rise     2.88     0.00            0        17502             4.80  Clean                Timed                        
+rx_clk                              tx_clk                                                                       0            1                   Ignored              False Path                   
+rxoutclk_out[0]_1                   clk_out1_demo_management_clock_1                                             0           45                   Ignored              False Path                   
+rxoutclk_out[0]_1                   rxoutclk_out[0]_1                   rise - rise     1.49     0.00            0        17611             3.20  Clean                Partial False Path           
+rxoutclk_out[0]_1                   txoutclk_out[0]_1                   rise - rise     2.47     0.00            0          330             3.20  No Common Node       Partial False Path (unsafe)  
+tx_clk                              clk_out1_system_clk_wiz_0_0         rise - rise     0.90     0.00            0         1808             1.63  Clean                Timed                        
+tx_clk                              clk_pl_0                            rise - rise    -1.44  -165.59          190          204       Unexpanded  No Common Clock      Partial False Path (unsafe)  
+tx_clk                              rx_clk                              rise - rise     9.36     0.00            0           13             9.60  Ignored              Max Delay Datapath Only      
+tx_clk                              tx_clk                              rise - rise     0.95     0.00            0        47822             3.27  Clean                Timed                        
+txoutclk_out[0]_1                   clk_out1_demo_management_clock_1                                             0           10                   Ignored              False Path                   
+txoutclk_out[0]_1                   clk_pl_0                                                                     0           59                   Ignored              Asynchronous Groups          
+txoutclk_out[0]_1                   rxoutclk_out[0]_1                   rise - rise     2.57     0.00            0           10             3.20  No Common Node       Partial False Path (unsafe)  
+txoutclk_out[0]_1                   txoutclk_out[0]_1                   rise - rise     0.97     0.00            0        30014             3.20  Clean                Partial False Path           
+
+

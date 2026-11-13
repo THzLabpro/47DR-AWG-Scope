@@ -1,0 +1,113 @@
+{
+  "task": "D3A5_INTEGRATION",
+  "status": "NEEDS_PARENT_JUDGMENT",
+  "date": "2026-11-11",
+  "acceptance": {
+    "tx_rx": {
+      "status": "PASS",
+      "tx_pass": 26,
+      "tx_fail": 0,
+      "rx_compared": 543552,
+      "rx_mismatches": 0,
+      "rx_pass_items": 26,
+      "rx_fail_items": 0,
+      "rx_cap_tx_word_max_error": 17,
+      "rx_cap_tx_word_limit": 24
+    },
+    "control_tb": {
+      "status": "PASS",
+      "pass": 48,
+      "fail": 0
+    },
+    "eth_bridge": {
+      "status": "PASS",
+      "pass": 115,
+      "fail": 0,
+      "s10_bytes": 65536,
+      "s10_cycles": 110464,
+      "s10_MBps": 59.327926,
+      "s10_min_MBps": 40.0
+    },
+    "system_tb_s1_s9": {
+      "status": "NEEDS_PARENT_JUDGMENT",
+      "runs": 2,
+      "pass": 239,
+      "fail": 5,
+      "s4_ch0_first_nonzero": 471,
+      "s4_ch1_first_nonzero": 471,
+      "s4_ch0_mismatches": 1536,
+      "s4_ch1_mismatches": 1536,
+      "s4_solutions": 0,
+      "s5_best_o": 1605,
+      "s5_best_p": 7,
+      "s5_solutions": 0,
+      "s5_ch0_mismatches": 768,
+      "s5_ch1_mismatches": 768,
+      "capture_samples": 1536,
+      "loop_distance_violations": 0,
+      "s2_crc_ch0": "9FB469E2",
+      "s2_crc_ch1": "7ACC79A3",
+      "s9_crc_ch2": "55A06FF7",
+      "s9_backpressure_cycles": 1609,
+      "s7_write_MBps": 45.768559,
+      "s7_write_min_MBps": 40.0,
+      "s7_read_MBps": 34.087706,
+      "s7_read_min_MBps": 30.0
+    },
+    "synthesis_constraints_cdc": {
+      "status": "NEEDS_PARENT_JUDGMENT",
+      "synth_status": "synth_design Complete!",
+      "synth_errors": 0,
+      "synth_critical_warnings": 0,
+      "project_build_critical_warnings": 0,
+      "cdc_match_entries": 65,
+      "cdc_match_zero_entries": 0,
+      "clock_interaction_clk_pl_0_to_tx_clk_unsafe_endpoints": 1,
+      "clock_interaction_clk_pl_0_to_tx_clk_WNS_ns": -0.894,
+      "clock_interaction_tx_clk_to_clk_pl_0_unsafe_endpoints": 9,
+      "clock_interaction_tx_clk_to_clk_pl_0_WNS_ns": -1.454,
+      "clock_interaction_tx_clk_to_clk_pl_0_TNS_ns": -11.49,
+      "check_timing_no_clock": 1132,
+      "check_timing_unconstrained_internal_endpoints": 3366,
+      "check_timing_multiple_clock": 0,
+      "check_timing_generated_clocks": 0,
+      "report_cdc_critical_total": 34,
+      "report_cdc_CDC_1": 9,
+      "report_cdc_CDC_10": 13,
+      "report_cdc_CDC_11": 8,
+      "report_cdc_CDC_13": 4,
+      "mac_rx_to_tx_endpoints": 330,
+      "mac_rx_to_tx_max_delay_ns": 3.2,
+      "mac_rx_to_tx_sampled_slack_ns": 2.686
+    },
+    "resources": {
+      "status": "PASS",
+      "uram": 56,
+      "ramb36": 261,
+      "ramb18": 16,
+      "ramb36_equivalent": 269,
+      "clb_lut": 36849,
+      "clb_registers": 63236,
+      "gtye4_channel": 4,
+      "gtye4_common": 1,
+      "d3a4_comparison": {
+        "uram": 56,
+        "ramb36_equivalent": 269,
+        "gtye4_channel": 4,
+        "clb_lut": 36882,
+        "clb_registers": 63239
+      }
+    },
+    "hardware_operations": false,
+    "implementation_run": false,
+    "bitstream_generated": false
+  },
+  "coordination_required": [
+    "S4 captures 471 leading zero samples before the waveform; full (o,p) comparison has no solution.",
+    "S5 captured wave-index sequence is discontinuous in both channels, with 768 mismatches per 1536 samples.",
+    "Unsafe clk_pl_0/tx_clk crossings remain at config_done and XPM FIFO reset-controller paths.",
+    "CDC Critical findings remain in RX, RFDC vendor logic, and FIFO reset logic outside the authorized RTL edit scope.",
+    "check_timing reports JTAG/debug no-clock and unconstrained endpoints; scope decision is required.",
+    "Vivado updated files in the pre-existing root rf_adda_loop.gen tree; output-path isolation needs coordination."
+  ]
+}

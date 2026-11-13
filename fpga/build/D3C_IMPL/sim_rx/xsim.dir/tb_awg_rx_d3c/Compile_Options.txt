@@ -1,0 +1,1 @@
+-L "xpm" "work.tb_awg_rx" "work.glbl" -s "tb_awg_rx_d3c" -debug "typical" 

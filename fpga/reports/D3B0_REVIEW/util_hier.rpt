@@ -1,0 +1,173 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+| Date         : Wed Nov 11 23:14:58 2026
+| Host         : DESKTOP-CLMQL7K running 64-bit major release  (build 9200)
+| Command      : report_utilization -hierarchical -hierarchical_depth 3 -file D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/reports/D3B0_REVIEW/util_hier.rpt
+| Design       : awg_eth_top
+| Device       : xczu47dr-fsve1156-2-i
+| Speed File   : -2
+| Design State : Synthesized
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Utilization Design Information
+
+Table of Contents
+-----------------
+1. Utilization by Hierarchy
+
+1. Utilization by Hierarchy
+---------------------------
+
++--------------------------------------------------+-----------------------------------------------+------------+------------+---------+------+-------+--------+--------+------+------------+
+|                     Instance                     |                     Module                    | Total LUTs | Logic LUTs | LUTRAMs | SRLs |  FFs  | RAMB36 | RAMB18 | URAM | DSP Blocks |
++--------------------------------------------------+-----------------------------------------------+------------+------------+---------+------+-------+--------+--------+------+------------+
+| awg_eth_top                                      |                                         (top) |      36926 |      35697 |     676 |  553 | 63238 |    261 |     16 |   56 |          1 |
+|   (awg_eth_top)                                  |                                         (top) |          0 |          0 |       0 |    0 |   308 |      0 |      0 |    0 |          0 |
+|   arb_i                                          |                                     axil_arb2 |        113 |        113 |       0 |    0 |   382 |      0 |      0 |    0 |          0 |
+|   control_i                                      |                                awg_control_v2 |        736 |        736 |       0 |    0 |   420 |      0 |      0 |    0 |          0 |
+|   eth_bridge_i                                   |                                awg_eth_bridge |       1649 |       1649 |       0 |    0 |  1827 |     14 |      2 |    0 |          0 |
+|     (eth_bridge_i)                               |                                awg_eth_bridge |       1164 |       1164 |       0 |    0 |  1574 |      4 |      0 |    0 |          0 |
+|     u_rx_fifo                                    |                               axis_async_fifo |        154 |        154 |       0 |    0 |   126 |      4 |      1 |    0 |          0 |
+|     u_tx_fifo                                    |               axis_async_fifo__parameterized0 |        331 |        331 |       0 |    0 |   127 |      6 |      1 |    0 |          0 |
+|   eth_core_i                                     |                                  awg_eth_core |      16971 |      16004 |     516 |  451 | 20220 |     21 |      4 |    0 |          0 |
+|     u_udp_port                                   |                                  awg_udp_port |       2945 |       2865 |      80 |    0 |  4305 |      5 |      2 |    0 |          0 |
+|       u_udp_complete                             |                               udp_complete_64 |       2098 |       2018 |      80 |    0 |  3119 |      5 |      2 |    0 |          0 |
+|       u_eth_rx                                   |                                   eth_axis_rx |        131 |        131 |       0 |    0 |   241 |      0 |      0 |    0 |          0 |
+|       u_eth_tx                                   |                                   eth_axis_tx |        162 |        162 |       0 |    0 |   263 |      0 |      0 |    0 |          0 |
+|       u_rx_gearbox                               |                             axis256_to_axis64 |         92 |         92 |       0 |    0 |   293 |      0 |      0 |    0 |          0 |
+|       u_tx_frame_align_pad                       |                             awg_eth_frame_pad |        173 |        173 |       0 |    0 |    89 |      0 |      0 |    0 |          0 |
+|       u_tx_gearbox                               |                             axis64_to_axis256 |        286 |        286 |       0 |    0 |   299 |      0 |      0 |    0 |          0 |
+|     u_qsfp2_mac                                  |                           optical_port2_exdes |      13938 |      13051 |     436 |  451 | 15842 |      4 |      0 |    0 |          0 |
+|       u_diagnostic_rx_levels                     |          xpm_cdc_array_single__parameterized1 |          0 |          0 |       0 |    0 |    52 |      0 |      0 |    0 |          0 |
+|       DUT                                        |                                 optical_port2 |      13929 |      13042 |     436 |  451 | 15738 |      4 |      0 |    0 |          0 |
+|   jtag_axi_i                                     |                                  jtag_awg_axi |        642 |        473 |     160 |    9 |  1777 |      2 |      1 |    0 |          0 |
+|     inst                                         |        jtag_awg_axi_jtag_axi_v1_2_23_jtag_axi |        642 |        473 |     160 |    9 |  1777 |      2 |      1 |    0 |          0 |
+|       jtag_axi_engine_u                          | jtag_awg_axi_jtag_axi_v1_2_23_jtag_axi_engine |        614 |        445 |     160 |    9 |  1561 |      2 |      1 |    0 |          0 |
+|       axi_bridge_u                               |      jtag_awg_axi_jtag_axi_v1_2_23_axi_bridge |         28 |         28 |       0 |    0 |   216 |      0 |      0 |    0 |          0 |
+|   rx_i                                           |                                        awg_rx |        991 |        991 |       0 |    0 |  7167 |    224 |      8 |    0 |          1 |
+|     (rx_i)                                       |                                        awg_rx |        985 |        985 |       0 |    0 |  7035 |    224 |      8 |    0 |          1 |
+|   system_i                                       |                                system_wrapper |      11860 |      11779 |       0 |   81 |  8852 |      0 |      0 |    0 |          0 |
+|     (system_i)                                   |                                system_wrapper |         61 |         61 |       0 |    0 |     0 |      0 |      0 |    0 |          0 |
+|     system_i                                     |                                        system |      11799 |      11718 |       0 |   81 |  8852 |      0 |      0 |    0 |          0 |
+|       zynq_ultra_ps_e_0                          |                    system_zynq_ultra_ps_e_0_0 |        264 |        264 |       0 |    0 |     0 |      0 |      0 |    0 |          0 |
+|       clk_wiz_0                                  |                            system_clk_wiz_0_0 |       1161 |       1161 |       0 |    0 |  1496 |      0 |      0 |    0 |          0 |
+|       ps8_0_axi_periph                           |                     system_ps8_0_axi_periph_0 |        628 |        551 |       0 |   77 |   795 |      0 |      0 |    0 |          0 |
+|       up_axi_0                                   |                             system_up_axi_0_0 |         46 |         46 |       0 |    0 |   149 |      0 |      0 |    0 |          0 |
+|       usp_rf_data_converter_0                    |              system_usp_rf_data_converter_0_0 |       9638 |       9637 |       0 |    1 |  6292 |      0 |      0 |    0 |          0 |
+|   tx_i                                           |                                        awg_tx |       3962 |       3950 |       0 |   12 | 22181 |      0 |      1 |   56 |          0 |
+|     (tx_i)                                       |                                        awg_tx |       2944 |       2932 |       0 |   12 | 18410 |      0 |      0 |    0 |          0 |
+|     g_uram_channel[0].g_uram_block[0].uram_i     |                             awg_tx_uram_block |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|       memory_i                                   |                             xpm_memory_sdpram |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|     g_uram_channel[0].g_uram_block[1].uram_i     |                           awg_tx_uram_block_4 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|       memory_i                                   |                         xpm_memory_sdpram__55 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|     g_uram_channel[0].g_uram_block[2].uram_i     |                           awg_tx_uram_block_5 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|       memory_i                                   |                         xpm_memory_sdpram__54 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|     g_uram_channel[0].g_uram_block[3].uram_i     |                           awg_tx_uram_block_6 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|       memory_i                                   |                          xpm_memory_sdpram__1 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|     g_uram_channel[0].g_uram_block[4].uram_i     |                           awg_tx_uram_block_7 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|       memory_i                                   |                          xpm_memory_sdpram__2 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|     g_uram_channel[0].g_uram_block[5].uram_i     |                           awg_tx_uram_block_8 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|       memory_i                                   |                         xpm_memory_sdpram__28 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|     g_uram_channel[1].g_uram_block[0].uram_i     |                          awg_tx_uram_block_10 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|       memory_i                                   |                         xpm_memory_sdpram__53 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|     g_uram_channel[1].g_uram_block[1].uram_i     |                          awg_tx_uram_block_11 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|       memory_i                                   |                         xpm_memory_sdpram__52 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|     g_uram_channel[1].g_uram_block[2].uram_i     |                          awg_tx_uram_block_12 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|       memory_i                                   |                         xpm_memory_sdpram__51 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|     g_uram_channel[1].g_uram_block[3].uram_i     |                          awg_tx_uram_block_13 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|       memory_i                                   |                          xpm_memory_sdpram__3 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|     g_uram_channel[1].g_uram_block[4].uram_i     |                          awg_tx_uram_block_14 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|       memory_i                                   |                          xpm_memory_sdpram__4 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|     g_uram_channel[1].g_uram_block[5].uram_i     |                          awg_tx_uram_block_15 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|       memory_i                                   |                         xpm_memory_sdpram__27 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|     g_uram_channel[2].g_uram_block[0].uram_i     |                          awg_tx_uram_block_17 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|       memory_i                                   |                         xpm_memory_sdpram__50 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|     g_uram_channel[2].g_uram_block[1].uram_i     |                          awg_tx_uram_block_18 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|       memory_i                                   |                         xpm_memory_sdpram__49 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|     g_uram_channel[2].g_uram_block[2].uram_i     |                          awg_tx_uram_block_19 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|       memory_i                                   |                         xpm_memory_sdpram__48 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|     g_uram_channel[2].g_uram_block[3].uram_i     |                          awg_tx_uram_block_20 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|       memory_i                                   |                          xpm_memory_sdpram__5 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|     g_uram_channel[2].g_uram_block[4].uram_i     |                          awg_tx_uram_block_21 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|       memory_i                                   |                          xpm_memory_sdpram__6 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|     g_uram_channel[2].g_uram_block[5].uram_i     |                          awg_tx_uram_block_22 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|       memory_i                                   |                         xpm_memory_sdpram__26 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|     g_uram_channel[3].g_uram_block[0].uram_i     |                          awg_tx_uram_block_24 |         72 |         72 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|       (g_uram_channel[3].g_uram_block[0].uram_i) |                          awg_tx_uram_block_24 |         72 |         72 |       0 |    0 |     0 |      0 |      0 |    0 |          0 |
+|       memory_i                                   |                         xpm_memory_sdpram__47 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|     g_uram_channel[3].g_uram_block[1].uram_i     |                          awg_tx_uram_block_25 |         72 |         72 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|       (g_uram_channel[3].g_uram_block[1].uram_i) |                          awg_tx_uram_block_25 |         72 |         72 |       0 |    0 |     0 |      0 |      0 |    0 |          0 |
+|       memory_i                                   |                         xpm_memory_sdpram__46 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|     g_uram_channel[3].g_uram_block[2].uram_i     |                          awg_tx_uram_block_26 |         72 |         72 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|       (g_uram_channel[3].g_uram_block[2].uram_i) |                          awg_tx_uram_block_26 |         72 |         72 |       0 |    0 |     0 |      0 |      0 |    0 |          0 |
+|       memory_i                                   |                         xpm_memory_sdpram__45 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|     g_uram_channel[3].g_uram_block[3].uram_i     |                          awg_tx_uram_block_27 |         72 |         72 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|       (g_uram_channel[3].g_uram_block[3].uram_i) |                          awg_tx_uram_block_27 |         72 |         72 |       0 |    0 |     0 |      0 |      0 |    0 |          0 |
+|       memory_i                                   |                          xpm_memory_sdpram__7 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|     g_uram_channel[3].g_uram_block[4].uram_i     |                          awg_tx_uram_block_28 |         72 |         72 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|       (g_uram_channel[3].g_uram_block[4].uram_i) |                          awg_tx_uram_block_28 |         72 |         72 |       0 |    0 |     0 |      0 |      0 |    0 |          0 |
+|       memory_i                                   |                          xpm_memory_sdpram__8 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|     g_uram_channel[3].g_uram_block[5].uram_i     |                          awg_tx_uram_block_29 |         72 |         72 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|       (g_uram_channel[3].g_uram_block[5].uram_i) |                          awg_tx_uram_block_29 |         72 |         72 |       0 |    0 |     0 |      0 |      0 |    0 |          0 |
+|       memory_i                                   |                         xpm_memory_sdpram__25 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|     g_uram_channel[4].g_uram_block[0].uram_i     |                          awg_tx_uram_block_31 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|       memory_i                                   |                         xpm_memory_sdpram__44 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|     g_uram_channel[4].g_uram_block[1].uram_i     |                          awg_tx_uram_block_32 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|       memory_i                                   |                         xpm_memory_sdpram__43 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|     g_uram_channel[4].g_uram_block[2].uram_i     |                          awg_tx_uram_block_33 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|       memory_i                                   |                         xpm_memory_sdpram__24 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|     g_uram_channel[4].g_uram_block[3].uram_i     |                          awg_tx_uram_block_34 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|       memory_i                                   |                          xpm_memory_sdpram__9 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|     g_uram_channel[4].g_uram_block[4].uram_i     |                          awg_tx_uram_block_35 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|       memory_i                                   |                         xpm_memory_sdpram__10 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|     g_uram_channel[4].g_uram_block[5].uram_i     |                          awg_tx_uram_block_36 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|       memory_i                                   |                         xpm_memory_sdpram__23 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|     g_uram_channel[5].g_uram_block[0].uram_i     |                          awg_tx_uram_block_38 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|       memory_i                                   |                         xpm_memory_sdpram__42 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|     g_uram_channel[5].g_uram_block[1].uram_i     |                          awg_tx_uram_block_39 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|       memory_i                                   |                         xpm_memory_sdpram__41 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|     g_uram_channel[5].g_uram_block[2].uram_i     |                          awg_tx_uram_block_40 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|       memory_i                                   |                         xpm_memory_sdpram__22 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|     g_uram_channel[5].g_uram_block[3].uram_i     |                          awg_tx_uram_block_41 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|       memory_i                                   |                         xpm_memory_sdpram__11 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|     g_uram_channel[5].g_uram_block[4].uram_i     |                          awg_tx_uram_block_42 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|       memory_i                                   |                         xpm_memory_sdpram__12 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|     g_uram_channel[5].g_uram_block[5].uram_i     |                          awg_tx_uram_block_43 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|       memory_i                                   |                         xpm_memory_sdpram__21 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|     g_uram_channel[6].g_uram_block[0].uram_i     |                          awg_tx_uram_block_45 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|       memory_i                                   |                         xpm_memory_sdpram__40 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|     g_uram_channel[6].g_uram_block[1].uram_i     |                          awg_tx_uram_block_46 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|       memory_i                                   |                         xpm_memory_sdpram__39 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|     g_uram_channel[6].g_uram_block[2].uram_i     |                          awg_tx_uram_block_47 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|       memory_i                                   |                         xpm_memory_sdpram__13 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|     g_uram_channel[6].g_uram_block[3].uram_i     |                          awg_tx_uram_block_48 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|       memory_i                                   |                         xpm_memory_sdpram__14 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|     g_uram_channel[6].g_uram_block[4].uram_i     |                          awg_tx_uram_block_49 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|       memory_i                                   |                         xpm_memory_sdpram__15 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|     g_uram_channel[6].g_uram_block[5].uram_i     |                          awg_tx_uram_block_50 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|       memory_i                                   |                         xpm_memory_sdpram__20 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|     g_uram_channel[7].g_uram_block[0].uram_i     |                          awg_tx_uram_block_52 |         72 |         72 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|       (g_uram_channel[7].g_uram_block[0].uram_i) |                          awg_tx_uram_block_52 |         72 |         72 |       0 |    0 |     0 |      0 |      0 |    0 |          0 |
+|       memory_i                                   |                         xpm_memory_sdpram__38 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|     g_uram_channel[7].g_uram_block[1].uram_i     |                          awg_tx_uram_block_53 |         72 |         72 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|       (g_uram_channel[7].g_uram_block[1].uram_i) |                          awg_tx_uram_block_53 |         72 |         72 |       0 |    0 |     0 |      0 |      0 |    0 |          0 |
+|       memory_i                                   |                         xpm_memory_sdpram__37 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|     g_uram_channel[7].g_uram_block[2].uram_i     |                          awg_tx_uram_block_54 |         72 |         72 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|       (g_uram_channel[7].g_uram_block[2].uram_i) |                          awg_tx_uram_block_54 |         72 |         72 |       0 |    0 |     0 |      0 |      0 |    0 |          0 |
+|       memory_i                                   |                         xpm_memory_sdpram__16 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|     g_uram_channel[7].g_uram_block[3].uram_i     |                          awg_tx_uram_block_55 |         72 |         72 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|       (g_uram_channel[7].g_uram_block[3].uram_i) |                          awg_tx_uram_block_55 |         72 |         72 |       0 |    0 |     0 |      0 |      0 |    0 |          0 |
+|       memory_i                                   |                         xpm_memory_sdpram__17 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|     g_uram_channel[7].g_uram_block[4].uram_i     |                          awg_tx_uram_block_56 |         72 |         72 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|       (g_uram_channel[7].g_uram_block[4].uram_i) |                          awg_tx_uram_block_56 |         72 |         72 |       0 |    0 |     0 |      0 |      0 |    0 |          0 |
+|       memory_i                                   |                         xpm_memory_sdpram__18 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|     g_uram_channel[7].g_uram_block[5].uram_i     |                          awg_tx_uram_block_57 |         72 |         72 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|       (g_uram_channel[7].g_uram_block[5].uram_i) |                          awg_tx_uram_block_57 |         72 |         72 |       0 |    0 |     0 |      0 |      0 |    0 |          0 |
+|       memory_i                                   |                         xpm_memory_sdpram__19 |          0 |          0 |       0 |    0 |    72 |      0 |      0 |    1 |          0 |
+|     wr_fifo_i                                    |                                xpm_fifo_async |        122 |        122 |       0 |    0 |   185 |      0 |      1 |    0 |          0 |
+|       gnuram_async_fifo.xpm_fifo_base_inst       |                                 xpm_fifo_base |        122 |        122 |       0 |    0 |   185 |      0 |      1 |    0 |          0 |
+|   user_control_i                                 |                                  user_control |          2 |          2 |       0 |    0 |    94 |      0 |      0 |    0 |          0 |
++--------------------------------------------------+-----------------------------------------------+------------+------------+---------+------+-------+--------+--------+------+------------+
+
+

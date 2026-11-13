@@ -1,0 +1,137 @@
+{
+  "task": "D3A6_INTEGRATION",
+  "status": "NEEDS_PARENT_JUDGMENT",
+  "date": "2026-11-11",
+  "acceptance": {
+    "tx_tb": {
+      "status": "PASS",
+      "pass": 70,
+      "fail": 0,
+      "mismatches": 0,
+      "reset_release_tx_low": "PASS",
+      "reset_release_tx_high": "PASS",
+      "fifo_busy_write_block": "PASS"
+    },
+    "rx_tb": {
+      "status": "PASS",
+      "compared": 543552,
+      "mismatches": 0,
+      "pass_items": 26,
+      "fail_items": 0,
+      "cap_tx_word_max_error": 17,
+      "cap_tx_word_limit": 24
+    },
+    "control_tb": {
+      "status": "PASS",
+      "pass": 48,
+      "fail": 0
+    },
+    "eth_bridge_tb": {
+      "status": "PASS",
+      "pass": 115,
+      "fail": 0,
+      "s10_MBps": 59.327926,
+      "s10_min_MBps": 40.0
+    },
+    "system_tb_s1_s9": {
+      "status": "PASS",
+      "pass": 245,
+      "fail": 0,
+      "s4_ch0": {"o": 6, "p": 14, "first_nonzero": 13, "compared": 1523, "mismatches": 0, "solutions": 1},
+      "s4_ch1": {"o": 6, "p": 14, "first_nonzero": 13, "compared": 1523, "mismatches": 0, "solutions": 1},
+      "s4_cap_tx_word_error": 0,
+      "s5_ch0": {"o": 2517, "p": 7, "first_nonzero": 0, "compared": 1536, "mismatches": 0, "solutions": 1},
+      "s5_ch1": {"o": 2517, "p": 7, "first_nonzero": 0, "compared": 1536, "mismatches": 0, "solutions": 1},
+      "loop_distance_violations": 0,
+      "s7_write_MBps": 45.768559,
+      "s7_write_min_MBps": 40.0,
+      "s7_read_MBps": 34.087706,
+      "s7_read_min_MBps": 30.0
+    },
+    "synth_1": {
+      "status": "PASS",
+      "run_status": "synth_design Complete!",
+      "jobs": 2,
+      "errors": 0,
+      "critical_warnings": 0,
+      "implementation": false,
+      "bitstream_generated": false
+    },
+    "clock_interaction": {
+      "status": "PASS",
+      "unsafe_pairs": 0,
+      "host_to_tx_classification": "Max Delay Datapath Only",
+      "tx_to_host_classification": "Max Delay Datapath Only",
+      "host_tx_wns_ns": 3.03
+    },
+    "report_cdc": {
+      "status": "PASS",
+      "unwaived_critical": 0,
+      "cdc1_critical": 0,
+      "waived_endpoints": {"CDC-10": 2, "CDC-11": 8, "CDC-13": 4}
+    },
+    "cdc_constraints": {
+      "status": "PASS",
+      "match_entries": 95,
+      "zero_match_entries": 0,
+      "explicit_waiver_rules": 14
+    },
+    "check_timing": {
+      "status": "PASS_CLASSIFIED",
+      "no_clock": 1132,
+      "no_clock_dbg_hub_root_count": 1124,
+      "no_clock_jtag_axi": 1105,
+      "no_clock_jtag_axi_engine": 19,
+      "no_clock_ps_outputs": 8,
+      "unconstrained_internal_endpoints": 3366,
+      "unconstrained_jtag_axi": 3173,
+      "unconstrained_jtag_axi_engine": 193,
+      "multiple_clock": 0,
+      "generated_clocks": 0
+    },
+    "rx_capture_counter": {
+      "status": "PASS",
+      "runtime_increment": 1,
+      "multi_step_increment_path": false,
+      "stable_after_done": true
+    },
+    "resources": {
+      "status": "PASS",
+      "uram": 56,
+      "ramb36": 261,
+      "ramb18": 16,
+      "ramb36_equivalent": 269,
+      "gtye4_channel": 4,
+      "gtye4_common": 1,
+      "clb_lut": 36926,
+      "clb_registers": 63238,
+      "d3a5_comparison": {
+        "uram": 56,
+        "ramb36_equivalent": 269,
+        "gtye4_channel": 4,
+        "clb_lut": 36849,
+        "clb_registers": 63236
+      }
+    },
+    "generation_path_isolation": {
+      "status": "PASS",
+      "bd_xci_audit_rows": 9,
+      "root_gen_before_files": 1582,
+      "root_gen_after_files": 1582,
+      "root_gen_changed_files": 0,
+      "root_gen_missing_files": 0,
+      "root_gen_metadata_changed_files": 0
+    },
+    "vivado_process_limit": {
+      "status": "NEEDS_PARENT_JUDGMENT",
+      "limit": 3,
+      "observed_concurrent_processes": 10,
+      "observation_is_peak": false,
+      "reason": "Vivado automatically launched IP OOC synthesis/task-worker processes during synth_1 -jobs 2."
+    },
+    "hardware_operations": false
+  },
+  "coordination_required": [
+    "Clarify whether the maximum of three Vivado processes includes Vivado-managed IP OOC synthesis/task-worker processes; one live sample showed ten concurrent Vivado processes."
+  ]
+}

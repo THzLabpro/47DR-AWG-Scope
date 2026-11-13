@@ -1,0 +1,5 @@
+dbg_hub=dbg_hub
+C_CLK_INPUT_FREQ_HZ=100000000
+C_ENABLE_CLK_DIVIDER=false
+C_USER_SCAN_CHAIN=1
+clk_net=fclk_100m

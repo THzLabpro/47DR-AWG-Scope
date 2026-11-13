@@ -1,0 +1,11 @@
+{
+  "task": "D3C_IMPL",
+  "status": "PASS",
+  "scope": "build only; new bit not on hardware yet",
+  "fixes": ["MAC ctl_rx_max_packet_len 9600", "CAP_RD_CH rewinds pointer", "CAP_RD_DATA past-end and watchdog SLVERR", "adc_pair_valid per-channel copies"],
+  "sims": {"control": "57/0", "tx": "70/0", "rx": "29/0", "bridge": "115/0", "system": "245/0", "host_pytest": "14/14"},
+  "impl": {"attempt": 1, "wns": 0.011, "whs": 0.010, "tns": 0.0, "ths": 0.0, "drc_errors": 0, "unrouted": 0, "unsafe": 0},
+  "tightest_path": "adc_pair_valid_ch[0] -> LUT6 -> channel_write_data_q CE (adc->rx_clk, +0.011 ns)",
+  "artifacts": {"bit_sha256": "A294A0D8BB436E228A855708F774854E40F5884D679207F0BB335221C9AFC079", "xsa_sha256": "72B1B7FD36924489AB9105A2B20D0A26AB45576DF3B4377E6BE20EC8F0724468"},
+  "hardware_operations": "none"
+}

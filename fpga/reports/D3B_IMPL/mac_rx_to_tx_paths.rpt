@@ -1,0 +1,1178 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version      : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+| Date              : Thu Nov 12 02:21:34 2026
+| Host              : DESKTOP-CLMQL7K running 64-bit major release  (build 9200)
+| Command           : report_timing -delay_type max -max_paths 40 -from [get_clocks -quiet *rxoutclk_out*] -to [get_clocks -quiet *txoutclk_out*] -path_type full_clock_expanded -input_pins -file D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/reports/D3B_IMPL/mac_rx_to_tx_paths.rpt
+| Design            : awg_eth_top
+| Device            : xczu47dr-fsve1156
+| Speed File        : -2  PRODUCTION 1.32 01-31-2021
+| Design State      : Synthesized
+| Temperature Grade : I
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (MET) :             2.686ns  (required time - arrival time)
+  Source:                 awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell RAMD32 clocked by rxoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Destination:            awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell FDRE clocked by txoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Path Group:             txoutclk_out[0]
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.200ns  (MaxDelay Path 3.200ns)
+  Data Path Delay:        0.539ns  (logic 0.304ns (56.401%)  route 0.235ns (43.599%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 3.200ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         RAMD32 (Prop_RAMD32_CLK_O)
+                                                      0.304     0.304 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.235     0.539    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         FDRE                                         r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                    3.200     3.200    
+                         FDRE (Setup_FDRE_C_D)        0.025     3.225    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------
+                         required time                          3.225    
+                         arrival time                          -0.539    
+  -------------------------------------------------------------------
+                         slack                                  2.686    
+
+Slack (MET) :             2.686ns  (required time - arrival time)
+  Source:                 awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell RAMD32 clocked by rxoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Destination:            awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell FDRE clocked by txoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Path Group:             txoutclk_out[0]
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.200ns  (MaxDelay Path 3.200ns)
+  Data Path Delay:        0.539ns  (logic 0.304ns (56.401%)  route 0.235ns (43.599%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 3.200ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         RAMD32 (Prop_RAMD32_CLK_O)
+                                                      0.304     0.304 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.235     0.539    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         FDRE                                         r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                    3.200     3.200    
+                         FDRE (Setup_FDRE_C_D)        0.025     3.225    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------
+                         required time                          3.225    
+                         arrival time                          -0.539    
+  -------------------------------------------------------------------
+                         slack                                  2.686    
+
+Slack (MET) :             2.686ns  (required time - arrival time)
+  Source:                 awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell RAMD32 clocked by rxoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Destination:            awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell FDRE clocked by txoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Path Group:             txoutclk_out[0]
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.200ns  (MaxDelay Path 3.200ns)
+  Data Path Delay:        0.539ns  (logic 0.304ns (56.401%)  route 0.235ns (43.599%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 3.200ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         RAMD32 (Prop_RAMD32_CLK_O)
+                                                      0.304     0.304 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.235     0.539    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         FDRE                                         r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                    3.200     3.200    
+                         FDRE (Setup_FDRE_C_D)        0.025     3.225    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------
+                         required time                          3.225    
+                         arrival time                          -0.539    
+  -------------------------------------------------------------------
+                         slack                                  2.686    
+
+Slack (MET) :             2.686ns  (required time - arrival time)
+  Source:                 awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell RAMD32 clocked by rxoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Destination:            awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell FDRE clocked by txoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Path Group:             txoutclk_out[0]
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.200ns  (MaxDelay Path 3.200ns)
+  Data Path Delay:        0.539ns  (logic 0.304ns (56.401%)  route 0.235ns (43.599%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 3.200ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         RAMD32 (Prop_RAMD32_CLK_O)
+                                                      0.304     0.304 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.235     0.539    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         FDRE                                         r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                    3.200     3.200    
+                         FDRE (Setup_FDRE_C_D)        0.025     3.225    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------
+                         required time                          3.225    
+                         arrival time                          -0.539    
+  -------------------------------------------------------------------
+                         slack                                  2.686    
+
+Slack (MET) :             2.686ns  (required time - arrival time)
+  Source:                 awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell RAMD32 clocked by rxoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Destination:            awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell FDRE clocked by txoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Path Group:             txoutclk_out[0]
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.200ns  (MaxDelay Path 3.200ns)
+  Data Path Delay:        0.539ns  (logic 0.304ns (56.401%)  route 0.235ns (43.599%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 3.200ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         RAMD32 (Prop_RAMD32_CLK_O)
+                                                      0.304     0.304 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.235     0.539    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         FDRE                                         r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                    3.200     3.200    
+                         FDRE (Setup_FDRE_C_D)        0.025     3.225    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------
+                         required time                          3.225    
+                         arrival time                          -0.539    
+  -------------------------------------------------------------------
+                         slack                                  2.686    
+
+Slack (MET) :             2.686ns  (required time - arrival time)
+  Source:                 awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell RAMD32 clocked by rxoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Destination:            awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell FDRE clocked by txoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Path Group:             txoutclk_out[0]
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.200ns  (MaxDelay Path 3.200ns)
+  Data Path Delay:        0.539ns  (logic 0.304ns (56.401%)  route 0.235ns (43.599%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 3.200ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         RAMD32 (Prop_RAMD32_CLK_O)
+                                                      0.304     0.304 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.235     0.539    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         FDRE                                         r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                    3.200     3.200    
+                         FDRE (Setup_FDRE_C_D)        0.025     3.225    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------
+                         required time                          3.225    
+                         arrival time                          -0.539    
+  -------------------------------------------------------------------
+                         slack                                  2.686    
+
+Slack (MET) :             2.686ns  (required time - arrival time)
+  Source:                 awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell RAMD32 clocked by rxoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Destination:            awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell FDRE clocked by txoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Path Group:             txoutclk_out[0]
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.200ns  (MaxDelay Path 3.200ns)
+  Data Path Delay:        0.539ns  (logic 0.304ns (56.401%)  route 0.235ns (43.599%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 3.200ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         RAMD32 (Prop_RAMD32_CLK_O)
+                                                      0.304     0.304 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.235     0.539    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         FDRE                                         r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                    3.200     3.200    
+                         FDRE (Setup_FDRE_C_D)        0.025     3.225    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------
+                         required time                          3.225    
+                         arrival time                          -0.539    
+  -------------------------------------------------------------------
+                         slack                                  2.686    
+
+Slack (MET) :             2.686ns  (required time - arrival time)
+  Source:                 awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell RAMD32 clocked by rxoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Destination:            awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell FDRE clocked by txoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Path Group:             txoutclk_out[0]
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.200ns  (MaxDelay Path 3.200ns)
+  Data Path Delay:        0.539ns  (logic 0.304ns (56.401%)  route 0.235ns (43.599%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 3.200ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         RAMD32 (Prop_RAMD32_CLK_O)
+                                                      0.304     0.304 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.235     0.539    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         FDRE                                         r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                    3.200     3.200    
+                         FDRE (Setup_FDRE_C_D)        0.025     3.225    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------
+                         required time                          3.225    
+                         arrival time                          -0.539    
+  -------------------------------------------------------------------
+                         slack                                  2.686    
+
+Slack (MET) :             2.686ns  (required time - arrival time)
+  Source:                 awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell RAMD32 clocked by rxoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Destination:            awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell FDRE clocked by txoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Path Group:             txoutclk_out[0]
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.200ns  (MaxDelay Path 3.200ns)
+  Data Path Delay:        0.539ns  (logic 0.304ns (56.401%)  route 0.235ns (43.599%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 3.200ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         RAMD32 (Prop_RAMD32_CLK_O)
+                                                      0.304     0.304 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.235     0.539    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         FDRE                                         r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                    3.200     3.200    
+                         FDRE (Setup_FDRE_C_D)        0.025     3.225    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------
+                         required time                          3.225    
+                         arrival time                          -0.539    
+  -------------------------------------------------------------------
+                         slack                                  2.686    
+
+Slack (MET) :             2.686ns  (required time - arrival time)
+  Source:                 awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell RAMD32 clocked by rxoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Destination:            awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell FDRE clocked by txoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Path Group:             txoutclk_out[0]
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.200ns  (MaxDelay Path 3.200ns)
+  Data Path Delay:        0.539ns  (logic 0.304ns (56.401%)  route 0.235ns (43.599%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 3.200ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         RAMD32 (Prop_RAMD32_CLK_O)
+                                                      0.304     0.304 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.235     0.539    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         FDRE                                         r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                    3.200     3.200    
+                         FDRE (Setup_FDRE_C_D)        0.025     3.225    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------
+                         required time                          3.225    
+                         arrival time                          -0.539    
+  -------------------------------------------------------------------
+                         slack                                  2.686    
+
+Slack (MET) :             2.686ns  (required time - arrival time)
+  Source:                 awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell RAMD32 clocked by rxoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Destination:            awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell FDRE clocked by txoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Path Group:             txoutclk_out[0]
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.200ns  (MaxDelay Path 3.200ns)
+  Data Path Delay:        0.539ns  (logic 0.304ns (56.401%)  route 0.235ns (43.599%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 3.200ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         RAMD32 (Prop_RAMD32_CLK_O)
+                                                      0.304     0.304 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.235     0.539    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         FDRE                                         r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                    3.200     3.200    
+                         FDRE (Setup_FDRE_C_D)        0.025     3.225    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------
+                         required time                          3.225    
+                         arrival time                          -0.539    
+  -------------------------------------------------------------------
+                         slack                                  2.686    
+
+Slack (MET) :             2.686ns  (required time - arrival time)
+  Source:                 awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell RAMD32 clocked by rxoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Destination:            awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell FDRE clocked by txoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Path Group:             txoutclk_out[0]
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.200ns  (MaxDelay Path 3.200ns)
+  Data Path Delay:        0.539ns  (logic 0.304ns (56.401%)  route 0.235ns (43.599%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 3.200ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         RAMD32 (Prop_RAMD32_CLK_O)
+                                                      0.304     0.304 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.235     0.539    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         FDRE                                         r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                    3.200     3.200    
+                         FDRE (Setup_FDRE_C_D)        0.025     3.225    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------
+                         required time                          3.225    
+                         arrival time                          -0.539    
+  -------------------------------------------------------------------
+                         slack                                  2.686    
+
+Slack (MET) :             2.686ns  (required time - arrival time)
+  Source:                 awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell RAMD32 clocked by rxoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Destination:            awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell FDRE clocked by txoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Path Group:             txoutclk_out[0]
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.200ns  (MaxDelay Path 3.200ns)
+  Data Path Delay:        0.539ns  (logic 0.304ns (56.401%)  route 0.235ns (43.599%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 3.200ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         RAMD32 (Prop_RAMD32_CLK_O)
+                                                      0.304     0.304 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.235     0.539    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         FDRE                                         r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                    3.200     3.200    
+                         FDRE (Setup_FDRE_C_D)        0.025     3.225    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------
+                         required time                          3.225    
+                         arrival time                          -0.539    
+  -------------------------------------------------------------------
+                         slack                                  2.686    
+
+Slack (MET) :             2.686ns  (required time - arrival time)
+  Source:                 awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell RAMD32 clocked by rxoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Destination:            awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell FDRE clocked by txoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Path Group:             txoutclk_out[0]
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.200ns  (MaxDelay Path 3.200ns)
+  Data Path Delay:        0.539ns  (logic 0.304ns (56.401%)  route 0.235ns (43.599%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 3.200ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         RAMD32 (Prop_RAMD32_CLK_O)
+                                                      0.304     0.304 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.235     0.539    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         FDRE                                         r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                    3.200     3.200    
+                         FDRE (Setup_FDRE_C_D)        0.025     3.225    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------
+                         required time                          3.225    
+                         arrival time                          -0.539    
+  -------------------------------------------------------------------
+                         slack                                  2.686    
+
+Slack (MET) :             2.686ns  (required time - arrival time)
+  Source:                 awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell RAMD32 clocked by rxoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Destination:            awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell FDRE clocked by txoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Path Group:             txoutclk_out[0]
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.200ns  (MaxDelay Path 3.200ns)
+  Data Path Delay:        0.539ns  (logic 0.304ns (56.401%)  route 0.235ns (43.599%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 3.200ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         RAMD32 (Prop_RAMD32_CLK_O)
+                                                      0.304     0.304 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.235     0.539    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         FDRE                                         r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                    3.200     3.200    
+                         FDRE (Setup_FDRE_C_D)        0.025     3.225    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------
+                         required time                          3.225    
+                         arrival time                          -0.539    
+  -------------------------------------------------------------------
+                         slack                                  2.686    
+
+Slack (MET) :             2.686ns  (required time - arrival time)
+  Source:                 awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell RAMD32 clocked by rxoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Destination:            awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell FDRE clocked by txoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Path Group:             txoutclk_out[0]
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.200ns  (MaxDelay Path 3.200ns)
+  Data Path Delay:        0.539ns  (logic 0.304ns (56.401%)  route 0.235ns (43.599%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 3.200ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         RAMD32 (Prop_RAMD32_CLK_O)
+                                                      0.304     0.304 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.235     0.539    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         FDRE                                         r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                    3.200     3.200    
+                         FDRE (Setup_FDRE_C_D)        0.025     3.225    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------
+                         required time                          3.225    
+                         arrival time                          -0.539    
+  -------------------------------------------------------------------
+                         slack                                  2.686    
+
+Slack (MET) :             2.686ns  (required time - arrival time)
+  Source:                 awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell RAMD32 clocked by rxoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Destination:            awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell FDRE clocked by txoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Path Group:             txoutclk_out[0]
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.200ns  (MaxDelay Path 3.200ns)
+  Data Path Delay:        0.539ns  (logic 0.304ns (56.401%)  route 0.235ns (43.599%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 3.200ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         RAMD32 (Prop_RAMD32_CLK_O)
+                                                      0.304     0.304 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.235     0.539    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         FDRE                                         r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                    3.200     3.200    
+                         FDRE (Setup_FDRE_C_D)        0.025     3.225    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------
+                         required time                          3.225    
+                         arrival time                          -0.539    
+  -------------------------------------------------------------------
+                         slack                                  2.686    
+
+Slack (MET) :             2.686ns  (required time - arrival time)
+  Source:                 awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell RAMD32 clocked by rxoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Destination:            awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell FDRE clocked by txoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Path Group:             txoutclk_out[0]
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.200ns  (MaxDelay Path 3.200ns)
+  Data Path Delay:        0.539ns  (logic 0.304ns (56.401%)  route 0.235ns (43.599%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 3.200ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         RAMD32 (Prop_RAMD32_CLK_O)
+                                                      0.304     0.304 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.235     0.539    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         FDRE                                         r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                    3.200     3.200    
+                         FDRE (Setup_FDRE_C_D)        0.025     3.225    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------
+                         required time                          3.225    
+                         arrival time                          -0.539    
+  -------------------------------------------------------------------
+                         slack                                  2.686    
+
+Slack (MET) :             2.686ns  (required time - arrival time)
+  Source:                 awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell RAMD32 clocked by rxoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Destination:            awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell FDRE clocked by txoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Path Group:             txoutclk_out[0]
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.200ns  (MaxDelay Path 3.200ns)
+  Data Path Delay:        0.539ns  (logic 0.304ns (56.401%)  route 0.235ns (43.599%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 3.200ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         RAMD32 (Prop_RAMD32_CLK_O)
+                                                      0.304     0.304 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.235     0.539    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         FDRE                                         r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                    3.200     3.200    
+                         FDRE (Setup_FDRE_C_D)        0.025     3.225    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------
+                         required time                          3.225    
+                         arrival time                          -0.539    
+  -------------------------------------------------------------------
+                         slack                                  2.686    
+
+Slack (MET) :             2.686ns  (required time - arrival time)
+  Source:                 awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell RAMD32 clocked by rxoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Destination:            awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell FDRE clocked by txoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Path Group:             txoutclk_out[0]
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.200ns  (MaxDelay Path 3.200ns)
+  Data Path Delay:        0.539ns  (logic 0.304ns (56.401%)  route 0.235ns (43.599%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 3.200ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         RAMD32 (Prop_RAMD32_CLK_O)
+                                                      0.304     0.304 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.235     0.539    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         FDRE                                         r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                    3.200     3.200    
+                         FDRE (Setup_FDRE_C_D)        0.025     3.225    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------
+                         required time                          3.225    
+                         arrival time                          -0.539    
+  -------------------------------------------------------------------
+                         slack                                  2.686    
+
+Slack (MET) :             2.686ns  (required time - arrival time)
+  Source:                 awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell RAMD32 clocked by rxoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Destination:            awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell FDRE clocked by txoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Path Group:             txoutclk_out[0]
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.200ns  (MaxDelay Path 3.200ns)
+  Data Path Delay:        0.539ns  (logic 0.304ns (56.401%)  route 0.235ns (43.599%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 3.200ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         RAMD32 (Prop_RAMD32_CLK_O)
+                                                      0.304     0.304 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.235     0.539    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         FDRE                                         r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                    3.200     3.200    
+                         FDRE (Setup_FDRE_C_D)        0.025     3.225    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------
+                         required time                          3.225    
+                         arrival time                          -0.539    
+  -------------------------------------------------------------------
+                         slack                                  2.686    
+
+Slack (MET) :             2.686ns  (required time - arrival time)
+  Source:                 awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell RAMD32 clocked by rxoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Destination:            awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell FDRE clocked by txoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Path Group:             txoutclk_out[0]
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.200ns  (MaxDelay Path 3.200ns)
+  Data Path Delay:        0.539ns  (logic 0.304ns (56.401%)  route 0.235ns (43.599%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 3.200ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         RAMD32 (Prop_RAMD32_CLK_O)
+                                                      0.304     0.304 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.235     0.539    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         FDRE                                         r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                    3.200     3.200    
+                         FDRE (Setup_FDRE_C_D)        0.025     3.225    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------
+                         required time                          3.225    
+                         arrival time                          -0.539    
+  -------------------------------------------------------------------
+                         slack                                  2.686    
+
+Slack (MET) :             2.686ns  (required time - arrival time)
+  Source:                 awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell RAMD32 clocked by rxoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Destination:            awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell FDRE clocked by txoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Path Group:             txoutclk_out[0]
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.200ns  (MaxDelay Path 3.200ns)
+  Data Path Delay:        0.539ns  (logic 0.304ns (56.401%)  route 0.235ns (43.599%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 3.200ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         RAMD32 (Prop_RAMD32_CLK_O)
+                                                      0.304     0.304 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.235     0.539    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         FDRE                                         r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                    3.200     3.200    
+                         FDRE (Setup_FDRE_C_D)        0.025     3.225    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------
+                         required time                          3.225    
+                         arrival time                          -0.539    
+  -------------------------------------------------------------------
+                         slack                                  2.686    
+
+Slack (MET) :             2.686ns  (required time - arrival time)
+  Source:                 awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell RAMD32 clocked by rxoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Destination:            awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell FDRE clocked by txoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Path Group:             txoutclk_out[0]
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.200ns  (MaxDelay Path 3.200ns)
+  Data Path Delay:        0.539ns  (logic 0.304ns (56.401%)  route 0.235ns (43.599%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 3.200ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         RAMD32 (Prop_RAMD32_CLK_O)
+                                                      0.304     0.304 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.235     0.539    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         FDRE                                         r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                    3.200     3.200    
+                         FDRE (Setup_FDRE_C_D)        0.025     3.225    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------
+                         required time                          3.225    
+                         arrival time                          -0.539    
+  -------------------------------------------------------------------
+                         slack                                  2.686    
+
+Slack (MET) :             2.686ns  (required time - arrival time)
+  Source:                 awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell RAMD32 clocked by rxoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Destination:            awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell FDRE clocked by txoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Path Group:             txoutclk_out[0]
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.200ns  (MaxDelay Path 3.200ns)
+  Data Path Delay:        0.539ns  (logic 0.304ns (56.401%)  route 0.235ns (43.599%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 3.200ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         RAMD32 (Prop_RAMD32_CLK_O)
+                                                      0.304     0.304 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.235     0.539    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         FDRE                                         r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                    3.200     3.200    
+                         FDRE (Setup_FDRE_C_D)        0.025     3.225    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------
+                         required time                          3.225    
+                         arrival time                          -0.539    
+  -------------------------------------------------------------------
+                         slack                                  2.686    
+
+Slack (MET) :             2.686ns  (required time - arrival time)
+  Source:                 awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell RAMD32 clocked by rxoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Destination:            awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell FDRE clocked by txoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Path Group:             txoutclk_out[0]
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.200ns  (MaxDelay Path 3.200ns)
+  Data Path Delay:        0.539ns  (logic 0.304ns (56.401%)  route 0.235ns (43.599%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 3.200ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         RAMD32 (Prop_RAMD32_CLK_O)
+                                                      0.304     0.304 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.235     0.539    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         FDRE                                         r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                    3.200     3.200    
+                         FDRE (Setup_FDRE_C_D)        0.025     3.225    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------
+                         required time                          3.225    
+                         arrival time                          -0.539    
+  -------------------------------------------------------------------
+                         slack                                  2.686    
+
+Slack (MET) :             2.686ns  (required time - arrival time)
+  Source:                 awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell RAMD32 clocked by rxoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Destination:            awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell FDRE clocked by txoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Path Group:             txoutclk_out[0]
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.200ns  (MaxDelay Path 3.200ns)
+  Data Path Delay:        0.539ns  (logic 0.304ns (56.401%)  route 0.235ns (43.599%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 3.200ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         RAMD32 (Prop_RAMD32_CLK_O)
+                                                      0.304     0.304 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.235     0.539    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         FDRE                                         r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                    3.200     3.200    
+                         FDRE (Setup_FDRE_C_D)        0.025     3.225    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------
+                         required time                          3.225    
+                         arrival time                          -0.539    
+  -------------------------------------------------------------------
+                         slack                                  2.686    
+
+Slack (MET) :             2.686ns  (required time - arrival time)
+  Source:                 awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell RAMD32 clocked by rxoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Destination:            awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell FDRE clocked by txoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Path Group:             txoutclk_out[0]
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.200ns  (MaxDelay Path 3.200ns)
+  Data Path Delay:        0.539ns  (logic 0.304ns (56.401%)  route 0.235ns (43.599%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 3.200ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         RAMD32 (Prop_RAMD32_CLK_O)
+                                                      0.304     0.304 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.235     0.539    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         FDRE                                         r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                    3.200     3.200    
+                         FDRE (Setup_FDRE_C_D)        0.025     3.225    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------
+                         required time                          3.225    
+                         arrival time                          -0.539    
+  -------------------------------------------------------------------
+                         slack                                  2.686    
+
+Slack (MET) :             2.686ns  (required time - arrival time)
+  Source:                 awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell RAMD32 clocked by rxoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Destination:            awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell FDRE clocked by txoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Path Group:             txoutclk_out[0]
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.200ns  (MaxDelay Path 3.200ns)
+  Data Path Delay:        0.539ns  (logic 0.304ns (56.401%)  route 0.235ns (43.599%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 3.200ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         RAMD32 (Prop_RAMD32_CLK_O)
+                                                      0.304     0.304 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.235     0.539    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         FDRE                                         r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                    3.200     3.200    
+                         FDRE (Setup_FDRE_C_D)        0.025     3.225    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------
+                         required time                          3.225    
+                         arrival time                          -0.539    
+  -------------------------------------------------------------------
+                         slack                                  2.686    
+
+Slack (MET) :             2.686ns  (required time - arrival time)
+  Source:                 awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell RAMD32 clocked by rxoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Destination:            awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell FDRE clocked by txoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Path Group:             txoutclk_out[0]
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.200ns  (MaxDelay Path 3.200ns)
+  Data Path Delay:        0.539ns  (logic 0.304ns (56.401%)  route 0.235ns (43.599%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 3.200ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         RAMD32 (Prop_RAMD32_CLK_O)
+                                                      0.304     0.304 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.235     0.539    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         FDRE                                         r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                    3.200     3.200    
+                         FDRE (Setup_FDRE_C_D)        0.025     3.225    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------
+                         required time                          3.225    
+                         arrival time                          -0.539    
+  -------------------------------------------------------------------
+                         slack                                  2.686    
+
+Slack (MET) :             2.686ns  (required time - arrival time)
+  Source:                 awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell RAMD32 clocked by rxoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Destination:            awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell FDRE clocked by txoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Path Group:             txoutclk_out[0]
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.200ns  (MaxDelay Path 3.200ns)
+  Data Path Delay:        0.539ns  (logic 0.304ns (56.401%)  route 0.235ns (43.599%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 3.200ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         RAMD32 (Prop_RAMD32_CLK_O)
+                                                      0.304     0.304 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.235     0.539    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         FDRE                                         r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                    3.200     3.200    
+                         FDRE (Setup_FDRE_C_D)        0.025     3.225    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------
+                         required time                          3.225    
+                         arrival time                          -0.539    
+  -------------------------------------------------------------------
+                         slack                                  2.686    
+
+Slack (MET) :             2.686ns  (required time - arrival time)
+  Source:                 awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell RAMD32 clocked by rxoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Destination:            awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell FDRE clocked by txoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Path Group:             txoutclk_out[0]
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.200ns  (MaxDelay Path 3.200ns)
+  Data Path Delay:        0.539ns  (logic 0.304ns (56.401%)  route 0.235ns (43.599%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 3.200ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         RAMD32 (Prop_RAMD32_CLK_O)
+                                                      0.304     0.304 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.235     0.539    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         FDRE                                         r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                    3.200     3.200    
+                         FDRE (Setup_FDRE_C_D)        0.025     3.225    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------
+                         required time                          3.225    
+                         arrival time                          -0.539    
+  -------------------------------------------------------------------
+                         slack                                  2.686    
+
+Slack (MET) :             2.686ns  (required time - arrival time)
+  Source:                 awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell RAMD32 clocked by rxoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Destination:            awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell FDRE clocked by txoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Path Group:             txoutclk_out[0]
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.200ns  (MaxDelay Path 3.200ns)
+  Data Path Delay:        0.539ns  (logic 0.304ns (56.401%)  route 0.235ns (43.599%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 3.200ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         RAMD32 (Prop_RAMD32_CLK_O)
+                                                      0.304     0.304 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.235     0.539    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         FDRE                                         r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                    3.200     3.200    
+                         FDRE (Setup_FDRE_C_D)        0.025     3.225    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------
+                         required time                          3.225    
+                         arrival time                          -0.539    
+  -------------------------------------------------------------------
+                         slack                                  2.686    
+
+Slack (MET) :             2.686ns  (required time - arrival time)
+  Source:                 awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell RAMD32 clocked by rxoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Destination:            awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell FDRE clocked by txoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Path Group:             txoutclk_out[0]
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.200ns  (MaxDelay Path 3.200ns)
+  Data Path Delay:        0.539ns  (logic 0.304ns (56.401%)  route 0.235ns (43.599%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 3.200ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         RAMD32 (Prop_RAMD32_CLK_O)
+                                                      0.304     0.304 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.235     0.539    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         FDRE                                         r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                    3.200     3.200    
+                         FDRE (Setup_FDRE_C_D)        0.025     3.225    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------
+                         required time                          3.225    
+                         arrival time                          -0.539    
+  -------------------------------------------------------------------
+                         slack                                  2.686    
+
+Slack (MET) :             2.686ns  (required time - arrival time)
+  Source:                 awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell RAMD32 clocked by rxoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Destination:            awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell FDRE clocked by txoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Path Group:             txoutclk_out[0]
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.200ns  (MaxDelay Path 3.200ns)
+  Data Path Delay:        0.539ns  (logic 0.304ns (56.401%)  route 0.235ns (43.599%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 3.200ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         RAMD32 (Prop_RAMD32_CLK_O)
+                                                      0.304     0.304 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.235     0.539    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         FDRE                                         r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                    3.200     3.200    
+                         FDRE (Setup_FDRE_C_D)        0.025     3.225    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------
+                         required time                          3.225    
+                         arrival time                          -0.539    
+  -------------------------------------------------------------------
+                         slack                                  2.686    
+
+Slack (MET) :             2.686ns  (required time - arrival time)
+  Source:                 awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell RAMD32 clocked by rxoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Destination:            awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell FDRE clocked by txoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Path Group:             txoutclk_out[0]
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.200ns  (MaxDelay Path 3.200ns)
+  Data Path Delay:        0.539ns  (logic 0.304ns (56.401%)  route 0.235ns (43.599%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 3.200ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         RAMD32 (Prop_RAMD32_CLK_O)
+                                                      0.304     0.304 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.235     0.539    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         FDRE                                         r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                    3.200     3.200    
+                         FDRE (Setup_FDRE_C_D)        0.025     3.225    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------
+                         required time                          3.225    
+                         arrival time                          -0.539    
+  -------------------------------------------------------------------
+                         slack                                  2.686    
+
+Slack (MET) :             2.686ns  (required time - arrival time)
+  Source:                 awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell RAMD32 clocked by rxoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Destination:            awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell FDRE clocked by txoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Path Group:             txoutclk_out[0]
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.200ns  (MaxDelay Path 3.200ns)
+  Data Path Delay:        0.539ns  (logic 0.304ns (56.401%)  route 0.235ns (43.599%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 3.200ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         RAMD32 (Prop_RAMD32_CLK_O)
+                                                      0.304     0.304 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.235     0.539    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         FDRE                                         r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                    3.200     3.200    
+                         FDRE (Setup_FDRE_C_D)        0.025     3.225    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------
+                         required time                          3.225    
+                         arrival time                          -0.539    
+  -------------------------------------------------------------------
+                         slack                                  2.686    
+
+Slack (MET) :             2.686ns  (required time - arrival time)
+  Source:                 awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell RAMD32 clocked by rxoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Destination:            awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell FDRE clocked by txoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Path Group:             txoutclk_out[0]
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.200ns  (MaxDelay Path 3.200ns)
+  Data Path Delay:        0.539ns  (logic 0.304ns (56.401%)  route 0.235ns (43.599%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 3.200ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         RAMD32 (Prop_RAMD32_CLK_O)
+                                                      0.304     0.304 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.235     0.539    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         FDRE                                         r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                    3.200     3.200    
+                         FDRE (Setup_FDRE_C_D)        0.025     3.225    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------
+                         required time                          3.225    
+                         arrival time                          -0.539    
+  -------------------------------------------------------------------
+                         slack                                  2.686    
+
+Slack (MET) :             2.686ns  (required time - arrival time)
+  Source:                 awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell RAMD32 clocked by rxoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Destination:            awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell FDRE clocked by txoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Path Group:             txoutclk_out[0]
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.200ns  (MaxDelay Path 3.200ns)
+  Data Path Delay:        0.539ns  (logic 0.304ns (56.401%)  route 0.235ns (43.599%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 3.200ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         RAMD32 (Prop_RAMD32_CLK_O)
+                                                      0.304     0.304 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.235     0.539    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         FDRE                                         r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                    3.200     3.200    
+                         FDRE (Setup_FDRE_C_D)        0.025     3.225    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------
+                         required time                          3.225    
+                         arrival time                          -0.539    
+  -------------------------------------------------------------------
+                         slack                                  2.686    
+
+Slack (MET) :             2.686ns  (required time - arrival time)
+  Source:                 awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell RAMD32 clocked by rxoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Destination:            awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (rising edge-triggered cell FDRE clocked by txoutclk_out[0]  {rise@0.000ns fall@1.600ns period=3.200ns})
+  Path Group:             txoutclk_out[0]
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.200ns  (MaxDelay Path 3.200ns)
+  Data Path Delay:        0.539ns  (logic 0.304ns (56.401%)  route 0.235ns (43.599%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 3.200ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         RAMD32 (Prop_RAMD32_CLK_O)
+                                                      0.304     0.304 r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, unplaced)         0.235     0.539    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         FDRE                                         r  awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                    3.200     3.200    
+                         FDRE (Setup_FDRE_C_D)        0.025     3.225    awg_eth_top/awg_eth_core/optical_port2_exdes/optical_port2/optical_port2_wrapper/optical_port2_top/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------
+                         required time                          3.225    
+                         arrival time                          -0.539    
+  -------------------------------------------------------------------
+                         slack                                  2.686    
+
+
+
+

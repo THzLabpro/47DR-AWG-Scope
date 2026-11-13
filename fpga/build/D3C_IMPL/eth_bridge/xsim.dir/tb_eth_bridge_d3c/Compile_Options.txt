@@ -1,0 +1,1 @@
+"xil_defaultlib.tb_eth_bridge" -s "tb_eth_bridge_d3c" -debug "typical" -nolog 

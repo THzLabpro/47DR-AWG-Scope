@@ -1,0 +1,25 @@
+COMMAND xvlog_eth_bridge --sv --nolog -work xil_defaultlib D:\ClaudeProject\47DR_DAAD\rf_awg_eth_v1\rtl\eth\vendor\verilog-ethernet\lib\axis\rtl\axis_async_fifo.v D:\ClaudeProject\47DR_DAAD\rf_awg_eth_v1\rtl\eth\awg_eth_bridge.sv D:\ClaudeProject\47DR_DAAD\rf_awg_eth_v1\rtl\eth\axil_arb2.sv D:\ClaudeProject\47DR_DAAD\rf_awg_eth_v1\rtl\awg_wave_bank.sv D:\ClaudeProject\47DR_DAAD\rf_awg_eth_v1\rtl\axis_wide_gearbox.sv D:\ClaudeProject\47DR_DAAD\rf_awg_eth_v1\rtl\axis_register_slice.sv D:\ClaudeProject\47DR_DAAD\rf_awg_eth_v1\rtl\awg_player.sv D:\ClaudeProject\47DR_DAAD\rf_awg_eth_v1\rtl\awg_control.sv D:\ClaudeProject\47DR_DAAD\rf_awg_eth_v1\rtl\awg_subsystem.sv D:\ClaudeProject\47DR_DAAD\rf_awg_eth_v1\rtl\adc_capture.sv D:\ClaudeProject\47DR_DAAD\rf_awg_eth_v1\sim\eth_bridge\tb_eth_bridge.sv
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/rtl/eth/vendor/verilog-ethernet/lib/axis/rtl/axis_async_fifo.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axis_async_fifo
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/rtl/eth/awg_eth_bridge.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module awg_eth_bridge
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/rtl/eth/axil_arb2.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axil_arb2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/rtl/awg_wave_bank.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module awg_wave_bank
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/rtl/axis_wide_gearbox.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axis_wide_gearbox
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/rtl/axis_register_slice.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axis_register_slice
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/rtl/awg_player.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module awg_player
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/rtl/awg_control.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module awg_control
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/rtl/awg_subsystem.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module awg_subsystem
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/rtl/adc_capture.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module adc_capture
+INFO: [VRFC 10-311] analyzing module adc_async_fifo
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/sim/eth_bridge/tb_eth_bridge.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_eth_bridge
+EXIT_CODE xvlog_eth_bridge 0

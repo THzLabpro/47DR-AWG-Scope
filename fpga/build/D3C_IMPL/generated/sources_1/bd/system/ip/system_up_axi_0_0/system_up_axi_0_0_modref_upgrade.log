@@ -1,0 +1,16 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+| Date         : Thu Nov 12 05:08:15 2026
+| Host         : DESKTOP-CLMQL7K running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xczu47dr-fsve1156-2-i
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'system_up_axi_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of system_up_axi_0_0 (xilinx.com:module_ref:up_axi:1.0 (Rev. 1)) to current project options.
+

@@ -1,0 +1,11 @@
+{
+  "task": "E5C",
+  "status": "PASS",
+  "bit_sha256": "A294A0D8BB436E228A855708F774854E40F5884D679207F0BB335221C9AFC079",
+  "init": {"init_stage": 99, "config_done": 1, "mts_dac_latency_t1": 272, "mts_adc_latency_t1": 116},
+  "fix_probe": "14/0",
+  "load": {"channels": 8, "samples_per_channel": 131072, "crc_all_match": true, "seconds": 0.651, "words_per_packet": 2048},
+  "bench_mb_per_s": {"256": [3.83, 3.16], "1024": [7.85, 8.17], "2048": [11.38, 12.45]},
+  "loopback_ch0": {"sinad_db": 39.2, "sfdr_db": 49.1, "amplitude_lsb": 7149},
+  "hardware_operations": "JTAG program x1, JTAG memory read, UDP to 192.168.42.2 (user approved)"
+}

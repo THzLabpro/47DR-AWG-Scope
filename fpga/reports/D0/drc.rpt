@@ -1,0 +1,56 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+| Date         : Wed Nov 11 10:42:19 2026
+| Host         : DESKTOP-CLMQL7K running 64-bit major release  (build 9200)
+| Command      : report_drc -file D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/reports/D0/drc.rpt
+| Design       : d0_probe_top
+| Device       : xczu47dr-fsve1156-2-i
+| Speed File   : -2
+| Design State : Fully Routed
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Report DRC
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: checkpoint_d0_probe_top_routed
+      Design limits: <entire design considered>
+           Ruledeck: default
+             Max checks: <unlimited>
+             Checks found: 1
++-----------+----------+-------------------+--------+
+| Rule      | Severity | Description       | Checks |
++-----------+----------+-------------------+--------+
+| RTSTAT-10 | Warning  | No routable loads | 1      |
++-----------+----------+-------------------+--------+
+
+2. REPORT DETAILS
+-----------------
+RTSTAT-10#1 Warning
+No routable loads  
+48 net(s) have no routable loads. The problem bus(es) and/or net(s) are system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/STATUS_ADC0[13],
+system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/STATUS_ADC0[1],
+system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/STATUS_ADC0[4],
+system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/STATUS_ADC0[5],
+system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/STATUS_ADC0[6],
+system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/STATUS_ADC0[7],
+system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/STATUS_ADC2[13],
+system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/STATUS_ADC2[1],
+system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/STATUS_ADC2[4],
+system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/STATUS_ADC2[5],
+system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/STATUS_ADC2[6],
+system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/STATUS_ADC2[7],
+system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/rx1_u_adc_0[1],
+system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/rx1_u_adc_0[4],
+system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/rx1_u_adc_0[5]
+ (the first 15 of 48 listed nets/buses).
+Related violations: <none>
+
+

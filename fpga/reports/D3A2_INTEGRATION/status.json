@@ -1,0 +1,38 @@
+{
+  "task": "D3A2_INTEGRATION",
+  "date": "2026-11-11",
+  "status": "NEEDS_PARENT_JUDGMENT",
+  "acceptance": {
+    "1_tx_rx": "PASS",
+    "2_control_unit": "PASS",
+    "3_system_s1_s7": "FAIL",
+    "4_synth_bd_constraints": "PASS_WITH_CRITICAL_WARNINGS",
+    "5_resource_estimate": "PARTIAL"
+  },
+  "results": {
+    "tx": {"pass": 26, "fail": 0, "crc": "D49307A0"},
+    "rx": {"compared": 543552, "mismatches": 0, "x_count": 0, "pass_items": 24, "fail_items": 0, "r2_trials": "20/20", "max_tx_word_error": 17, "limit": 24},
+    "control_unit": {"pass": 38, "fail": 0},
+    "synth_design_rtl": "PASS",
+    "cdc_hits": {"sysref_source": 1, "sysref_dac": 1, "sysref_adc": 1, "gray": 0},
+    "bd_diff": {"changed": 15, "unexpected": 0, "status": "PASS"},
+    "system": {
+      "s1": "PASS",
+      "s2": "PARTIAL_CHANNEL_SELECT_UNVERIFIED",
+      "s3": "FAIL",
+      "s4": "FAIL",
+      "s5": "FAIL",
+      "s6": "PASS",
+      "s7_write_mbps": 37.271305,
+      "s7_write_threshold_mbps": 40.0,
+      "s7_read": "TIMEOUT",
+      "result_line": "NOT_PRODUCED"
+    }
+  },
+  "hardware_operations": false,
+  "needs_parent_judgment": [
+    "系統 S3/S4/S5/S7 失敗或未完成",
+    "D3A2 top 使用 boundary stub，DRC 有 2 個 critical warning",
+    "S7 write 低於固定 40 MB/s 門檻"
+  ]
+}

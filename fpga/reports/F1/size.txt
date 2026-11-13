@@ -1,0 +1,2 @@
+   text	   data	    bss	    dec	    hex	filename
+ 289888	   9212	  94944	 394044	  6033c	D:\ClaudeProject\47DR_DAAD\rf_awg_eth_v1\build\F1\rf_awg_init.elf

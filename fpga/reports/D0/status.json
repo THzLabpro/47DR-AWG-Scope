@@ -1,0 +1,8 @@
+{
+  "task": "D0_CLOCK_PROBE",
+  "status": "NEEDS_PARENT_JUDGMENT",
+  "synthesis": "synth_design Complete!",
+  "implementation": "route_design Complete!",
+  "timing": "FAIL",
+  "reason": "Post-route WNS is negative; see timing_summary.rpt and worst_paths_setup.rpt"
+}

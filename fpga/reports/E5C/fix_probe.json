@@ -1,0 +1,72 @@
+[
+  {
+    "name": "BUILD_ID is D3C",
+    "pass": true,
+    "detail": "0xd3c02026"
+  },
+  {
+    "name": "A jumbo write 256 words (1048 B payload)",
+    "pass": true,
+    "detail": "rx_ok+2"
+  },
+  {
+    "name": "A jumbo write 350 words (1424 B payload)",
+    "pass": true,
+    "detail": "rx_ok+2"
+  },
+  {
+    "name": "A jumbo write 368 words (1496 B payload)",
+    "pass": true,
+    "detail": "rx_ok+2"
+  },
+  {
+    "name": "A jumbo write 512 words (2072 B payload)",
+    "pass": true,
+    "detail": "rx_ok+2"
+  },
+  {
+    "name": "A jumbo write 1024 words (4120 B payload)",
+    "pass": true,
+    "detail": "rx_ok+2"
+  },
+  {
+    "name": "A jumbo write 2048 words (8216 B payload)",
+    "pass": true,
+    "detail": "rx_ok+2"
+  },
+  {
+    "name": "A jumbo read 2048 words",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "B CAP_RD_CH rewinds pointer",
+    "pass": true,
+    "detail": "ptr=0"
+  },
+  {
+    "name": "C pointer reaches 32760",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "C past-end read returns AXI error",
+    "pass": true,
+    "detail": "status=1"
+  },
+  {
+    "name": "C bus alive after past-end read",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "C no AXI timeouts",
+    "pass": true,
+    "detail": "axi_timeouts=0 axi_errors=4"
+  },
+  {
+    "name": "abort clears armed capture",
+    "pass": true,
+    "detail": "armed=0x5 after=0x0"
+  }
+]

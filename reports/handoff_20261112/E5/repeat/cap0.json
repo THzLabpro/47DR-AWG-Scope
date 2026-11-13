@@ -1,0 +1,10 @@
+{
+  "format": "47dr-raw-adc-v2",
+  "fs_hz": 5000000000,
+  "channel_mask": 1,
+  "samples": 65520,
+  "sample_bits": 14,
+  "signed": true,
+  "trigger": "start",
+  "cap_tx_word": 3562
+}

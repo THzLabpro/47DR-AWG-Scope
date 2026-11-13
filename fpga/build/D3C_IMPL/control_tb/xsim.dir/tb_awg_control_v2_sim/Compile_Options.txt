@@ -1,0 +1,1 @@
+"work.tb_awg_control_v2" -s "tb_awg_control_v2_sim" -nolog -log "D:\ClaudeProject\47DR_DAAD\rf_awg_eth_v1\reports\D3C_IMPL\control_tb\control_xelab.log" 

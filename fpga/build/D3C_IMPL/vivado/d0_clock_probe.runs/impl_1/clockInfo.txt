@@ -1,0 +1,109 @@
+-------------------------------------
+| Tool Version : Vivado v.2025.2
+| Date         : Thu Nov 12 05:46:03 2026
+| Host         : DESKTOP-CLMQL7K
+| Design       : design_1
+| Device       : xczu47dr-fsve1156-2-I-
+-------------------------------------
+
+For more information on clockInfo.txt clock routing debug file see https://support.xilinx.com/s/article/000035660?language=en_US
+
+***********************
+Running Pre-CRP Checker
+***********************
+Number of global clocks: 12
+	Number of BUFGCE: 5
+	Number of BUFGCE_HDIO: 0
+	Number of BUFG_CTRL: 0
+	Number of BUFGCE_DIV: 2
+	Number of BUFG_GT: 4
+	Number of BUFG_PS: 1
+	Number of BUFG_FABRIC: 0
+	Running suboptimal placement checker for 4 BUFG_GT clocks (and their loads)...
+		No sub-optimality found
+		No sub-optimality found
+		WARNING: suboptimal BUFG_GT clock net eth_core_i/u_qsfp2_mac/DUT/inst/gt_refclk_out, source in region X0Y5 has locked load in region (4, 2)
+		No sub-optimality found
+	Running suboptimal placement checker for 5 clocks (and their loads) which do not have the CLOCK_LOW_FANOUT property but have a fanout less than 2000...
+Pre-CRP Checker took 0 secs
+
+**************************************
+Clock Nets/Source Overview (CRP Input)
+**************************************
+Clock 1: tx_clk
+	Clock source type: BUFG_DIV
+	Clock source region: X4Y1
+	initial rect ((0, 1), (5, 6))
+
+Clock 2: eth_core_i/u_qsfp2_mac/DUT/inst/i_core_gtwiz_userclk_tx_inst_0/tx_clk_out_0
+	Clock source type: BUFG_GT
+	Clock source region: X0Y5
+	Clock regions with locked loads: X0Y5 
+	initial rect ((0, 3), (4, 5))
+
+Clock 3: system_i/system_i/zynq_ultra_ps_e_0/inst/pl_clk0
+	Clock source type: BUFG_PS
+	Clock source region: X1Y2
+	Clock regions with locked loads: X1Y2 X4Y1 X5Y0 X5Y1 X5Y2 X5Y3 X5Y4 X5Y5 X5Y6 X5Y7 
+	initial rect ((0, 0), (5, 7))
+
+Clock 4: eth_core_i/u_qsfp2_mac/DUT/inst/i_core_gtwiz_userclk_rx_inst_0/rx_clk_out_0
+	Clock source type: BUFG_GT
+	Clock source region: X0Y5
+	Clock regions with locked loads: X0Y5 
+	initial rect ((0, 5), (2, 5))
+
+Clock 5: system_i/system_i/clk_wiz_adc/inst/clk_out1
+	Clock source type: BUFGCE
+	Clock source region: X4Y0
+	Clock regions with locked loads: X5Y0 X5Y1 X5Y2 X5Y3 
+	initial rect ((2, 0), (5, 5))
+
+Clock 6: rx_clk
+	Clock source type: BUFG_DIV
+	Clock source region: X4Y0
+	initial rect ((1, 0), (5, 6))
+
+Clock 7: system_i/system_i/clk_wiz_0/inst/CLK_CORE_DRP_I/clk_inst/clk_out1
+	Clock source type: BUFGCE
+	Clock source region: X4Y1
+	Clock regions with locked loads: X5Y4 X5Y5 X5Y6 X5Y7 
+	initial rect ((3, 1), (5, 7))
+
+Clock 8: dbg_hub/inst/BSCANID.u_xsdbm_id/itck_i
+	Clock source type: BUFGCE
+	Clock source region: X4Y7
+	initial rect ((1, 1), (5, 7))
+
+Clock 9: eth_core_i/u_management_clock/inst/clk_out1
+	Clock source type: BUFGCE
+	Clock source region: X4Y2
+	Clock regions with locked loads: X0Y5 
+	initial rect ((0, 2), (4, 5))
+
+Clock 10: pl_clk
+	Clock source type: BUFGCE
+	Clock source region: X4Y0
+	Clock regions with locked loads: X4Y0 
+	initial rect ((4, 0), (4, 4))
+
+Clock 11: eth_core_i/u_qsfp2_mac/DUT/inst/gt_refclk_out
+	Clock source type: BUFG_GT
+	Clock source region: X0Y5
+	Clock regions with locked loads: X4Y2 
+	initial rect ((0, 2), (4, 5))
+
+Clock 12: system_i/system_i/usp_rf_data_converter_0/inst/i_system_usp_rf_data_converter_0_0_bufg_gt_ctrl/clk_dac2
+	Clock source type: BUFG_GT
+	Clock source region: X5Y6
+	Clock regions with locked loads: X4Y1 
+	initial rect ((4, 1), (5, 6))
+
+
+
+*****************************
+Clocks With User Constraints:
+*****************************
+No clocks with user constraints found
+
+

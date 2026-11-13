@@ -1,0 +1,562 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xczu47dr-fsve1156-2-i" LaunchTime="1794490402">
+  <File Type="ROUTE-PWR" Name="awg_eth_top_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="awg_eth_top.tcl"/>
+  <File Type="ROUTE-PWR-SUM" Name="awg_eth_top_power_summary_routed.pb"/>
+  <File Type="OPT-RQA-PB" Name="awg_eth_top_rqa_opted.pb"/>
+  <File Type="REPORTS-TCL" Name="awg_eth_top_reports.tcl"/>
+  <File Type="INIT-TIMING" Name="awg_eth_top_timing_summary_init.rpt"/>
+  <File Type="OPT-DCP" Name="awg_eth_top_opt.dcp"/>
+  <File Type="OPT-DRC" Name="awg_eth_top_drc_opted.rpt"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="awg_eth_top_routed_bb.dcp"/>
+  <File Type="OPT-UTIL" Name="awg_eth_top_utilization_opted.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="awg_eth_top_timing_summary_routed.pb"/>
+  <File Type="OPT-UTIL-PB" Name="awg_eth_top_utilization_opted.pb"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="awg_eth_top_methodology_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="awg_eth_top.hwdef"/>
+  <File Type="OPT-TIMING" Name="awg_eth_top_timing_summary_opted.rpt"/>
+  <File Type="PWROPT-DCP" Name="awg_eth_top_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="awg_eth_top_drc_pwropted.rpt"/>
+  <File Type="NOC_TRAFFIC_SPEC_FILE" Name="awg_eth_top.nts"/>
+  <File Type="PWROPT-TIMING" Name="awg_eth_top_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="awg_eth_top_placed.dcp"/>
+  <File Type="PLACE-IO" Name="awg_eth_top_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="awg_eth_top_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="awg_eth_top_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="awg_eth_top_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="awg_eth_top_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="awg_eth_top_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="awg_eth_top_incremental_reuse_pre_placed.rpt"/>
+  <File Type="NOC_SOLUTION_FILE" Name="awg_eth_top.ncr"/>
+  <File Type="PLACE-TIMING" Name="awg_eth_top_timing_summary_placed.rpt"/>
+  <File Type="ROUTE-PWR-RPX" Name="awg_eth_top_power_routed.rpx"/>
+  <File Type="PLACE-RQA-PB" Name="awg_eth_top_rqa_placed.pb"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="awg_eth_top_postplace_pwropt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="awg_eth_top_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="awg_eth_top_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="awg_eth_top_drc_physopted.rpt"/>
+  <File Type="PHYSOPT-TIMING" Name="awg_eth_top_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-UTIL" Name="awg_eth_top_utilization_routed.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="awg_eth_top_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="awg_eth_top_routed.dcp"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="awg_eth_top_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-UTIL-PB" Name="awg_eth_top_utilization_routed.pb"/>
+  <File Type="ROUTE-DRC" Name="awg_eth_top_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="awg_eth_top_drc_routed.pb"/>
+  <File Type="ROUTE-DRC-RPX" Name="awg_eth_top_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="awg_eth_top_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="awg_eth_top_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="awg_eth_top_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-RQS-PB" Name="awg_eth_top_rqs_routed.pb"/>
+  <File Type="ROUTE-STATUS" Name="awg_eth_top_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="awg_eth_top_route_status.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="awg_eth_top_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="awg_eth_top_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="awg_eth_top_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW" Name="awg_eth_top_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="awg_eth_top_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="awg_eth_top_bus_skew_routed.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="awg_eth_top_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="awg_eth_top_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="awg_eth_top_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="awg_eth_top_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="awg_eth_top_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="awg_eth_top_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="awg_eth_top_bus_skew_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="awg_eth_top_bus_skew_postroute_physopted.rpx"/>
+  <File Type="BG-BIT" Name="awg_eth_top.bit"/>
+  <File Type="BG-BIN" Name="awg_eth_top.bin"/>
+  <File Type="BITSTR-MSK" Name="awg_eth_top.msk"/>
+  <File Type="BITSTR-RBT" Name="awg_eth_top.rbt"/>
+  <File Type="BITSTR-NKY" Name="awg_eth_top.nky"/>
+  <File Type="BITSTR-BMM" Name="awg_eth_top_bd.bmm"/>
+  <File Type="BITSTR-MMI" Name="awg_eth_top.mmi"/>
+  <File Type="PDI-FILE" Name="awg_eth_top.pdi"/>
+  <File Type="BOOT-PDI-FILE" Name="awg_eth_top_boot.pdi"/>
+  <File Type="PL-PDI-FILE" Name="awg_eth_top_pld.pdi"/>
+  <File Type="RCFI_FILE" Name="awg_eth_top.rcfi"/>
+  <File Type="CFI_FILE" Name="awg_eth_top.cfi"/>
+  <File Type="RNPI_FILE" Name="awg_eth_top.rnpi"/>
+  <File Type="RCDO-FILE" Name="awg_eth_top.rcdo"/>
+  <File Type="MARKER-RNPI-FILE" Name="awg_eth_top_markers.rnpi"/>
+  <File Type="MARKER-RCDO-FILE" Name="awg_eth_top_markers.rcdo"/>
+  <File Type="BOOT_RNPI_FILE" Name="awg_eth_top_boot.rnpi"/>
+  <File Type="BOOT_MARKER_RNPI_FILE" Name="awg_eth_top_boot_markers.rnpi"/>
+  <File Type="PL_RNPI_FILE" Name="awg_eth_top_pld.rnpi"/>
+  <File Type="PL_MARKER_RNPI_FILE" Name="awg_eth_top_pld_markers.rnpi"/>
+  <File Type="PL_MASK_RNPI_FILE" Name="awg_eth_top_pld_mask.rnpi"/>
+  <File Type="PL_SHUTDOWN_RNPI_FILE" Name="awg_eth_top_pld_shutdown.rnpi"/>
+  <File Type="PL_UNMASK_RNPI_FILE" Name="awg_eth_top_pld_unmask.rnpi"/>
+  <File Type="PL-RCDO-FILE" Name="awg_eth_top_pld.rcdo"/>
+  <File Type="PL-CLEAR-RCDO-FILE" Name="awg_eth_top_pld_clear.rcdo"/>
+  <File Type="PL_MARKER_RCDO_FILE" Name="awg_eth_top_pld_markers.rcdo"/>
+  <File Type="PL_MASK_RCDO_FILE" Name="awg_eth_top_pld_mask.rcdo"/>
+  <File Type="PL_UNMASK_MARKER_RCDO_FILE" Name="awg_eth_top_pld_unmask_markers.rcdo"/>
+  <File Type="PL_UNMASK_RCDO_FILE" Name="awg_eth_top_pld_unmask.rcdo"/>
+  <File Type="NPI_FILE" Name="awg_eth_top.npi"/>
+  <File Type="RBD_FILE" Name="awg_eth_top.rbd"/>
+  <File Type="MMI-FILE" Name="awg_eth_top.mmi"/>
+  <File Type="BIF-FILE" Name="awg_eth_top.bif"/>
+  <File Type="BOOT-BIF-FILE" Name="awg_eth_top_boot.bif"/>
+  <File Type="PL-BIF-FILE" Name="awg_eth_top_pld.bif"/>
+  <File Type="LTX-FILE" Name="awg_eth_top.ltx"/>
+  <File Type="BOOT-LTX-FILE" Name="awg_eth_top_boot.ltx"/>
+  <File Type="PL-LTX-FILE" Name="awg_eth_top_pld.ltx"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="awg_eth_top.ltx"/>
+  <File Type="BITSTR-SYSDEF" Name="awg_eth_top.sysdef"/>
+  <File Type="BG-BGN" Name="awg_eth_top.bgn"/>
+  <File Type="BG-DRC" Name="awg_eth_top.drc"/>
+  <File Type="RDI-RDI" Name="awg_eth_top.vdi"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <File Type="ROUTE-RQS" Name="awg_eth_top_routed.rqs"/>
+  <File Type="POSTROUTE-PHYSOPT-RQS" Name="awg_eth_top_postroute_physopted.rqs"/>
+  <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-RQS-RPT" Name="postroute_physopt_report_qor_suggestions_0.rpt"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PPRDIR/../../../rtl/eth/v3_qsfp2/axis_eth_frame_align_pad_64.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../rtl/eth/v3_qsfp2/axis_eth_frame_pad_64_registered.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../rtl/eth/v3_qsfp2/axis_reset_sync.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../rtl/eth/v3_qsfp2/eth_pause_tx.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../rtl/eth/v3_qsfp2/qsfp2_protocol_endpoint.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../rtl/eth/v3_qsfp2/qsfp2_udp_echo_top.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../rtl/eth/v3_qsfp2/udp_arp_axis256_port.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../rtl/eth/v3_qsfp2/udp_arp_axis256_port_v3.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../rtl/eth/v3_qsfp2/udp_arp_ethernet_shell_64.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../rtl/eth/v3_qsfp2/udp_biz_ingress.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../rtl/eth/v3_qsfp2/udp_echo_app_64.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../rtl/eth/vendor/verilog-ethernet/rtl/ip_arb_mux.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../rtl/up_axi.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../bd_seed/system.bd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../rtl/eth/vendor/verilog-ethernet/lib/axis/rtl/arbiter.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../rtl/eth/v3_qsfp2/arp.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../rtl/eth/vendor/verilog-ethernet/rtl/arp_cache.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../rtl/eth/vendor/verilog-ethernet/rtl/arp_eth_rx.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../rtl/eth/vendor/verilog-ethernet/rtl/arp_eth_tx.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../rtl/eth/awg_eth_core.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../rtl/eth/awg_eth_frame_pad.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../rtl/eth/awg_udp_port.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../rtl/eth/v3_qsfp2/axis256_to_axis64.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../rtl/eth/v3_qsfp2/axis64_to_axis256.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../rtl/eth/vendor/verilog-ethernet/lib/axis/rtl/axis_async_fifo.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../rtl/eth/vendor/verilog-ethernet/lib/axis/rtl/axis_fifo.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../rtl/eth/vendor/verilog-ethernet/rtl/eth_arb_mux.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../rtl/eth/vendor/verilog-ethernet/rtl/eth_axis_rx.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../rtl/eth/vendor/verilog-ethernet/rtl/eth_axis_tx.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../rtl/eth/vendor/verilog-ethernet/rtl/ip_64.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../rtl/eth/v3_qsfp2/ip_complete_64.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../rtl/eth/vendor/verilog-ethernet/rtl/ip_eth_rx_64.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../rtl/eth/vendor/verilog-ethernet/rtl/ip_eth_tx_64.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../rtl/eth/vendor/verilog-ethernet/rtl/lfsr.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../rtl/eth/v3_qsfp2/optical_port2_exdes.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../rtl/eth/vendor/verilog-ethernet/lib/axis/rtl/priority_encoder.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../rtl/reset_sync.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../generated/sources_1/bd/system/hdl/system_wrapper.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../rtl/eth/v3_qsfp2/udp_64.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../rtl/eth/v3_qsfp2/udp_checksum_gen_64.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../rtl/eth/v3_qsfp2/udp_complete_64.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../rtl/eth/v3_qsfp2/udp_ip_rx_64.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../rtl/eth/v3_qsfp2/udp_ip_tx_64.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../rtl/user_control.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../rtl/ctrl/awg_control_v2.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../rtl/eth/awg_eth_bridge.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../rtl/rx/awg_rx.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../rtl/tx/awg_tx.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../rtl/tx/awg_tx_uram_block.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../rtl/eth/axil_arb2.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../rtl/top/awg_eth_top.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="awg_eth_top"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PPRDIR/../../../constraints/d0/d0_board.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../constraints/eth/awg_eth_core.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../constraints/top/board.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../constraints/top/debug.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../constraints/top/timing.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="ProcessingOrder" Val="LATE"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1" RelGenDir="$PGENDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2025"/>
+    <Step Id="init_design"/>
+    <Step Id="opt_design" PreStepTclHook="$PPRDIR/../../../constraints/top/cdc.tcl"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design">
+      <Option Id="Directive">2</Option>
+    </Step>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design" EnableStepBool="1"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="system_clk_wiz_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_clk_wiz_adc_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="jtag_awg_axi"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_proc_sys_reset_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="optical_port1_clk_wiz_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_up_axi_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_rst_adc_clk_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_rst_ps8_0_99M_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="demo_management_clock"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_ps8_0_axi_periph_upgraded_ipi_imp_xbar_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_usp_rf_data_converter_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_ps8_0_axi_periph_imp_auto_pc_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_zynq_ultra_ps_e_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="optical_port2"/>
+</GenRun>

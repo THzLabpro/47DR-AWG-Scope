@@ -1,0 +1,327 @@
+*tog_q_reg* cells=1
+*tx_phase_tog_reg* cells=1
+*dac_tdata_reg_reg* cells=1792
+*fifo_reset_host_reg* cells=1
+*eth_reset_pipe_reg* cells=2
+*capture_word_gray_rx_reg* cells=12
+tx_phase_tog fanout=1798
+clock RFADC0_CLK period=25.600
+clock RFADC1_CLK period=3.200
+clock RFADC2_CLK period=25.600
+clock RFADC3_CLK period=25.600
+clock RFDAC0_CLK period=1.633
+clock RFDAC1_CLK period=1.633
+clock RFDAC2_CLK period=1.633
+clock clk_out1_system_clk_wiz_0_0 period=1.633
+clock tx_clk period=3.266
+clock RFDAC3_CLK period=1.633
+clock clk_pl_0 period=10.000
+clock qsfp2_refclk_p period=6.400
+clock qpll0outclk_out[0] period=0.194
+clock qpll0outrefclk_out[0] period=6.400
+clock clk_out1_demo_management_clock period=10.000
+clock rxoutclk_out[0] period=3.200
+clock txoutclk_out[0] period=3.200
+clock GTYE4_CHANNEL_TXOUTCLKPCS[0] period=3.103
+clock GTYE4_CHANNEL_TXOUTCLKPCS[1] period=3.103
+clock GTYE4_CHANNEL_TXOUTCLKPCS[2] period=3.103
+clock GTYE4_CHANNEL_TXOUTCLKPCS[3] period=3.103
+clock clk_out1_optical_port1_clk_wiz_0 period=10.000
+clock pl_clk_p period=5.000
+clock clk_out1_system_clk_wiz_adc_0 period=2.400
+clock rx_clk period=4.800
+port adc1_clk_n dir=IN loc=AB4 iostd=LVCMOS18
+port adc1_clk_p dir=IN loc=AB5 iostd=LVCMOS18
+port dac2_clk_n dir=IN loc=J4 iostd=LVCMOS18
+port dac2_clk_p dir=IN loc=J5 iostd=LVCMOS18
+port led[0] dir=OUT loc=B12 iostd=LVCMOS18
+port led[1] dir=OUT loc=A12 iostd=LVCMOS18
+port pl_clk_n dir=IN loc=D12 iostd=LVPECL
+port pl_clk_p dir=IN loc=E12 iostd=LVPECL
+port pl_sysref_n dir=IN loc=D14 iostd=LVPECL
+port pl_sysref_p dir=IN loc=E14 iostd=LVPECL
+port qsfp2_lpmode dir=OUT loc=B10 iostd=LVCMOS33
+port qsfp2_modsel_n dir=OUT loc=C10 iostd=LVCMOS33
+port qsfp2_refclk_n dir=IN loc=H29 iostd=
+port qsfp2_refclk_p dir=IN loc=H28 iostd=
+port qsfp2_reset_n dir=OUT loc=D13 iostd=LVCMOS18
+port qsfp2_rx_n[0] dir=IN loc=F34 iostd=
+port qsfp2_rx_n[1] dir=IN loc=D34 iostd=
+port qsfp2_rx_n[2] dir=IN loc=B34 iostd=
+port qsfp2_rx_n[3] dir=IN loc=A32 iostd=
+port qsfp2_rx_p[0] dir=IN loc=F33 iostd=
+port qsfp2_rx_p[1] dir=IN loc=D33 iostd=
+port qsfp2_rx_p[2] dir=IN loc=B33 iostd=
+port qsfp2_rx_p[3] dir=IN loc=A31 iostd=
+port qsfp2_tx_n[0] dir=OUT loc=E31 iostd=
+port qsfp2_tx_n[1] dir=OUT loc=D29 iostd=
+port qsfp2_tx_n[2] dir=OUT loc=C31 iostd=
+port qsfp2_tx_n[3] dir=OUT loc=B29 iostd=
+port qsfp2_tx_p[0] dir=OUT loc=E30 iostd=
+port qsfp2_tx_p[1] dir=OUT loc=D28 iostd=
+port qsfp2_tx_p[2] dir=OUT loc=C30 iostd=
+port qsfp2_tx_p[3] dir=OUT loc=B28 iostd=
+port sysref_in_n dir=IN loc=N4 iostd=LVCMOS18
+port sysref_in_p dir=IN loc=N5 iostd=LVCMOS18
+port vin0_01_n dir=IN loc=AK1 iostd=LVCMOS18
+port vin0_01_p dir=IN loc=AK2 iostd=LVCMOS18
+port vin0_23_n dir=IN loc=AH1 iostd=LVCMOS18
+port vin0_23_p dir=IN loc=AH2 iostd=LVCMOS18
+port vin1_01_n dir=IN loc=AF1 iostd=LVCMOS18
+port vin1_01_p dir=IN loc=AF2 iostd=LVCMOS18
+port vin1_23_n dir=IN loc=AD1 iostd=LVCMOS18
+port vin1_23_p dir=IN loc=AD2 iostd=LVCMOS18
+port vin2_01_n dir=IN loc=AB1 iostd=LVCMOS18
+port vin2_01_p dir=IN loc=AB2 iostd=LVCMOS18
+port vin2_23_n dir=IN loc=Y1 iostd=LVCMOS18
+port vin2_23_p dir=IN loc=Y2 iostd=LVCMOS18
+port vin3_01_n dir=IN loc=V1 iostd=LVCMOS18
+port vin3_01_p dir=IN loc=V2 iostd=LVCMOS18
+port vin3_23_n dir=IN loc=T1 iostd=LVCMOS18
+port vin3_23_p dir=IN loc=T2 iostd=LVCMOS18
+port vout00_n dir=OUT loc=N1 iostd=LVCMOS18
+port vout00_p dir=OUT loc=N2 iostd=LVCMOS18
+port vout02_n dir=OUT loc=L1 iostd=LVCMOS18
+port vout02_p dir=OUT loc=L2 iostd=LVCMOS18
+port vout10_n dir=OUT loc=J1 iostd=LVCMOS18
+port vout10_p dir=OUT loc=J2 iostd=LVCMOS18
+port vout12_n dir=OUT loc=G1 iostd=LVCMOS18
+port vout12_p dir=OUT loc=G2 iostd=LVCMOS18
+port vout20_n dir=OUT loc=E1 iostd=LVCMOS18
+port vout20_p dir=OUT loc=E2 iostd=LVCMOS18
+port vout22_n dir=OUT loc=C1 iostd=LVCMOS18
+port vout22_p dir=OUT loc=C2 iostd=LVCMOS18
+port vout30_n dir=OUT loc=A4 iostd=LVCMOS18
+port vout30_p dir=OUT loc=B4 iostd=LVCMOS18
+port vout32_n dir=OUT loc=A6 iostd=LVCMOS18
+port vout32_p dir=OUT loc=B6 iostd=LVCMOS18
+--- timing paths into dac_tdata
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version      : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+| Date              : Wed Nov 11 23:15:35 2026
+| Host              : DESKTOP-CLMQL7K running 64-bit major release  (build 9200)
+| Command           : report_timing -to [get_cells -hier -quiet *dac_tdata_reg_reg*] -max_paths 3 -return_string
+| Design            : awg_eth_top
+| Device            : xczu47dr-fsve1156
+| Speed File        : -2  PRODUCTION 1.32 01-31-2021
+| Design State      : Synthesized
+| Temperature Grade : I
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (MET) :             0.709ns  (required time - arrival time)
+  Source:                 tx_i/tx_phase_tog_reg/C
+                            (rising edge-triggered cell FDRE clocked by tx_clk  {rise@0.000ns fall@1.633ns period=3.266ns})
+  Destination:            tx_i/dac_tdata_reg_reg[1794]/D
+                            (rising edge-triggered cell FDRE clocked by clk_out1_system_clk_wiz_0_0  {rise@0.000ns fall@0.817ns period=1.633ns})
+  Path Group:             clk_out1_system_clk_wiz_0_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            1.633ns  (clk_out1_system_clk_wiz_0_0 rise@1.633ns - tx_clk rise@0.000ns)
+  Data Path Delay:        0.499ns  (logic 0.202ns (40.481%)  route 0.297ns (59.519%))
+  Logic Levels:           1  (LUT6=1)
+  Clock Path Skew:        -0.400ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    7.055ns = ( 8.688 - 1.633 ) 
+    Source Clock Delay      (SCD):    9.516ns
+    Clock Pessimism Removal (CPR):    2.061ns
+  Clock Uncertainty:      0.050ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.070ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock tx_clk rise edge)     0.000     0.000 r  
+    RFDAC_X0Y2           RFDAC                        0.000     0.000 r  system_i/system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx2_u_dac/INTERNAL_FBRC_MUX
+    RFDAC_X0Y2           RFDAC (Prop_RFDAC_INTERNAL_FBRC_MUX_CLK_DAC)
+                                                      0.336     0.336 r  system_i/system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx2_u_dac/CLK_DAC
+                         net (fo=2, unplaced)         0.245     0.581    system_i/system_i/usp_rf_data_converter_0/inst/i_system_usp_rf_data_converter_0_0_bufg_gt_ctrl/dac2_bufg_gt_0
+                         BUFG_GT (Prop_BUFG_GT_I_O)
+                                                      0.130     0.711 r  system_i/system_i/usp_rf_data_converter_0/inst/i_system_usp_rf_data_converter_0_0_bufg_gt_ctrl/dac2_bufg_gt/O
+                         net (fo=1, unplaced)         2.584     3.295    system_i/system_i/clk_wiz_0/inst/CLK_CORE_DRP_I/clk_inst/clk_in1
+                         MMCME4_ADV (Prop_MMCME4_ADV_CLKIN1_CLKOUT0)
+                                                     -0.127     3.168 r  system_i/system_i/clk_wiz_0/inst/CLK_CORE_DRP_I/clk_inst/mmcme4_adv_inst/CLKOUT0
+                         net (fo=1, unplaced)         0.198     3.366    system_i/system_i/clk_wiz_0/inst/CLK_CORE_DRP_I/clk_inst/clk_out1_system_clk_wiz_0_0
+                         BUFGCE (Prop_BUFGCE_I_O)     0.028     3.394 r  system_i/system_i/clk_wiz_0/inst/CLK_CORE_DRP_I/clk_inst/clkout1_buf/O
+                         net (fo=1970, unplaced)      3.387     6.781    data_clk
+                         BUFGCE_DIV (Prop_BUFGCE_DIV_I_O)
+                                                      0.151     6.932 r  tx_clk_div/O
+                         net (fo=19857, unplaced)     2.584     9.516    tx_i/tx_clk
+                         FDRE                                         r  tx_i/tx_phase_tog_reg/C
+  -------------------------------------------------------------------    -------------------
+                         FDRE (Prop_FDRE_C_Q)         0.077     9.593 r  tx_i/tx_phase_tog_reg/Q
+                         net (fo=1797, unplaced)      0.249     9.842    tx_i/tx_phase_tog
+                         LUT6 (Prop_LUT6_I1_O)        0.125     9.967 r  tx_i/dac_tdata_reg[1794]_i_1/O
+                         net (fo=1, unplaced)         0.048    10.015    tx_i/dac_tdata_reg[1794]_i_1_n_0
+                         FDRE                                         r  tx_i/dac_tdata_reg_reg[1794]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_system_clk_wiz_0_0 rise edge)
+                                                      1.633     1.633 r  
+    RFDAC_X0Y2           RFDAC                        0.000     1.633 r  system_i/system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx2_u_dac/INTERNAL_FBRC_MUX
+    RFDAC_X0Y2           RFDAC (Prop_RFDAC_INTERNAL_FBRC_MUX_CLK_DAC)
+                                                      0.281     1.914 r  system_i/system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx2_u_dac/CLK_DAC
+                         net (fo=2, unplaced)         0.149     2.063    system_i/system_i/usp_rf_data_converter_0/inst/i_system_usp_rf_data_converter_0_0_bufg_gt_ctrl/dac2_bufg_gt_0
+                         BUFG_GT (Prop_BUFG_GT_I_O)
+                                                      0.114     2.177 r  system_i/system_i/usp_rf_data_converter_0/inst/i_system_usp_rf_data_converter_0_0_bufg_gt_ctrl/dac2_bufg_gt/O
+                         net (fo=1, unplaced)         2.439     4.616    system_i/system_i/clk_wiz_0/inst/CLK_CORE_DRP_I/clk_inst/clk_in1
+                         MMCME4_ADV (Prop_MMCME4_ADV_CLKIN1_CLKOUT0)
+                                                      0.630     5.246 r  system_i/system_i/clk_wiz_0/inst/CLK_CORE_DRP_I/clk_inst/mmcme4_adv_inst/CLKOUT0
+                         net (fo=1, unplaced)         0.176     5.422    system_i/system_i/clk_wiz_0/inst/CLK_CORE_DRP_I/clk_inst/clk_out1_system_clk_wiz_0_0
+                         BUFGCE (Prop_BUFGCE_I_O)     0.024     5.446 r  system_i/system_i/clk_wiz_0/inst/CLK_CORE_DRP_I/clk_inst/clkout1_buf/O
+                         net (fo=1970, unplaced)      3.242     8.688    tx_i/data_clk
+                         FDRE                                         r  tx_i/dac_tdata_reg_reg[1794]/C
+                         clock pessimism              2.061    10.749    
+                         clock uncertainty           -0.050    10.700    
+                         FDRE (Setup_FDRE_C_D)        0.025    10.725    tx_i/dac_tdata_reg_reg[1794]
+  -------------------------------------------------------------------
+                         required time                         10.725    
+                         arrival time                         -10.015    
+  -------------------------------------------------------------------
+                         slack                                  0.709    
+
+Slack (MET) :             0.709ns  (required time - arrival time)
+  Source:                 tx_i/tx_phase_tog_reg/C
+                            (rising edge-triggered cell FDRE clocked by tx_clk  {rise@0.000ns fall@1.633ns period=3.266ns})
+  Destination:            tx_i/dac_tdata_reg_reg[1795]/D
+                            (rising edge-triggered cell FDRE clocked by clk_out1_system_clk_wiz_0_0  {rise@0.000ns fall@0.817ns period=1.633ns})
+  Path Group:             clk_out1_system_clk_wiz_0_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            1.633ns  (clk_out1_system_clk_wiz_0_0 rise@1.633ns - tx_clk rise@0.000ns)
+  Data Path Delay:        0.499ns  (logic 0.202ns (40.481%)  route 0.297ns (59.519%))
+  Logic Levels:           1  (LUT6=1)
+  Clock Path Skew:        -0.400ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    7.055ns = ( 8.688 - 1.633 ) 
+    Source Clock Delay      (SCD):    9.516ns
+    Clock Pessimism Removal (CPR):    2.061ns
+  Clock Uncertainty:      0.050ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.070ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock tx_clk rise edge)     0.000     0.000 r  
+    RFDAC_X0Y2           RFDAC                        0.000     0.000 r  system_i/system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx2_u_dac/INTERNAL_FBRC_MUX
+    RFDAC_X0Y2           RFDAC (Prop_RFDAC_INTERNAL_FBRC_MUX_CLK_DAC)
+                                                      0.336     0.336 r  system_i/system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx2_u_dac/CLK_DAC
+                         net (fo=2, unplaced)         0.245     0.581    system_i/system_i/usp_rf_data_converter_0/inst/i_system_usp_rf_data_converter_0_0_bufg_gt_ctrl/dac2_bufg_gt_0
+                         BUFG_GT (Prop_BUFG_GT_I_O)
+                                                      0.130     0.711 r  system_i/system_i/usp_rf_data_converter_0/inst/i_system_usp_rf_data_converter_0_0_bufg_gt_ctrl/dac2_bufg_gt/O
+                         net (fo=1, unplaced)         2.584     3.295    system_i/system_i/clk_wiz_0/inst/CLK_CORE_DRP_I/clk_inst/clk_in1
+                         MMCME4_ADV (Prop_MMCME4_ADV_CLKIN1_CLKOUT0)
+                                                     -0.127     3.168 r  system_i/system_i/clk_wiz_0/inst/CLK_CORE_DRP_I/clk_inst/mmcme4_adv_inst/CLKOUT0
+                         net (fo=1, unplaced)         0.198     3.366    system_i/system_i/clk_wiz_0/inst/CLK_CORE_DRP_I/clk_inst/clk_out1_system_clk_wiz_0_0
+                         BUFGCE (Prop_BUFGCE_I_O)     0.028     3.394 r  system_i/system_i/clk_wiz_0/inst/CLK_CORE_DRP_I/clk_inst/clkout1_buf/O
+                         net (fo=1970, unplaced)      3.387     6.781    data_clk
+                         BUFGCE_DIV (Prop_BUFGCE_DIV_I_O)
+                                                      0.151     6.932 r  tx_clk_div/O
+                         net (fo=19857, unplaced)     2.584     9.516    tx_i/tx_clk
+                         FDRE                                         r  tx_i/tx_phase_tog_reg/C
+  -------------------------------------------------------------------    -------------------
+                         FDRE (Prop_FDRE_C_Q)         0.077     9.593 r  tx_i/tx_phase_tog_reg/Q
+                         net (fo=1797, unplaced)      0.249     9.842    tx_i/tx_phase_tog
+                         LUT6 (Prop_LUT6_I1_O)        0.125     9.967 r  tx_i/dac_tdata_reg[1795]_i_1/O
+                         net (fo=1, unplaced)         0.048    10.015    tx_i/dac_tdata_reg[1795]_i_1_n_0
+                         FDRE                                         r  tx_i/dac_tdata_reg_reg[1795]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_system_clk_wiz_0_0 rise edge)
+                                                      1.633     1.633 r  
+    RFDAC_X0Y2           RFDAC                        0.000     1.633 r  system_i/system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx2_u_dac/INTERNAL_FBRC_MUX
+    RFDAC_X0Y2           RFDAC (Prop_RFDAC_INTERNAL_FBRC_MUX_CLK_DAC)
+                                                      0.281     1.914 r  system_i/system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx2_u_dac/CLK_DAC
+                         net (fo=2, unplaced)         0.149     2.063    system_i/system_i/usp_rf_data_converter_0/inst/i_system_usp_rf_data_converter_0_0_bufg_gt_ctrl/dac2_bufg_gt_0
+                         BUFG_GT (Prop_BUFG_GT_I_O)
+                                                      0.114     2.177 r  system_i/system_i/usp_rf_data_converter_0/inst/i_system_usp_rf_data_converter_0_0_bufg_gt_ctrl/dac2_bufg_gt/O
+                         net (fo=1, unplaced)         2.439     4.616    system_i/system_i/clk_wiz_0/inst/CLK_CORE_DRP_I/clk_inst/clk_in1
+                         MMCME4_ADV (Prop_MMCME4_ADV_CLKIN1_CLKOUT0)
+                                                      0.630     5.246 r  system_i/system_i/clk_wiz_0/inst/CLK_CORE_DRP_I/clk_inst/mmcme4_adv_inst/CLKOUT0
+                         net (fo=1, unplaced)         0.176     5.422    system_i/system_i/clk_wiz_0/inst/CLK_CORE_DRP_I/clk_inst/clk_out1_system_clk_wiz_0_0
+                         BUFGCE (Prop_BUFGCE_I_O)     0.024     5.446 r  system_i/system_i/clk_wiz_0/inst/CLK_CORE_DRP_I/clk_inst/clkout1_buf/O
+                         net (fo=1970, unplaced)      3.242     8.688    tx_i/data_clk
+                         FDRE                                         r  tx_i/dac_tdata_reg_reg[1795]/C
+                         clock pessimism              2.061    10.749    
+                         clock uncertainty           -0.050    10.700    
+                         FDRE (Setup_FDRE_C_D)        0.025    10.725    tx_i/dac_tdata_reg_reg[1795]
+  -------------------------------------------------------------------
+                         required time                         10.725    
+                         arrival time                         -10.015    
+  -------------------------------------------------------------------
+                         slack                                  0.709    
+
+Slack (MET) :             0.709ns  (required time - arrival time)
+  Source:                 tx_i/tx_phase_tog_reg/C
+                            (rising edge-triggered cell FDRE clocked by tx_clk  {rise@0.000ns fall@1.633ns period=3.266ns})
+  Destination:            tx_i/dac_tdata_reg_reg[1796]/D
+                            (rising edge-triggered cell FDRE clocked by clk_out1_system_clk_wiz_0_0  {rise@0.000ns fall@0.817ns period=1.633ns})
+  Path Group:             clk_out1_system_clk_wiz_0_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            1.633ns  (clk_out1_system_clk_wiz_0_0 rise@1.633ns - tx_clk rise@0.000ns)
+  Data Path Delay:        0.499ns  (logic 0.202ns (40.481%)  route 0.297ns (59.519%))
+  Logic Levels:           1  (LUT6=1)
+  Clock Path Skew:        -0.400ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    7.055ns = ( 8.688 - 1.633 ) 
+    Source Clock Delay      (SCD):    9.516ns
+    Clock Pessimism Removal (CPR):    2.061ns
+  Clock Uncertainty:      0.050ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.070ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock tx_clk rise edge)     0.000     0.000 r  
+    RFDAC_X0Y2           RFDAC                        0.000     0.000 r  system_i/system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx2_u_dac/INTERNAL_FBRC_MUX
+    RFDAC_X0Y2           RFDAC (Prop_RFDAC_INTERNAL_FBRC_MUX_CLK_DAC)
+                                                      0.336     0.336 r  system_i/system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx2_u_dac/CLK_DAC
+                         net (fo=2, unplaced)         0.245     0.581    system_i/system_i/usp_rf_data_converter_0/inst/i_system_usp_rf_data_converter_0_0_bufg_gt_ctrl/dac2_bufg_gt_0
+                         BUFG_GT (Prop_BUFG_GT_I_O)
+                                                      0.130     0.711 r  system_i/system_i/usp_rf_data_converter_0/inst/i_system_usp_rf_data_converter_0_0_bufg_gt_ctrl/dac2_bufg_gt/O
+                         net (fo=1, unplaced)         2.584     3.295    system_i/system_i/clk_wiz_0/inst/CLK_CORE_DRP_I/clk_inst/clk_in1
+                         MMCME4_ADV (Prop_MMCME4_ADV_CLKIN1_CLKOUT0)
+                                                     -0.127     3.168 r  system_i/system_i/clk_wiz_0/inst/CLK_CORE_DRP_I/clk_inst/mmcme4_adv_inst/CLKOUT0
+                         net (fo=1, unplaced)         0.198     3.366    system_i/system_i/clk_wiz_0/inst/CLK_CORE_DRP_I/clk_inst/clk_out1_system_clk_wiz_0_0
+                         BUFGCE (Prop_BUFGCE_I_O)     0.028     3.394 r  system_i/system_i/clk_wiz_0/inst/CLK_CORE_DRP_I/clk_inst/clkout1_buf/O
+                         net (fo=1970, unplaced)      3.387     6.781    data_clk
+                         BUFGCE_DIV (Prop_BUFGCE_DIV_I_O)
+                                                      0.151     6.932 r  tx_clk_div/O
+                         net (fo=19857, unplaced)     2.584     9.516    tx_i/tx_clk
+                         FDRE                                         r  tx_i/tx_phase_tog_reg/C
+  -------------------------------------------------------------------    -------------------
+                         FDRE (Prop_FDRE_C_Q)         0.077     9.593 r  tx_i/tx_phase_tog_reg/Q
+                         net (fo=1797, unplaced)      0.249     9.842    tx_i/tx_phase_tog
+                         LUT6 (Prop_LUT6_I1_O)        0.125     9.967 r  tx_i/dac_tdata_reg[1796]_i_1/O
+                         net (fo=1, unplaced)         0.048    10.015    tx_i/dac_tdata_reg[1796]_i_1_n_0
+                         FDRE                                         r  tx_i/dac_tdata_reg_reg[1796]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_system_clk_wiz_0_0 rise edge)
+                                                      1.633     1.633 r  
+    RFDAC_X0Y2           RFDAC                        0.000     1.633 r  system_i/system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx2_u_dac/INTERNAL_FBRC_MUX
+    RFDAC_X0Y2           RFDAC (Prop_RFDAC_INTERNAL_FBRC_MUX_CLK_DAC)
+                                                      0.281     1.914 r  system_i/system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx2_u_dac/CLK_DAC
+                         net (fo=2, unplaced)         0.149     2.063    system_i/system_i/usp_rf_data_converter_0/inst/i_system_usp_rf_data_converter_0_0_bufg_gt_ctrl/dac2_bufg_gt_0
+                         BUFG_GT (Prop_BUFG_GT_I_O)
+                                                      0.114     2.177 r  system_i/system_i/usp_rf_data_converter_0/inst/i_system_usp_rf_data_converter_0_0_bufg_gt_ctrl/dac2_bufg_gt/O
+                         net (fo=1, unplaced)         2.439     4.616    system_i/system_i/clk_wiz_0/inst/CLK_CORE_DRP_I/clk_inst/clk_in1
+                         MMCME4_ADV (Prop_MMCME4_ADV_CLKIN1_CLKOUT0)
+                                                      0.630     5.246 r  system_i/system_i/clk_wiz_0/inst/CLK_CORE_DRP_I/clk_inst/mmcme4_adv_inst/CLKOUT0
+                         net (fo=1, unplaced)         0.176     5.422    system_i/system_i/clk_wiz_0/inst/CLK_CORE_DRP_I/clk_inst/clk_out1_system_clk_wiz_0_0
+                         BUFGCE (Prop_BUFGCE_I_O)     0.024     5.446 r  system_i/system_i/clk_wiz_0/inst/CLK_CORE_DRP_I/clk_inst/clkout1_buf/O
+                         net (fo=1970, unplaced)      3.242     8.688    tx_i/data_clk
+                         FDRE                                         r  tx_i/dac_tdata_reg_reg[1796]/C
+                         clock pessimism              2.061    10.749    
+                         clock uncertainty           -0.050    10.700    
+                         FDRE (Setup_FDRE_C_D)        0.025    10.725    tx_i/dac_tdata_reg_reg[1796]
+  -------------------------------------------------------------------
+                         required time                         10.725    
+                         arrival time                         -10.015    
+  -------------------------------------------------------------------
+                         slack                                  0.709    
+
+
+
+
+

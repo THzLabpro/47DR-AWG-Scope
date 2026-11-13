@@ -1,0 +1,1 @@
+-L "xpm" "work.tb_d3_system" "work.glbl" -s "tb_d3_system_sim" -debug "typical" -nolog -log "D:\ClaudeProject\47DR_DAAD\rf_awg_eth_v1\reports\D3C_IMPL\system_tb\system_xelab.log" 

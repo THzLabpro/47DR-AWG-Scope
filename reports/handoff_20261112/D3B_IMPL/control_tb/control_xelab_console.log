@@ -1,0 +1,14 @@
+Vivado Simulator v2025.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: D:/AMDDesignTools/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe work.tb_awg_control_v2 -s tb_awg_control_v2_sim -nolog -log D:\ClaudeProject\47DR_DAAD\rf_awg_eth_v1\reports\D3B_IMPL\control_tb\control_xelab.log 
+Multi-threading is on. Using 18 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.awg_control_v2(BUILD_ID=32'b1101...
+Compiling module work.tb_awg_control_v2
+Built simulation snapshot tb_awg_control_v2_sim

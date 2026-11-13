@@ -1,0 +1,3 @@
+CHECK_TIMING_SECTION name=unconstrained_internal_endpoints total=3366
+GROUP name=awg_eth_top/jtag_awg_axi/<hidden> count=3173
+GROUP name=jtag_axi_i/inst/jtag_axi_engine_u count=193

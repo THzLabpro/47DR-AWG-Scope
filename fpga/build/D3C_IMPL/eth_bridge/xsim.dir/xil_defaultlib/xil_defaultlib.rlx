@@ -1,0 +1,15 @@
+0.7
+2020.2
+Nov 14 2025
+19:37:27
+D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/rtl/adc_capture.sv,1794414045,systemVerilog,,D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/sim/eth_bridge/tb_eth_bridge.sv,,adc_async_fifo;adc_capture,,,,,,,,
+D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/rtl/awg_control.sv,1794414045,systemVerilog,,D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/rtl/awg_subsystem.sv,,awg_control,,,,,,,,
+D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/rtl/awg_player.sv,1794414045,systemVerilog,,D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/rtl/awg_control.sv,,awg_player,,,,,,,,
+D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/rtl/awg_subsystem.sv,1794414045,systemVerilog,,D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/rtl/adc_capture.sv,,awg_subsystem,,,,,,,,
+D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/rtl/awg_wave_bank.sv,1794414045,systemVerilog,,D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/rtl/axis_wide_gearbox.sv,,awg_wave_bank,,,,,,,,
+D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/rtl/axis_register_slice.sv,1794414045,systemVerilog,,D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/rtl/awg_player.sv,,axis_register_slice,,,,,,,,
+D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/rtl/axis_wide_gearbox.sv,1794414045,systemVerilog,,D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/rtl/axis_register_slice.sv,,axis_wide_gearbox,,,,,,,,
+D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/rtl/eth/awg_eth_bridge.sv,1794443129,systemVerilog,,D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/rtl/eth/axil_arb2.sv,,awg_eth_bridge,,,,,,,,
+D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/rtl/eth/axil_arb2.sv,1794424649,systemVerilog,,D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/rtl/awg_wave_bank.sv,,axil_arb2,,,,,,,,
+D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/rtl/eth/vendor/verilog-ethernet/lib/axis/rtl/axis_async_fifo.v,1794414046,systemVerilog,,D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/rtl/eth/awg_eth_bridge.sv,,axis_async_fifo,,,,,,,,
+D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/sim/eth_bridge/tb_eth_bridge.sv,1794442083,systemVerilog,,,,tb_eth_bridge,,,,,,,,

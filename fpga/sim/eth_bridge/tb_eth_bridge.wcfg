@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+  <wave_state>
+    <zoom_range_ns>0</zoom_range_ns>
+    <groups>
+      <group name="UDP RX">
+        <signal name="/tb_eth_bridge/rx_hdr_valid" radix="hex"/>
+        <signal name="/tb_eth_bridge/rx_hdr_ready" radix="hex"/>
+        <signal name="/tb_eth_bridge/rx_payload_tvalid" radix="hex"/>
+        <signal name="/tb_eth_bridge/rx_payload_tready" radix="hex"/>
+      </group>
+      <group name="Bridge AXI">
+        <signal name="/tb_eth_bridge/e_awvalid" radix="hex"/>
+        <signal name="/tb_eth_bridge/e_awready" radix="hex"/>
+        <signal name="/tb_eth_bridge/e_wvalid" radix="hex"/>
+        <signal name="/tb_eth_bridge/e_bvalid" radix="hex"/>
+        <signal name="/tb_eth_bridge/e_arvalid" radix="hex"/>
+        <signal name="/tb_eth_bridge/e_rvalid" radix="hex"/>
+      </group>
+      <group name="UDP TX">
+        <signal name="/tb_eth_bridge/tx_hdr_valid" radix="hex"/>
+        <signal name="/tb_eth_bridge/tx_payload_tvalid" radix="hex"/>
+        <signal name="/tb_eth_bridge/tx_payload_tlast" radix="hex"/>
+      </group>
+    </groups>
+  </wave_state>
+</wave_config>

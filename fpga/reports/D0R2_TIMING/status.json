@@ -1,0 +1,66 @@
+{
+  "task": "D0R2_TIMING",
+  "status": "NEEDS_PARENT_JUDGMENT",
+  "date": "2026-11-11",
+  "tool": "Vivado 2025.2",
+  "acceptance": {
+    "pass": 3,
+    "fail": 1,
+    "not_applicable": 1,
+    "items": {
+      "bd_diff_drc_route": "PASS",
+      "domain_and_cross_domain_timing": "PASS",
+      "report_cdc_no_unresolved_critical": "FAIL",
+      "resource_counts": "PASS",
+      "pblock_if_route_limited_boundary_failure": "NOT_APPLICABLE"
+    }
+  },
+  "bd_parameter_diff": {
+    "changed": 15,
+    "unexpected": 0,
+    "status": "PASS"
+  },
+  "route": {
+    "routable_nets": 61533,
+    "fully_routed_nets": 61533,
+    "unrouted_nets": 0,
+    "partially_routed_nets": 0,
+    "routing_errors": 0,
+    "drc_errors": 0,
+    "drc_warnings": 1
+  },
+  "timing_ns": {
+    "overall": {
+      "wns": 0.193,
+      "tns": 0.0,
+      "whs": 0.010,
+      "ths": 0.0
+    },
+    "domains": {
+      "dac_clk": {"wns": 0.263, "tns": 0.0, "whs": 0.041},
+      "tx_clk": {"wns": 0.512, "tns": 0.0, "whs": 0.010},
+      "adc_clk": {"wns": 0.580, "tns": 0.0, "whs": 0.028},
+      "rx_clk": {"wns": 1.811, "tns": 0.0, "whs": 0.021},
+      "clk_pl_0": {"wns": 2.531, "tns": 0.0, "whs": 0.017}
+    }
+  },
+  "resources": {
+    "uram288": 56,
+    "ramb36": 224,
+    "ramb18": 8
+  },
+  "cdc": {
+    "critical_count": 12,
+    "critical_cdc_11_reset_to_rfdc_clock_valid": 8,
+    "critical_cdc_13_rfdc_adc_common_control": 4,
+    "warning_count": 84,
+    "status": "NEEDS_PARENT_JUDGMENT"
+  },
+  "implementation": {
+    "strategy": "Vivado Implementation Defaults",
+    "route_complete": true,
+    "alternate_strategy_run": false,
+    "pblock_applied": false
+  },
+  "hardware_operations": "NOT_PERFORMED"
+}

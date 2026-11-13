@@ -1,0 +1,33 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+| Date         : Wed Nov 11 23:15:15 2026
+| Host         : DESKTOP-CLMQL7K running 64-bit major release  (build 9200)
+| Command      : report_design_analysis -logic_level_distribution -logic_level_dist_paths 5000 -file D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/reports/D3B0_REVIEW/logic_levels.rpt
+| Design       : awg_eth_top
+| Device       : xczu47dr
+| Design State : Synthesized
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Report Design Analysis
+
+Table of Contents
+-----------------
+1. Logic Level Distribution
+
+1. Logic Level Distribution
+---------------------------
+
++-------------------------------+-------------+------+------+----+-----+---+----+---+----+---+
+|        End Point Clock        | Requirement |   0  |   1  |  2 |  3  | 4 |  5 | 7 |  8 | 9 |
++-------------------------------+-------------+------+------+----+-----+---+----+---+----+---+
+| clk_out1_system_clk_wiz_0_0   | 1.633ns     | 2715 | 1901 | 20 |  13 | 0 |  1 | 0 |  0 | 0 |
+| clk_out1_system_clk_wiz_adc_0 | 2.400ns     |   90 |    0 |  0 | 168 | 8 |  0 | 0 |  0 | 0 |
+| tx_clk                        | 1.633ns     |    8 |   22 |  0 |   0 | 0 |  0 | 0 |  0 | 0 |
+| tx_clk                        | 3.266ns     |    0 |    0 |  0 |   0 | 0 |  0 | 0 | 32 | 0 |
+| txoutclk_out[0]               | 3.200ns     |    0 |    0 |  0 |   0 | 0 | 13 | 8 |  0 | 1 |
++-------------------------------+-------------+------+------+----+-----+---+----+---+----+---+
+* Columns represent the logic levels per end point clock
+** Distribution is for top worst 5000 paths
+
+

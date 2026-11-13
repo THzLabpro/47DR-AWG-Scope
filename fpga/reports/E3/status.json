@@ -1,0 +1,47 @@
+{
+  "task": "E3_HOST",
+  "status": "PASS",
+  "acceptance": {
+    "pytest": {
+      "status": "PASS",
+      "passed": 13,
+      "failed": 0
+    },
+    "loopback_bench": {
+      "status": "PASS",
+      "packet_loss": 0.0,
+      "write_bytes": 131040,
+      "write_mbps": 5.491,
+      "read_bytes": 131040,
+      "read_mbps": 2.417
+    },
+    "loss_injected_max_load_crc_verify": {
+      "status": "PASS",
+      "channels": 8,
+      "samples_per_channel": 131072,
+      "response_drop_rate": 0.1,
+      "duplicate_packet_rate": 0.1
+    },
+    "matlab_regressions_and_eth_e2e": {
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "matlab_acceptance.log"
+    },
+    "no_192_168_42_x_packets": {
+      "status": "PASS"
+    }
+  },
+  "logs": [
+    "pytest.log",
+    "cli_help.log",
+    "bench.log",
+    "fpga_emu.log",
+    "fpga_emu_error.log",
+    "matlab_acceptance.log"
+  ],
+  "notes": [
+    "sim/tx/crc_ref.py 不存在；已新增獨立 CRC 測試參考 tools/awg_eth/tests/crc_ref.py。",
+    "checkout 缺少 hardware/dac9g_opt1/rf_awg_init.elf；此非 E3 固定驗收項目，MATLAB 測試將套件存在性檢查標示為 UNTESTED。",
+    "早期 MATLAB 測試改寫了非歸屬檔案 sim/matlab_fixtures/capture.mat，並在 app_data/waveforms/ 留下輸出；兩者依歸屬限制保留，測試路徑已調整為後續寫入 reports/E3。"
+  ]
+}

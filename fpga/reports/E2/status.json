@@ -1,0 +1,61 @@
+{
+  "task": "E2_ETH_CORE",
+  "status": "PASS",
+  "date": "2026-11-11",
+  "simulation": {
+    "command": "powershell -NoProfile -ExecutionPolicy Bypass -File sim\\eth_core\\run.ps1",
+    "status": "PASS",
+    "tests_passed": 6,
+    "tests_failed": 0,
+    "results": {
+      "T1": "PASS",
+      "T2": "PASS",
+      "T3": "PASS",
+      "T4": "PASS",
+      "T5": "PASS",
+      "T6": "PASS"
+    },
+    "counts": {
+      "rx_frames": 38,
+      "rx_udp_9100": 35,
+      "rx_udp_other": 1,
+      "rx_non_ip": 2,
+      "tx_frames": 36,
+      "app_headers": 35,
+      "app_payloads": 35,
+      "app_payload_bytes": 42824,
+      "errors": 0
+    },
+    "udp_reply_checksums": ["0x0856", "0xff56", "0xc05d"],
+    "log": "reports/E2/E2_xsim.log"
+  },
+  "ooc_synthesis": {
+    "command": "powershell -NoProfile -ExecutionPolicy Bypass -File sim\\eth_core\\run_ooc.ps1",
+    "status": "PASS",
+    "part": "xczu47dr-fsve1156-2-i",
+    "errors": 0,
+    "critical_warnings_in_synth_design": 0,
+    "warnings_in_synth_design": 334,
+    "wns_ns": 0.586,
+    "tns_ns": 0.0,
+    "lut": 14731,
+    "ff": 17618,
+    "bram_tiles": 5.5,
+    "uram": 12,
+    "gt_group": "Quad_X0Y2",
+    "gt_channels": ["GTYE4_CHANNEL_X0Y8", "GTYE4_CHANNEL_X0Y9", "GTYE4_CHANNEL_X0Y10", "GTYE4_CHANNEL_X0Y11"],
+    "log": "reports/E2/E2_ooc_synth.log",
+    "reports": ["build/E2/utilization.rpt", "build/E2/timing_summary.rpt", "build/E2/timing_paths.rpt", "build/E2/gt_locations.rpt"]
+  },
+  "arp": {
+    "behavior": "Dynamic ARP sender learning plus static fallback",
+    "static_fallback_ip": "192.168.42.10",
+    "static_fallback_mac": "6c:b3:11:21:7d:8e",
+    "alternate_sender_ip_tested": false
+  },
+  "notes": [
+    "rx_frames counts valid frames delivered to awg_udp_port after the core RX frame FIFO; dropped bad frames are excluded.",
+    "Vivado reported file-management critical warnings while generated IP HDL was explicitly added; synth_design completed with 0 errors and timing acceptance passed.",
+    "No hardware operation or host network traffic was performed."
+  ]
+}

@@ -1,0 +1,677 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version      : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+| Date              : Wed Nov 11 12:13:12 2026
+| Host              : DESKTOP-CLMQL7K running 64-bit major release  (build 9200)
+| Command           : report_timing -delay_type min -max_paths 10 -path_type full_clock_expanded -file D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/reports/D0R2_TIMING/worst_paths_hold.rpt
+| Design            : d0_probe_top
+| Device            : xczu47dr-fsve1156
+| Speed File        : -2  PRODUCTION 1.32 01-31-2021
+| Design State      : Routed
+| Temperature Grade : I
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (MET) :             0.010ns  (arrival time - required time)
+  Source:                 g_channels[1].tx_stub_i/rd_addr_reg[3]/C
+                            (rising edge-triggered cell FDCE clocked by tx_clk  {rise@0.000ns fall@1.633ns period=3.266ns})
+  Destination:            g_channels[1].tx_stub_i/uram_i/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_uram_6/DIN_B[51]
+                            (rising edge-triggered cell URAM288 clocked by tx_clk  {rise@0.000ns fall@1.633ns period=3.266ns})
+  Path Group:             tx_clk
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (tx_clk rise@0.000ns - tx_clk rise@0.000ns)
+  Data Path Delay:        0.124ns  (logic 0.058ns (46.720%)  route 0.066ns (53.280%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.173ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    4.659ns
+    Source Clock Delay      (SCD):    4.717ns
+    Clock Pessimism Removal (CPR):    -0.231ns
+  Clock Net Delay (Source):      2.219ns (routing 1.043ns, distribution 1.176ns)
+  Clock Net Delay (Destination): 2.578ns (routing 1.147ns, distribution 1.431ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock tx_clk rise edge)     0.000     0.000 r  
+    RFDAC_X0Y2           RFDAC                        0.000     0.000 r  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx2_u_dac/INTERNAL_FBRC_MUX
+    RFDAC_X0Y2           RFDAC (Prop_RFDAC_INTERNAL_FBRC_MUX_CLK_DAC)
+                                                      0.281     0.281 r  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx2_u_dac/CLK_DAC
+                         net (fo=2, routed)           0.149     0.430    system_i/usp_rf_data_converter_0/inst/i_system_usp_rf_data_converter_0_0_bufg_gt_ctrl/dac2_bufg_gt_0
+    BUFG_GT_X1Y158       BUFG_GT (Prop_BUFG_GT_I_O)
+                                                      0.114     0.544 r  system_i/usp_rf_data_converter_0/inst/i_system_usp_rf_data_converter_0_0_bufg_gt_ctrl/dac2_bufg_gt/O
+                         net (fo=1, routed)           0.978     1.522    system_i/clk_wiz_0/inst/CLK_CORE_DRP_I/clk_inst/clk_in1
+    MMCM_X0Y6            MMCME4_ADV (Prop_MMCM_CLKIN1_CLKOUT0)
+                                                      0.630     2.152 r  system_i/clk_wiz_0/inst/CLK_CORE_DRP_I/clk_inst/mmcme4_adv_inst/CLKOUT0
+                         net (fo=2, routed)           0.215     2.367    lopt_2
+    BUFGCE_DIV_X0Y24     BUFGCE_DIV (Prop_BUFGCE_DIV_I_O)
+                                                      0.131     2.498 r  tx_clk_div/O
+    X2Y5 (CLOCK_ROOT)    net (fo=12258, routed)       2.219     4.717    g_channels[1].tx_stub_i/tx_clk
+    SLICE_X19Y276        FDCE                                         r  g_channels[1].tx_stub_i/rd_addr_reg[3]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X19Y276        FDCE (Prop_CFF_SLICEL_C_Q)
+                                                      0.058     4.775 r  g_channels[1].tx_stub_i/rd_addr_reg[3]/Q
+                         net (fo=57, routed)          0.066     4.841    g_channels[1].tx_stub_i/uram_i/xpm_memory_base_inst/addrb[3]
+    URAM288_X0Y25        URAM288                                      r  g_channels[1].tx_stub_i/uram_i/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_uram_6/DIN_B[51]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock tx_clk rise edge)     0.000     0.000 r  
+    RFDAC_X0Y2           RFDAC                        0.000     0.000 r  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx2_u_dac/INTERNAL_FBRC_MUX
+    RFDAC_X0Y2           RFDAC (Prop_RFDAC_INTERNAL_FBRC_MUX_CLK_DAC)
+                                                      0.336     0.336 r  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx2_u_dac/CLK_DAC
+                         net (fo=2, routed)           0.245     0.581    system_i/usp_rf_data_converter_0/inst/i_system_usp_rf_data_converter_0_0_bufg_gt_ctrl/dac2_bufg_gt_0
+    BUFG_GT_X1Y158       BUFG_GT (Prop_BUFG_GT_I_O)
+                                                      0.130     0.711 r  system_i/usp_rf_data_converter_0/inst/i_system_usp_rf_data_converter_0_0_bufg_gt_ctrl/dac2_bufg_gt/O
+                         net (fo=1, routed)           1.102     1.813    system_i/clk_wiz_0/inst/CLK_CORE_DRP_I/clk_inst/clk_in1
+    MMCM_X0Y6            MMCME4_ADV (Prop_MMCM_CLKIN1_CLKOUT0)
+                                                     -0.127     1.686 r  system_i/clk_wiz_0/inst/CLK_CORE_DRP_I/clk_inst/mmcme4_adv_inst/CLKOUT0
+                         net (fo=2, routed)           0.244     1.930    lopt_2
+    BUFGCE_DIV_X0Y24     BUFGCE_DIV (Prop_BUFGCE_DIV_I_O)
+                                                      0.151     2.081 r  tx_clk_div/O
+    X2Y5 (CLOCK_ROOT)    net (fo=12258, routed)       2.578     4.659    g_channels[1].tx_stub_i/uram_i/xpm_memory_base_inst/clka
+    URAM288_X0Y25        URAM288                                      r  g_channels[1].tx_stub_i/uram_i/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_uram_6/CLK
+                         clock pessimism              0.231     4.890    
+    URAM288_X0Y25        URAM288 (Hold_URAM_288K_INST_URAM288_CLK_DIN_B[51])
+                                                     -0.059     4.831    g_channels[1].tx_stub_i/uram_i/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_uram_6
+  -------------------------------------------------------------------
+                         required time                         -4.831    
+                         arrival time                           4.841    
+  -------------------------------------------------------------------
+                         slack                                  0.010    
+
+Slack (MET) :             0.010ns  (arrival time - required time)
+  Source:                 g_channels[1].tx_stub_i/rd_addr_reg[4]/C
+                            (rising edge-triggered cell FDCE clocked by tx_clk  {rise@0.000ns fall@1.633ns period=3.266ns})
+  Destination:            g_channels[1].tx_stub_i/uram_i/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_uram_6/DIN_B[52]
+                            (rising edge-triggered cell URAM288 clocked by tx_clk  {rise@0.000ns fall@1.633ns period=3.266ns})
+  Path Group:             tx_clk
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (tx_clk rise@0.000ns - tx_clk rise@0.000ns)
+  Data Path Delay:        0.124ns  (logic 0.059ns (47.430%)  route 0.065ns (52.570%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.173ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    4.659ns
+    Source Clock Delay      (SCD):    4.717ns
+    Clock Pessimism Removal (CPR):    -0.231ns
+  Clock Net Delay (Source):      2.219ns (routing 1.043ns, distribution 1.176ns)
+  Clock Net Delay (Destination): 2.578ns (routing 1.147ns, distribution 1.431ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock tx_clk rise edge)     0.000     0.000 r  
+    RFDAC_X0Y2           RFDAC                        0.000     0.000 r  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx2_u_dac/INTERNAL_FBRC_MUX
+    RFDAC_X0Y2           RFDAC (Prop_RFDAC_INTERNAL_FBRC_MUX_CLK_DAC)
+                                                      0.281     0.281 r  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx2_u_dac/CLK_DAC
+                         net (fo=2, routed)           0.149     0.430    system_i/usp_rf_data_converter_0/inst/i_system_usp_rf_data_converter_0_0_bufg_gt_ctrl/dac2_bufg_gt_0
+    BUFG_GT_X1Y158       BUFG_GT (Prop_BUFG_GT_I_O)
+                                                      0.114     0.544 r  system_i/usp_rf_data_converter_0/inst/i_system_usp_rf_data_converter_0_0_bufg_gt_ctrl/dac2_bufg_gt/O
+                         net (fo=1, routed)           0.978     1.522    system_i/clk_wiz_0/inst/CLK_CORE_DRP_I/clk_inst/clk_in1
+    MMCM_X0Y6            MMCME4_ADV (Prop_MMCM_CLKIN1_CLKOUT0)
+                                                      0.630     2.152 r  system_i/clk_wiz_0/inst/CLK_CORE_DRP_I/clk_inst/mmcme4_adv_inst/CLKOUT0
+                         net (fo=2, routed)           0.215     2.367    lopt_2
+    BUFGCE_DIV_X0Y24     BUFGCE_DIV (Prop_BUFGCE_DIV_I_O)
+                                                      0.131     2.498 r  tx_clk_div/O
+    X2Y5 (CLOCK_ROOT)    net (fo=12258, routed)       2.219     4.717    g_channels[1].tx_stub_i/tx_clk
+    SLICE_X19Y276        FDCE                                         r  g_channels[1].tx_stub_i/rd_addr_reg[4]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X19Y276        FDCE (Prop_DFF_SLICEL_C_Q)
+                                                      0.059     4.776 r  g_channels[1].tx_stub_i/rd_addr_reg[4]/Q
+                         net (fo=57, routed)          0.065     4.841    g_channels[1].tx_stub_i/uram_i/xpm_memory_base_inst/addrb[4]
+    URAM288_X0Y25        URAM288                                      r  g_channels[1].tx_stub_i/uram_i/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_uram_6/DIN_B[52]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock tx_clk rise edge)     0.000     0.000 r  
+    RFDAC_X0Y2           RFDAC                        0.000     0.000 r  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx2_u_dac/INTERNAL_FBRC_MUX
+    RFDAC_X0Y2           RFDAC (Prop_RFDAC_INTERNAL_FBRC_MUX_CLK_DAC)
+                                                      0.336     0.336 r  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx2_u_dac/CLK_DAC
+                         net (fo=2, routed)           0.245     0.581    system_i/usp_rf_data_converter_0/inst/i_system_usp_rf_data_converter_0_0_bufg_gt_ctrl/dac2_bufg_gt_0
+    BUFG_GT_X1Y158       BUFG_GT (Prop_BUFG_GT_I_O)
+                                                      0.130     0.711 r  system_i/usp_rf_data_converter_0/inst/i_system_usp_rf_data_converter_0_0_bufg_gt_ctrl/dac2_bufg_gt/O
+                         net (fo=1, routed)           1.102     1.813    system_i/clk_wiz_0/inst/CLK_CORE_DRP_I/clk_inst/clk_in1
+    MMCM_X0Y6            MMCME4_ADV (Prop_MMCM_CLKIN1_CLKOUT0)
+                                                     -0.127     1.686 r  system_i/clk_wiz_0/inst/CLK_CORE_DRP_I/clk_inst/mmcme4_adv_inst/CLKOUT0
+                         net (fo=2, routed)           0.244     1.930    lopt_2
+    BUFGCE_DIV_X0Y24     BUFGCE_DIV (Prop_BUFGCE_DIV_I_O)
+                                                      0.151     2.081 r  tx_clk_div/O
+    X2Y5 (CLOCK_ROOT)    net (fo=12258, routed)       2.578     4.659    g_channels[1].tx_stub_i/uram_i/xpm_memory_base_inst/clka
+    URAM288_X0Y25        URAM288                                      r  g_channels[1].tx_stub_i/uram_i/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_uram_6/CLK
+                         clock pessimism              0.231     4.890    
+    URAM288_X0Y25        URAM288 (Hold_URAM_288K_INST_URAM288_CLK_DIN_B[52])
+                                                     -0.059     4.831    g_channels[1].tx_stub_i/uram_i/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_uram_6
+  -------------------------------------------------------------------
+                         required time                         -4.831    
+                         arrival time                           4.841    
+  -------------------------------------------------------------------
+                         slack                                  0.010    
+
+Slack (MET) :             0.011ns  (arrival time - required time)
+  Source:                 g_channels[3].tx_stub_i/rd_addr_reg[2]/C
+                            (rising edge-triggered cell FDCE clocked by tx_clk  {rise@0.000ns fall@1.633ns period=3.266ns})
+  Destination:            g_channels[3].tx_stub_i/uram_i/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_uram_0/DIN_B[62]
+                            (rising edge-triggered cell URAM288 clocked by tx_clk  {rise@0.000ns fall@1.633ns period=3.266ns})
+  Path Group:             tx_clk
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (tx_clk rise@0.000ns - tx_clk rise@0.000ns)
+  Data Path Delay:        0.123ns  (logic 0.059ns (48.095%)  route 0.064ns (51.905%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.171ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    4.631ns
+    Source Clock Delay      (SCD):    4.697ns
+    Clock Pessimism Removal (CPR):    -0.236ns
+  Clock Net Delay (Source):      2.199ns (routing 1.043ns, distribution 1.156ns)
+  Clock Net Delay (Destination): 2.550ns (routing 1.147ns, distribution 1.403ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock tx_clk rise edge)     0.000     0.000 r  
+    RFDAC_X0Y2           RFDAC                        0.000     0.000 r  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx2_u_dac/INTERNAL_FBRC_MUX
+    RFDAC_X0Y2           RFDAC (Prop_RFDAC_INTERNAL_FBRC_MUX_CLK_DAC)
+                                                      0.281     0.281 r  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx2_u_dac/CLK_DAC
+                         net (fo=2, routed)           0.149     0.430    system_i/usp_rf_data_converter_0/inst/i_system_usp_rf_data_converter_0_0_bufg_gt_ctrl/dac2_bufg_gt_0
+    BUFG_GT_X1Y158       BUFG_GT (Prop_BUFG_GT_I_O)
+                                                      0.114     0.544 r  system_i/usp_rf_data_converter_0/inst/i_system_usp_rf_data_converter_0_0_bufg_gt_ctrl/dac2_bufg_gt/O
+                         net (fo=1, routed)           0.978     1.522    system_i/clk_wiz_0/inst/CLK_CORE_DRP_I/clk_inst/clk_in1
+    MMCM_X0Y6            MMCME4_ADV (Prop_MMCM_CLKIN1_CLKOUT0)
+                                                      0.630     2.152 r  system_i/clk_wiz_0/inst/CLK_CORE_DRP_I/clk_inst/mmcme4_adv_inst/CLKOUT0
+                         net (fo=2, routed)           0.215     2.367    lopt_2
+    BUFGCE_DIV_X0Y24     BUFGCE_DIV (Prop_BUFGCE_DIV_I_O)
+                                                      0.131     2.498 r  tx_clk_div/O
+    X2Y5 (CLOCK_ROOT)    net (fo=12258, routed)       2.199     4.697    g_channels[3].tx_stub_i/tx_clk
+    SLICE_X19Y333        FDCE                                         r  g_channels[3].tx_stub_i/rd_addr_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X19Y333        FDCE (Prop_BFF_SLICEL_C_Q)
+                                                      0.059     4.756 r  g_channels[3].tx_stub_i/rd_addr_reg[2]/Q
+                         net (fo=57, routed)          0.064     4.819    g_channels[3].tx_stub_i/uram_i/xpm_memory_base_inst/addrb[2]
+    URAM288_X0Y40        URAM288                                      r  g_channels[3].tx_stub_i/uram_i/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_uram_0/DIN_B[62]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock tx_clk rise edge)     0.000     0.000 r  
+    RFDAC_X0Y2           RFDAC                        0.000     0.000 r  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx2_u_dac/INTERNAL_FBRC_MUX
+    RFDAC_X0Y2           RFDAC (Prop_RFDAC_INTERNAL_FBRC_MUX_CLK_DAC)
+                                                      0.336     0.336 r  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx2_u_dac/CLK_DAC
+                         net (fo=2, routed)           0.245     0.581    system_i/usp_rf_data_converter_0/inst/i_system_usp_rf_data_converter_0_0_bufg_gt_ctrl/dac2_bufg_gt_0
+    BUFG_GT_X1Y158       BUFG_GT (Prop_BUFG_GT_I_O)
+                                                      0.130     0.711 r  system_i/usp_rf_data_converter_0/inst/i_system_usp_rf_data_converter_0_0_bufg_gt_ctrl/dac2_bufg_gt/O
+                         net (fo=1, routed)           1.102     1.813    system_i/clk_wiz_0/inst/CLK_CORE_DRP_I/clk_inst/clk_in1
+    MMCM_X0Y6            MMCME4_ADV (Prop_MMCM_CLKIN1_CLKOUT0)
+                                                     -0.127     1.686 r  system_i/clk_wiz_0/inst/CLK_CORE_DRP_I/clk_inst/mmcme4_adv_inst/CLKOUT0
+                         net (fo=2, routed)           0.244     1.930    lopt_2
+    BUFGCE_DIV_X0Y24     BUFGCE_DIV (Prop_BUFGCE_DIV_I_O)
+                                                      0.151     2.081 r  tx_clk_div/O
+    X2Y5 (CLOCK_ROOT)    net (fo=12258, routed)       2.550     4.631    g_channels[3].tx_stub_i/uram_i/xpm_memory_base_inst/clka
+    URAM288_X0Y40        URAM288                                      r  g_channels[3].tx_stub_i/uram_i/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_uram_0/CLK
+                         clock pessimism              0.236     4.867    
+    URAM288_X0Y40        URAM288 (Hold_URAM_288K_INST_URAM288_CLK_DIN_B[62])
+                                                     -0.059     4.808    g_channels[3].tx_stub_i/uram_i/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_uram_0
+  -------------------------------------------------------------------
+                         required time                         -4.808    
+                         arrival time                           4.819    
+  -------------------------------------------------------------------
+                         slack                                  0.011    
+
+Slack (MET) :             0.011ns  (arrival time - required time)
+  Source:                 g_channels[6].rx_stub_i/adc_prev_reg[175]/C
+                            (rising edge-triggered cell FDRE clocked by clk_out1_system_clk_wiz_adc_0  {rise@0.000ns fall@1.200ns period=2.400ns})
+  Destination:            g_channels[6].rx_stub_i/packed_stage_reg[321]/D
+                            (rising edge-triggered cell FDRE clocked by rx_clk  {rise@0.000ns fall@2.400ns period=4.800ns})
+  Path Group:             rx_clk
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (rx_clk rise@0.000ns - clk_out1_system_clk_wiz_adc_0 rise@0.000ns)
+  Data Path Delay:        0.518ns  (logic 0.058ns (11.197%)  route 0.460ns (88.803%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.447ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    8.212ns
+    Source Clock Delay      (SCD):    7.220ns
+    Clock Pessimism Removal (CPR):    0.544ns
+  Clock Net Delay (Source):      2.437ns (routing 1.397ns, distribution 1.040ns)
+  Clock Net Delay (Destination): 2.740ns (routing 1.554ns, distribution 1.186ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_system_clk_wiz_adc_0 rise edge)
+                                                      0.000     0.000 r  
+    E12                                               0.000     0.000 r  pl_clk_p (IN)
+                         net (fo=0)                   0.000     0.000    pl_clk_ibufds/I
+    HDIOBDIFFINBUF_X0Y31 DIFFINBUF (Prop_DIFFINBUF_HDIOBDIFFINBUF_DIFF_IN_P_O)
+                                                      0.807     0.807 r  pl_clk_ibufds/DIFFINBUF_INST/O
+                         net (fo=1, routed)           0.034     0.841    pl_clk_ibufds/OUT
+    E12                  IBUFCTRL (Prop_IBUFCTRL_HDIOB_M_I_O)
+                                                      0.000     0.841 r  pl_clk_ibufds/IBUFCTRL_INST/O
+                         net (fo=1, routed)           1.642     2.483    pl_clk_raw
+    BUFGCE_X0Y176        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.024     2.507 r  pl_clk_bufg/O
+                         net (fo=2, routed)           1.407     3.914    system_i/clk_wiz_adc/inst/clk_in1
+    MMCM_X0Y7            MMCME4_ADV (Prop_MMCM_CLKIN1_CLKOUT0)
+                                                      0.630     4.544 r  system_i/clk_wiz_adc/inst/mmcme4_adv_inst/CLKOUT0
+                         net (fo=2, routed)           0.215     4.759    system_i/clk_wiz_adc/inst/clk_out1_system_clk_wiz_adc_0
+    BUFGCE_X0Y172        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.024     4.783 r  system_i/clk_wiz_adc/inst/clkout1_buf/O
+    X4Y2 (CLOCK_ROOT)    net (fo=4389, routed)        2.437     7.220    g_channels[6].rx_stub_i/adc_clk
+    SLICE_X93Y178        FDRE                                         r  g_channels[6].rx_stub_i/adc_prev_reg[175]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X93Y178        FDRE (Prop_BFF_SLICEM_C_Q)
+                                                      0.058     7.278 r  g_channels[6].rx_stub_i/adc_prev_reg[175]/Q
+                         net (fo=2, routed)           0.460     7.738    g_channels[6].rx_stub_i/adc_prev[175]
+    SLICE_X93Y178        FDRE                                         r  g_channels[6].rx_stub_i/packed_stage_reg[321]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock rx_clk rise edge)     0.000     0.000 r  
+    E12                                               0.000     0.000 r  pl_clk_p (IN)
+                         net (fo=0)                   0.000     0.000    pl_clk_ibufds/I
+    HDIOBDIFFINBUF_X0Y31 DIFFINBUF (Prop_DIFFINBUF_HDIOBDIFFINBUF_DIFF_IN_P_O)
+                                                      1.143     1.143 r  pl_clk_ibufds/DIFFINBUF_INST/O
+                         net (fo=1, routed)           0.045     1.188    pl_clk_ibufds/OUT
+    E12                  IBUFCTRL (Prop_IBUFCTRL_HDIOB_M_I_O)
+                                                      0.000     1.188 r  pl_clk_ibufds/IBUFCTRL_INST/O
+                         net (fo=1, routed)           2.417     3.605    pl_clk_raw
+    BUFGCE_X0Y176        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     3.633 r  pl_clk_bufg/O
+                         net (fo=2, routed)           1.571     5.204    system_i/clk_wiz_adc/inst/clk_in1
+    MMCM_X0Y7            MMCME4_ADV (Prop_MMCM_CLKIN1_CLKOUT0)
+                                                     -0.127     5.077 r  system_i/clk_wiz_adc/inst/mmcme4_adv_inst/CLKOUT0
+                         net (fo=2, routed)           0.244     5.321    lopt
+    BUFGCE_DIV_X0Y29     BUFGCE_DIV (Prop_BUFGCE_DIV_I_O)
+                                                      0.151     5.472 r  rx_clk_div/O
+    X4Y2 (CLOCK_ROOT)    net (fo=6242, routed)        2.740     8.212    g_channels[6].rx_stub_i/rx_clk
+    SLICE_X93Y178        FDRE                                         r  g_channels[6].rx_stub_i/packed_stage_reg[321]/C
+                         clock pessimism             -0.544     7.667    
+    SLICE_X93Y178        FDRE (Hold_HFF_SLICEM_C_D)
+                                                      0.060     7.727    g_channels[6].rx_stub_i/packed_stage_reg[321]
+  -------------------------------------------------------------------
+                         required time                         -7.727    
+                         arrival time                           7.738    
+  -------------------------------------------------------------------
+                         slack                                  0.011    
+
+Slack (MET) :             0.011ns  (arrival time - required time)
+  Source:                 g_channels[3].tx_stub_i/rd_addr_reg[4]/C
+                            (rising edge-triggered cell FDCE clocked by tx_clk  {rise@0.000ns fall@1.633ns period=3.266ns})
+  Destination:            g_channels[3].tx_stub_i/uram_i/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_uram_0/DIN_B[64]
+                            (rising edge-triggered cell URAM288 clocked by tx_clk  {rise@0.000ns fall@1.633ns period=3.266ns})
+  Path Group:             tx_clk
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (tx_clk rise@0.000ns - tx_clk rise@0.000ns)
+  Data Path Delay:        0.123ns  (logic 0.059ns (47.862%)  route 0.064ns (52.138%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.171ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    4.631ns
+    Source Clock Delay      (SCD):    4.697ns
+    Clock Pessimism Removal (CPR):    -0.236ns
+  Clock Net Delay (Source):      2.199ns (routing 1.043ns, distribution 1.156ns)
+  Clock Net Delay (Destination): 2.550ns (routing 1.147ns, distribution 1.403ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock tx_clk rise edge)     0.000     0.000 r  
+    RFDAC_X0Y2           RFDAC                        0.000     0.000 r  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx2_u_dac/INTERNAL_FBRC_MUX
+    RFDAC_X0Y2           RFDAC (Prop_RFDAC_INTERNAL_FBRC_MUX_CLK_DAC)
+                                                      0.281     0.281 r  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx2_u_dac/CLK_DAC
+                         net (fo=2, routed)           0.149     0.430    system_i/usp_rf_data_converter_0/inst/i_system_usp_rf_data_converter_0_0_bufg_gt_ctrl/dac2_bufg_gt_0
+    BUFG_GT_X1Y158       BUFG_GT (Prop_BUFG_GT_I_O)
+                                                      0.114     0.544 r  system_i/usp_rf_data_converter_0/inst/i_system_usp_rf_data_converter_0_0_bufg_gt_ctrl/dac2_bufg_gt/O
+                         net (fo=1, routed)           0.978     1.522    system_i/clk_wiz_0/inst/CLK_CORE_DRP_I/clk_inst/clk_in1
+    MMCM_X0Y6            MMCME4_ADV (Prop_MMCM_CLKIN1_CLKOUT0)
+                                                      0.630     2.152 r  system_i/clk_wiz_0/inst/CLK_CORE_DRP_I/clk_inst/mmcme4_adv_inst/CLKOUT0
+                         net (fo=2, routed)           0.215     2.367    lopt_2
+    BUFGCE_DIV_X0Y24     BUFGCE_DIV (Prop_BUFGCE_DIV_I_O)
+                                                      0.131     2.498 r  tx_clk_div/O
+    X2Y5 (CLOCK_ROOT)    net (fo=12258, routed)       2.199     4.697    g_channels[3].tx_stub_i/tx_clk
+    SLICE_X19Y333        FDCE                                         r  g_channels[3].tx_stub_i/rd_addr_reg[4]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X19Y333        FDCE (Prop_DFF_SLICEL_C_Q)
+                                                      0.059     4.756 r  g_channels[3].tx_stub_i/rd_addr_reg[4]/Q
+                         net (fo=57, routed)          0.064     4.820    g_channels[3].tx_stub_i/uram_i/xpm_memory_base_inst/addrb[4]
+    URAM288_X0Y40        URAM288                                      r  g_channels[3].tx_stub_i/uram_i/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_uram_0/DIN_B[64]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock tx_clk rise edge)     0.000     0.000 r  
+    RFDAC_X0Y2           RFDAC                        0.000     0.000 r  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx2_u_dac/INTERNAL_FBRC_MUX
+    RFDAC_X0Y2           RFDAC (Prop_RFDAC_INTERNAL_FBRC_MUX_CLK_DAC)
+                                                      0.336     0.336 r  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx2_u_dac/CLK_DAC
+                         net (fo=2, routed)           0.245     0.581    system_i/usp_rf_data_converter_0/inst/i_system_usp_rf_data_converter_0_0_bufg_gt_ctrl/dac2_bufg_gt_0
+    BUFG_GT_X1Y158       BUFG_GT (Prop_BUFG_GT_I_O)
+                                                      0.130     0.711 r  system_i/usp_rf_data_converter_0/inst/i_system_usp_rf_data_converter_0_0_bufg_gt_ctrl/dac2_bufg_gt/O
+                         net (fo=1, routed)           1.102     1.813    system_i/clk_wiz_0/inst/CLK_CORE_DRP_I/clk_inst/clk_in1
+    MMCM_X0Y6            MMCME4_ADV (Prop_MMCM_CLKIN1_CLKOUT0)
+                                                     -0.127     1.686 r  system_i/clk_wiz_0/inst/CLK_CORE_DRP_I/clk_inst/mmcme4_adv_inst/CLKOUT0
+                         net (fo=2, routed)           0.244     1.930    lopt_2
+    BUFGCE_DIV_X0Y24     BUFGCE_DIV (Prop_BUFGCE_DIV_I_O)
+                                                      0.151     2.081 r  tx_clk_div/O
+    X2Y5 (CLOCK_ROOT)    net (fo=12258, routed)       2.550     4.631    g_channels[3].tx_stub_i/uram_i/xpm_memory_base_inst/clka
+    URAM288_X0Y40        URAM288                                      r  g_channels[3].tx_stub_i/uram_i/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_uram_0/CLK
+                         clock pessimism              0.236     4.867    
+    URAM288_X0Y40        URAM288 (Hold_URAM_288K_INST_URAM288_CLK_DIN_B[64])
+                                                     -0.059     4.808    g_channels[3].tx_stub_i/uram_i/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_uram_0
+  -------------------------------------------------------------------
+                         required time                         -4.808    
+                         arrival time                           4.820    
+  -------------------------------------------------------------------
+                         slack                                  0.011    
+
+Slack (MET) :             0.012ns  (arrival time - required time)
+  Source:                 g_channels[5].tx_stub_i/rd_addr_reg[7]/C
+                            (rising edge-triggered cell FDCE clocked by tx_clk  {rise@0.000ns fall@1.633ns period=3.266ns})
+  Destination:            g_channels[5].tx_stub_i/uram_i/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_uram_1/DIN_B[19]
+                            (rising edge-triggered cell URAM288 clocked by tx_clk  {rise@0.000ns fall@1.633ns period=3.266ns})
+  Path Group:             tx_clk
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (tx_clk rise@0.000ns - tx_clk rise@0.000ns)
+  Data Path Delay:        0.123ns  (logic 0.059ns (47.821%)  route 0.064ns (52.180%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.170ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    4.692ns
+    Source Clock Delay      (SCD):    4.755ns
+    Clock Pessimism Removal (CPR):    -0.233ns
+  Clock Net Delay (Source):      2.257ns (routing 1.043ns, distribution 1.214ns)
+  Clock Net Delay (Destination): 2.611ns (routing 1.147ns, distribution 1.464ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock tx_clk rise edge)     0.000     0.000 r  
+    RFDAC_X0Y2           RFDAC                        0.000     0.000 r  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx2_u_dac/INTERNAL_FBRC_MUX
+    RFDAC_X0Y2           RFDAC (Prop_RFDAC_INTERNAL_FBRC_MUX_CLK_DAC)
+                                                      0.281     0.281 r  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx2_u_dac/CLK_DAC
+                         net (fo=2, routed)           0.149     0.430    system_i/usp_rf_data_converter_0/inst/i_system_usp_rf_data_converter_0_0_bufg_gt_ctrl/dac2_bufg_gt_0
+    BUFG_GT_X1Y158       BUFG_GT (Prop_BUFG_GT_I_O)
+                                                      0.114     0.544 r  system_i/usp_rf_data_converter_0/inst/i_system_usp_rf_data_converter_0_0_bufg_gt_ctrl/dac2_bufg_gt/O
+                         net (fo=1, routed)           0.978     1.522    system_i/clk_wiz_0/inst/CLK_CORE_DRP_I/clk_inst/clk_in1
+    MMCM_X0Y6            MMCME4_ADV (Prop_MMCM_CLKIN1_CLKOUT0)
+                                                      0.630     2.152 r  system_i/clk_wiz_0/inst/CLK_CORE_DRP_I/clk_inst/mmcme4_adv_inst/CLKOUT0
+                         net (fo=2, routed)           0.215     2.367    lopt_2
+    BUFGCE_DIV_X0Y24     BUFGCE_DIV (Prop_BUFGCE_DIV_I_O)
+                                                      0.131     2.498 r  tx_clk_div/O
+    X2Y5 (CLOCK_ROOT)    net (fo=12258, routed)       2.257     4.755    g_channels[5].tx_stub_i/tx_clk
+    SLICE_X19Y379        FDCE                                         r  g_channels[5].tx_stub_i/rd_addr_reg[7]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X19Y379        FDCE (Prop_GFF_SLICEL_C_Q)
+                                                      0.059     4.814 r  g_channels[5].tx_stub_i/rd_addr_reg[7]/Q
+                         net (fo=57, routed)          0.064     4.878    g_channels[5].tx_stub_i/uram_i/xpm_memory_base_inst/addrb[7]
+    URAM288_X0Y53        URAM288                                      r  g_channels[5].tx_stub_i/uram_i/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_uram_1/DIN_B[19]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock tx_clk rise edge)     0.000     0.000 r  
+    RFDAC_X0Y2           RFDAC                        0.000     0.000 r  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx2_u_dac/INTERNAL_FBRC_MUX
+    RFDAC_X0Y2           RFDAC (Prop_RFDAC_INTERNAL_FBRC_MUX_CLK_DAC)
+                                                      0.336     0.336 r  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx2_u_dac/CLK_DAC
+                         net (fo=2, routed)           0.245     0.581    system_i/usp_rf_data_converter_0/inst/i_system_usp_rf_data_converter_0_0_bufg_gt_ctrl/dac2_bufg_gt_0
+    BUFG_GT_X1Y158       BUFG_GT (Prop_BUFG_GT_I_O)
+                                                      0.130     0.711 r  system_i/usp_rf_data_converter_0/inst/i_system_usp_rf_data_converter_0_0_bufg_gt_ctrl/dac2_bufg_gt/O
+                         net (fo=1, routed)           1.102     1.813    system_i/clk_wiz_0/inst/CLK_CORE_DRP_I/clk_inst/clk_in1
+    MMCM_X0Y6            MMCME4_ADV (Prop_MMCM_CLKIN1_CLKOUT0)
+                                                     -0.127     1.686 r  system_i/clk_wiz_0/inst/CLK_CORE_DRP_I/clk_inst/mmcme4_adv_inst/CLKOUT0
+                         net (fo=2, routed)           0.244     1.930    lopt_2
+    BUFGCE_DIV_X0Y24     BUFGCE_DIV (Prop_BUFGCE_DIV_I_O)
+                                                      0.151     2.081 r  tx_clk_div/O
+    X2Y5 (CLOCK_ROOT)    net (fo=12258, routed)       2.611     4.692    g_channels[5].tx_stub_i/uram_i/xpm_memory_base_inst/clka
+    URAM288_X0Y53        URAM288                                      r  g_channels[5].tx_stub_i/uram_i/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_uram_1/CLK
+                         clock pessimism              0.233     4.925    
+    URAM288_X0Y53        URAM288 (Hold_URAM_288K_INST_URAM288_CLK_DIN_B[19])
+                                                     -0.059     4.866    g_channels[5].tx_stub_i/uram_i/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_uram_1
+  -------------------------------------------------------------------
+                         required time                         -4.866    
+                         arrival time                           4.878    
+  -------------------------------------------------------------------
+                         slack                                  0.012    
+
+Slack (MET) :             0.012ns  (arrival time - required time)
+  Source:                 g_channels[5].tx_stub_i/rd_addr_reg[7]/C
+                            (rising edge-triggered cell FDCE clocked by tx_clk  {rise@0.000ns fall@1.633ns period=3.266ns})
+  Destination:            g_channels[5].tx_stub_i/uram_i/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_uram_1/ADDR_B[7]
+                            (rising edge-triggered cell URAM288 clocked by tx_clk  {rise@0.000ns fall@1.633ns period=3.266ns})
+  Path Group:             tx_clk
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (tx_clk rise@0.000ns - tx_clk rise@0.000ns)
+  Data Path Delay:        0.152ns  (logic 0.059ns (38.719%)  route 0.093ns (61.280%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.170ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    4.692ns
+    Source Clock Delay      (SCD):    4.755ns
+    Clock Pessimism Removal (CPR):    -0.233ns
+  Clock Net Delay (Source):      2.257ns (routing 1.043ns, distribution 1.214ns)
+  Clock Net Delay (Destination): 2.611ns (routing 1.147ns, distribution 1.464ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock tx_clk rise edge)     0.000     0.000 r  
+    RFDAC_X0Y2           RFDAC                        0.000     0.000 r  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx2_u_dac/INTERNAL_FBRC_MUX
+    RFDAC_X0Y2           RFDAC (Prop_RFDAC_INTERNAL_FBRC_MUX_CLK_DAC)
+                                                      0.281     0.281 r  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx2_u_dac/CLK_DAC
+                         net (fo=2, routed)           0.149     0.430    system_i/usp_rf_data_converter_0/inst/i_system_usp_rf_data_converter_0_0_bufg_gt_ctrl/dac2_bufg_gt_0
+    BUFG_GT_X1Y158       BUFG_GT (Prop_BUFG_GT_I_O)
+                                                      0.114     0.544 r  system_i/usp_rf_data_converter_0/inst/i_system_usp_rf_data_converter_0_0_bufg_gt_ctrl/dac2_bufg_gt/O
+                         net (fo=1, routed)           0.978     1.522    system_i/clk_wiz_0/inst/CLK_CORE_DRP_I/clk_inst/clk_in1
+    MMCM_X0Y6            MMCME4_ADV (Prop_MMCM_CLKIN1_CLKOUT0)
+                                                      0.630     2.152 r  system_i/clk_wiz_0/inst/CLK_CORE_DRP_I/clk_inst/mmcme4_adv_inst/CLKOUT0
+                         net (fo=2, routed)           0.215     2.367    lopt_2
+    BUFGCE_DIV_X0Y24     BUFGCE_DIV (Prop_BUFGCE_DIV_I_O)
+                                                      0.131     2.498 r  tx_clk_div/O
+    X2Y5 (CLOCK_ROOT)    net (fo=12258, routed)       2.257     4.755    g_channels[5].tx_stub_i/tx_clk
+    SLICE_X19Y379        FDCE                                         r  g_channels[5].tx_stub_i/rd_addr_reg[7]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X19Y379        FDCE (Prop_GFF_SLICEL_C_Q)
+                                                      0.059     4.814 r  g_channels[5].tx_stub_i/rd_addr_reg[7]/Q
+                         net (fo=57, routed)          0.093     4.907    g_channels[5].tx_stub_i/uram_i/xpm_memory_base_inst/addrb[7]
+    URAM288_X0Y53        URAM288                                      r  g_channels[5].tx_stub_i/uram_i/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_uram_1/ADDR_B[7]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock tx_clk rise edge)     0.000     0.000 r  
+    RFDAC_X0Y2           RFDAC                        0.000     0.000 r  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx2_u_dac/INTERNAL_FBRC_MUX
+    RFDAC_X0Y2           RFDAC (Prop_RFDAC_INTERNAL_FBRC_MUX_CLK_DAC)
+                                                      0.336     0.336 r  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx2_u_dac/CLK_DAC
+                         net (fo=2, routed)           0.245     0.581    system_i/usp_rf_data_converter_0/inst/i_system_usp_rf_data_converter_0_0_bufg_gt_ctrl/dac2_bufg_gt_0
+    BUFG_GT_X1Y158       BUFG_GT (Prop_BUFG_GT_I_O)
+                                                      0.130     0.711 r  system_i/usp_rf_data_converter_0/inst/i_system_usp_rf_data_converter_0_0_bufg_gt_ctrl/dac2_bufg_gt/O
+                         net (fo=1, routed)           1.102     1.813    system_i/clk_wiz_0/inst/CLK_CORE_DRP_I/clk_inst/clk_in1
+    MMCM_X0Y6            MMCME4_ADV (Prop_MMCM_CLKIN1_CLKOUT0)
+                                                     -0.127     1.686 r  system_i/clk_wiz_0/inst/CLK_CORE_DRP_I/clk_inst/mmcme4_adv_inst/CLKOUT0
+                         net (fo=2, routed)           0.244     1.930    lopt_2
+    BUFGCE_DIV_X0Y24     BUFGCE_DIV (Prop_BUFGCE_DIV_I_O)
+                                                      0.151     2.081 r  tx_clk_div/O
+    X2Y5 (CLOCK_ROOT)    net (fo=12258, routed)       2.611     4.692    g_channels[5].tx_stub_i/uram_i/xpm_memory_base_inst/clka
+    URAM288_X0Y53        URAM288                                      r  g_channels[5].tx_stub_i/uram_i/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_uram_1/CLK
+                         clock pessimism              0.233     4.925    
+    URAM288_X0Y53        URAM288 (Hold_URAM_288K_INST_URAM288_CLK_ADDR_B[7])
+                                                     -0.030     4.895    g_channels[5].tx_stub_i/uram_i/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_uram_1
+  -------------------------------------------------------------------
+                         required time                         -4.895    
+                         arrival time                           4.907    
+  -------------------------------------------------------------------
+                         slack                                  0.012    
+
+Slack (MET) :             0.012ns  (arrival time - required time)
+  Source:                 g_channels[2].tx_stub_i/rd_addr_reg[7]/C
+                            (rising edge-triggered cell FDCE clocked by tx_clk  {rise@0.000ns fall@1.633ns period=3.266ns})
+  Destination:            g_channels[2].tx_stub_i/uram_i/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_uram_4/ADDR_B[7]
+                            (rising edge-triggered cell URAM288 clocked by tx_clk  {rise@0.000ns fall@1.633ns period=3.266ns})
+  Path Group:             tx_clk
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (tx_clk rise@0.000ns - tx_clk rise@0.000ns)
+  Data Path Delay:        0.154ns  (logic 0.059ns (38.223%)  route 0.095ns (61.777%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.172ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    4.673ns
+    Source Clock Delay      (SCD):    4.732ns
+    Clock Pessimism Removal (CPR):    -0.231ns
+  Clock Net Delay (Source):      2.234ns (routing 1.043ns, distribution 1.191ns)
+  Clock Net Delay (Destination): 2.592ns (routing 1.147ns, distribution 1.445ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock tx_clk rise edge)     0.000     0.000 r  
+    RFDAC_X0Y2           RFDAC                        0.000     0.000 r  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx2_u_dac/INTERNAL_FBRC_MUX
+    RFDAC_X0Y2           RFDAC (Prop_RFDAC_INTERNAL_FBRC_MUX_CLK_DAC)
+                                                      0.281     0.281 r  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx2_u_dac/CLK_DAC
+                         net (fo=2, routed)           0.149     0.430    system_i/usp_rf_data_converter_0/inst/i_system_usp_rf_data_converter_0_0_bufg_gt_ctrl/dac2_bufg_gt_0
+    BUFG_GT_X1Y158       BUFG_GT (Prop_BUFG_GT_I_O)
+                                                      0.114     0.544 r  system_i/usp_rf_data_converter_0/inst/i_system_usp_rf_data_converter_0_0_bufg_gt_ctrl/dac2_bufg_gt/O
+                         net (fo=1, routed)           0.978     1.522    system_i/clk_wiz_0/inst/CLK_CORE_DRP_I/clk_inst/clk_in1
+    MMCM_X0Y6            MMCME4_ADV (Prop_MMCM_CLKIN1_CLKOUT0)
+                                                      0.630     2.152 r  system_i/clk_wiz_0/inst/CLK_CORE_DRP_I/clk_inst/mmcme4_adv_inst/CLKOUT0
+                         net (fo=2, routed)           0.215     2.367    lopt_2
+    BUFGCE_DIV_X0Y24     BUFGCE_DIV (Prop_BUFGCE_DIV_I_O)
+                                                      0.131     2.498 r  tx_clk_div/O
+    X2Y5 (CLOCK_ROOT)    net (fo=12258, routed)       2.234     4.732    g_channels[2].tx_stub_i/tx_clk
+    SLICE_X19Y293        FDCE                                         r  g_channels[2].tx_stub_i/rd_addr_reg[7]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X19Y293        FDCE (Prop_GFF_SLICEL_C_Q)
+                                                      0.059     4.791 r  g_channels[2].tx_stub_i/rd_addr_reg[7]/Q
+                         net (fo=57, routed)          0.095     4.886    g_channels[2].tx_stub_i/uram_i/xpm_memory_base_inst/addrb[7]
+    URAM288_X0Y30        URAM288                                      r  g_channels[2].tx_stub_i/uram_i/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_uram_4/ADDR_B[7]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock tx_clk rise edge)     0.000     0.000 r  
+    RFDAC_X0Y2           RFDAC                        0.000     0.000 r  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx2_u_dac/INTERNAL_FBRC_MUX
+    RFDAC_X0Y2           RFDAC (Prop_RFDAC_INTERNAL_FBRC_MUX_CLK_DAC)
+                                                      0.336     0.336 r  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx2_u_dac/CLK_DAC
+                         net (fo=2, routed)           0.245     0.581    system_i/usp_rf_data_converter_0/inst/i_system_usp_rf_data_converter_0_0_bufg_gt_ctrl/dac2_bufg_gt_0
+    BUFG_GT_X1Y158       BUFG_GT (Prop_BUFG_GT_I_O)
+                                                      0.130     0.711 r  system_i/usp_rf_data_converter_0/inst/i_system_usp_rf_data_converter_0_0_bufg_gt_ctrl/dac2_bufg_gt/O
+                         net (fo=1, routed)           1.102     1.813    system_i/clk_wiz_0/inst/CLK_CORE_DRP_I/clk_inst/clk_in1
+    MMCM_X0Y6            MMCME4_ADV (Prop_MMCM_CLKIN1_CLKOUT0)
+                                                     -0.127     1.686 r  system_i/clk_wiz_0/inst/CLK_CORE_DRP_I/clk_inst/mmcme4_adv_inst/CLKOUT0
+                         net (fo=2, routed)           0.244     1.930    lopt_2
+    BUFGCE_DIV_X0Y24     BUFGCE_DIV (Prop_BUFGCE_DIV_I_O)
+                                                      0.151     2.081 r  tx_clk_div/O
+    X2Y5 (CLOCK_ROOT)    net (fo=12258, routed)       2.592     4.673    g_channels[2].tx_stub_i/uram_i/xpm_memory_base_inst/clka
+    URAM288_X0Y30        URAM288                                      r  g_channels[2].tx_stub_i/uram_i/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_uram_4/CLK
+                         clock pessimism              0.231     4.904    
+    URAM288_X0Y30        URAM288 (Hold_URAM_288K_INST_URAM288_CLK_ADDR_B[7])
+                                                     -0.030     4.874    g_channels[2].tx_stub_i/uram_i/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_uram_4
+  -------------------------------------------------------------------
+                         required time                         -4.874    
+                         arrival time                           4.886    
+  -------------------------------------------------------------------
+                         slack                                  0.012    
+
+Slack (MET) :             0.012ns  (arrival time - required time)
+  Source:                 g_channels[2].tx_stub_i/rd_addr_reg[7]/C
+                            (rising edge-triggered cell FDCE clocked by tx_clk  {rise@0.000ns fall@1.633ns period=3.266ns})
+  Destination:            g_channels[2].tx_stub_i/uram_i/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_uram_4/DIN_B[19]
+                            (rising edge-triggered cell URAM288 clocked by tx_clk  {rise@0.000ns fall@1.633ns period=3.266ns})
+  Path Group:             tx_clk
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (tx_clk rise@0.000ns - tx_clk rise@0.000ns)
+  Data Path Delay:        0.125ns  (logic 0.059ns (47.066%)  route 0.066ns (52.934%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.172ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    4.673ns
+    Source Clock Delay      (SCD):    4.732ns
+    Clock Pessimism Removal (CPR):    -0.231ns
+  Clock Net Delay (Source):      2.234ns (routing 1.043ns, distribution 1.191ns)
+  Clock Net Delay (Destination): 2.592ns (routing 1.147ns, distribution 1.445ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock tx_clk rise edge)     0.000     0.000 r  
+    RFDAC_X0Y2           RFDAC                        0.000     0.000 r  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx2_u_dac/INTERNAL_FBRC_MUX
+    RFDAC_X0Y2           RFDAC (Prop_RFDAC_INTERNAL_FBRC_MUX_CLK_DAC)
+                                                      0.281     0.281 r  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx2_u_dac/CLK_DAC
+                         net (fo=2, routed)           0.149     0.430    system_i/usp_rf_data_converter_0/inst/i_system_usp_rf_data_converter_0_0_bufg_gt_ctrl/dac2_bufg_gt_0
+    BUFG_GT_X1Y158       BUFG_GT (Prop_BUFG_GT_I_O)
+                                                      0.114     0.544 r  system_i/usp_rf_data_converter_0/inst/i_system_usp_rf_data_converter_0_0_bufg_gt_ctrl/dac2_bufg_gt/O
+                         net (fo=1, routed)           0.978     1.522    system_i/clk_wiz_0/inst/CLK_CORE_DRP_I/clk_inst/clk_in1
+    MMCM_X0Y6            MMCME4_ADV (Prop_MMCM_CLKIN1_CLKOUT0)
+                                                      0.630     2.152 r  system_i/clk_wiz_0/inst/CLK_CORE_DRP_I/clk_inst/mmcme4_adv_inst/CLKOUT0
+                         net (fo=2, routed)           0.215     2.367    lopt_2
+    BUFGCE_DIV_X0Y24     BUFGCE_DIV (Prop_BUFGCE_DIV_I_O)
+                                                      0.131     2.498 r  tx_clk_div/O
+    X2Y5 (CLOCK_ROOT)    net (fo=12258, routed)       2.234     4.732    g_channels[2].tx_stub_i/tx_clk
+    SLICE_X19Y293        FDCE                                         r  g_channels[2].tx_stub_i/rd_addr_reg[7]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X19Y293        FDCE (Prop_GFF_SLICEL_C_Q)
+                                                      0.059     4.791 r  g_channels[2].tx_stub_i/rd_addr_reg[7]/Q
+                         net (fo=57, routed)          0.066     4.857    g_channels[2].tx_stub_i/uram_i/xpm_memory_base_inst/addrb[7]
+    URAM288_X0Y30        URAM288                                      r  g_channels[2].tx_stub_i/uram_i/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_uram_4/DIN_B[19]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock tx_clk rise edge)     0.000     0.000 r  
+    RFDAC_X0Y2           RFDAC                        0.000     0.000 r  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx2_u_dac/INTERNAL_FBRC_MUX
+    RFDAC_X0Y2           RFDAC (Prop_RFDAC_INTERNAL_FBRC_MUX_CLK_DAC)
+                                                      0.336     0.336 r  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx2_u_dac/CLK_DAC
+                         net (fo=2, routed)           0.245     0.581    system_i/usp_rf_data_converter_0/inst/i_system_usp_rf_data_converter_0_0_bufg_gt_ctrl/dac2_bufg_gt_0
+    BUFG_GT_X1Y158       BUFG_GT (Prop_BUFG_GT_I_O)
+                                                      0.130     0.711 r  system_i/usp_rf_data_converter_0/inst/i_system_usp_rf_data_converter_0_0_bufg_gt_ctrl/dac2_bufg_gt/O
+                         net (fo=1, routed)           1.102     1.813    system_i/clk_wiz_0/inst/CLK_CORE_DRP_I/clk_inst/clk_in1
+    MMCM_X0Y6            MMCME4_ADV (Prop_MMCM_CLKIN1_CLKOUT0)
+                                                     -0.127     1.686 r  system_i/clk_wiz_0/inst/CLK_CORE_DRP_I/clk_inst/mmcme4_adv_inst/CLKOUT0
+                         net (fo=2, routed)           0.244     1.930    lopt_2
+    BUFGCE_DIV_X0Y24     BUFGCE_DIV (Prop_BUFGCE_DIV_I_O)
+                                                      0.151     2.081 r  tx_clk_div/O
+    X2Y5 (CLOCK_ROOT)    net (fo=12258, routed)       2.592     4.673    g_channels[2].tx_stub_i/uram_i/xpm_memory_base_inst/clka
+    URAM288_X0Y30        URAM288                                      r  g_channels[2].tx_stub_i/uram_i/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_uram_4/CLK
+                         clock pessimism              0.231     4.904    
+    URAM288_X0Y30        URAM288 (Hold_URAM_288K_INST_URAM288_CLK_DIN_B[19])
+                                                     -0.059     4.845    g_channels[2].tx_stub_i/uram_i/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_uram_4
+  -------------------------------------------------------------------
+                         required time                         -4.845    
+                         arrival time                           4.857    
+  -------------------------------------------------------------------
+                         slack                                  0.012    
+
+Slack (MET) :             0.012ns  (arrival time - required time)
+  Source:                 g_channels[5].tx_stub_i/rd_addr_reg[8]/C
+                            (rising edge-triggered cell FDCE clocked by tx_clk  {rise@0.000ns fall@1.633ns period=3.266ns})
+  Destination:            g_channels[5].tx_stub_i/uram_i/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_uram_1/ADDR_B[8]
+                            (rising edge-triggered cell URAM288 clocked by tx_clk  {rise@0.000ns fall@1.633ns period=3.266ns})
+  Path Group:             tx_clk
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (tx_clk rise@0.000ns - tx_clk rise@0.000ns)
+  Data Path Delay:        0.152ns  (logic 0.058ns (38.040%)  route 0.094ns (61.960%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.170ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    4.692ns
+    Source Clock Delay      (SCD):    4.755ns
+    Clock Pessimism Removal (CPR):    -0.233ns
+  Clock Net Delay (Source):      2.257ns (routing 1.043ns, distribution 1.214ns)
+  Clock Net Delay (Destination): 2.611ns (routing 1.147ns, distribution 1.464ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock tx_clk rise edge)     0.000     0.000 r  
+    RFDAC_X0Y2           RFDAC                        0.000     0.000 r  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx2_u_dac/INTERNAL_FBRC_MUX
+    RFDAC_X0Y2           RFDAC (Prop_RFDAC_INTERNAL_FBRC_MUX_CLK_DAC)
+                                                      0.281     0.281 r  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx2_u_dac/CLK_DAC
+                         net (fo=2, routed)           0.149     0.430    system_i/usp_rf_data_converter_0/inst/i_system_usp_rf_data_converter_0_0_bufg_gt_ctrl/dac2_bufg_gt_0
+    BUFG_GT_X1Y158       BUFG_GT (Prop_BUFG_GT_I_O)
+                                                      0.114     0.544 r  system_i/usp_rf_data_converter_0/inst/i_system_usp_rf_data_converter_0_0_bufg_gt_ctrl/dac2_bufg_gt/O
+                         net (fo=1, routed)           0.978     1.522    system_i/clk_wiz_0/inst/CLK_CORE_DRP_I/clk_inst/clk_in1
+    MMCM_X0Y6            MMCME4_ADV (Prop_MMCM_CLKIN1_CLKOUT0)
+                                                      0.630     2.152 r  system_i/clk_wiz_0/inst/CLK_CORE_DRP_I/clk_inst/mmcme4_adv_inst/CLKOUT0
+                         net (fo=2, routed)           0.215     2.367    lopt_2
+    BUFGCE_DIV_X0Y24     BUFGCE_DIV (Prop_BUFGCE_DIV_I_O)
+                                                      0.131     2.498 r  tx_clk_div/O
+    X2Y5 (CLOCK_ROOT)    net (fo=12258, routed)       2.257     4.755    g_channels[5].tx_stub_i/tx_clk
+    SLICE_X19Y379        FDCE                                         r  g_channels[5].tx_stub_i/rd_addr_reg[8]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X19Y379        FDCE (Prop_HFF_SLICEL_C_Q)
+                                                      0.058     4.813 r  g_channels[5].tx_stub_i/rd_addr_reg[8]/Q
+                         net (fo=57, routed)          0.094     4.907    g_channels[5].tx_stub_i/uram_i/xpm_memory_base_inst/addrb[8]
+    URAM288_X0Y53        URAM288                                      r  g_channels[5].tx_stub_i/uram_i/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_uram_1/ADDR_B[8]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock tx_clk rise edge)     0.000     0.000 r  
+    RFDAC_X0Y2           RFDAC                        0.000     0.000 r  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx2_u_dac/INTERNAL_FBRC_MUX
+    RFDAC_X0Y2           RFDAC (Prop_RFDAC_INTERNAL_FBRC_MUX_CLK_DAC)
+                                                      0.336     0.336 r  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx2_u_dac/CLK_DAC
+                         net (fo=2, routed)           0.245     0.581    system_i/usp_rf_data_converter_0/inst/i_system_usp_rf_data_converter_0_0_bufg_gt_ctrl/dac2_bufg_gt_0
+    BUFG_GT_X1Y158       BUFG_GT (Prop_BUFG_GT_I_O)
+                                                      0.130     0.711 r  system_i/usp_rf_data_converter_0/inst/i_system_usp_rf_data_converter_0_0_bufg_gt_ctrl/dac2_bufg_gt/O
+                         net (fo=1, routed)           1.102     1.813    system_i/clk_wiz_0/inst/CLK_CORE_DRP_I/clk_inst/clk_in1
+    MMCM_X0Y6            MMCME4_ADV (Prop_MMCM_CLKIN1_CLKOUT0)
+                                                     -0.127     1.686 r  system_i/clk_wiz_0/inst/CLK_CORE_DRP_I/clk_inst/mmcme4_adv_inst/CLKOUT0
+                         net (fo=2, routed)           0.244     1.930    lopt_2
+    BUFGCE_DIV_X0Y24     BUFGCE_DIV (Prop_BUFGCE_DIV_I_O)
+                                                      0.151     2.081 r  tx_clk_div/O
+    X2Y5 (CLOCK_ROOT)    net (fo=12258, routed)       2.611     4.692    g_channels[5].tx_stub_i/uram_i/xpm_memory_base_inst/clka
+    URAM288_X0Y53        URAM288                                      r  g_channels[5].tx_stub_i/uram_i/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_uram_1/CLK
+                         clock pessimism              0.233     4.925    
+    URAM288_X0Y53        URAM288 (Hold_URAM_288K_INST_URAM288_CLK_ADDR_B[8])
+                                                     -0.030     4.895    g_channels[5].tx_stub_i/uram_i/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_uram_1
+  -------------------------------------------------------------------
+                         required time                         -4.895    
+                         arrival time                           4.907    
+  -------------------------------------------------------------------
+                         slack                                  0.012    
+
+
+
+

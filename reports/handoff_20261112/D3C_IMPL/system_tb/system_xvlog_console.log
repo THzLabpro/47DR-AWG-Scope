@@ -1,0 +1,18 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/rtl/eth/vendor/verilog-ethernet/lib/axis/rtl/axis_async_fifo.v" into library work
+INFO: [VRFC 10-311] analyzing module axis_async_fifo
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/rtl/eth/awg_eth_bridge.sv" into library work
+INFO: [VRFC 10-311] analyzing module awg_eth_bridge
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/rtl/eth/axil_arb2.sv" into library work
+INFO: [VRFC 10-311] analyzing module axil_arb2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/rtl/ctrl/awg_control_v2.sv" into library work
+INFO: [VRFC 10-311] analyzing module awg_control_v2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/rtl/tx/awg_tx_uram_block.sv" into library work
+INFO: [VRFC 10-311] analyzing module awg_tx_uram_block
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/rtl/tx/awg_tx.sv" into library work
+INFO: [VRFC 10-311] analyzing module awg_tx
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/rtl/rx/awg_rx.sv" into library work
+INFO: [VRFC 10-311] analyzing module awg_rx
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/sim/d3/tb_d3_system.sv" into library work
+INFO: [VRFC 10-311] analyzing module tb_d3_system
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/AMDDesignTools/2025.2/data/verilog/src/glbl.v" into library work
+INFO: [VRFC 10-311] analyzing module glbl

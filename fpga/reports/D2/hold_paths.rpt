@@ -1,0 +1,978 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version      : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+| Date              : Wed Nov 11 09:59:14 2026
+| Host              : DESKTOP-CLMQL7K running 64-bit major release  (build 9200)
+| Command           : report_timing -delay_type min -max_paths 20 -file D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/reports/D2/hold_paths.rpt
+| Design            : awg_rx
+| Device            : xczu47dr-fsve1156
+| Speed File        : -2  PRODUCTION 1.32 01-31-2021
+| Design State      : Routed
+| Temperature Grade : I
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (MET) :             0.023ns  (arrival time - required time)
+  Source:                 adc_pair_channels[2].adc_pair_data_q_reg[1046]/C
+                            (rising edge-triggered cell FDRE clocked by adc_clk  {rise@0.000ns fall@1.200ns period=2.400ns})
+  Destination:            channel_bram[2].channel_write_data_q_reg[242]/D
+                            (rising edge-triggered cell FDRE clocked by rx_clk  {rise@0.000ns fall@2.400ns period=4.800ns})
+  Path Group:             rx_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (rx_clk rise@0.000ns - adc_clk rise@0.000ns)
+  Data Path Delay:        0.109ns  (logic 0.039ns (35.780%)  route 0.070ns (64.220%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.005ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.018ns
+    Source Clock Delay      (SCD):    0.013ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+  Clock Domain Crossing:  Inter clock paths are considered valid unless explicitly excluded by timing constraints such as set_clock_groups or set_false_path.
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock adc_clk rise edge)    0.000     0.000 r  
+                                                      0.000     0.000 r  adc_clk (IN)
+                         net (fo=4051, unset)         0.013     0.013    adc_clk
+    SLICE_X33Y210        FDRE                                         r  adc_pair_channels[2].adc_pair_data_q_reg[1046]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X33Y210        FDRE (Prop_EFF_SLICEL_C_Q)
+                                                      0.039     0.052 r  adc_pair_channels[2].adc_pair_data_q_reg[1046]/Q
+                         net (fo=1, routed)           0.070     0.122    adc_pair_data_q[1046]
+    SLICE_X33Y210        FDRE                                         r  channel_bram[2].channel_write_data_q_reg[242]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock rx_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  rx_clk (IN)
+                         net (fo=3205, unset)         0.018     0.018    rx_clk
+    SLICE_X33Y210        FDRE                                         r  channel_bram[2].channel_write_data_q_reg[242]/C
+                         clock pessimism              0.000     0.018    
+                         clock uncertainty            0.035     0.053    
+    SLICE_X33Y210        FDRE (Hold_BFF_SLICEL_C_D)
+                                                      0.046     0.099    channel_bram[2].channel_write_data_q_reg[242]
+  -------------------------------------------------------------------
+                         required time                         -0.099    
+                         arrival time                           0.122    
+  -------------------------------------------------------------------
+                         slack                                  0.023    
+
+Slack (MET) :             0.030ns  (arrival time - required time)
+  Source:                 adc_pair_channels[0].adc_pair_data_q_reg[381]/C
+                            (rising edge-triggered cell FDRE clocked by adc_clk  {rise@0.000ns fall@1.200ns period=2.400ns})
+  Destination:            channel_bram[0].channel_write_data_q_reg[333]/D
+                            (rising edge-triggered cell FDRE clocked by rx_clk  {rise@0.000ns fall@2.400ns period=4.800ns})
+  Path Group:             rx_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (rx_clk rise@0.000ns - adc_clk rise@0.000ns)
+  Data Path Delay:        0.117ns  (logic 0.038ns (32.479%)  route 0.079ns (67.521%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.006ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.019ns
+    Source Clock Delay      (SCD):    0.013ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+  Clock Domain Crossing:  Inter clock paths are considered valid unless explicitly excluded by timing constraints such as set_clock_groups or set_false_path.
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock adc_clk rise edge)    0.000     0.000 r  
+                                                      0.000     0.000 r  adc_clk (IN)
+                         net (fo=4051, unset)         0.013     0.013    adc_clk
+    SLICE_X46Y217        FDRE                                         r  adc_pair_channels[0].adc_pair_data_q_reg[381]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X46Y217        FDRE (Prop_EFF_SLICEM_C_Q)
+                                                      0.038     0.051 r  adc_pair_channels[0].adc_pair_data_q_reg[381]/Q
+                         net (fo=1, routed)           0.079     0.130    adc_pair_data_q[381]
+    SLICE_X46Y217        FDRE                                         r  channel_bram[0].channel_write_data_q_reg[333]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock rx_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  rx_clk (IN)
+                         net (fo=3205, unset)         0.019     0.019    rx_clk
+    SLICE_X46Y217        FDRE                                         r  channel_bram[0].channel_write_data_q_reg[333]/C
+                         clock pessimism              0.000     0.019    
+                         clock uncertainty            0.035     0.054    
+    SLICE_X46Y217        FDRE (Hold_BFF_SLICEM_C_D)
+                                                      0.046     0.100    channel_bram[0].channel_write_data_q_reg[333]
+  -------------------------------------------------------------------
+                         required time                         -0.100    
+                         arrival time                           0.130    
+  -------------------------------------------------------------------
+                         slack                                  0.030    
+
+Slack (MET) :             0.030ns  (arrival time - required time)
+  Source:                 adc_pair_channels[1].adc_pair_data_q_reg[683]/C
+                            (rising edge-triggered cell FDRE clocked by adc_clk  {rise@0.000ns fall@1.200ns period=2.400ns})
+  Destination:            channel_bram[1].channel_write_data_q_reg[261]/D
+                            (rising edge-triggered cell FDRE clocked by rx_clk  {rise@0.000ns fall@2.400ns period=4.800ns})
+  Path Group:             rx_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (rx_clk rise@0.000ns - adc_clk rise@0.000ns)
+  Data Path Delay:        0.117ns  (logic 0.038ns (32.479%)  route 0.079ns (67.521%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.006ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.019ns
+    Source Clock Delay      (SCD):    0.013ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+  Clock Domain Crossing:  Inter clock paths are considered valid unless explicitly excluded by timing constraints such as set_clock_groups or set_false_path.
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock adc_clk rise edge)    0.000     0.000 r  
+                                                      0.000     0.000 r  adc_clk (IN)
+                         net (fo=4051, unset)         0.013     0.013    adc_clk
+    SLICE_X39Y207        FDRE                                         r  adc_pair_channels[1].adc_pair_data_q_reg[683]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X39Y207        FDRE (Prop_EFF_SLICEM_C_Q)
+                                                      0.038     0.051 r  adc_pair_channels[1].adc_pair_data_q_reg[683]/Q
+                         net (fo=1, routed)           0.079     0.130    adc_pair_data_q[683]
+    SLICE_X39Y207        FDRE                                         r  channel_bram[1].channel_write_data_q_reg[261]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock rx_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  rx_clk (IN)
+                         net (fo=3205, unset)         0.019     0.019    rx_clk
+    SLICE_X39Y207        FDRE                                         r  channel_bram[1].channel_write_data_q_reg[261]/C
+                         clock pessimism              0.000     0.019    
+                         clock uncertainty            0.035     0.054    
+    SLICE_X39Y207        FDRE (Hold_BFF_SLICEM_C_D)
+                                                      0.046     0.100    channel_bram[1].channel_write_data_q_reg[261]
+  -------------------------------------------------------------------
+                         required time                         -0.100    
+                         arrival time                           0.130    
+  -------------------------------------------------------------------
+                         slack                                  0.030    
+
+Slack (MET) :             0.030ns  (arrival time - required time)
+  Source:                 adc_pair_channels[6].adc_pair_data_q_reg[2636]/C
+                            (rising edge-triggered cell FDRE clocked by adc_clk  {rise@0.000ns fall@1.200ns period=2.400ns})
+  Destination:            channel_bram[6].channel_write_data_q_reg[290]/D
+                            (rising edge-triggered cell FDRE clocked by rx_clk  {rise@0.000ns fall@2.400ns period=4.800ns})
+  Path Group:             rx_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (rx_clk rise@0.000ns - adc_clk rise@0.000ns)
+  Data Path Delay:        0.117ns  (logic 0.038ns (32.479%)  route 0.079ns (67.521%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.006ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.019ns
+    Source Clock Delay      (SCD):    0.013ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+  Clock Domain Crossing:  Inter clock paths are considered valid unless explicitly excluded by timing constraints such as set_clock_groups or set_false_path.
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock adc_clk rise edge)    0.000     0.000 r  
+                                                      0.000     0.000 r  adc_clk (IN)
+                         net (fo=4051, unset)         0.013     0.013    adc_clk
+    SLICE_X39Y206        FDRE                                         r  adc_pair_channels[6].adc_pair_data_q_reg[2636]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X39Y206        FDRE (Prop_EFF_SLICEM_C_Q)
+                                                      0.038     0.051 r  adc_pair_channels[6].adc_pair_data_q_reg[2636]/Q
+                         net (fo=1, routed)           0.079     0.130    adc_pair_data_q[2636]
+    SLICE_X39Y206        FDRE                                         r  channel_bram[6].channel_write_data_q_reg[290]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock rx_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  rx_clk (IN)
+                         net (fo=3205, unset)         0.019     0.019    rx_clk
+    SLICE_X39Y206        FDRE                                         r  channel_bram[6].channel_write_data_q_reg[290]/C
+                         clock pessimism              0.000     0.019    
+                         clock uncertainty            0.035     0.054    
+    SLICE_X39Y206        FDRE (Hold_BFF_SLICEM_C_D)
+                                                      0.046     0.100    channel_bram[6].channel_write_data_q_reg[290]
+  -------------------------------------------------------------------
+                         required time                         -0.100    
+                         arrival time                           0.130    
+  -------------------------------------------------------------------
+                         slack                                  0.030    
+
+Slack (MET) :             0.031ns  (arrival time - required time)
+  Source:                 adc_pair_channels[6].adc_pair_data_q_reg[2574]/C
+                            (rising edge-triggered cell FDRE clocked by adc_clk  {rise@0.000ns fall@1.200ns period=2.400ns})
+  Destination:            channel_bram[6].channel_write_data_q_reg[236]/D
+                            (rising edge-triggered cell FDRE clocked by rx_clk  {rise@0.000ns fall@2.400ns period=4.800ns})
+  Path Group:             rx_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (rx_clk rise@0.000ns - adc_clk rise@0.000ns)
+  Data Path Delay:        0.118ns  (logic 0.039ns (33.051%)  route 0.079ns (66.949%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.005ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.018ns
+    Source Clock Delay      (SCD):    0.013ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+  Clock Domain Crossing:  Inter clock paths are considered valid unless explicitly excluded by timing constraints such as set_clock_groups or set_false_path.
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock adc_clk rise edge)    0.000     0.000 r  
+                                                      0.000     0.000 r  adc_clk (IN)
+                         net (fo=4051, unset)         0.013     0.013    adc_clk
+    SLICE_X40Y211        FDRE                                         r  adc_pair_channels[6].adc_pair_data_q_reg[2574]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X40Y211        FDRE (Prop_EFF_SLICEL_C_Q)
+                                                      0.039     0.052 r  adc_pair_channels[6].adc_pair_data_q_reg[2574]/Q
+                         net (fo=1, routed)           0.079     0.131    adc_pair_data_q[2574]
+    SLICE_X40Y211        FDRE                                         r  channel_bram[6].channel_write_data_q_reg[236]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock rx_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  rx_clk (IN)
+                         net (fo=3205, unset)         0.018     0.018    rx_clk
+    SLICE_X40Y211        FDRE                                         r  channel_bram[6].channel_write_data_q_reg[236]/C
+                         clock pessimism              0.000     0.018    
+                         clock uncertainty            0.035     0.053    
+    SLICE_X40Y211        FDRE (Hold_DFF2_SLICEL_C_D)
+                                                      0.047     0.100    channel_bram[6].channel_write_data_q_reg[236]
+  -------------------------------------------------------------------
+                         required time                         -0.100    
+                         arrival time                           0.131    
+  -------------------------------------------------------------------
+                         slack                                  0.031    
+
+Slack (MET) :             0.031ns  (arrival time - required time)
+  Source:                 adc_pair_channels[1].adc_pair_data_q_reg[579]/C
+                            (rising edge-triggered cell FDRE clocked by adc_clk  {rise@0.000ns fall@1.200ns period=2.400ns})
+  Destination:            channel_bram[1].channel_write_data_q_reg[169]/D
+                            (rising edge-triggered cell FDRE clocked by rx_clk  {rise@0.000ns fall@2.400ns period=4.800ns})
+  Path Group:             rx_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (rx_clk rise@0.000ns - adc_clk rise@0.000ns)
+  Data Path Delay:        0.118ns  (logic 0.039ns (33.051%)  route 0.079ns (66.949%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.005ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.018ns
+    Source Clock Delay      (SCD):    0.013ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+  Clock Domain Crossing:  Inter clock paths are considered valid unless explicitly excluded by timing constraints such as set_clock_groups or set_false_path.
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock adc_clk rise edge)    0.000     0.000 r  
+                                                      0.000     0.000 r  adc_clk (IN)
+                         net (fo=4051, unset)         0.013     0.013    adc_clk
+    SLICE_X40Y208        FDRE                                         r  adc_pair_channels[1].adc_pair_data_q_reg[579]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X40Y208        FDRE (Prop_HFF_SLICEL_C_Q)
+                                                      0.039     0.052 r  adc_pair_channels[1].adc_pair_data_q_reg[579]/Q
+                         net (fo=1, routed)           0.079     0.131    adc_pair_data_q[579]
+    SLICE_X40Y208        FDRE                                         r  channel_bram[1].channel_write_data_q_reg[169]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock rx_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  rx_clk (IN)
+                         net (fo=3205, unset)         0.018     0.018    rx_clk
+    SLICE_X40Y208        FDRE                                         r  channel_bram[1].channel_write_data_q_reg[169]/C
+                         clock pessimism              0.000     0.018    
+                         clock uncertainty            0.035     0.053    
+    SLICE_X40Y208        FDRE (Hold_BFF2_SLICEL_C_D)
+                                                      0.047     0.100    channel_bram[1].channel_write_data_q_reg[169]
+  -------------------------------------------------------------------
+                         required time                         -0.100    
+                         arrival time                           0.131    
+  -------------------------------------------------------------------
+                         slack                                  0.031    
+
+Slack (MET) :             0.031ns  (arrival time - required time)
+  Source:                 adc_pair_channels[2].adc_pair_data_q_reg[1054]/C
+                            (rising edge-triggered cell FDRE clocked by adc_clk  {rise@0.000ns fall@1.200ns period=2.400ns})
+  Destination:            channel_bram[2].channel_write_data_q_reg[250]/D
+                            (rising edge-triggered cell FDRE clocked by rx_clk  {rise@0.000ns fall@2.400ns period=4.800ns})
+  Path Group:             rx_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (rx_clk rise@0.000ns - adc_clk rise@0.000ns)
+  Data Path Delay:        0.118ns  (logic 0.039ns (33.051%)  route 0.079ns (66.949%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.005ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.018ns
+    Source Clock Delay      (SCD):    0.013ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+  Clock Domain Crossing:  Inter clock paths are considered valid unless explicitly excluded by timing constraints such as set_clock_groups or set_false_path.
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock adc_clk rise edge)    0.000     0.000 r  
+                                                      0.000     0.000 r  adc_clk (IN)
+                         net (fo=4051, unset)         0.013     0.013    adc_clk
+    SLICE_X38Y213        FDRE                                         r  adc_pair_channels[2].adc_pair_data_q_reg[1054]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X38Y213        FDRE (Prop_HFF_SLICEL_C_Q)
+                                                      0.039     0.052 r  adc_pair_channels[2].adc_pair_data_q_reg[1054]/Q
+                         net (fo=1, routed)           0.079     0.131    adc_pair_data_q[1054]
+    SLICE_X38Y213        FDRE                                         r  channel_bram[2].channel_write_data_q_reg[250]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock rx_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  rx_clk (IN)
+                         net (fo=3205, unset)         0.018     0.018    rx_clk
+    SLICE_X38Y213        FDRE                                         r  channel_bram[2].channel_write_data_q_reg[250]/C
+                         clock pessimism              0.000     0.018    
+                         clock uncertainty            0.035     0.053    
+    SLICE_X38Y213        FDRE (Hold_AFF2_SLICEL_C_D)
+                                                      0.047     0.100    channel_bram[2].channel_write_data_q_reg[250]
+  -------------------------------------------------------------------
+                         required time                         -0.100    
+                         arrival time                           0.131    
+  -------------------------------------------------------------------
+                         slack                                  0.031    
+
+Slack (MET) :             0.031ns  (arrival time - required time)
+  Source:                 adc_pair_channels[5].adc_pair_data_q_reg[2184]/C
+                            (rising edge-triggered cell FDRE clocked by adc_clk  {rise@0.000ns fall@1.200ns period=2.400ns})
+  Destination:            channel_bram[5].channel_write_data_q_reg[230]/D
+                            (rising edge-triggered cell FDRE clocked by rx_clk  {rise@0.000ns fall@2.400ns period=4.800ns})
+  Path Group:             rx_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (rx_clk rise@0.000ns - adc_clk rise@0.000ns)
+  Data Path Delay:        0.118ns  (logic 0.039ns (33.051%)  route 0.079ns (66.949%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.005ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.018ns
+    Source Clock Delay      (SCD):    0.013ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+  Clock Domain Crossing:  Inter clock paths are considered valid unless explicitly excluded by timing constraints such as set_clock_groups or set_false_path.
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock adc_clk rise edge)    0.000     0.000 r  
+                                                      0.000     0.000 r  adc_clk (IN)
+                         net (fo=4051, unset)         0.013     0.013    adc_clk
+    SLICE_X26Y208        FDRE                                         r  adc_pair_channels[5].adc_pair_data_q_reg[2184]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X26Y208        FDRE (Prop_HFF_SLICEL_C_Q)
+                                                      0.039     0.052 r  adc_pair_channels[5].adc_pair_data_q_reg[2184]/Q
+                         net (fo=1, routed)           0.079     0.131    adc_pair_data_q[2184]
+    SLICE_X26Y208        FDRE                                         r  channel_bram[5].channel_write_data_q_reg[230]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock rx_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  rx_clk (IN)
+                         net (fo=3205, unset)         0.018     0.018    rx_clk
+    SLICE_X26Y208        FDRE                                         r  channel_bram[5].channel_write_data_q_reg[230]/C
+                         clock pessimism              0.000     0.018    
+                         clock uncertainty            0.035     0.053    
+    SLICE_X26Y208        FDRE (Hold_BFF2_SLICEL_C_D)
+                                                      0.047     0.100    channel_bram[5].channel_write_data_q_reg[230]
+  -------------------------------------------------------------------
+                         required time                         -0.100    
+                         arrival time                           0.131    
+  -------------------------------------------------------------------
+                         slack                                  0.031    
+
+Slack (MET) :             0.031ns  (arrival time - required time)
+  Source:                 adc_pair_channels[0].adc_pair_data_q_reg[205]/C
+                            (rising edge-triggered cell FDRE clocked by adc_clk  {rise@0.000ns fall@1.200ns period=2.400ns})
+  Destination:            channel_bram[0].channel_write_data_q_reg[179]/D
+                            (rising edge-triggered cell FDRE clocked by rx_clk  {rise@0.000ns fall@2.400ns period=4.800ns})
+  Path Group:             rx_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (rx_clk rise@0.000ns - adc_clk rise@0.000ns)
+  Data Path Delay:        0.118ns  (logic 0.038ns (32.203%)  route 0.080ns (67.797%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.006ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.019ns
+    Source Clock Delay      (SCD):    0.013ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+  Clock Domain Crossing:  Inter clock paths are considered valid unless explicitly excluded by timing constraints such as set_clock_groups or set_false_path.
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock adc_clk rise edge)    0.000     0.000 r  
+                                                      0.000     0.000 r  adc_clk (IN)
+                         net (fo=4051, unset)         0.013     0.013    adc_clk
+    SLICE_X34Y246        FDRE                                         r  adc_pair_channels[0].adc_pair_data_q_reg[205]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X34Y246        FDRE (Prop_EFF_SLICEM_C_Q)
+                                                      0.038     0.051 r  adc_pair_channels[0].adc_pair_data_q_reg[205]/Q
+                         net (fo=1, routed)           0.080     0.131    adc_pair_data_q[205]
+    SLICE_X34Y246        FDRE                                         r  channel_bram[0].channel_write_data_q_reg[179]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock rx_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  rx_clk (IN)
+                         net (fo=3205, unset)         0.019     0.019    rx_clk
+    SLICE_X34Y246        FDRE                                         r  channel_bram[0].channel_write_data_q_reg[179]/C
+                         clock pessimism              0.000     0.019    
+                         clock uncertainty            0.035     0.054    
+    SLICE_X34Y246        FDRE (Hold_AFF_SLICEM_C_D)
+                                                      0.046     0.100    channel_bram[0].channel_write_data_q_reg[179]
+  -------------------------------------------------------------------
+                         required time                         -0.100    
+                         arrival time                           0.131    
+  -------------------------------------------------------------------
+                         slack                                  0.031    
+
+Slack (MET) :             0.031ns  (arrival time - required time)
+  Source:                 adc_pair_channels[0].adc_pair_data_q_reg[259]/C
+                            (rising edge-triggered cell FDRE clocked by adc_clk  {rise@0.000ns fall@1.200ns period=2.400ns})
+  Destination:            channel_bram[0].channel_write_data_q_reg[225]/D
+                            (rising edge-triggered cell FDRE clocked by rx_clk  {rise@0.000ns fall@2.400ns period=4.800ns})
+  Path Group:             rx_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (rx_clk rise@0.000ns - adc_clk rise@0.000ns)
+  Data Path Delay:        0.118ns  (logic 0.038ns (32.203%)  route 0.080ns (67.797%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.006ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.019ns
+    Source Clock Delay      (SCD):    0.013ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+  Clock Domain Crossing:  Inter clock paths are considered valid unless explicitly excluded by timing constraints such as set_clock_groups or set_false_path.
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock adc_clk rise edge)    0.000     0.000 r  
+                                                      0.000     0.000 r  adc_clk (IN)
+                         net (fo=4051, unset)         0.013     0.013    adc_clk
+    SLICE_X18Y237        FDRE                                         r  adc_pair_channels[0].adc_pair_data_q_reg[259]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X18Y237        FDRE (Prop_EFF_SLICEM_C_Q)
+                                                      0.038     0.051 r  adc_pair_channels[0].adc_pair_data_q_reg[259]/Q
+                         net (fo=1, routed)           0.080     0.131    adc_pair_data_q[259]
+    SLICE_X18Y237        FDRE                                         r  channel_bram[0].channel_write_data_q_reg[225]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock rx_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  rx_clk (IN)
+                         net (fo=3205, unset)         0.019     0.019    rx_clk
+    SLICE_X18Y237        FDRE                                         r  channel_bram[0].channel_write_data_q_reg[225]/C
+                         clock pessimism              0.000     0.019    
+                         clock uncertainty            0.035     0.054    
+    SLICE_X18Y237        FDRE (Hold_AFF_SLICEM_C_D)
+                                                      0.046     0.100    channel_bram[0].channel_write_data_q_reg[225]
+  -------------------------------------------------------------------
+                         required time                         -0.100    
+                         arrival time                           0.131    
+  -------------------------------------------------------------------
+                         slack                                  0.031    
+
+Slack (MET) :             0.031ns  (arrival time - required time)
+  Source:                 adc_pair_channels[0].adc_pair_data_q_reg[279]/C
+                            (rising edge-triggered cell FDRE clocked by adc_clk  {rise@0.000ns fall@1.200ns period=2.400ns})
+  Destination:            channel_bram[0].channel_write_data_q_reg[243]/D
+                            (rising edge-triggered cell FDRE clocked by rx_clk  {rise@0.000ns fall@2.400ns period=4.800ns})
+  Path Group:             rx_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (rx_clk rise@0.000ns - adc_clk rise@0.000ns)
+  Data Path Delay:        0.118ns  (logic 0.038ns (32.203%)  route 0.080ns (67.797%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.006ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.019ns
+    Source Clock Delay      (SCD):    0.013ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+  Clock Domain Crossing:  Inter clock paths are considered valid unless explicitly excluded by timing constraints such as set_clock_groups or set_false_path.
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock adc_clk rise edge)    0.000     0.000 r  
+                                                      0.000     0.000 r  adc_clk (IN)
+                         net (fo=4051, unset)         0.013     0.013    adc_clk
+    SLICE_X34Y221        FDRE                                         r  adc_pair_channels[0].adc_pair_data_q_reg[279]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X34Y221        FDRE (Prop_EFF_SLICEM_C_Q)
+                                                      0.038     0.051 r  adc_pair_channels[0].adc_pair_data_q_reg[279]/Q
+                         net (fo=1, routed)           0.080     0.131    adc_pair_data_q[279]
+    SLICE_X34Y221        FDRE                                         r  channel_bram[0].channel_write_data_q_reg[243]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock rx_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  rx_clk (IN)
+                         net (fo=3205, unset)         0.019     0.019    rx_clk
+    SLICE_X34Y221        FDRE                                         r  channel_bram[0].channel_write_data_q_reg[243]/C
+                         clock pessimism              0.000     0.019    
+                         clock uncertainty            0.035     0.054    
+    SLICE_X34Y221        FDRE (Hold_AFF_SLICEM_C_D)
+                                                      0.046     0.100    channel_bram[0].channel_write_data_q_reg[243]
+  -------------------------------------------------------------------
+                         required time                         -0.100    
+                         arrival time                           0.131    
+  -------------------------------------------------------------------
+                         slack                                  0.031    
+
+Slack (MET) :             0.031ns  (arrival time - required time)
+  Source:                 adc_pair_channels[0].adc_pair_data_q_reg[295]/C
+                            (rising edge-triggered cell FDRE clocked by adc_clk  {rise@0.000ns fall@1.200ns period=2.400ns})
+  Destination:            channel_bram[0].channel_write_data_q_reg[257]/D
+                            (rising edge-triggered cell FDRE clocked by rx_clk  {rise@0.000ns fall@2.400ns period=4.800ns})
+  Path Group:             rx_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (rx_clk rise@0.000ns - adc_clk rise@0.000ns)
+  Data Path Delay:        0.118ns  (logic 0.038ns (32.203%)  route 0.080ns (67.797%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.006ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.019ns
+    Source Clock Delay      (SCD):    0.013ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+  Clock Domain Crossing:  Inter clock paths are considered valid unless explicitly excluded by timing constraints such as set_clock_groups or set_false_path.
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock adc_clk rise edge)    0.000     0.000 r  
+                                                      0.000     0.000 r  adc_clk (IN)
+                         net (fo=4051, unset)         0.013     0.013    adc_clk
+    SLICE_X39Y204        FDRE                                         r  adc_pair_channels[0].adc_pair_data_q_reg[295]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X39Y204        FDRE (Prop_EFF_SLICEM_C_Q)
+                                                      0.038     0.051 r  adc_pair_channels[0].adc_pair_data_q_reg[295]/Q
+                         net (fo=1, routed)           0.080     0.131    adc_pair_data_q[295]
+    SLICE_X39Y204        FDRE                                         r  channel_bram[0].channel_write_data_q_reg[257]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock rx_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  rx_clk (IN)
+                         net (fo=3205, unset)         0.019     0.019    rx_clk
+    SLICE_X39Y204        FDRE                                         r  channel_bram[0].channel_write_data_q_reg[257]/C
+                         clock pessimism              0.000     0.019    
+                         clock uncertainty            0.035     0.054    
+    SLICE_X39Y204        FDRE (Hold_AFF_SLICEM_C_D)
+                                                      0.046     0.100    channel_bram[0].channel_write_data_q_reg[257]
+  -------------------------------------------------------------------
+                         required time                         -0.100    
+                         arrival time                           0.131    
+  -------------------------------------------------------------------
+                         slack                                  0.031    
+
+Slack (MET) :             0.031ns  (arrival time - required time)
+  Source:                 adc_pair_channels[0].adc_pair_data_q_reg[297]/C
+                            (rising edge-triggered cell FDRE clocked by adc_clk  {rise@0.000ns fall@1.200ns period=2.400ns})
+  Destination:            channel_bram[0].channel_write_data_q_reg[259]/D
+                            (rising edge-triggered cell FDRE clocked by rx_clk  {rise@0.000ns fall@2.400ns period=4.800ns})
+  Path Group:             rx_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (rx_clk rise@0.000ns - adc_clk rise@0.000ns)
+  Data Path Delay:        0.118ns  (logic 0.038ns (32.203%)  route 0.080ns (67.797%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.006ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.019ns
+    Source Clock Delay      (SCD):    0.013ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+  Clock Domain Crossing:  Inter clock paths are considered valid unless explicitly excluded by timing constraints such as set_clock_groups or set_false_path.
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock adc_clk rise edge)    0.000     0.000 r  
+                                                      0.000     0.000 r  adc_clk (IN)
+                         net (fo=4051, unset)         0.013     0.013    adc_clk
+    SLICE_X27Y207        FDRE                                         r  adc_pair_channels[0].adc_pair_data_q_reg[297]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X27Y207        FDRE (Prop_EFF_SLICEM_C_Q)
+                                                      0.038     0.051 r  adc_pair_channels[0].adc_pair_data_q_reg[297]/Q
+                         net (fo=1, routed)           0.080     0.131    adc_pair_data_q[297]
+    SLICE_X27Y207        FDRE                                         r  channel_bram[0].channel_write_data_q_reg[259]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock rx_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  rx_clk (IN)
+                         net (fo=3205, unset)         0.019     0.019    rx_clk
+    SLICE_X27Y207        FDRE                                         r  channel_bram[0].channel_write_data_q_reg[259]/C
+                         clock pessimism              0.000     0.019    
+                         clock uncertainty            0.035     0.054    
+    SLICE_X27Y207        FDRE (Hold_AFF_SLICEM_C_D)
+                                                      0.046     0.100    channel_bram[0].channel_write_data_q_reg[259]
+  -------------------------------------------------------------------
+                         required time                         -0.100    
+                         arrival time                           0.131    
+  -------------------------------------------------------------------
+                         slack                                  0.031    
+
+Slack (MET) :             0.031ns  (arrival time - required time)
+  Source:                 adc_pair_channels[0].adc_pair_data_q_reg[307]/C
+                            (rising edge-triggered cell FDRE clocked by adc_clk  {rise@0.000ns fall@1.200ns period=2.400ns})
+  Destination:            channel_bram[0].channel_write_data_q_reg[267]/D
+                            (rising edge-triggered cell FDRE clocked by rx_clk  {rise@0.000ns fall@2.400ns period=4.800ns})
+  Path Group:             rx_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (rx_clk rise@0.000ns - adc_clk rise@0.000ns)
+  Data Path Delay:        0.118ns  (logic 0.038ns (32.203%)  route 0.080ns (67.797%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.006ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.019ns
+    Source Clock Delay      (SCD):    0.013ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+  Clock Domain Crossing:  Inter clock paths are considered valid unless explicitly excluded by timing constraints such as set_clock_groups or set_false_path.
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock adc_clk rise edge)    0.000     0.000 r  
+                                                      0.000     0.000 r  adc_clk (IN)
+                         net (fo=4051, unset)         0.013     0.013    adc_clk
+    SLICE_X24Y229        FDRE                                         r  adc_pair_channels[0].adc_pair_data_q_reg[307]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X24Y229        FDRE (Prop_EFF_SLICEM_C_Q)
+                                                      0.038     0.051 r  adc_pair_channels[0].adc_pair_data_q_reg[307]/Q
+                         net (fo=1, routed)           0.080     0.131    adc_pair_data_q[307]
+    SLICE_X24Y229        FDRE                                         r  channel_bram[0].channel_write_data_q_reg[267]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock rx_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  rx_clk (IN)
+                         net (fo=3205, unset)         0.019     0.019    rx_clk
+    SLICE_X24Y229        FDRE                                         r  channel_bram[0].channel_write_data_q_reg[267]/C
+                         clock pessimism              0.000     0.019    
+                         clock uncertainty            0.035     0.054    
+    SLICE_X24Y229        FDRE (Hold_AFF_SLICEM_C_D)
+                                                      0.046     0.100    channel_bram[0].channel_write_data_q_reg[267]
+  -------------------------------------------------------------------
+                         required time                         -0.100    
+                         arrival time                           0.131    
+  -------------------------------------------------------------------
+                         slack                                  0.031    
+
+Slack (MET) :             0.031ns  (arrival time - required time)
+  Source:                 adc_pair_channels[0].adc_pair_data_q_reg[310]/C
+                            (rising edge-triggered cell FDRE clocked by adc_clk  {rise@0.000ns fall@1.200ns period=2.400ns})
+  Destination:            channel_bram[0].channel_write_data_q_reg[270]/D
+                            (rising edge-triggered cell FDRE clocked by rx_clk  {rise@0.000ns fall@2.400ns period=4.800ns})
+  Path Group:             rx_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (rx_clk rise@0.000ns - adc_clk rise@0.000ns)
+  Data Path Delay:        0.118ns  (logic 0.038ns (32.203%)  route 0.080ns (67.797%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.006ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.019ns
+    Source Clock Delay      (SCD):    0.013ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+  Clock Domain Crossing:  Inter clock paths are considered valid unless explicitly excluded by timing constraints such as set_clock_groups or set_false_path.
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock adc_clk rise edge)    0.000     0.000 r  
+                                                      0.000     0.000 r  adc_clk (IN)
+                         net (fo=4051, unset)         0.013     0.013    adc_clk
+    SLICE_X31Y223        FDRE                                         r  adc_pair_channels[0].adc_pair_data_q_reg[310]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X31Y223        FDRE (Prop_EFF_SLICEM_C_Q)
+                                                      0.038     0.051 r  adc_pair_channels[0].adc_pair_data_q_reg[310]/Q
+                         net (fo=1, routed)           0.080     0.131    adc_pair_data_q[310]
+    SLICE_X31Y223        FDRE                                         r  channel_bram[0].channel_write_data_q_reg[270]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock rx_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  rx_clk (IN)
+                         net (fo=3205, unset)         0.019     0.019    rx_clk
+    SLICE_X31Y223        FDRE                                         r  channel_bram[0].channel_write_data_q_reg[270]/C
+                         clock pessimism              0.000     0.019    
+                         clock uncertainty            0.035     0.054    
+    SLICE_X31Y223        FDRE (Hold_AFF_SLICEM_C_D)
+                                                      0.046     0.100    channel_bram[0].channel_write_data_q_reg[270]
+  -------------------------------------------------------------------
+                         required time                         -0.100    
+                         arrival time                           0.131    
+  -------------------------------------------------------------------
+                         slack                                  0.031    
+
+Slack (MET) :             0.031ns  (arrival time - required time)
+  Source:                 adc_pair_channels[0].adc_pair_data_q_reg[319]/C
+                            (rising edge-triggered cell FDRE clocked by adc_clk  {rise@0.000ns fall@1.200ns period=2.400ns})
+  Destination:            channel_bram[0].channel_write_data_q_reg[279]/D
+                            (rising edge-triggered cell FDRE clocked by rx_clk  {rise@0.000ns fall@2.400ns period=4.800ns})
+  Path Group:             rx_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (rx_clk rise@0.000ns - adc_clk rise@0.000ns)
+  Data Path Delay:        0.118ns  (logic 0.038ns (32.203%)  route 0.080ns (67.797%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.006ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.019ns
+    Source Clock Delay      (SCD):    0.013ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+  Clock Domain Crossing:  Inter clock paths are considered valid unless explicitly excluded by timing constraints such as set_clock_groups or set_false_path.
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock adc_clk rise edge)    0.000     0.000 r  
+                                                      0.000     0.000 r  adc_clk (IN)
+                         net (fo=4051, unset)         0.013     0.013    adc_clk
+    SLICE_X39Y202        FDRE                                         r  adc_pair_channels[0].adc_pair_data_q_reg[319]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X39Y202        FDRE (Prop_EFF_SLICEM_C_Q)
+                                                      0.038     0.051 r  adc_pair_channels[0].adc_pair_data_q_reg[319]/Q
+                         net (fo=1, routed)           0.080     0.131    adc_pair_data_q[319]
+    SLICE_X39Y202        FDRE                                         r  channel_bram[0].channel_write_data_q_reg[279]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock rx_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  rx_clk (IN)
+                         net (fo=3205, unset)         0.019     0.019    rx_clk
+    SLICE_X39Y202        FDRE                                         r  channel_bram[0].channel_write_data_q_reg[279]/C
+                         clock pessimism              0.000     0.019    
+                         clock uncertainty            0.035     0.054    
+    SLICE_X39Y202        FDRE (Hold_AFF_SLICEM_C_D)
+                                                      0.046     0.100    channel_bram[0].channel_write_data_q_reg[279]
+  -------------------------------------------------------------------
+                         required time                         -0.100    
+                         arrival time                           0.131    
+  -------------------------------------------------------------------
+                         slack                                  0.031    
+
+Slack (MET) :             0.031ns  (arrival time - required time)
+  Source:                 adc_pair_channels[1].adc_pair_data_q_reg[510]/C
+                            (rising edge-triggered cell FDRE clocked by adc_clk  {rise@0.000ns fall@1.200ns period=2.400ns})
+  Destination:            channel_bram[1].channel_write_data_q_reg[110]/D
+                            (rising edge-triggered cell FDRE clocked by rx_clk  {rise@0.000ns fall@2.400ns period=4.800ns})
+  Path Group:             rx_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (rx_clk rise@0.000ns - adc_clk rise@0.000ns)
+  Data Path Delay:        0.118ns  (logic 0.040ns (33.898%)  route 0.078ns (66.102%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.006ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.018ns
+    Source Clock Delay      (SCD):    0.012ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+  Clock Domain Crossing:  Inter clock paths are considered valid unless explicitly excluded by timing constraints such as set_clock_groups or set_false_path.
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock adc_clk rise edge)    0.000     0.000 r  
+                                                      0.000     0.000 r  adc_clk (IN)
+                         net (fo=4051, unset)         0.012     0.012    adc_clk
+    SLICE_X52Y210        FDRE                                         r  adc_pair_channels[1].adc_pair_data_q_reg[510]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X52Y210        FDRE (Prop_CFF2_SLICEL_C_Q)
+                                                      0.040     0.052 r  adc_pair_channels[1].adc_pair_data_q_reg[510]/Q
+                         net (fo=1, routed)           0.078     0.130    adc_pair_data_q[510]
+    SLICE_X52Y213        FDRE                                         r  channel_bram[1].channel_write_data_q_reg[110]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock rx_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  rx_clk (IN)
+                         net (fo=3205, unset)         0.018     0.018    rx_clk
+    SLICE_X52Y213        FDRE                                         r  channel_bram[1].channel_write_data_q_reg[110]/C
+                         clock pessimism              0.000     0.018    
+                         clock uncertainty            0.035     0.053    
+    SLICE_X52Y213        FDRE (Hold_BFF_SLICEL_C_D)
+                                                      0.046     0.099    channel_bram[1].channel_write_data_q_reg[110]
+  -------------------------------------------------------------------
+                         required time                         -0.099    
+                         arrival time                           0.130    
+  -------------------------------------------------------------------
+                         slack                                  0.031    
+
+Slack (MET) :             0.031ns  (arrival time - required time)
+  Source:                 adc_pair_channels[1].adc_pair_data_q_reg[533]/C
+                            (rising edge-triggered cell FDRE clocked by adc_clk  {rise@0.000ns fall@1.200ns period=2.400ns})
+  Destination:            channel_bram[1].channel_write_data_q_reg[129]/D
+                            (rising edge-triggered cell FDRE clocked by rx_clk  {rise@0.000ns fall@2.400ns period=4.800ns})
+  Path Group:             rx_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (rx_clk rise@0.000ns - adc_clk rise@0.000ns)
+  Data Path Delay:        0.118ns  (logic 0.040ns (33.898%)  route 0.078ns (66.102%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.006ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.018ns
+    Source Clock Delay      (SCD):    0.012ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+  Clock Domain Crossing:  Inter clock paths are considered valid unless explicitly excluded by timing constraints such as set_clock_groups or set_false_path.
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock adc_clk rise edge)    0.000     0.000 r  
+                                                      0.000     0.000 r  adc_clk (IN)
+                         net (fo=4051, unset)         0.012     0.012    adc_clk
+    SLICE_X51Y214        FDRE                                         r  adc_pair_channels[1].adc_pair_data_q_reg[533]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X51Y214        FDRE (Prop_CFF2_SLICEL_C_Q)
+                                                      0.040     0.052 r  adc_pair_channels[1].adc_pair_data_q_reg[533]/Q
+                         net (fo=1, routed)           0.078     0.130    adc_pair_data_q[533]
+    SLICE_X51Y217        FDRE                                         r  channel_bram[1].channel_write_data_q_reg[129]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock rx_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  rx_clk (IN)
+                         net (fo=3205, unset)         0.018     0.018    rx_clk
+    SLICE_X51Y217        FDRE                                         r  channel_bram[1].channel_write_data_q_reg[129]/C
+                         clock pessimism              0.000     0.018    
+                         clock uncertainty            0.035     0.053    
+    SLICE_X51Y217        FDRE (Hold_BFF_SLICEL_C_D)
+                                                      0.046     0.099    channel_bram[1].channel_write_data_q_reg[129]
+  -------------------------------------------------------------------
+                         required time                         -0.099    
+                         arrival time                           0.130    
+  -------------------------------------------------------------------
+                         slack                                  0.031    
+
+Slack (MET) :             0.031ns  (arrival time - required time)
+  Source:                 adc_pair_channels[1].adc_pair_data_q_reg[634]/C
+                            (rising edge-triggered cell FDRE clocked by adc_clk  {rise@0.000ns fall@1.200ns period=2.400ns})
+  Destination:            channel_bram[1].channel_write_data_q_reg[218]/D
+                            (rising edge-triggered cell FDRE clocked by rx_clk  {rise@0.000ns fall@2.400ns period=4.800ns})
+  Path Group:             rx_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (rx_clk rise@0.000ns - adc_clk rise@0.000ns)
+  Data Path Delay:        0.118ns  (logic 0.038ns (32.203%)  route 0.080ns (67.797%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.006ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.019ns
+    Source Clock Delay      (SCD):    0.013ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+  Clock Domain Crossing:  Inter clock paths are considered valid unless explicitly excluded by timing constraints such as set_clock_groups or set_false_path.
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock adc_clk rise edge)    0.000     0.000 r  
+                                                      0.000     0.000 r  adc_clk (IN)
+                         net (fo=4051, unset)         0.013     0.013    adc_clk
+    SLICE_X21Y233        FDRE                                         r  adc_pair_channels[1].adc_pair_data_q_reg[634]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X21Y233        FDRE (Prop_EFF_SLICEM_C_Q)
+                                                      0.038     0.051 r  adc_pair_channels[1].adc_pair_data_q_reg[634]/Q
+                         net (fo=1, routed)           0.080     0.131    adc_pair_data_q[634]
+    SLICE_X21Y233        FDRE                                         r  channel_bram[1].channel_write_data_q_reg[218]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock rx_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  rx_clk (IN)
+                         net (fo=3205, unset)         0.019     0.019    rx_clk
+    SLICE_X21Y233        FDRE                                         r  channel_bram[1].channel_write_data_q_reg[218]/C
+                         clock pessimism              0.000     0.019    
+                         clock uncertainty            0.035     0.054    
+    SLICE_X21Y233        FDRE (Hold_AFF_SLICEM_C_D)
+                                                      0.046     0.100    channel_bram[1].channel_write_data_q_reg[218]
+  -------------------------------------------------------------------
+                         required time                         -0.100    
+                         arrival time                           0.131    
+  -------------------------------------------------------------------
+                         slack                                  0.031    
+
+Slack (MET) :             0.031ns  (arrival time - required time)
+  Source:                 adc_pair_channels[1].adc_pair_data_q_reg[638]/C
+                            (rising edge-triggered cell FDRE clocked by adc_clk  {rise@0.000ns fall@1.200ns period=2.400ns})
+  Destination:            channel_bram[1].channel_write_data_q_reg[222]/D
+                            (rising edge-triggered cell FDRE clocked by rx_clk  {rise@0.000ns fall@2.400ns period=4.800ns})
+  Path Group:             rx_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (rx_clk rise@0.000ns - adc_clk rise@0.000ns)
+  Data Path Delay:        0.118ns  (logic 0.038ns (32.203%)  route 0.080ns (67.797%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.006ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.019ns
+    Source Clock Delay      (SCD):    0.013ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+  Clock Domain Crossing:  Inter clock paths are considered valid unless explicitly excluded by timing constraints such as set_clock_groups or set_false_path.
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock adc_clk rise edge)    0.000     0.000 r  
+                                                      0.000     0.000 r  adc_clk (IN)
+                         net (fo=4051, unset)         0.013     0.013    adc_clk
+    SLICE_X34Y218        FDRE                                         r  adc_pair_channels[1].adc_pair_data_q_reg[638]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X34Y218        FDRE (Prop_EFF_SLICEM_C_Q)
+                                                      0.038     0.051 r  adc_pair_channels[1].adc_pair_data_q_reg[638]/Q
+                         net (fo=1, routed)           0.080     0.131    adc_pair_data_q[638]
+    SLICE_X34Y218        FDRE                                         r  channel_bram[1].channel_write_data_q_reg[222]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock rx_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  rx_clk (IN)
+                         net (fo=3205, unset)         0.019     0.019    rx_clk
+    SLICE_X34Y218        FDRE                                         r  channel_bram[1].channel_write_data_q_reg[222]/C
+                         clock pessimism              0.000     0.019    
+                         clock uncertainty            0.035     0.054    
+    SLICE_X34Y218        FDRE (Hold_AFF_SLICEM_C_D)
+                                                      0.046     0.100    channel_bram[1].channel_write_data_q_reg[222]
+  -------------------------------------------------------------------
+                         required time                         -0.100    
+                         arrival time                           0.131    
+  -------------------------------------------------------------------
+                         slack                                  0.031    
+
+
+
+

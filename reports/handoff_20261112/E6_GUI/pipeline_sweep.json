@@ -1,0 +1,245 @@
+[
+ {
+  "words": 256,
+  "window": 1,
+  "write_ok": true,
+  "write_MBs": 5.2,
+  "read_ok": true,
+  "read_MBs": 4.8,
+  "rx_dropped": 0
+ },
+ {
+  "words": 256,
+  "window": 2,
+  "write_ok": true,
+  "write_MBs": 11.9,
+  "read_ok": true,
+  "read_MBs": 10.8,
+  "rx_dropped": 0
+ },
+ {
+  "words": 256,
+  "window": 3,
+  "write_ok": true,
+  "write_MBs": 17.3,
+  "read_ok": true,
+  "read_MBs": 14.8,
+  "rx_dropped": 0
+ },
+ {
+  "words": 256,
+  "window": 4,
+  "write_ok": true,
+  "write_MBs": 22.7,
+  "read_ok": true,
+  "read_MBs": 19.2,
+  "rx_dropped": 0
+ },
+ {
+  "words": 256,
+  "window": 6,
+  "write_ok": true,
+  "write_MBs": 32.0,
+  "read_ok": true,
+  "read_MBs": 24.6,
+  "rx_dropped": 0
+ },
+ {
+  "words": 256,
+  "window": 8,
+  "write_ok": true,
+  "write_MBs": 38.7,
+  "read_ok": true,
+  "read_MBs": 28.2,
+  "rx_dropped": 0
+ },
+ {
+  "words": 256,
+  "window": 12,
+  "write_ok": true,
+  "write_MBs": 38.4,
+  "read_ok": true,
+  "read_MBs": 26.5,
+  "rx_dropped": 0
+ },
+ {
+  "words": 512,
+  "window": 1,
+  "write_ok": true,
+  "write_MBs": 10.0,
+  "read_ok": true,
+  "read_MBs": 9.2,
+  "rx_dropped": 0
+ },
+ {
+  "words": 512,
+  "window": 2,
+  "write_ok": true,
+  "write_MBs": 18.7,
+  "read_ok": true,
+  "read_MBs": 18.7,
+  "rx_dropped": 0
+ },
+ {
+  "words": 512,
+  "window": 3,
+  "write_ok": true,
+  "write_MBs": 27.6,
+  "read_ok": true,
+  "read_MBs": 25.1,
+  "rx_dropped": 0
+ },
+ {
+  "words": 512,
+  "window": 4,
+  "write_ok": true,
+  "write_MBs": 37.7,
+  "read_ok": true,
+  "read_MBs": 24.9,
+  "rx_dropped": 0
+ },
+ {
+  "words": 512,
+  "window": 6,
+  "write_ok": true,
+  "write_MBs": 40.2,
+  "read_ok": true,
+  "read_MBs": 27.4,
+  "rx_dropped": 0
+ },
+ {
+  "words": 512,
+  "window": 8,
+  "write_ok": true,
+  "write_MBs": 41.0,
+  "read_ok": true,
+  "read_MBs": 26.7,
+  "rx_dropped": 0
+ },
+ {
+  "words": 512,
+  "window": 12,
+  "write_ok": false,
+  "write_MBs": 0.6,
+  "read_ok": true,
+  "read_MBs": 30.9,
+  "rx_dropped": 4
+ },
+ {
+  "words": 1024,
+  "window": 1,
+  "write_ok": true,
+  "write_MBs": 13.2,
+  "read_ok": true,
+  "read_MBs": 11.8,
+  "rx_dropped": 0
+ },
+ {
+  "words": 1024,
+  "window": 2,
+  "write_ok": true,
+  "write_MBs": 23.8,
+  "read_ok": true,
+  "read_MBs": 21.6,
+  "rx_dropped": 0
+ },
+ {
+  "words": 1024,
+  "window": 3,
+  "write_ok": true,
+  "write_MBs": 36.3,
+  "read_ok": true,
+  "read_MBs": 27.8,
+  "rx_dropped": 0
+ },
+ {
+  "words": 1024,
+  "window": 4,
+  "write_ok": true,
+  "write_MBs": 38.6,
+  "read_ok": true,
+  "read_MBs": 29.8,
+  "rx_dropped": 0
+ },
+ {
+  "words": 1024,
+  "window": 6,
+  "write_ok": false,
+  "write_MBs": 0.6,
+  "read_ok": true,
+  "read_MBs": 25.2,
+  "rx_dropped": 2
+ },
+ {
+  "words": 1024,
+  "window": 8,
+  "write_ok": false,
+  "write_MBs": 0.6,
+  "read_ok": true,
+  "read_MBs": 28.6,
+  "rx_dropped": 4
+ },
+ {
+  "words": 1024,
+  "window": 12,
+  "write_ok": false,
+  "write_MBs": 0.6,
+  "read_ok": true,
+  "read_MBs": 29.9,
+  "rx_dropped": 7
+ },
+ {
+  "words": 2048,
+  "window": 1,
+  "write_ok": true,
+  "write_MBs": 18.2,
+  "read_ok": true,
+  "read_MBs": 16.2,
+  "rx_dropped": 0
+ },
+ {
+  "words": 2048,
+  "window": 2,
+  "write_ok": true,
+  "write_MBs": 34.0,
+  "read_ok": true,
+  "read_MBs": 24.8,
+  "rx_dropped": 0
+ },
+ {
+  "words": 2048,
+  "window": 3,
+  "write_ok": false,
+  "write_MBs": 0.6,
+  "read_ok": true,
+  "read_MBs": 27.1,
+  "rx_dropped": 1
+ },
+ {
+  "words": 2048,
+  "window": 4,
+  "write_ok": false,
+  "write_MBs": 0.6,
+  "read_ok": true,
+  "read_MBs": 28.1,
+  "rx_dropped": 2
+ },
+ {
+  "words": 2048,
+  "window": 6,
+  "write_ok": false,
+  "write_MBs": 0.6,
+  "read_ok": true,
+  "read_MBs": 30.4,
+  "rx_dropped": 4
+ },
+ {
+  "words": 2048,
+  "window": 8,
+  "write_ok": false,
+  "write_MBs": 0.6,
+  "read_ok": true,
+  "read_MBs": 30.4,
+  "rx_dropped": 6
+ }
+]

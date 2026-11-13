@@ -1,0 +1,127 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+| Date         : Wed Nov 11 23:14:42 2026
+| Host         : DESKTOP-CLMQL7K running 64-bit major release  (build 9200)
+| Command      : report_drc -file D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/reports/D3B0_REVIEW/drc_synth.rpt
+| Design       : awg_eth_top
+| Device       : xczu47dr-fsve1156-2-i
+| Speed File   : -2
+| Design State : Synthesized
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Report DRC
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: s1
+      Design limits: <entire design considered>
+           Ruledeck: default
+             Max checks: <unlimited>
+             Checks found: 17
++-----------+----------+---------------------------------------------------+--------+
+| Rule      | Severity | Description                                       | Checks |
++-----------+----------+---------------------------------------------------+--------+
+| DPIP-2    | Warning  | Input pipelining                                  | 1      |
+| DPOP-3    | Warning  | PREG Output pipelining                            | 1      |
+| DPOP-4    | Warning  | MREG Output pipelining                            | 1      |
+| REQP-1773 | Warning  | RAMB36E2_WRITE_WIDTH_A_9_or_less_doesnt_use_WEA31 | 4      |
+| REQP-1853 | Warning  | BUFGCE_DIV_cascade_from_clock_buf                 | 2      |
+| REQP-1877 | Warning  | BUFGCE_has_no_loads                               | 1      |
+| REQP-1880 | Warning  | BUFG_GT_has_no_loads                              | 7      |
++-----------+----------+---------------------------------------------------+--------+
+
+2. REPORT DETAILS
+-----------------
+DPIP-2#1 Warning
+Input pipelining  
+DSP rx_i/h_captured_samples input rx_i/h_captured_samples/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPOP-3#1 Warning
+PREG Output pipelining  
+DSP rx_i/h_captured_samples output rx_i/h_captured_samples/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-4#1 Warning
+MREG Output pipelining  
+DSP rx_i/h_captured_samples multiplier stage rx_i/h_captured_samples/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+REQP-1773#1 Warning
+RAMB36E2_WRITE_WIDTH_A_9_or_less_doesnt_use_WEA31  
+The RAMB36E2 cell rx_i/channel_bram[0].capture_mem_reg_bram_27 has WRITE_WIDTH_A set to 9 or less. The WEA[3:1] pins should not be connected to active signal.
+Related violations: <none>
+
+REQP-1773#2 Warning
+RAMB36E2_WRITE_WIDTH_A_9_or_less_doesnt_use_WEA31  
+The RAMB36E2 cell rx_i/channel_bram[2].capture_mem_reg_bram_27 has WRITE_WIDTH_A set to 9 or less. The WEA[3:1] pins should not be connected to active signal.
+Related violations: <none>
+
+REQP-1773#3 Warning
+RAMB36E2_WRITE_WIDTH_A_9_or_less_doesnt_use_WEA31  
+The RAMB36E2 cell rx_i/channel_bram[4].capture_mem_reg_bram_27 has WRITE_WIDTH_A set to 9 or less. The WEA[3:1] pins should not be connected to active signal.
+Related violations: <none>
+
+REQP-1773#4 Warning
+RAMB36E2_WRITE_WIDTH_A_9_or_less_doesnt_use_WEA31  
+The RAMB36E2 cell rx_i/channel_bram[6].capture_mem_reg_bram_27 has WRITE_WIDTH_A set to 9 or less. The WEA[3:1] pins should not be connected to active signal.
+Related violations: <none>
+
+REQP-1853#1 Warning
+BUFGCE_DIV_cascade_from_clock_buf  
+Cascaded clock buffers exist in the design with constant CE pin. This may result in large clock skew and timing violations. Cell BUFGCE_DIV rx_clk_div I pin is driven by another clock buffer system_i/system_i/clk_wiz_adc/inst/clkout1_buf.
+Related violations: <none>
+
+REQP-1853#2 Warning
+BUFGCE_DIV_cascade_from_clock_buf  
+Cascaded clock buffers exist in the design with constant CE pin. This may result in large clock skew and timing violations. Cell BUFGCE_DIV tx_clk_div I pin is driven by another clock buffer system_i/system_i/clk_wiz_0/inst/CLK_CORE_DRP_I/clk_inst/clkout1_buf.
+Related violations: <none>
+
+REQP-1877#1 Warning
+BUFGCE_has_no_loads  
+Global Clock buffer BUFGCE cell eth_core_i/u_qsfp2_mac/i_CLK_GEN_0/inst/clkout1_buf has no loads and may be unnecessarily using clock routing/distribution resources. This buffer should be removed from the design.
+Related violations: <none>
+
+REQP-1880#1 Warning
+BUFG_GT_has_no_loads  
+Global Clock buffer BUFG_GT cell system_i/system_i/usp_rf_data_converter_0/inst/i_system_usp_rf_data_converter_0_0_bufg_gt_ctrl/adc0_bufg_gt has no loads and may be unnecessarily using clock routing/distribution resources. This buffer should be removed from the design.
+Related violations: <none>
+
+REQP-1880#2 Warning
+BUFG_GT_has_no_loads  
+Global Clock buffer BUFG_GT cell system_i/system_i/usp_rf_data_converter_0/inst/i_system_usp_rf_data_converter_0_0_bufg_gt_ctrl/adc1_bufg_gt has no loads and may be unnecessarily using clock routing/distribution resources. This buffer should be removed from the design.
+Related violations: <none>
+
+REQP-1880#3 Warning
+BUFG_GT_has_no_loads  
+Global Clock buffer BUFG_GT cell system_i/system_i/usp_rf_data_converter_0/inst/i_system_usp_rf_data_converter_0_0_bufg_gt_ctrl/adc2_bufg_gt has no loads and may be unnecessarily using clock routing/distribution resources. This buffer should be removed from the design.
+Related violations: <none>
+
+REQP-1880#4 Warning
+BUFG_GT_has_no_loads  
+Global Clock buffer BUFG_GT cell system_i/system_i/usp_rf_data_converter_0/inst/i_system_usp_rf_data_converter_0_0_bufg_gt_ctrl/adc3_bufg_gt has no loads and may be unnecessarily using clock routing/distribution resources. This buffer should be removed from the design.
+Related violations: <none>
+
+REQP-1880#5 Warning
+BUFG_GT_has_no_loads  
+Global Clock buffer BUFG_GT cell system_i/system_i/usp_rf_data_converter_0/inst/i_system_usp_rf_data_converter_0_0_bufg_gt_ctrl/dac0_bufg_gt has no loads and may be unnecessarily using clock routing/distribution resources. This buffer should be removed from the design.
+Related violations: <none>
+
+REQP-1880#6 Warning
+BUFG_GT_has_no_loads  
+Global Clock buffer BUFG_GT cell system_i/system_i/usp_rf_data_converter_0/inst/i_system_usp_rf_data_converter_0_0_bufg_gt_ctrl/dac1_bufg_gt has no loads and may be unnecessarily using clock routing/distribution resources. This buffer should be removed from the design.
+Related violations: <none>
+
+REQP-1880#7 Warning
+BUFG_GT_has_no_loads  
+Global Clock buffer BUFG_GT cell system_i/system_i/usp_rf_data_converter_0/inst/i_system_usp_rf_data_converter_0_0_bufg_gt_ctrl/dac3_bufg_gt has no loads and may be unnecessarily using clock routing/distribution resources. This buffer should be removed from the design.
+Related violations: <none>
+
+

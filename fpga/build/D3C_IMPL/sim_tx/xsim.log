@@ -1,0 +1,106 @@
+#-----------------------------------------------------------
+# xsim v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Thu Nov 12 04:57:07 2026
+# Process ID         : 5724
+# Current directory  : D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/sim_tx
+# Command line       : xsim.exe -mode tcl -source {xsim.dir/tb_awg_tx_d3c/xsim_script.tcl}
+# Log file           : D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/sim_tx/xsim.log
+# Journal file       : D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/sim_tx\xsim.jou
+# Running On         : DESKTOP-CLMQL7K
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 19045
+# Processor Detail   : 12th Gen Intel(R) Core(TM) i7-12700
+# CPU Frequency      : 2112 MHz
+# CPU Physical cores : 12
+# CPU Logical cores  : 20
+# Host memory        : 34088 MB
+# Swap memory        : 5100 MB
+# Total Virtual      : 39188 MB
+# Available Virtual  : 19830 MB
+#-----------------------------------------------------------
+source xsim.dir/tb_awg_tx_d3c/xsim_script.tcl
+# xsim {tb_awg_tx_d3c} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+D1_TX TB begin
+CHECK PASS write_blocked_during_host_reset
+CHECK PASS write_blocked_while_fifo_reset_busy
+CHECK PASS write_blocked_while_fifo_reset_busy
+CHECK PASS write_blocked_while_fifo_reset_busy
+CHECK PASS write_blocked_while_fifo_reset_busy
+CHECK PASS write_blocked_while_fifo_reset_busy
+CHECK PASS write_blocked_while_fifo_reset_busy
+CHECK PASS write_blocked_while_fifo_reset_busy
+CHECK PASS write_blocked_while_fifo_reset_busy
+CHECK PASS write_blocked_while_fifo_reset_busy
+CHECK PASS write_blocked_while_fifo_reset_busy
+CHECK PASS write_blocked_while_fifo_reset_busy
+CHECK PASS write_blocked_while_fifo_reset_busy
+CHECK PASS write_blocked_while_fifo_reset_busy
+CHECK PASS write_blocked_while_fifo_reset_busy
+CHECK PASS write_blocked_while_fifo_reset_busy
+CHECK PASS write_blocked_while_fifo_reset_busy
+CHECK PASS write_blocked_while_fifo_reset_busy
+CHECK PASS write_blocked_while_fifo_reset_busy
+CHECK PASS write_blocked_while_fifo_reset_busy
+CHECK PASS write_blocked_while_fifo_reset_busy
+CHECK PASS write_blocked_while_fifo_reset_busy
+CHECK PASS write_blocked_while_fifo_reset_busy
+CHECK PASS write_blocked_while_fifo_reset_busy
+CHECK PASS write_blocked_while_fifo_reset_busy
+CHECK PASS write_blocked_while_fifo_reset_busy
+CHECK PASS write_blocked_while_fifo_reset_busy
+CHECK PASS fifo_reset_busy_cleared
+T6 accepted_words=524288 elapsed_ns=10488480.000 host_words_per_second=49987033.393
+CHECK PASS continuous_write_count
+CHECK PASS write_pointer_full_scale
+CHECK PASS start_event_first_half
+CHECK PASS playback_start_index_found
+CHECK PASS start_event_seen
+CHECK PASS playback_samples
+CHECK PASS dac_reset_release_tx_low_sequence
+CHECK PASS start_event_first_half
+CHECK PASS playback_start_index_found
+CHECK PASS start_event_seen
+CHECK PASS playback_samples
+CHECK PASS dac_reset_release_tx_high_sequence
+CHECK PASS start_event_first_half
+CHECK PASS playback_start_index_found
+CHECK PASS start_event_seen
+CHECK PASS playback_samples
+CHECK PASS running_asserted
+CHECK PASS stop_after_32_point_window
+CHECK PASS start_event_first_half
+CHECK PASS playback_start_index_found
+CHECK PASS start_event_seen
+CHECK PASS playback_samples
+CHECK PASS running_asserted
+CHECK PASS stop_after_65536_point_window
+CHECK PASS start_event_first_half
+CHECK PASS playback_start_index_found
+CHECK PASS start_event_seen
+CHECK PASS playback_samples
+CHECK PASS running_asserted
+CHECK PASS stop_after_131072_point_window
+CHECK PASS crc_sv_reference
+T3 crc_dut=d49307a0 crc_sv=d49307a0
+CHECK PASS start_rejected_short_write
+CHECK PASS short_write_not_running
+CHECK PASS running_asserted
+CHECK PASS h_locked_running
+CHECK PASS write_rejected_while_locked
+CHECK PASS running_asserted
+CHECK PASS underflow_fault
+CHECK PASS underflow_stops_playback
+CHECK PASS clear_fault
+CHECK PASS running_asserted
+CHECK PASS recover_after_clear
+RESULT name=tb_awg_tx PASS=70 FAIL=0 mismatches=0 x_count=0
+$finish called at time : 12342055 ns : File "D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/sim/tx/tb_awg_tx.sv" Line 492
+run: Time (s): cpu = 00:00:00 ; elapsed = 00:01:10 . Memory (MB): peak = 235.160 ; gain = 0.000
+exit
+INFO: xsimkernel Simulation Memory Usage: 15828 KB (Peak: 15828 KB), Simulation CPU Usage: 70171 ms
+INFO: [Common 17-206] Exiting xsim at Thu Nov 12 04:58:20 2026...

@@ -1,0 +1,10 @@
+CDC_MATCH name=sysref_dac_source count=1
+CDC_MATCH name=sysref_dac_stage1 count=1
+CDC_MATCH name=sysref_adc_source count=1
+CDC_MATCH name=sysref_adc_stage1 count=1
+CDC_MATCH name=dac_clock_pin count=2
+CDC_MATCH name=adc_clock_pin count=2
+CDC_MATCH name=dac_clock count=1
+CDC_MATCH name=adc_clock count=1
+CDC_MATCH name=host_clock_group count=1
+CDC_MATCH name=eth_clock_group count=1

@@ -1,0 +1,91 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+| Date         : Thu Nov 12 05:45:31 2026
+| Host         : DESKTOP-CLMQL7K running 64-bit major release  (build 9200)
+| Command      : report_drc -file awg_eth_top_drc_opted.rpt -pb awg_eth_top_drc_opted.pb -rpx awg_eth_top_drc_opted.rpx
+| Design       : awg_eth_top
+| Device       : xczu47dr-fsve1156-2-i
+| Speed File   : -2
+| Design State : Synthesized
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Report DRC
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+           Ruledeck: default
+             Max checks: <unlimited>
+             Checks found: 10
++-----------+----------+---------------------------------------------------+--------+
+| Rule      | Severity | Description                                       | Checks |
++-----------+----------+---------------------------------------------------+--------+
+| DPIP-2    | Warning  | Input pipelining                                  | 1      |
+| DPOP-3    | Warning  | PREG Output pipelining                            | 1      |
+| DPOP-4    | Warning  | MREG Output pipelining                            | 1      |
+| REQP-1773 | Warning  | RAMB36E2_WRITE_WIDTH_A_9_or_less_doesnt_use_WEA31 | 4      |
+| REQP-1857 | Warning  | RAMB18E2_writefirst_collision_advisory            | 1      |
+| REQP-1858 | Warning  | RAMB36E2_writefirst_collision_advisory            | 2      |
++-----------+----------+---------------------------------------------------+--------+
+
+2. REPORT DETAILS
+-----------------
+DPIP-2#1 Warning
+Input pipelining  
+DSP rx_i/h_captured_samples input rx_i/h_captured_samples/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPOP-3#1 Warning
+PREG Output pipelining  
+DSP rx_i/h_captured_samples output rx_i/h_captured_samples/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-4#1 Warning
+MREG Output pipelining  
+DSP rx_i/h_captured_samples multiplier stage rx_i/h_captured_samples/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+REQP-1773#1 Warning
+RAMB36E2_WRITE_WIDTH_A_9_or_less_doesnt_use_WEA31  
+The RAMB36E2 cell rx_i/channel_bram[0].capture_mem_reg_bram_27 has WRITE_WIDTH_A set to 9 or less. The WEA[3:1] pins should not be connected to active signal.
+Related violations: <none>
+
+REQP-1773#2 Warning
+RAMB36E2_WRITE_WIDTH_A_9_or_less_doesnt_use_WEA31  
+The RAMB36E2 cell rx_i/channel_bram[2].capture_mem_reg_bram_27 has WRITE_WIDTH_A set to 9 or less. The WEA[3:1] pins should not be connected to active signal.
+Related violations: <none>
+
+REQP-1773#3 Warning
+RAMB36E2_WRITE_WIDTH_A_9_or_less_doesnt_use_WEA31  
+The RAMB36E2 cell rx_i/channel_bram[4].capture_mem_reg_bram_27 has WRITE_WIDTH_A set to 9 or less. The WEA[3:1] pins should not be connected to active signal.
+Related violations: <none>
+
+REQP-1773#4 Warning
+RAMB36E2_WRITE_WIDTH_A_9_or_less_doesnt_use_WEA31  
+The RAMB36E2 cell rx_i/channel_bram[6].capture_mem_reg_bram_27 has WRITE_WIDTH_A set to 9 or less. The WEA[3:1] pins should not be connected to active signal.
+Related violations: <none>
+
+REQP-1857#1 Warning
+RAMB18E2_writefirst_collision_advisory  
+Synchronous clocking is detected for BRAM (jtag_axi_i/inst/jtag_axi_engine_u/rx_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_8SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram) in SDP mode with WRITE_FIRST write-mode. It is strongly suggested to change this mode to NO_CHANGE for best power characteristics. However, both WRITE_FIRST and NO_CHANGE may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.
+Related violations: <none>
+
+REQP-1858#1 Warning
+RAMB36E2_writefirst_collision_advisory  
+Synchronous clocking is detected for BRAM (jtag_axi_i/inst/jtag_axi_engine_u/rd_cmd_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_8SERIES.NO_BMM_INFO.SDP.WIDE_PRIM36_NO_ECC.ram) in SDP mode with WRITE_FIRST write-mode. It is strongly suggested to change this mode to NO_CHANGE for best power characteristics. However, both WRITE_FIRST and NO_CHANGE may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.
+Related violations: <none>
+
+REQP-1858#2 Warning
+RAMB36E2_writefirst_collision_advisory  
+Synchronous clocking is detected for BRAM (jtag_axi_i/inst/jtag_axi_engine_u/wr_cmd_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_8SERIES.NO_BMM_INFO.SDP.WIDE_PRIM36_NO_ECC.ram) in SDP mode with WRITE_FIRST write-mode. It is strongly suggested to change this mode to NO_CHANGE for best power characteristics. However, both WRITE_FIRST and NO_CHANGE may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.
+Related violations: <none>
+
+

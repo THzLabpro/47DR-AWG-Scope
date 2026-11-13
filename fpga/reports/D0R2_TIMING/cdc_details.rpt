@@ -1,0 +1,246 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version      : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+| Date              : Wed Nov 11 12:18:01 2026
+| Host              : DESKTOP-CLMQL7K running 64-bit major release  (build 9200)
+| Command           : report_cdc -details -file D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/reports/D0R2_TIMING/cdc_details.rpt
+| Design            : d0_probe_top
+| Device            : xczu47dr-fsve1156
+| Speed File        : -2  PRODUCTION 1.32 01-31-2021
+| Design State      : Routed
+| Temperature Grade : I
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+CDC Report
+
+ID      Severity  Count  Description
+------  --------  -----  -------------------------------------------------------
+CDC-3   Info         26  1-bit synchronized with ASYNC_REG property
+CDC-9   Info          3  Asynchronous reset synchronized with ASYNC_REG property
+CDC-11  Critical      8  Fan-out from launch flop to destination clock
+CDC-13  Critical      4  1-bit CDC path on a non-FD primitive
+CDC-15  Warning      84  Clock enable controlled CDC structure detected
+
+Source Clock: clk_pl_0
+Destination Clock: clk_out1_system_clk_wiz_0_0
+CDC Type: No Common Primary Clock
+
+Row  ID     Severity  Description                                              Depth  Exception            Source (From)                                                                                          Destination (To)
+---  -----  --------  -------------------------------------------------------  -----  -------------------  -----------------------------------------------------------------------------------------------------  --------------------------------------------------------------------------------------------------------------------------------------------
+  1  CDC-9  Info      Asynchronous reset synchronized with ASYNC_REG property      3  Asynch Clock Groups  system_i/usp_rf_data_converter_0/inst/mts_sysref_count_start_reg[1]/C                                  system_i/usp_rf_data_converter_0/inst/i_mts_sysref_count_dac/i_xpm_cdc_single_start_pulse/arststages_ff_reg[0]/PRE
+  2  CDC-3  Info      1-bit synchronized with ASYNC_REG property                   4  Asynch Clock Groups  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/dac0_done_i_reg/C  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/cdc_dac0_done_i/syncstages_ff_reg[0]/D
+  3  CDC-3  Info      1-bit synchronized with ASYNC_REG property                   4  Asynch Clock Groups  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/dac1_done_i_reg/C  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/cdc_dac1_done_i/syncstages_ff_reg[0]/D
+  4  CDC-3  Info      1-bit synchronized with ASYNC_REG property                   4  Asynch Clock Groups  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/dac2_done_i_reg/C  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/cdc_dac2_done_i/syncstages_ff_reg[0]/D
+  5  CDC-3  Info      1-bit synchronized with ASYNC_REG property                   4  Asynch Clock Groups  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/dac3_done_i_reg/C  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/cdc_dac3_done_i/syncstages_ff_reg[0]/D
+  6  CDC-3  Info      1-bit synchronized with ASYNC_REG property                   3  Asynch Clock Groups  system_i/usp_rf_data_converter_0/inst/mt_dac_fifo_en_ff_reg/C                                          system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/i_fifo_ctrl_dac/Ixpm_cdc_fifo_en/syncstages_ff_reg[0]/D
+  7  CDC-3  Info      1-bit synchronized with ASYNC_REG property                   3  Asynch Clock Groups  system_i/usp_rf_data_converter_0/inst/mt_dac_fifo_src_ff_reg/C                                         system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/i_fifo_ctrl_dac/Ixpm_cdc_fifo_src/syncstages_ff_reg[0]/D
+
+Source Clock: pl_clk_p
+Destination Clock: clk_out1_system_clk_wiz_0_0
+CDC Type: No Common Primary Clock
+
+Row  ID     Severity  Description                                 Depth  Exception                Source (From)      Destination (To)
+---  -----  --------  ------------------------------------------  -----  -----------------------  -----------------  ---------------------
+  1  CDC-3  Info      1-bit synchronized with ASYNC_REG property      2  Max Delay Datapath Only  pl_sysref_r_reg/C  sysref_dac_meta_reg/D
+
+Source Clock: clk_pl_0
+Destination Clock: clk_out1_system_clk_wiz_adc_0
+CDC Type: No Common Primary Clock
+
+Row  ID      Severity  Description                                              Depth  Exception            Source (From)                                                                                          Destination (To)
+---  ------  --------  -------------------------------------------------------  -----  -------------------  -----------------------------------------------------------------------------------------------------  --------------------------------------------------------------------------------------------------------------------------------------------
+  1  CDC-9   Info      Asynchronous reset synchronized with ASYNC_REG property      3  Asynch Clock Groups  system_i/usp_rf_data_converter_0/inst/mts_sysref_count_start_reg[0]/C                                  system_i/usp_rf_data_converter_0/inst/i_mts_sysref_count_adc/i_xpm_cdc_single_start_pulse/arststages_ff_reg[0]/PRE
+  2  CDC-9   Info      Asynchronous reset synchronized with ASYNC_REG property      4  Asynch Clock Groups  system_i/usp_rf_data_converter_0/inst/mt_mrk_rst_ff_reg/C                                              system_i/usp_rf_data_converter_0/inst/i_xpm_cdc_single_mt_mrk_rst/arststages_ff_reg[0]/PRE
+  3  CDC-3   Info      1-bit synchronized with ASYNC_REG property                   4  Asynch Clock Groups  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/adc0_done_i_reg/C  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/cdc_adc0_done_i/syncstages_ff_reg[0]/D
+  4  CDC-3   Info      1-bit synchronized with ASYNC_REG property                   4  Asynch Clock Groups  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/adc1_done_i_reg/C  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/cdc_adc1_done_i/syncstages_ff_reg[0]/D
+  5  CDC-3   Info      1-bit synchronized with ASYNC_REG property                   4  Asynch Clock Groups  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/adc2_done_i_reg/C  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/cdc_adc2_done_i/syncstages_ff_reg[0]/D
+  6  CDC-3   Info      1-bit synchronized with ASYNC_REG property                   4  Asynch Clock Groups  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/adc3_done_i_reg/C  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/cdc_adc3_done_i/syncstages_ff_reg[0]/D
+  7  CDC-3   Info      1-bit synchronized with ASYNC_REG property                   3  Asynch Clock Groups  system_i/usp_rf_data_converter_0/inst/mt_adc_fifo_en_ff_reg/C                                          system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/i_fifo_ctrl_adc/Ixpm_cdc_fifo_en/syncstages_ff_reg[0]/D
+  8  CDC-3   Info      1-bit synchronized with ASYNC_REG property                   3  Asynch Clock Groups  system_i/usp_rf_data_converter_0/inst/mt_adc_fifo_src_ff_reg/C                                         system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/i_fifo_ctrl_adc/Ixpm_cdc_fifo_src/syncstages_ff_reg[0]/D
+  9  CDC-13  Critical  1-bit CDC path on a non-FD primitive                         0  Asynch Clock Groups  system_i/usp_rf_data_converter_0/inst/adc0_cmn_control_ff_reg[12]/C                                    system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/rx0_u_adc/CONTROL_COMMON[12]
+ 10  CDC-13  Critical  1-bit CDC path on a non-FD primitive                         0  Asynch Clock Groups  system_i/usp_rf_data_converter_0/inst/adc1_cmn_control_ff_reg[12]/C                                    system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/rx1_u_adc/CONTROL_COMMON[12]
+ 11  CDC-13  Critical  1-bit CDC path on a non-FD primitive                         0  Asynch Clock Groups  system_i/usp_rf_data_converter_0/inst/adc2_cmn_control_ff_reg[12]/C                                    system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/rx2_u_adc/CONTROL_COMMON[12]
+ 12  CDC-13  Critical  1-bit CDC path on a non-FD primitive                         0  Asynch Clock Groups  system_i/usp_rf_data_converter_0/inst/adc3_cmn_control_ff_reg[12]/C                                    system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/rx3_u_adc/CONTROL_COMMON[12]
+
+Source Clock: pl_clk_p
+Destination Clock: clk_out1_system_clk_wiz_adc_0
+CDC Type: Safely Timed
+
+Row  ID     Severity  Description                                 Depth  Exception                Source (From)      Destination (To)
+---  -----  --------  ------------------------------------------  -----  -----------------------  -----------------  ---------------------
+  1  CDC-3  Info      1-bit synchronized with ASYNC_REG property      2  Max Delay Datapath Only  pl_sysref_r_reg/C  sysref_adc_meta_reg/D
+
+Source Clock: RFADC0_CLK
+Destination Clock: clk_pl_0
+CDC Type: No Common Primary Clock
+
+Row  ID      Severity  Description                                     Depth  Exception   Source (From)                                                                                                         Destination (To)
+---  ------  --------  ----------------------------------------------  -----  ----------  --------------------------------------------------------------------------------------------------------------------  -----------------------------------------------------------
+  1  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/rx0_u_adc/INTERNAL_FBRC_DIV1_MUX  system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[8]/D
+  2  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/rx0_u_adc/INTERNAL_FBRC_DIV1_MUX  system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[9]/D
+  3  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/rx0_u_adc/INTERNAL_FBRC_DIV1_MUX  system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[10]/D
+  4  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/rx0_u_adc/INTERNAL_FBRC_DIV1_MUX  system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[11]/D
+  5  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/rx0_u_adc/INTERNAL_FBRC_DIV1_MUX  system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[12]/D
+  6  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/rx0_u_adc/INTERNAL_FBRC_DIV1_MUX  system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[13]/D
+  7  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/rx0_u_adc/INTERNAL_FBRC_DIV1_MUX  system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[14]/D
+  8  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/rx0_u_adc/INTERNAL_FBRC_DIV1_MUX  system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[15]/D
+
+Source Clock: RFADC1_CLK
+Destination Clock: clk_pl_0
+CDC Type: No Common Primary Clock
+
+Row  ID      Severity  Description                                     Depth  Exception   Source (From)                                                                                                         Destination (To)
+---  ------  --------  ----------------------------------------------  -----  ----------  --------------------------------------------------------------------------------------------------------------------  -----------------------------------------------------------
+  1  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/rx1_u_adc/INTERNAL_FBRC_DIV1_MUX  system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[8]/D
+  2  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/rx1_u_adc/INTERNAL_FBRC_DIV1_MUX  system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[9]/D
+  3  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/rx1_u_adc/INTERNAL_FBRC_DIV1_MUX  system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[10]/D
+  4  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/rx1_u_adc/INTERNAL_FBRC_DIV1_MUX  system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[11]/D
+  5  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/rx1_u_adc/INTERNAL_FBRC_DIV1_MUX  system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[12]/D
+  6  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/rx1_u_adc/INTERNAL_FBRC_DIV1_MUX  system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[13]/D
+  7  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/rx1_u_adc/INTERNAL_FBRC_DIV1_MUX  system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[14]/D
+  8  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/rx1_u_adc/INTERNAL_FBRC_DIV1_MUX  system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[15]/D
+
+Source Clock: RFADC2_CLK
+Destination Clock: clk_pl_0
+CDC Type: No Common Primary Clock
+
+Row  ID      Severity  Description                                     Depth  Exception   Source (From)                                                                                                         Destination (To)
+---  ------  --------  ----------------------------------------------  -----  ----------  --------------------------------------------------------------------------------------------------------------------  -----------------------------------------------------------
+  1  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/rx2_u_adc/INTERNAL_FBRC_DIV1_MUX  system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[8]/D
+  2  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/rx2_u_adc/INTERNAL_FBRC_DIV1_MUX  system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[9]/D
+  3  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/rx2_u_adc/INTERNAL_FBRC_DIV1_MUX  system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[10]/D
+  4  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/rx2_u_adc/INTERNAL_FBRC_DIV1_MUX  system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[11]/D
+  5  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/rx2_u_adc/INTERNAL_FBRC_DIV1_MUX  system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[12]/D
+  6  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/rx2_u_adc/INTERNAL_FBRC_DIV1_MUX  system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[13]/D
+  7  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/rx2_u_adc/INTERNAL_FBRC_DIV1_MUX  system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[14]/D
+  8  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/rx2_u_adc/INTERNAL_FBRC_DIV1_MUX  system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[15]/D
+
+Source Clock: RFADC3_CLK
+Destination Clock: clk_pl_0
+CDC Type: No Common Primary Clock
+
+Row  ID      Severity  Description                                     Depth  Exception   Source (From)                                                                                                         Destination (To)
+---  ------  --------  ----------------------------------------------  -----  ----------  --------------------------------------------------------------------------------------------------------------------  -----------------------------------------------------------
+  1  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/rx3_u_adc/INTERNAL_FBRC_DIV1_MUX  system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[8]/D
+  2  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/rx3_u_adc/INTERNAL_FBRC_DIV1_MUX  system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[9]/D
+  3  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/rx3_u_adc/INTERNAL_FBRC_DIV1_MUX  system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[10]/D
+  4  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/rx3_u_adc/INTERNAL_FBRC_DIV1_MUX  system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[11]/D
+  5  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/rx3_u_adc/INTERNAL_FBRC_DIV1_MUX  system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[12]/D
+  6  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/rx3_u_adc/INTERNAL_FBRC_DIV1_MUX  system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[13]/D
+  7  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/rx3_u_adc/INTERNAL_FBRC_DIV1_MUX  system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[14]/D
+  8  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/rx3_u_adc/INTERNAL_FBRC_DIV1_MUX  system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[15]/D
+
+Source Clock: RFDAC0_CLK
+Destination Clock: clk_pl_0
+CDC Type: No Common Primary Clock
+
+Row  ID      Severity  Description                                     Depth  Exception   Source (From)                                                                                                    Destination (To)
+---  ------  --------  ----------------------------------------------  -----  ----------  ---------------------------------------------------------------------------------------------------------------  -----------------------------------------------------------
+  1  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx0_u_dac/INTERNAL_FBRC_MUX  system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[8]/D
+  2  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx0_u_dac/INTERNAL_FBRC_MUX  system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[9]/D
+  3  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx0_u_dac/INTERNAL_FBRC_MUX  system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[10]/D
+  4  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx0_u_dac/INTERNAL_FBRC_MUX  system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[11]/D
+  5  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx0_u_dac/INTERNAL_FBRC_MUX  system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[12]/D
+  6  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx0_u_dac/INTERNAL_FBRC_MUX  system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[13]/D
+  7  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx0_u_dac/INTERNAL_FBRC_MUX  system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[14]/D
+  8  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx0_u_dac/INTERNAL_FBRC_MUX  system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[15]/D
+
+Source Clock: RFDAC1_CLK
+Destination Clock: clk_pl_0
+CDC Type: No Common Primary Clock
+
+Row  ID      Severity  Description                                     Depth  Exception   Source (From)                                                                                                    Destination (To)
+---  ------  --------  ----------------------------------------------  -----  ----------  ---------------------------------------------------------------------------------------------------------------  -----------------------------------------------------------
+  1  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx1_u_dac/INTERNAL_FBRC_MUX  system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[8]/D
+  2  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx1_u_dac/INTERNAL_FBRC_MUX  system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[9]/D
+  3  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx1_u_dac/INTERNAL_FBRC_MUX  system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[10]/D
+  4  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx1_u_dac/INTERNAL_FBRC_MUX  system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[11]/D
+  5  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx1_u_dac/INTERNAL_FBRC_MUX  system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[12]/D
+  6  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx1_u_dac/INTERNAL_FBRC_MUX  system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[13]/D
+  7  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx1_u_dac/INTERNAL_FBRC_MUX  system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[14]/D
+  8  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx1_u_dac/INTERNAL_FBRC_MUX  system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[15]/D
+
+Source Clock: RFDAC2_CLK
+Destination Clock: clk_pl_0
+CDC Type: No Common Primary Clock
+
+Row  ID      Severity  Description                                     Depth  Exception   Source (From)                                                                                                    Destination (To)
+---  ------  --------  ----------------------------------------------  -----  ----------  ---------------------------------------------------------------------------------------------------------------  -----------------------------------------------------------
+  1  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx2_u_dac/INTERNAL_FBRC_MUX  system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[8]/D
+  2  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx2_u_dac/INTERNAL_FBRC_MUX  system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[9]/D
+  3  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx2_u_dac/INTERNAL_FBRC_MUX  system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[10]/D
+  4  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx2_u_dac/INTERNAL_FBRC_MUX  system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[11]/D
+  5  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx2_u_dac/INTERNAL_FBRC_MUX  system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[12]/D
+  6  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx2_u_dac/INTERNAL_FBRC_MUX  system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[13]/D
+  7  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx2_u_dac/INTERNAL_FBRC_MUX  system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[14]/D
+  8  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx2_u_dac/INTERNAL_FBRC_MUX  system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[15]/D
+
+Source Clock: RFDAC3_CLK
+Destination Clock: clk_pl_0
+CDC Type: No Common Primary Clock
+
+Row  ID      Severity  Description                                     Depth  Exception   Source (From)                                                                                                    Destination (To)
+---  ------  --------  ----------------------------------------------  -----  ----------  ---------------------------------------------------------------------------------------------------------------  -----------------------------------------------------------
+  1  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx3_u_dac/INTERNAL_FBRC_MUX  system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[8]/D
+  2  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx3_u_dac/INTERNAL_FBRC_MUX  system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[9]/D
+  3  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx3_u_dac/INTERNAL_FBRC_MUX  system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[10]/D
+  4  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx3_u_dac/INTERNAL_FBRC_MUX  system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[11]/D
+  5  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx3_u_dac/INTERNAL_FBRC_MUX  system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[12]/D
+  6  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx3_u_dac/INTERNAL_FBRC_MUX  system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[13]/D
+  7  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx3_u_dac/INTERNAL_FBRC_MUX  system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[14]/D
+  8  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx3_u_dac/INTERNAL_FBRC_MUX  system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[15]/D
+
+Source Clock: clk_out1_system_clk_wiz_0_0
+Destination Clock: clk_pl_0
+CDC Type: No Common Primary Clock
+
+Row  ID      Severity  Description                                    Depth  Exception            Source (From)                                                                           Destination (To)
+---  ------  --------  ---------------------------------------------  -----  -------------------  --------------------------------------------------------------------------------------  ---------------------------------------------------------------------------------------------------------
+  1  CDC-11  Critical  Fan-out from launch flop to destination clock      4  Asynch Clock Groups  system_i/rst_rf_clk/U0/ACTIVE_LOW_PR_OUT_DFF[0].FDRE_PER_N/C                            system_i/usp_rf_data_converter_0/inst/cdc_dac0_clk_valid_i/syncstages_ff_reg[0]/D
+  2  CDC-11  Critical  Fan-out from launch flop to destination clock      4  Asynch Clock Groups  system_i/rst_rf_clk/U0/ACTIVE_LOW_PR_OUT_DFF[0].FDRE_PER_N/C                            system_i/usp_rf_data_converter_0/inst/cdc_dac1_clk_valid_i/syncstages_ff_reg[0]/D
+  3  CDC-11  Critical  Fan-out from launch flop to destination clock      4  Asynch Clock Groups  system_i/rst_rf_clk/U0/ACTIVE_LOW_PR_OUT_DFF[0].FDRE_PER_N/C                            system_i/usp_rf_data_converter_0/inst/cdc_dac2_clk_valid_i/syncstages_ff_reg[0]/D
+  4  CDC-11  Critical  Fan-out from launch flop to destination clock      4  Asynch Clock Groups  system_i/rst_rf_clk/U0/ACTIVE_LOW_PR_OUT_DFF[0].FDRE_PER_N/C                            system_i/usp_rf_data_converter_0/inst/cdc_dac3_clk_valid_i/syncstages_ff_reg[0]/D
+  5  CDC-3   Info      1-bit synchronized with ASYNC_REG property         3  Asynch Clock Groups  user_sysref_dac_reg/C                                                                   system_i/usp_rf_data_converter_0/inst/i_mts_sysref_count_dac/i_xpm_cdc_sysref/syncstages_ff_reg[0]/D
+  6  CDC-3   Info      1-bit synchronized with ASYNC_REG property         5  Asynch Clock Groups  system_i/usp_rf_data_converter_0/inst/i_mts_sysref_count_dac/sysref_freq_done_ff_reg/C  system_i/usp_rf_data_converter_0/inst/i_mts_sysref_count_dac/i_xpm_cdc_sysref_done/syncstages_ff_reg[0]/D
+
+Source Clock: clk_out1_system_clk_wiz_adc_0
+Destination Clock: clk_pl_0
+CDC Type: No Common Primary Clock
+
+Row  ID      Severity  Description                                     Depth  Exception            Source (From)                                                                                             Destination (To)
+---  ------  --------  ----------------------------------------------  -----  -------------------  --------------------------------------------------------------------------------------------------------  ---------------------------------------------------------------------------------------------------------
+  1  CDC-15  Warning   Clock enable controlled CDC structure detected      0  Asynch Clock Groups  system_i/usp_rf_data_converter_0/inst/i_rf_conv_mt_mrk_counter_adc02/mrk_cntr_ff_reg[0]/C                 system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[0]/D
+  2  CDC-15  Warning   Clock enable controlled CDC structure detected      0  Asynch Clock Groups  system_i/usp_rf_data_converter_0/inst/i_rf_conv_mt_mrk_counter_adc10/mrk_cntr_ff_reg[1]/C                 system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[1]/D
+  3  CDC-15  Warning   Clock enable controlled CDC structure detected      0  Asynch Clock Groups  system_i/usp_rf_data_converter_0/inst/i_rf_conv_mt_mrk_counter_adc10/mrk_cntr_ff_reg[2]/C                 system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[2]/D
+  4  CDC-15  Warning   Clock enable controlled CDC structure detected      0  Asynch Clock Groups  system_i/usp_rf_data_converter_0/inst/i_rf_conv_mt_mrk_counter_adc22/mrk_cntr_ff_reg[3]/C                 system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[3]/D
+  5  CDC-15  Warning   Clock enable controlled CDC structure detected      0  Asynch Clock Groups  system_i/usp_rf_data_converter_0/inst/i_rf_conv_mt_mrk_counter_adc10/mrk_cntr_ff_reg[4]/C                 system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[4]/D
+  6  CDC-15  Warning   Clock enable controlled CDC structure detected      0  Asynch Clock Groups  system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/rx0_u_adc/FABRIC_CLK  system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[5]/D
+  7  CDC-15  Warning   Clock enable controlled CDC structure detected      0  Asynch Clock Groups  system_i/usp_rf_data_converter_0/inst/i_rf_conv_mt_mrk_counter_adc10/mrk_cntr_ff_reg[6]/C                 system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[6]/D
+  8  CDC-15  Warning   Clock enable controlled CDC structure detected      0  Asynch Clock Groups  system_i/usp_rf_data_converter_0/inst/i_rf_conv_mt_mrk_counter_adc10/mrk_cntr_ff_reg[7]/C                 system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[7]/D
+  9  CDC-15  Warning   Clock enable controlled CDC structure detected      0  Asynch Clock Groups  system_i/usp_rf_data_converter_0/inst/i_rf_conv_mt_mrk_counter_adc10/mrk_cntr_ff_reg[8]/C                 system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[8]/D
+ 10  CDC-15  Warning   Clock enable controlled CDC structure detected      0  Asynch Clock Groups  system_i/usp_rf_data_converter_0/inst/i_rf_conv_mt_mrk_counter_adc10/mrk_cntr_ff_reg[9]/C                 system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[9]/D
+ 11  CDC-15  Warning   Clock enable controlled CDC structure detected      0  Asynch Clock Groups  system_i/usp_rf_data_converter_0/inst/i_rf_conv_mt_mrk_counter_adc00/mrk_cntr_ff_reg[10]/C                system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[10]/D
+ 12  CDC-15  Warning   Clock enable controlled CDC structure detected      0  Asynch Clock Groups  system_i/usp_rf_data_converter_0/inst/i_rf_conv_mt_mrk_counter_adc10/mrk_cntr_ff_reg[11]/C                system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[11]/D
+ 13  CDC-15  Warning   Clock enable controlled CDC structure detected      0  Asynch Clock Groups  system_i/usp_rf_data_converter_0/inst/i_rf_conv_mt_mrk_counter_adc02/mrk_cntr_ff_reg[12]/C                system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[12]/D
+ 14  CDC-15  Warning   Clock enable controlled CDC structure detected      0  Asynch Clock Groups  system_i/usp_rf_data_converter_0/inst/i_rf_conv_mt_mrk_counter_adc02/mrk_cntr_ff_reg[13]/C                system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[13]/D
+ 15  CDC-15  Warning   Clock enable controlled CDC structure detected      0  Asynch Clock Groups  system_i/usp_rf_data_converter_0/inst/i_rf_conv_mt_mrk_counter_adc10/mrk_cntr_ff_reg[14]/C                system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[14]/D
+ 16  CDC-15  Warning   Clock enable controlled CDC structure detected      0  Asynch Clock Groups  system_i/usp_rf_data_converter_0/inst/i_rf_conv_mt_mrk_counter_adc10/mrk_cntr_ff_reg[15]/C                system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[15]/D
+ 17  CDC-15  Warning   Clock enable controlled CDC structure detected      0  Asynch Clock Groups  system_i/usp_rf_data_converter_0/inst/i_rf_conv_mt_mrk_counter_adc10/mrk_loc_ff_reg[0]/C                  system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[16]/D
+ 18  CDC-15  Warning   Clock enable controlled CDC structure detected      0  Asynch Clock Groups  system_i/usp_rf_data_converter_0/inst/i_rf_conv_mt_mrk_counter_adc10/mrk_loc_ff_reg[1]/C                  system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[17]/D
+ 19  CDC-15  Warning   Clock enable controlled CDC structure detected      0  Asynch Clock Groups  system_i/usp_rf_data_converter_0/inst/i_rf_conv_mt_mrk_counter_adc10/mrk_loc_ff_reg[2]/C                  system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[18]/D
+ 20  CDC-15  Warning   Clock enable controlled CDC structure detected      0  Asynch Clock Groups  system_i/usp_rf_data_converter_0/inst/i_rf_conv_mt_mrk_counter_adc10/mrk_loc_ff_reg[3]/C                  system_i/usp_rf_data_converter_0/inst/IP2Bus_Data_reg[19]/D
+ 21  CDC-3   Info      1-bit synchronized with ASYNC_REG property          4  Asynch Clock Groups  system_i/usp_rf_data_converter_0/inst/i_rf_conv_mt_mrk_counter_adc00/mrk_cntr_done_ff_reg/C               system_i/usp_rf_data_converter_0/inst/cdc_adc00_mrk_cntr_done_i/syncstages_ff_reg[0]/D
+ 22  CDC-3   Info      1-bit synchronized with ASYNC_REG property          4  Asynch Clock Groups  system_i/usp_rf_data_converter_0/inst/i_rf_conv_mt_mrk_counter_adc02/mrk_cntr_done_ff_reg/C               system_i/usp_rf_data_converter_0/inst/cdc_adc02_mrk_cntr_done_i/syncstages_ff_reg[0]/D
+ 23  CDC-11  Critical  Fan-out from launch flop to destination clock       4  Asynch Clock Groups  system_i/rst_adc_clk/U0/ACTIVE_LOW_PR_OUT_DFF[0].FDRE_PER_N/C                                             system_i/usp_rf_data_converter_0/inst/cdc_adc0_clk_valid_i/syncstages_ff_reg[0]/D
+ 24  CDC-3   Info      1-bit synchronized with ASYNC_REG property          4  Asynch Clock Groups  system_i/usp_rf_data_converter_0/inst/i_rf_conv_mt_mrk_counter_adc10/mrk_cntr_done_ff_reg/C               system_i/usp_rf_data_converter_0/inst/cdc_adc10_mrk_cntr_done_i/syncstages_ff_reg[0]/D
+ 25  CDC-3   Info      1-bit synchronized with ASYNC_REG property          4  Asynch Clock Groups  system_i/usp_rf_data_converter_0/inst/i_rf_conv_mt_mrk_counter_adc12/mrk_cntr_done_ff_reg/C               system_i/usp_rf_data_converter_0/inst/cdc_adc12_mrk_cntr_done_i/syncstages_ff_reg[0]/D
+ 26  CDC-11  Critical  Fan-out from launch flop to destination clock       4  Asynch Clock Groups  system_i/rst_adc_clk/U0/ACTIVE_LOW_PR_OUT_DFF[0].FDRE_PER_N/C                                             system_i/usp_rf_data_converter_0/inst/cdc_adc1_clk_valid_i/syncstages_ff_reg[0]/D
+ 27  CDC-3   Info      1-bit synchronized with ASYNC_REG property          4  Asynch Clock Groups  system_i/usp_rf_data_converter_0/inst/i_rf_conv_mt_mrk_counter_adc20/mrk_cntr_done_ff_reg/C               system_i/usp_rf_data_converter_0/inst/cdc_adc20_mrk_cntr_done_i/syncstages_ff_reg[0]/D
+ 28  CDC-3   Info      1-bit synchronized with ASYNC_REG property          4  Asynch Clock Groups  system_i/usp_rf_data_converter_0/inst/i_rf_conv_mt_mrk_counter_adc22/mrk_cntr_done_ff_reg/C               system_i/usp_rf_data_converter_0/inst/cdc_adc22_mrk_cntr_done_i/syncstages_ff_reg[0]/D
+ 29  CDC-11  Critical  Fan-out from launch flop to destination clock       4  Asynch Clock Groups  system_i/rst_adc_clk/U0/ACTIVE_LOW_PR_OUT_DFF[0].FDRE_PER_N/C                                             system_i/usp_rf_data_converter_0/inst/cdc_adc2_clk_valid_i/syncstages_ff_reg[0]/D
+ 30  CDC-3   Info      1-bit synchronized with ASYNC_REG property          4  Asynch Clock Groups  system_i/usp_rf_data_converter_0/inst/i_rf_conv_mt_mrk_counter_adc30/mrk_cntr_done_ff_reg/C               system_i/usp_rf_data_converter_0/inst/cdc_adc30_mrk_cntr_done_i/syncstages_ff_reg[0]/D
+ 31  CDC-3   Info      1-bit synchronized with ASYNC_REG property          4  Asynch Clock Groups  system_i/usp_rf_data_converter_0/inst/i_rf_conv_mt_mrk_counter_adc32/mrk_cntr_done_ff_reg/C               system_i/usp_rf_data_converter_0/inst/cdc_adc32_mrk_cntr_done_i/syncstages_ff_reg[0]/D
+ 32  CDC-11  Critical  Fan-out from launch flop to destination clock       4  Asynch Clock Groups  system_i/rst_adc_clk/U0/ACTIVE_LOW_PR_OUT_DFF[0].FDRE_PER_N/C                                             system_i/usp_rf_data_converter_0/inst/cdc_adc3_clk_valid_i/syncstages_ff_reg[0]/D
+ 33  CDC-3   Info      1-bit synchronized with ASYNC_REG property          3  Asynch Clock Groups  user_sysref_adc_reg/C                                                                                     system_i/usp_rf_data_converter_0/inst/i_mts_sysref_count_adc/i_xpm_cdc_sysref/syncstages_ff_reg[0]/D
+ 34  CDC-3   Info      1-bit synchronized with ASYNC_REG property          5  Asynch Clock Groups  system_i/usp_rf_data_converter_0/inst/i_mts_sysref_count_adc/sysref_freq_done_ff_reg/C                    system_i/usp_rf_data_converter_0/inst/i_mts_sysref_count_adc/i_xpm_cdc_sysref_done/syncstages_ff_reg[0]/D
+

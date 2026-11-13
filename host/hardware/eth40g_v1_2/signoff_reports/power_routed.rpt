@@ -1,0 +1,356 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+-------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version     : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+| Date             : Thu Nov 12 06:00:53 2026
+| Host             : DESKTOP-CLMQL7K running 64-bit major release  (build 9200)
+| Command          : report_power -file D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/reports/D3C_IMPL/power_routed.rpt
+| Design           : awg_eth_top
+| Device           : xczu47dr-fsve1156-2-i
+| Design State     : routed
+| Grade            : industrial
+| Process          : typical
+| Characterization : Production
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+Power Report
+
+Table of Contents
+-----------------
+1. Summary
+1.1 On-Chip Components
+1.2 Power Supply Summary
+1.3 Confidence Level
+2. Settings
+2.1 Environment
+2.2 Clock Constraints
+3. Detailed Reports
+3.1 By Hierarchy
+
+1. Summary
+----------
+
++--------------------------+--------------+
+| Total On-Chip Power (W)  | 16.363       |
+| Design Power Budget (W)  | Unspecified* |
+| Power Budget Margin (W)  | NA           |
+| Dynamic (W)              | 14.786       |
+| Device Static (W)        | 1.577        |
+| Effective TJA (C/W)      | 0.9          |
+| Max Ambient (C)          | 84.9         |
+| Junction Temperature (C) | 40.1         |
+| Confidence Level         | Medium       |
+| Setting File             | ---          |
+| Simulation Activity File | ---          |
+| Design Nets Matched      | NA           |
++--------------------------+--------------+
+* Specify Design Power Budget using, set_operating_conditions -design_power_budget <value in Watts>
+
+
+1.1 On-Chip Components
+----------------------
+
++--------------------------+-----------+----------+-----------+-----------------+
+| On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
++--------------------------+-----------+----------+-----------+-----------------+
+| Clocks                   |     0.659 |       27 |       --- |             --- |
+| CLB Logic                |     0.215 |   104347 |       --- |             --- |
+|   LUT as Logic           |     0.178 |    33201 |    425280 |            7.81 |
+|   LUT as Distributed RAM |     0.022 |      612 |    213600 |            0.29 |
+|   Register               |     0.012 |    60157 |    850560 |            7.07 |
+|   LUT as Shift Register  |     0.002 |      235 |    213600 |            0.11 |
+|   CARRY8                 |     0.001 |      295 |     53160 |            0.55 |
+|   Others                 |     0.000 |     1574 |       --- |             --- |
+|   F7/F8 Muxes            |     0.000 |     1522 |    425280 |            0.36 |
+|   BUFG                   |     0.000 |        2 |        64 |            3.13 |
+| Signals                  |     0.318 |    98812 |       --- |             --- |
+| Block RAM                |     0.260 |      269 |      1080 |           24.91 |
+| URAM                     |     0.425 |       56 |        80 |           70.00 |
+| RFAMS                    |     8.988 |        8 |       --- |             --- |
+|   RFADC                  |     4.629 |        4 |         4 |          100.00 |
+|   RFDAC                  |     4.359 |        4 |         4 |          100.00 |
+| MMCM                     |     0.197 |        0 |       --- |             --- |
+| DSPs                     |    <0.001 |        1 |      4272 |            0.02 |
+| I/O                      |     0.008 |        9 |       152 |            5.92 |
+| GTY                      |     1.247 |        4 |         8 |           50.00 |
+| PS8                      |     2.470 |        1 |       --- |             --- |
+| Static Power             |     1.577 |          |           |                 |
+|   PS Static              |     0.113 |          |           |                 |
+|   PL Static              |     1.464 |          |           |                 |
+| Total                    |    16.363 |          |           |                 |
++--------------------------+-----------+----------+-----------+-----------------+
+
+
+1.2 Power Supply Summary
+------------------------
+
++------------------+-------------+-----------+-------------+------------+-------------+-------------+------------+
+| Source           | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
++------------------+-------------+-----------+-------------+------------+-------------+-------------+------------+
+| Vccint           |       0.850 |     2.854 |       2.360 |      0.494 |       NA    | Unspecified | NA         |
+| Vccint_io        |       0.850 |     0.076 |       0.001 |      0.075 |       NA    | Unspecified | NA         |
+| Vccbram          |       0.850 |     0.033 |       0.025 |      0.008 |       NA    | Unspecified | NA         |
+| Vccaux           |       1.800 |     0.380 |       0.109 |      0.271 |       NA    | Unspecified | NA         |
+| Vccaux_io        |       1.800 |     0.062 |       0.004 |      0.058 |       NA    | Unspecified | NA         |
+| Vcco33           |       3.300 |     0.010 |       0.000 |      0.010 |       NA    | Unspecified | NA         |
+| Vcco25           |       2.500 |     0.010 |       0.000 |      0.010 |       NA    | Unspecified | NA         |
+| Vcco18           |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| Vcco15           |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| Vcco135          |       1.350 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| Vcco12           |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| Vcco10           |       1.000 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| Vccadc           |       1.800 |     0.008 |       0.000 |      0.008 |       NA    | Unspecified | NA         |
+| VCC_PSINTFP      |       0.850 |     0.677 |       0.630 |      0.047 |       NA    | Unspecified | NA         |
+| VCC_PSINTLP      |       0.850 |     0.270 |       0.260 |      0.010 |       NA    | Unspecified | NA         |
+| VPS_MGTRAVCC     |       0.850 |     0.119 |       0.118 |      0.001 |       NA    | Unspecified | NA         |
+| VCC_PSINTFP_DDR  |       0.850 |     0.822 |       0.816 |      0.006 |       NA    | Unspecified | NA         |
+| VCC_PSPLL        |       1.200 |     0.074 |       0.072 |      0.002 |       NA    | Unspecified | NA         |
+| VPS_MGTRAVTT     |       1.800 |     0.034 |       0.033 |      0.001 |       NA    | Unspecified | NA         |
+| VCCO_PSDDR_504   |       1.200 |     0.677 |       0.643 |      0.034 |       NA    | Unspecified | NA         |
+| VCC_PSAUX        |       1.800 |     0.002 |       0.000 |      0.002 |       NA    | Unspecified | NA         |
+| VCC_PSBATT       |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| VCC_PSDDR_PLL    |       1.800 |     0.001 |       0.000 |      0.001 |       NA    | Unspecified | NA         |
+| VCCO_PSIO0_500   |       1.800 |     0.001 |       0.000 |      0.001 |       NA    | Unspecified | NA         |
+| VCCO_PSIO1_501   |       1.800 |     0.001 |       0.001 |      0.001 |       NA    | Unspecified | NA         |
+| VCCO_PSIO2_502   |       1.800 |     0.001 |       0.000 |      0.001 |       NA    | Unspecified | NA         |
+| VCCO_PSIO3_503   |       3.300 |     0.001 |       0.000 |      0.001 |       NA    | Unspecified | NA         |
+| VCC_PSADC        |       1.800 |     0.002 |       0.000 |      0.002 |       NA    | Unspecified | NA         |
+| VCCSDFEC         |       0.850 |     0.048 |       0.000 |      0.048 |       NA    | Unspecified | NA         |
+| VCCINT_AMS       |       0.850 |     2.011 |       1.982 |      0.029 |       NA    | Unspecified | NA         |
+| DACAVCC          |       0.925 |     2.312 |       2.295 |      0.017 |       NA    | Unspecified | NA         |
+| DACAVCCAUX       |       1.800 |     0.342 |       0.341 |      0.001 |       NA    | Unspecified | NA         |
+| DACAVTT          |       2.500 |     0.362 |       0.352 |      0.010 |       NA    | Unspecified | NA         |
+| ADCAVCC          |       0.925 |     1.933 |       1.819 |      0.114 |       NA    | Unspecified | NA         |
+| ADCAVCCAUX       |       1.800 |     1.140 |       1.113 |      0.027 |       NA    | Unspecified | NA         |
+| VMGTAVCC (GTY)   |       0.900 |     0.287 |       0.255 |      0.032 |       NA    | Unspecified | NA         |
+| VMGTAVTT (GTY)   |       1.200 |     0.700 |       0.688 |      0.012 |       NA    | Unspecified | NA         |
+| VMGTVCCAUX (GTY) |       1.800 |     0.025 |       0.023 |      0.001 |       NA    | Unspecified | NA         |
++------------------+-------------+-----------+-------------+------------+-------------+-------------+------------+
+
+
+1.3 Confidence Level
+--------------------
+
++-----------------------------+------------+-------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| User Input Data             | Confidence | Details                                               | Action                                                                                                     |
++-----------------------------+------------+-------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| Design implementation state | High       | Design is routed                                      |                                                                                                            |
+| Clock nodes activity        | High       | User specified more than 95% of clocks                |                                                                                                            |
+| I/O nodes activity          | Medium     | More than 5% of inputs are missing user specification | Provide missing input activity with simulation results or by editing the "By Resource Type -> I/Os" view   |
+| Internal nodes activity     | Medium     | User specified less than 25% of internal nodes        | Provide missing internal nodes activity with simulation results or by editing the "By Resource Type" views |
+| Device models               | High       | Device models are Production                          |                                                                                                            |
+|                             |            |                                                       |                                                                                                            |
+| Overall confidence level    | Medium     |                                                       |                                                                                                            |
++-----------------------------+------------+-------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+
+
+2. Settings
+-----------
+
+2.1 Environment
+---------------
+
++-----------------------+--------------------------+
+| Ambient Temp (C)      | 25.0                     |
+| ThetaJA (C/W)         | 0.9                      |
+| Airflow (LFM)         | 250                      |
+| Heat Sink             | medium (Medium Profile)  |
+| ThetaSA (C/W)         | 1.5                      |
+| Board Selection       | medium (10"x10")         |
+| # of Board Layers     | 12to15 (12 to 15 Layers) |
+| Board Temperature (C) | 25.0                     |
++-----------------------+--------------------------+
+
+
+2.2 Clock Constraints
+---------------------
+
++-----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
+| Clock                                                                                               | Domain                                                                                                                                                                                                                                                   | Constraint (ns) |
++-----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
+| GTYE4_CHANNEL_TXOUTCLKPCS[0]                                                                        | eth_core_i/u_qsfp2_mac/DUT/inst/i_optical_port2_gt/inst/gen_gtwizard_gtye4_top.optical_port2_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[2].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/GTYE4_CHANNEL_TXOUTCLKPCS[0] |             3.1 |
+| GTYE4_CHANNEL_TXOUTCLKPCS[1]                                                                        | eth_core_i/u_qsfp2_mac/DUT/inst/i_optical_port2_gt/inst/gen_gtwizard_gtye4_top.optical_port2_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[2].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/GTYE4_CHANNEL_TXOUTCLKPCS[1] |             3.1 |
+| GTYE4_CHANNEL_TXOUTCLKPCS[2]                                                                        | eth_core_i/u_qsfp2_mac/DUT/inst/i_optical_port2_gt/inst/gen_gtwizard_gtye4_top.optical_port2_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[2].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/GTYE4_CHANNEL_TXOUTCLKPCS[2] |             3.1 |
+| GTYE4_CHANNEL_TXOUTCLKPCS[3]                                                                        | eth_core_i/u_qsfp2_mac/DUT/inst/i_optical_port2_gt/inst/gen_gtwizard_gtye4_top.optical_port2_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[2].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/GTYE4_CHANNEL_TXOUTCLKPCS[3] |             3.1 |
+| RFDAC2_CLK                                                                                          | system_i/system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx2_u_dac_1                                                                                                                                                 |             1.6 |
+| clk_out1_demo_management_clock                                                                      | eth_core_i/u_management_clock/inst/clk_out1_demo_management_clock                                                                                                                                                                                        |            10.0 |
+| clk_out1_system_clk_wiz_0_0                                                                         | system_i/system_i/clk_wiz_0/inst/CLK_CORE_DRP_I/clk_inst/clk_out1_system_clk_wiz_0_0                                                                                                                                                                     |             1.6 |
+| clk_out1_system_clk_wiz_adc_0                                                                       | system_i/system_i/clk_wiz_adc/inst/clk_out1_system_clk_wiz_adc_0                                                                                                                                                                                         |             2.4 |
+| clk_pl_0                                                                                            | system_i/system_i/zynq_ultra_ps_e_0/inst/pl_clk_unbuffered[0]                                                                                                                                                                                            |            10.0 |
+| dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/INTERNAL_TCK | dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/DRCK                                                                                                                                                                                       |            50.0 |
+| pl_clk_p                                                                                            | pl_clk_p                                                                                                                                                                                                                                                 |             5.0 |
+| qpll0outclk_out[0]                                                                                  | eth_core_i/u_qsfp2_mac/DUT/inst/i_optical_port2_gt/inst/gen_gtwizard_gtye4_top.optical_port2_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_common.gen_common_container[2].gen_enabled_common.gtye4_common_wrapper_inst/common_inst/qpll0outclk_out[0]    |             0.2 |
+| qpll0outrefclk_out[0]                                                                               | eth_core_i/u_qsfp2_mac/DUT/inst/i_optical_port2_gt/inst/gen_gtwizard_gtye4_top.optical_port2_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_common.gen_common_container[2].gen_enabled_common.gtye4_common_wrapper_inst/common_inst/qpll0outrefclk_out[0] |             6.4 |
+| qsfp2_refclk_p                                                                                      | qsfp2_refclk_p                                                                                                                                                                                                                                           |             6.4 |
+| rx_clk                                                                                              | rx_clk                                                                                                                                                                                                                                                   |             4.8 |
+| rxoutclk_out[0]                                                                                     | eth_core_i/u_qsfp2_mac/DUT/inst/i_optical_port2_gt/inst/gen_gtwizard_gtye4_top.optical_port2_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[2].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/rxoutclk_out[0]              |             3.2 |
+| tx_clk                                                                                              | tx_clk                                                                                                                                                                                                                                                   |             3.3 |
+| txoutclk_out[0]                                                                                     | eth_core_i/u_qsfp2_mac/DUT/inst/i_optical_port2_gt/inst/gen_gtwizard_gtye4_top.optical_port2_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[2].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/txoutclk_out[0]              |             3.2 |
++-----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
+
+
+3. Detailed Reports
+-------------------
+
+3.1 By Hierarchy
+----------------
+
++----------------------------------------------+-----------+
+| Name                                         | Power (W) |
++----------------------------------------------+-----------+
+| awg_eth_top                                  |    14.786 |
+|   arb_i                                      |     0.002 |
+|   control_i                                  |     0.003 |
+|   dbg_hub                                    |     0.003 |
+|     inst                                     |     0.003 |
+|       BSCANID.u_xsdbm_id                     |     0.003 |
+|   eth_bridge_i                               |     0.029 |
+|     u_rx_fifo                                |     0.008 |
+|     u_tx_fifo                                |     0.011 |
+|   eth_core_i                                 |     1.964 |
+|     u_management_clock                       |     0.099 |
+|       inst                                   |     0.099 |
+|     u_qsfp2_mac                              |     1.660 |
+|       DUT                                    |     1.660 |
+|     u_rx_frame_fifo                          |     0.041 |
+|     u_tx_frame_fifo                          |     0.043 |
+|     u_udp_port                               |     0.121 |
+|       u_eth_rx                               |     0.013 |
+|       u_eth_tx                               |     0.005 |
+|       u_rx_gearbox                           |     0.009 |
+|       u_tx_frame_align_pad                   |     0.005 |
+|       u_tx_gearbox                           |     0.009 |
+|       u_udp_complete                         |     0.079 |
+|   jtag_axi_i                                 |     0.011 |
+|     inst                                     |     0.011 |
+|       jtag_axi_engine_u                      |     0.010 |
+|   pl_clk_ibufds                              |     0.001 |
+|   pl_sysref_ibufds                           |     0.001 |
+|   rx_i                                       |     0.330 |
+|   system_i                                   |    11.698 |
+|     system_i                                 |    11.698 |
+|       clk_wiz_0                              |     0.114 |
+|       clk_wiz_adc                            |     0.001 |
+|       ps8_0_axi_periph                       |     0.006 |
+|       rst_adc_clk                            |     0.001 |
+|       rst_rf_clk                             |     0.002 |
+|       up_axi_0                               |     0.001 |
+|       usp_rf_data_converter_0                |     9.098 |
+|       zynq_ultra_ps_e_0                      |     2.474 |
+|   tx_i                                       |     0.737 |
+|     g_uram_channel[0].g_uram_block[0].uram_i |     0.009 |
+|       memory_i                               |     0.009 |
+|     g_uram_channel[0].g_uram_block[1].uram_i |     0.008 |
+|       memory_i                               |     0.008 |
+|     g_uram_channel[0].g_uram_block[2].uram_i |     0.008 |
+|       memory_i                               |     0.008 |
+|     g_uram_channel[0].g_uram_block[3].uram_i |     0.008 |
+|       memory_i                               |     0.008 |
+|     g_uram_channel[0].g_uram_block[4].uram_i |     0.008 |
+|       memory_i                               |     0.008 |
+|     g_uram_channel[0].g_uram_block[5].uram_i |     0.008 |
+|       memory_i                               |     0.008 |
+|     g_uram_channel[0].g_uram_block[6].uram_i |     0.008 |
+|       memory_i                               |     0.008 |
+|     g_uram_channel[1].g_uram_block[0].uram_i |     0.008 |
+|       memory_i                               |     0.008 |
+|     g_uram_channel[1].g_uram_block[1].uram_i |     0.008 |
+|       memory_i                               |     0.008 |
+|     g_uram_channel[1].g_uram_block[2].uram_i |     0.008 |
+|       memory_i                               |     0.008 |
+|     g_uram_channel[1].g_uram_block[3].uram_i |     0.008 |
+|       memory_i                               |     0.008 |
+|     g_uram_channel[1].g_uram_block[4].uram_i |     0.008 |
+|       memory_i                               |     0.008 |
+|     g_uram_channel[1].g_uram_block[5].uram_i |     0.008 |
+|       memory_i                               |     0.008 |
+|     g_uram_channel[1].g_uram_block[6].uram_i |     0.008 |
+|       memory_i                               |     0.008 |
+|     g_uram_channel[2].g_uram_block[0].uram_i |     0.008 |
+|       memory_i                               |     0.008 |
+|     g_uram_channel[2].g_uram_block[1].uram_i |     0.008 |
+|       memory_i                               |     0.008 |
+|     g_uram_channel[2].g_uram_block[2].uram_i |     0.008 |
+|       memory_i                               |     0.008 |
+|     g_uram_channel[2].g_uram_block[3].uram_i |     0.008 |
+|       memory_i                               |     0.008 |
+|     g_uram_channel[2].g_uram_block[4].uram_i |     0.008 |
+|       memory_i                               |     0.008 |
+|     g_uram_channel[2].g_uram_block[5].uram_i |     0.008 |
+|       memory_i                               |     0.008 |
+|     g_uram_channel[2].g_uram_block[6].uram_i |     0.008 |
+|       memory_i                               |     0.008 |
+|     g_uram_channel[3].g_uram_block[0].uram_i |     0.008 |
+|       memory_i                               |     0.008 |
+|     g_uram_channel[3].g_uram_block[1].uram_i |     0.008 |
+|       memory_i                               |     0.008 |
+|     g_uram_channel[3].g_uram_block[2].uram_i |     0.008 |
+|       memory_i                               |     0.008 |
+|     g_uram_channel[3].g_uram_block[3].uram_i |     0.008 |
+|       memory_i                               |     0.008 |
+|     g_uram_channel[3].g_uram_block[4].uram_i |     0.008 |
+|       memory_i                               |     0.008 |
+|     g_uram_channel[3].g_uram_block[5].uram_i |     0.008 |
+|       memory_i                               |     0.008 |
+|     g_uram_channel[3].g_uram_block[6].uram_i |     0.008 |
+|       memory_i                               |     0.008 |
+|     g_uram_channel[4].g_uram_block[0].uram_i |     0.008 |
+|       memory_i                               |     0.008 |
+|     g_uram_channel[4].g_uram_block[1].uram_i |     0.008 |
+|       memory_i                               |     0.008 |
+|     g_uram_channel[4].g_uram_block[2].uram_i |     0.008 |
+|       memory_i                               |     0.008 |
+|     g_uram_channel[4].g_uram_block[3].uram_i |     0.008 |
+|       memory_i                               |     0.008 |
+|     g_uram_channel[4].g_uram_block[4].uram_i |     0.008 |
+|       memory_i                               |     0.008 |
+|     g_uram_channel[4].g_uram_block[5].uram_i |     0.008 |
+|       memory_i                               |     0.008 |
+|     g_uram_channel[4].g_uram_block[6].uram_i |     0.008 |
+|       memory_i                               |     0.008 |
+|     g_uram_channel[5].g_uram_block[0].uram_i |     0.008 |
+|       memory_i                               |     0.008 |
+|     g_uram_channel[5].g_uram_block[1].uram_i |     0.008 |
+|       memory_i                               |     0.008 |
+|     g_uram_channel[5].g_uram_block[2].uram_i |     0.008 |
+|       memory_i                               |     0.008 |
+|     g_uram_channel[5].g_uram_block[3].uram_i |     0.008 |
+|       memory_i                               |     0.008 |
+|     g_uram_channel[5].g_uram_block[4].uram_i |     0.008 |
+|       memory_i                               |     0.008 |
+|     g_uram_channel[5].g_uram_block[5].uram_i |     0.008 |
+|       memory_i                               |     0.008 |
+|     g_uram_channel[5].g_uram_block[6].uram_i |     0.008 |
+|       memory_i                               |     0.008 |
+|     g_uram_channel[6].g_uram_block[0].uram_i |     0.008 |
+|       memory_i                               |     0.008 |
+|     g_uram_channel[6].g_uram_block[1].uram_i |     0.008 |
+|       memory_i                               |     0.008 |
+|     g_uram_channel[6].g_uram_block[2].uram_i |     0.008 |
+|       memory_i                               |     0.008 |
+|     g_uram_channel[6].g_uram_block[3].uram_i |     0.008 |
+|       memory_i                               |     0.008 |
+|     g_uram_channel[6].g_uram_block[4].uram_i |     0.008 |
+|       memory_i                               |     0.008 |
+|     g_uram_channel[6].g_uram_block[5].uram_i |     0.008 |
+|       memory_i                               |     0.008 |
+|     g_uram_channel[6].g_uram_block[6].uram_i |     0.010 |
+|       memory_i                               |     0.010 |
+|     g_uram_channel[7].g_uram_block[0].uram_i |     0.008 |
+|       memory_i                               |     0.008 |
+|     g_uram_channel[7].g_uram_block[1].uram_i |     0.008 |
+|       memory_i                               |     0.008 |
+|     g_uram_channel[7].g_uram_block[2].uram_i |     0.008 |
+|       memory_i                               |     0.008 |
+|     g_uram_channel[7].g_uram_block[3].uram_i |     0.008 |
+|       memory_i                               |     0.008 |
+|     g_uram_channel[7].g_uram_block[4].uram_i |     0.008 |
+|       memory_i                               |     0.008 |
+|     g_uram_channel[7].g_uram_block[5].uram_i |     0.008 |
+|       memory_i                               |     0.008 |
+|     g_uram_channel[7].g_uram_block[6].uram_i |     0.008 |
+|       memory_i                               |     0.008 |
+|     wr_fifo_i                                |     0.004 |
+|       gnuram_async_fifo.xpm_fifo_base_inst   |     0.004 |
++----------------------------------------------+-----------+
+
+

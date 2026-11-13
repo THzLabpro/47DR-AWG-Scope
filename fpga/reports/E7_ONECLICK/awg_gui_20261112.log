@@ -1,0 +1,91 @@
+==== 2026-11-12 09:19:08 V1.2 start ====
+09:19:08 开始下载 bit 并初始化…
+09:19:08 [xsct] $ D:\AMDDesignTools\2025.2\Vitis\bin\xsct.bat D:\ClaudeProject\handoff\rf_awg_eth_v1_handoff_20261112\05_host_app\AWG47DR_V1\firmware\program.tcl -package D:\ClaudeProject\handoff\rf_awg_eth_v1_handoff_20261112\05_host_app\AWG47DR_V1\firmware
+09:19:09 [xsct] ****** Software Commandline Tool (XSCT) v2025.2.0
+09:19:09 [xsct]   **** SW Build 6298600 on Thu Nov 13 01:12:30 MST 2025
+09:19:09 [xsct]     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+09:19:09 [xsct]     ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+09:19:09 [xsct] Warning: XSCT is deprecated and will be removed in future releases.
+09:19:09 [xsct] We recommend using the new Python command-line tool for project management and debugging:
+09:19:09 [xsct] - Run "vitis -i" for interactive mode.
+09:19:09 [xsct] - Run "vitis -s <script>" for script mode.
+09:19:11 [xsct] attempting to launch hw_server
+09:19:12 [xsct] ****** Xilinx hw_server v2025.2
+09:19:12 [xsct]   **** Build date : Oct 28 2025 at 10:03:13
+09:19:12 [xsct]     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+09:19:12 [xsct]     ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+09:19:12 [xsct] INFO: hw_server application started
+09:19:12 [xsct] INFO: Use Ctrl-C to exit hw_server application
+09:19:12 [xsct] ****** Xilinx hw_server v2025.2
+09:19:12 [xsct]   **** Build date : Oct 28 2025 at 10:03:13
+09:19:12 [xsct]     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+09:19:12 [xsct]     ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+09:19:12 [xsct] INFO: hw_server application started
+09:19:12 [xsct] INFO: Use Ctrl-C to exit hw_server application
+09:19:12 [xsct] INFO: To connect to this hw_server instance use url: TCP:127.0.0.1:3121
+09:19:16 [xsct] WARNING: If the reset is being triggered after powering on the device,
+09:19:16 [xsct]          write bootloop at reset vector address (0xffff0000), or use
+09:19:16 [xsct]          -clear-registers option, to avoid unpredictable behavior.
+09:19:16 [xsct]          Further warnings will be suppressed
+09:19:20 [xsct] LMK clocks are stable; programming the matching PL before RFDC initialization.
+09:19:32 [xsct] RF initializer is running. Wait for AWG READY on PS UART before JTAG wave commands.
+09:19:32 bit 已下载，PS 正在初始化 RFDC（24 s），等待板卡就绪…
+09:19:36 已连接 192.168.42.2:9100（协议 1，单包最多 2048 字）
+09:19:36 下载 bit 并初始化完成，已连接（共 28 s）
+09:19:36 板卡就绪（等待 4 s）
+==== 2026-11-12 09:20:14 V1.2 start ====
+09:20:14 开始下载 bit 并初始化…
+09:20:14 [xsct] $ D:\AMDDesignTools\2025.2\Vitis\bin\xsct.bat D:\ClaudeProject\handoff\rf_awg_eth_v1_handoff_20261112\05_host_app\AWG47DR_V1\firmware\program.tcl -package D:\ClaudeProject\handoff\rf_awg_eth_v1_handoff_20261112\05_host_app\AWG47DR_V1\firmware
+09:20:14 [xsct] ****** Software Commandline Tool (XSCT) v2025.2.0
+09:20:14 [xsct]   **** SW Build 6298600 on Thu Nov 13 01:12:30 MST 2025
+09:20:14 [xsct]     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+09:20:14 [xsct]     ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+09:20:14 [xsct] Warning: XSCT is deprecated and will be removed in future releases.
+09:20:14 [xsct] We recommend using the new Python command-line tool for project management and debugging:
+09:20:14 [xsct] - Run "vitis -i" for interactive mode.
+09:20:14 [xsct] - Run "vitis -s <script>" for script mode.
+09:20:17 [xsct] attempting to launch hw_server
+09:20:17 [xsct] ****** Xilinx hw_server v2025.2
+09:20:17 [xsct]   **** Build date : Oct 28 2025 at 10:03:13
+09:20:17 [xsct]     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+09:20:17 [xsct]     ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+09:20:17 [xsct] INFO: hw_server application started
+09:20:17 [xsct] INFO: Use Ctrl-C to exit hw_server application
+09:20:17 [xsct] ****** Xilinx hw_server v2025.2
+09:20:17 [xsct]   **** Build date : Oct 28 2025 at 10:03:13
+09:20:17 [xsct]     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+09:20:17 [xsct]     ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+09:20:17 [xsct] INFO: hw_server application started
+09:20:17 [xsct] INFO: Use Ctrl-C to exit hw_server application
+09:20:17 [xsct] INFO: To connect to this hw_server instance use url: TCP:127.0.0.1:3121
+09:20:21 [xsct] WARNING: If the reset is being triggered after powering on the device,
+09:20:21 [xsct]          write bootloop at reset vector address (0xffff0000), or use
+09:20:21 [xsct]          -clear-registers option, to avoid unpredictable behavior.
+09:20:21 [xsct]          Further warnings will be suppressed
+09:20:25 [xsct] LMK clocks are stable; programming the matching PL before RFDC initialization.
+09:20:38 [xsct] RF initializer is running. Wait for AWG READY on PS UART before JTAG wave commands.
+09:20:38 bit 已下载，PS 正在初始化 RFDC（24 s），等待板卡就绪…
+09:20:41 已连接 192.168.42.2:9100（协议 1，单包最多 2048 字）
+09:20:41 下载 bit 并初始化完成，已连接（共 27 s）
+09:20:41 板卡就绪（等待 4 s）
+==== 2026-11-12 09:20:45 V1.2 start ====
+09:20:45 开始下载 bit 并初始化…
+09:20:45 [xsct] $ D:\AMDDesignTools\2025.2\Vitis\bin\xsct.bat D:\ClaudeProject\handoff\rf_awg_eth_v1_handoff_20261112\05_host_app\AWG47DR_V1\firmware\program.tcl -package D:\ClaudeProject\handoff\rf_awg_eth_v1_handoff_20261112\05_host_app\AWG47DR_V1\firmware
+09:20:45 [xsct] ****** Software Commandline Tool (XSCT) v2025.2.0
+09:20:45 [xsct]   **** SW Build 6298600 on Thu Nov 13 01:12:30 MST 2025
+09:20:45 [xsct]     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+09:20:45 [xsct]     ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+09:20:45 [xsct] Warning: XSCT is deprecated and will be removed in future releases.
+09:20:45 [xsct] We recommend using the new Python command-line tool for project management and debugging:
+09:20:45 [xsct] - Run "vitis -i" for interactive mode.
+09:20:45 [xsct] - Run "vitis -s <script>" for script mode.
+09:20:49 [xsct] WARNING: If the reset is being triggered after powering on the device,
+09:20:49 [xsct]          write bootloop at reset vector address (0xffff0000), or use
+09:20:49 [xsct]          -clear-registers option, to avoid unpredictable behavior.
+09:20:49 [xsct]          Further warnings will be suppressed
+09:20:53 [xsct] LMK clocks are stable; programming the matching PL before RFDC initialization.
+09:21:07 [xsct] RF initializer is running. Wait for AWG READY on PS UART before JTAG wave commands.
+09:21:07 bit 已下载，PS 正在初始化 RFDC（23 s），等待板卡就绪…
+09:21:10 已连接 192.168.42.2:9100（协议 1，单包最多 2048 字）
+09:21:10 下载 bit 并初始化完成，已连接（共 25 s）
+09:21:10 板卡就绪（等待 2 s）

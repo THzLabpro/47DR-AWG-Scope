@@ -1,0 +1,14 @@
+REPLICA pattern=tx_i/*tx_phase_tog_r_reg* cells=8 expected=8
+FANOUT pattern=tx_i/*tx_phase_tog_r_reg* max_fanout=9
+REPLICA pattern=tx_i/*tog_q_reg* cells=32 expected=32
+FANOUT pattern=tx_i/*tog_q_reg* max_fanout=1
+REPLICA pattern=tx_i/*fh_q_reg* cells=32 expected=32
+FANOUT pattern=tx_i/*fh_q_reg* max_fanout=58
+REPLICA pattern=rx_i/*rx_phase_tog_r_reg* cells=8 expected=8
+FANOUT pattern=rx_i/*rx_phase_tog_r_reg* max_fanout=3
+REPLICA pattern=rx_i/*rtog_q_reg* cells=8 expected=8
+FANOUT pattern=rx_i/*rtog_q_reg* max_fanout=1
+REPLICA pattern=rx_i/*ph_q_reg* cells=8 expected=8
+FANOUT pattern=rx_i/*ph_q_reg* max_fanout=338
+REPLICA pattern=rx_i/*adc_pair_valid_ch_reg* cells=8 expected=8
+FANOUT pattern=rx_i/*adc_pair_valid_ch_reg* max_fanout=1

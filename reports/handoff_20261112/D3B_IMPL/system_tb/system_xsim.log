@@ -1,0 +1,370 @@
+
+****** xsim v2025.2 (64-bit)
+  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
+  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+  **** Start of session at: Thu Nov 12 01:27:20 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/tb_d3_system_sim/xsim_script.tcl
+# xsim {tb_d3_system_sim} -autoloadwcfg -runall
+Time resolution is 1 fs
+run -all
+LOOP_MODEL_START D=32 A=-96
+WAVE_CRC_REF ch0=9fb469e2 ch1=7acc79a3 ch2=55a06ff7
+PASS waveform CRC reference constants
+PASS S1 PING
+PASS S1 ID
+PASS S1 ABI
+PASS S2 select ch0
+DATA_WRITE_WAVE channel=0 first_word=0 count=256 got=1 status=0 resp_count=256
+PASS S2 ch0 packet
+DATA_WRITE_WAVE channel=0 first_word=256 count=256 got=1 status=0 resp_count=256
+PASS S2 ch0 packet
+DATA_WRITE_WAVE channel=0 first_word=512 count=256 got=1 status=0 resp_count=256
+PASS S2 ch0 packet
+DATA_WRITE_WAVE channel=0 first_word=768 count=256 got=1 status=0 resp_count=256
+PASS S2 ch0 packet
+DATA_WRITE_WAVE channel=0 first_word=1024 count=256 got=1 status=0 resp_count=256
+PASS S2 ch0 packet
+DATA_WRITE_WAVE channel=0 first_word=1280 count=256 got=1 status=0 resp_count=256
+PASS S2 ch0 packet
+DATA_WRITE_WAVE channel=0 first_word=1536 count=256 got=1 status=0 resp_count=256
+PASS S2 ch0 packet
+DATA_WRITE_WAVE channel=0 first_word=1792 count=256 got=1 status=0 resp_count=256
+PASS S2 ch0 packet
+PASS S2 ch0 TX_WR_PTR=4096
+PASS S2 length
+PASS S2 mask
+PASS S2 ch0 CRC command
+PASS S2 ch0 CRC STATUS bit8 clears
+S2_CRC channel=0 expected=9fb469e2 actual=9fb469e2
+PASS S2 ch0 CRC
+PASS S2 select ch1
+DATA_WRITE_WAVE channel=1 first_word=0 count=256 got=1 status=0 resp_count=256
+PASS S2 ch1 packet
+DATA_WRITE_WAVE channel=1 first_word=256 count=256 got=1 status=0 resp_count=256
+PASS S2 ch1 packet
+DATA_WRITE_WAVE channel=1 first_word=512 count=256 got=1 status=0 resp_count=256
+PASS S2 ch1 packet
+DATA_WRITE_WAVE channel=1 first_word=768 count=256 got=1 status=0 resp_count=256
+PASS S2 ch1 packet
+DATA_WRITE_WAVE channel=1 first_word=1024 count=256 got=1 status=0 resp_count=256
+PASS S2 ch1 packet
+DATA_WRITE_WAVE channel=1 first_word=1280 count=256 got=1 status=0 resp_count=256
+PASS S2 ch1 packet
+DATA_WRITE_WAVE channel=1 first_word=1536 count=256 got=1 status=0 resp_count=256
+PASS S2 ch1 packet
+DATA_WRITE_WAVE channel=1 first_word=1792 count=256 got=1 status=0 resp_count=256
+PASS S2 ch1 packet
+PASS S2 ch1 TX_WR_PTR=4096
+PASS S2 ch1 CRC command
+PASS S2 ch1 CRC STATUS bit8 clears
+S2_CRC channel=1 expected=7acc79a3 actual=7acc79a3
+PASS S2 ch1 CRC
+PASS S4 event capture config
+PASS S4 event arm
+PASS S4 start
+PASS S4 capture done
+PASS S4 CAP_SAMPLES=1536
+PASS capture channel select
+PASS capture pointer rewind
+PASS capture chunk full response
+PASS capture chunk full response
+PASS capture chunk full response
+PASS capture full response
+CAPTURE_FIRST_NONZERO channel=0 index=25
+CAPTURE_COMPARE channel=0 o=4079 p=1 solutions=1 compared=1511 mismatches=0 first_nonzero=25
+PASS S4 ch0 point comparison
+PASS capture channel select
+PASS capture pointer rewind
+PASS capture chunk full response
+PASS capture chunk full response
+PASS capture chunk full response
+PASS capture full response
+CAPTURE_FIRST_NONZERO channel=1 index=25
+CAPTURE_COMPARE channel=1 o=4079 p=1 solutions=1 compared=1511 mismatches=0 first_nonzero=25
+PASS S4 ch1 point comparison
+PASS S4 first_nonzero <=120
+PASS S4 channel offsets match
+S4_START o=4079 o_signed=-17 p=1 first_nonzero_ch0=25 compared_ch0=1511 first_nonzero_ch1=25 compared_ch1=1511 cap_tx_word=0 observed_start_word=127 error_words=1
+PASS S4 CAP_TX_WORD error <=24 words
+PASS S5 stop before manual run
+PASS S5 manual capture config
+PASS S5 start
+PASS S5 manual arm
+PASS S5 manual done
+PASS S5 CAP_SAMPLES=1536
+PASS capture channel select
+PASS capture pointer rewind
+PASS capture chunk full response
+PASS capture chunk full response
+PASS capture chunk full response
+PASS capture full response
+CAPTURE_COMPARE channel=0 o=2493 p=19 solutions=1 compared=1536 mismatches=0 first_nonzero=0
+PASS S5 ch0 point comparison
+PASS capture channel select
+PASS capture pointer rewind
+PASS capture chunk full response
+PASS capture chunk full response
+PASS capture chunk full response
+PASS capture full response
+CAPTURE_COMPARE channel=1 o=2493 p=19 solutions=1 compared=1536 mismatches=0 first_nonzero=0
+PASS S5 ch1 point comparison
+PASS S5 channel offsets match
+S5_CAPTURE ch0_o=2493 ch0_p=19 ch0_first_nonzero=0 ch0_compared=1536 ch1_o=2493 ch1_p=19 ch1_first_nonzero=0 ch1_compared=1536 mismatches_ch0=0 mismatches_ch1=0
+PASS S5 stop after capture
+PASS S3 insufficient start SLVERR
+PASS S3 valid start
+PASS S3 locked length SLVERR
+PASS S3 stop
+PASS S6 JTAG and Ethernet overlap
+PASS S8 event arm without start
+PASS S8 CAP_STATUS armed and busy
+PASS S8 busy CAP_RD_DATA returns AXI_ERR
+PASS S8 abort
+PASS S8 abort clears armed and busy
+PASS S8 rearm succeeds
+PASS S8 rearm armed status
+PASS S8 cleanup abort
+PASS S9 select ch2
+DATA_WRITE_WAVE channel=2 first_word=0 count=256 got=1 status=0 resp_count=256
+PASS S9 backpressured write packet
+DATA_WRITE_WAVE channel=2 first_word=256 count=256 got=1 status=0 resp_count=256
+PASS S9 backpressured write packet
+DATA_WRITE_WAVE channel=2 first_word=512 count=256 got=1 status=0 resp_count=256
+PASS S9 backpressured write packet
+DATA_WRITE_WAVE channel=2 first_word=768 count=256 got=1 status=0 resp_count=256
+PASS S9 backpressured write packet
+DATA_WRITE_WAVE channel=2 first_word=1024 count=256 got=1 status=0 resp_count=256
+PASS S9 backpressured write packet
+DATA_WRITE_WAVE channel=2 first_word=1280 count=256 got=1 status=0 resp_count=256
+PASS S9 backpressured write packet
+DATA_WRITE_WAVE channel=2 first_word=1536 count=256 got=1 status=0 resp_count=256
+PASS S9 backpressured write packet
+DATA_WRITE_WAVE channel=2 first_word=1792 count=256 got=1 status=0 resp_count=256
+PASS S9 backpressured write packet
+PASS S9 randomized AWG TX backpressure observed
+PASS S9 TX_WR_PTR=4096
+PASS S9 CRC command
+PASS S9 CRC STATUS bit8 clears
+S9_BACKPRESSURE cycles=1609 CRC_expected=55a06ff7 CRC_actual=55a06ff7
+PASS S9 backpressured CRC
+PASS S7 stop before throughput write
+PASS S7 select ch0
+DATA_WRITE addr=90200038 count=256 got=1 status=0 resp_count=256 resp_len=24
+PASS S7 write packet
+DATA_WRITE addr=90200038 count=256 got=1 status=0 resp_count=256 resp_len=24
+PASS S7 write packet
+DATA_WRITE addr=90200038 count=256 got=1 status=0 resp_count=256 resp_len=24
+PASS S7 write packet
+DATA_WRITE addr=90200038 count=256 got=1 status=0 resp_count=256 resp_len=24
+PASS S7 write packet
+DATA_WRITE addr=90200038 count=256 got=1 status=0 resp_count=256 resp_len=24
+PASS S7 write packet
+DATA_WRITE addr=90200038 count=256 got=1 status=0 resp_count=256 resp_len=24
+PASS S7 write packet
+DATA_WRITE addr=90200038 count=256 got=1 status=0 resp_count=256 resp_len=24
+PASS S7 write packet
+DATA_WRITE addr=90200038 count=256 got=1 status=0 resp_count=256 resp_len=24
+PASS S7 write packet
+DATA_WRITE addr=90200038 count=256 got=1 status=0 resp_count=256 resp_len=24
+PASS S7 write packet
+DATA_WRITE addr=90200038 count=256 got=1 status=0 resp_count=256 resp_len=24
+PASS S7 write packet
+DATA_WRITE addr=90200038 count=256 got=1 status=0 resp_count=256 resp_len=24
+PASS S7 write packet
+DATA_WRITE addr=90200038 count=256 got=1 status=0 resp_count=256 resp_len=24
+PASS S7 write packet
+DATA_WRITE addr=90200038 count=256 got=1 status=0 resp_count=256 resp_len=24
+PASS S7 write packet
+DATA_WRITE addr=90200038 count=256 got=1 status=0 resp_count=256 resp_len=24
+PASS S7 write packet
+DATA_WRITE addr=90200038 count=256 got=1 status=0 resp_count=256 resp_len=24
+PASS S7 write packet
+DATA_WRITE addr=90200038 count=256 got=1 status=0 resp_count=256 resp_len=24
+PASS S7 write packet
+DATA_WRITE addr=90200038 count=256 got=1 status=0 resp_count=256 resp_len=24
+PASS S7 write packet
+DATA_WRITE addr=90200038 count=256 got=1 status=0 resp_count=256 resp_len=24
+PASS S7 write packet
+DATA_WRITE addr=90200038 count=256 got=1 status=0 resp_count=256 resp_len=24
+PASS S7 write packet
+DATA_WRITE addr=90200038 count=256 got=1 status=0 resp_count=256 resp_len=24
+PASS S7 write packet
+DATA_WRITE addr=90200038 count=256 got=1 status=0 resp_count=256 resp_len=24
+PASS S7 write packet
+DATA_WRITE addr=90200038 count=256 got=1 status=0 resp_count=256 resp_len=24
+PASS S7 write packet
+DATA_WRITE addr=90200038 count=256 got=1 status=0 resp_count=256 resp_len=24
+PASS S7 write packet
+DATA_WRITE addr=90200038 count=256 got=1 status=0 resp_count=256 resp_len=24
+PASS S7 write packet
+DATA_WRITE addr=90200038 count=256 got=1 status=0 resp_count=256 resp_len=24
+PASS S7 write packet
+DATA_WRITE addr=90200038 count=256 got=1 status=0 resp_count=256 resp_len=24
+PASS S7 write packet
+DATA_WRITE addr=90200038 count=256 got=1 status=0 resp_count=256 resp_len=24
+PASS S7 write packet
+DATA_WRITE addr=90200038 count=256 got=1 status=0 resp_count=256 resp_len=24
+PASS S7 write packet
+DATA_WRITE addr=90200038 count=256 got=1 status=0 resp_count=256 resp_len=24
+PASS S7 write packet
+DATA_WRITE addr=90200038 count=256 got=1 status=0 resp_count=256 resp_len=24
+PASS S7 write packet
+DATA_WRITE addr=90200038 count=256 got=1 status=0 resp_count=256 resp_len=24
+PASS S7 write packet
+DATA_WRITE addr=90200038 count=256 got=1 status=0 resp_count=256 resp_len=24
+PASS S7 write packet
+DATA_WRITE addr=90200038 count=256 got=1 status=0 resp_count=256 resp_len=24
+PASS S7 write packet
+DATA_WRITE addr=90200038 count=256 got=1 status=0 resp_count=256 resp_len=24
+PASS S7 write packet
+DATA_WRITE addr=90200038 count=256 got=1 status=0 resp_count=256 resp_len=24
+PASS S7 write packet
+DATA_WRITE addr=90200038 count=256 got=1 status=0 resp_count=256 resp_len=24
+PASS S7 write packet
+DATA_WRITE addr=90200038 count=256 got=1 status=0 resp_count=256 resp_len=24
+PASS S7 write packet
+DATA_WRITE addr=90200038 count=256 got=1 status=0 resp_count=256 resp_len=24
+PASS S7 write packet
+DATA_WRITE addr=90200038 count=256 got=1 status=0 resp_count=256 resp_len=24
+PASS S7 write packet
+DATA_WRITE addr=90200038 count=256 got=1 status=0 resp_count=256 resp_len=24
+PASS S7 write packet
+DATA_WRITE addr=90200038 count=256 got=1 status=0 resp_count=256 resp_len=24
+PASS S7 write packet
+DATA_WRITE addr=90200038 count=256 got=1 status=0 resp_count=256 resp_len=24
+PASS S7 write packet
+DATA_WRITE addr=90200038 count=256 got=1 status=0 resp_count=256 resp_len=24
+PASS S7 write packet
+DATA_WRITE addr=90200038 count=256 got=1 status=0 resp_count=256 resp_len=24
+PASS S7 write packet
+DATA_WRITE addr=90200038 count=256 got=1 status=0 resp_count=256 resp_len=24
+PASS S7 write packet
+DATA_WRITE addr=90200038 count=256 got=1 status=0 resp_count=256 resp_len=24
+PASS S7 write packet
+DATA_WRITE addr=90200038 count=256 got=1 status=0 resp_count=256 resp_len=24
+PASS S7 write packet
+DATA_WRITE addr=90200038 count=256 got=1 status=0 resp_count=256 resp_len=24
+PASS S7 write packet
+DATA_WRITE addr=90200038 count=256 got=1 status=0 resp_count=256 resp_len=24
+PASS S7 write packet
+DATA_WRITE addr=90200038 count=256 got=1 status=0 resp_count=256 resp_len=24
+PASS S7 write packet
+DATA_WRITE addr=90200038 count=256 got=1 status=0 resp_count=256 resp_len=24
+PASS S7 write packet
+DATA_WRITE addr=90200038 count=256 got=1 status=0 resp_count=256 resp_len=24
+PASS S7 write packet
+DATA_WRITE addr=90200038 count=256 got=1 status=0 resp_count=256 resp_len=24
+PASS S7 write packet
+DATA_WRITE addr=90200038 count=256 got=1 status=0 resp_count=256 resp_len=24
+PASS S7 write packet
+DATA_WRITE addr=90200038 count=256 got=1 status=0 resp_count=256 resp_len=24
+PASS S7 write packet
+DATA_WRITE addr=90200038 count=256 got=1 status=0 resp_count=256 resp_len=24
+PASS S7 write packet
+DATA_WRITE addr=90200038 count=256 got=1 status=0 resp_count=256 resp_len=24
+PASS S7 write packet
+DATA_WRITE addr=90200038 count=256 got=1 status=0 resp_count=256 resp_len=24
+PASS S7 write packet
+DATA_WRITE addr=90200038 count=256 got=1 status=0 resp_count=256 resp_len=24
+PASS S7 write packet
+DATA_WRITE addr=90200038 count=256 got=1 status=0 resp_count=256 resp_len=24
+PASS S7 write packet
+DATA_WRITE addr=90200038 count=256 got=1 status=0 resp_count=256 resp_len=24
+PASS S7 write packet
+DATA_WRITE addr=90200038 count=256 got=1 status=0 resp_count=256 resp_len=24
+PASS S7 write packet
+DATA_WRITE addr=90200038 count=256 got=1 status=0 resp_count=256 resp_len=24
+PASS S7 write packet
+DATA_WRITE addr=90200038 count=256 got=1 status=0 resp_count=256 resp_len=24
+PASS S7 write packet
+S7_WRITE cycles=143190 bytes=65536 words=16384 MBps=45.768559
+S7_WRITE_CYCLES bridge=61270 (3.7396/word) arb=16384 (1.0000/word) control=65536 (4.0000/word) awg_tx=0 (0.0000/word)
+PASS S7 write throughput >=40MB/s
+PASS S7 TX_WR_PTR=32768
+PASS S7 configure single channel playback
+PASS S7 start playback
+PASS S7 valid capture arm
+PASS S7 valid capture done
+PASS S7 capture length covers read range
+PASS S7 stop playback after capture
+PASS S7 select capture channel
+PASS S7 read packet status=0
+PASS S7 captured payload contains valid nonzero samples
+PASS S7 read packet status=0
+PASS S7 read packet status=0
+PASS S7 read packet status=0
+PASS S7 read packet status=0
+PASS S7 read packet status=0
+PASS S7 read packet status=0
+PASS S7 read packet status=0
+PASS S7 read packet status=0
+PASS S7 read packet status=0
+PASS S7 read packet status=0
+PASS S7 read packet status=0
+PASS S7 read packet status=0
+PASS S7 read packet status=0
+PASS S7 read packet status=0
+PASS S7 read packet status=0
+PASS S7 read packet status=0
+PASS S7 read packet status=0
+PASS S7 read packet status=0
+PASS S7 read packet status=0
+PASS S7 read packet status=0
+PASS S7 read packet status=0
+PASS S7 read packet status=0
+PASS S7 read packet status=0
+PASS S7 read packet status=0
+PASS S7 read packet status=0
+PASS S7 read packet status=0
+PASS S7 read packet status=0
+PASS S7 read packet status=0
+PASS S7 read packet status=0
+PASS S7 read packet status=0
+PASS S7 read packet status=0
+PASS S7 read packet status=0
+PASS S7 read packet status=0
+PASS S7 read packet status=0
+PASS S7 read packet status=0
+PASS S7 read packet status=0
+PASS S7 read packet status=0
+PASS S7 read packet status=0
+PASS S7 read packet status=0
+PASS S7 read packet status=0
+PASS S7 read packet status=0
+PASS S7 read packet status=0
+PASS S7 read packet status=0
+PASS S7 read packet status=0
+PASS S7 read packet status=0
+PASS S7 read packet status=0
+PASS S7 read packet status=0
+PASS S7 read packet status=0
+PASS S7 read packet status=0
+PASS S7 read packet status=0
+PASS S7 read packet status=0
+PASS S7 read packet status=0
+PASS S7 read packet status=0
+PASS S7 read packet status=0
+PASS S7 read packet status=0
+PASS S7 read packet status=0
+PASS S7 read packet status=0
+PASS S7 read packet status=0
+PASS S7 read packet status=0
+PASS S7 read packet status=0
+PASS S7 read packet status=0
+PASS S7 read packet status=0
+PASS S7 read packet status=0
+S7_READ cycles=192257 bytes=65536 words=16384 MBps=34.087706
+S7_READ_CYCLES bridge=77569 (4.7344/word) arb=16384 (1.0000/word) control=65536 (4.0000/word) awg_rx=32768 (2.0000/word)
+PASS S7 read throughput >=30MB/s
+LOOP_MODEL_DISTANCE violations=0
+PASS loop model distance invariant
+RESULT name=tb_d3_system PASS=245 FAIL=0
+$finish called at time : 4388800 ns : File "D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/sim/d3/tb_d3_system.sv" Line 760
+run: Time (s): cpu = 00:00:00 ; elapsed = 00:13:54 . Memory (MB): peak = 234.051 ; gain = 0.000
+exit
+INFO: xsimkernel Simulation Memory Usage: 21748 KB (Peak: 21748 KB), Simulation CPU Usage: 777999 ms
+INFO: [Common 17-206] Exiting xsim at Thu Nov 12 01:41:16 2026...

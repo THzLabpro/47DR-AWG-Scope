@@ -1,0 +1,158 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version      : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+| Date              : Wed Nov 11 21:30:38 2026
+| Host              : DESKTOP-CLMQL7K running 64-bit major release  (build 9200)
+| Command           : report_clocks -file D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/reports/D3A6_INTEGRATION/clocks_pre_cdc_synth.rpt
+| Design            : awg_eth_top
+| Device            : xczu47dr-fsve1156
+| Speed File        : -2  PRODUCTION 1.32 01-31-2021
+| Design State      : Synthesized
+| Temperature Grade : I
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+Clock Report
+
+
+Attributes
+  P: Propagated
+  G: Generated
+  A: Auto-derived
+  R: Renamed
+  V: Virtual
+  I: Inverted
+  S: Pin phase-shifted with Latency mode
+
+Clock                             Period(ns)  Waveform(ns)    Attributes  Sources
+RFADC0_CLK                        25.600      {0.000 12.800}  P           {system_i/system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/rx0_u_adc/INTERNAL_FBRC_DIV1_MUX}
+RFADC1_CLK                        3.200       {0.000 1.600}   P           {system_i/system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/rx1_u_adc/INTERNAL_FBRC_DIV1_MUX}
+RFADC2_CLK                        25.600      {0.000 12.800}  P           {system_i/system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/rx2_u_adc/INTERNAL_FBRC_DIV1_MUX}
+RFADC3_CLK                        25.600      {0.000 12.800}  P           {system_i/system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/rx3_u_adc/INTERNAL_FBRC_DIV1_MUX}
+RFDAC0_CLK                        1.633       {0.000 0.817}   P           {system_i/system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx0_u_dac/INTERNAL_FBRC_MUX}
+RFDAC1_CLK                        1.633       {0.000 0.817}   P           {system_i/system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx1_u_dac/INTERNAL_FBRC_MUX}
+RFDAC2_CLK                        1.633       {0.000 0.817}   P           {system_i/system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx2_u_dac/INTERNAL_FBRC_MUX}
+RFDAC3_CLK                        1.633       {0.000 0.817}   P           {system_i/system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx3_u_dac/INTERNAL_FBRC_MUX}
+clk_pl_0                          10.000      {0.000 5.000}   P           {system_i/system_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[0]}
+pl_clk_p                          5.000       {0.000 2.500}   P           {pl_clk_p}
+qsfp2_refclk_p                    6.400       {0.000 3.200}   P           {qsfp2_refclk_p}
+GTYE4_CHANNEL_TXOUTCLKPCS[0]      3.103       {0.000 1.552}   P,G,A       {eth_core_i/u_qsfp2_mac/DUT/inst/i_optical_port2_gt/inst/gen_gtwizard_gtye4_top.optical_port2_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[2].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/TXOUTCLKPCS}
+GTYE4_CHANNEL_TXOUTCLKPCS[1]      3.103       {0.000 1.552}   P,G,A       {eth_core_i/u_qsfp2_mac/DUT/inst/i_optical_port2_gt/inst/gen_gtwizard_gtye4_top.optical_port2_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[2].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[1].GTYE4_CHANNEL_PRIM_INST/TXOUTCLKPCS}
+GTYE4_CHANNEL_TXOUTCLKPCS[2]      3.103       {0.000 1.552}   P,G,A       {eth_core_i/u_qsfp2_mac/DUT/inst/i_optical_port2_gt/inst/gen_gtwizard_gtye4_top.optical_port2_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[2].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[2].GTYE4_CHANNEL_PRIM_INST/TXOUTCLKPCS}
+GTYE4_CHANNEL_TXOUTCLKPCS[3]      3.103       {0.000 1.552}   P,G,A       {eth_core_i/u_qsfp2_mac/DUT/inst/i_optical_port2_gt/inst/gen_gtwizard_gtye4_top.optical_port2_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[2].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[3].GTYE4_CHANNEL_PRIM_INST/TXOUTCLKPCS}
+clk_out1_demo_management_clock    10.000      {0.000 5.000}   P,G,A       {eth_core_i/u_management_clock/inst/mmcme4_adv_inst/CLKOUT0}
+clk_out1_optical_port1_clk_wiz_0  10.000      {0.000 5.000}   P,G,A       {eth_core_i/u_qsfp2_mac/i_CLK_GEN_0/inst/mmcme4_adv_inst/CLKOUT0}
+clk_out1_system_clk_wiz_0_0       1.633       {0.000 0.817}   P,G,A       {system_i/system_i/clk_wiz_0/inst/CLK_CORE_DRP_I/clk_inst/mmcme4_adv_inst/CLKOUT0}
+clk_out1_system_clk_wiz_adc_0     2.400       {0.000 1.200}   P,G,A       {system_i/system_i/clk_wiz_adc/inst/mmcme4_adv_inst/CLKOUT0}
+qpll0outclk_out[0]                0.194       {0.000 0.097}   P,G,A       {eth_core_i/u_qsfp2_mac/DUT/inst/i_optical_port2_gt/inst/gen_gtwizard_gtye4_top.optical_port2_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_common.gen_common_container[2].gen_enabled_common.gtye4_common_wrapper_inst/common_inst/gtye4_common_gen.GTYE4_COMMON_PRIM_INST/QPLL0OUTCLK}
+qpll0outrefclk_out[0]             6.400       {0.000 3.200}   P,G,A       {eth_core_i/u_qsfp2_mac/DUT/inst/i_optical_port2_gt/inst/gen_gtwizard_gtye4_top.optical_port2_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_common.gen_common_container[2].gen_enabled_common.gtye4_common_wrapper_inst/common_inst/gtye4_common_gen.GTYE4_COMMON_PRIM_INST/QPLL0OUTREFCLK}
+rx_clk                            4.800       {0.000 2.400}   P,G,A       {rx_clk_div/O}
+rxoutclk_out[0]                   3.200       {0.000 1.600}   P,G,A       {eth_core_i/u_qsfp2_mac/DUT/inst/i_optical_port2_gt/inst/gen_gtwizard_gtye4_top.optical_port2_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[2].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/RXOUTCLK}
+tx_clk                            3.266       {0.000 1.633}   P,G,A       {tx_clk_div/O}
+txoutclk_out[0]                   3.200       {0.000 1.600}   P,G,A       {eth_core_i/u_qsfp2_mac/DUT/inst/i_optical_port2_gt/inst/gen_gtwizard_gtye4_top.optical_port2_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[2].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/TXOUTCLK}
+
+
+====================================================
+Generated Clocks
+====================================================
+
+Generated Clock     : GTYE4_CHANNEL_TXOUTCLKPCS[0]
+Master Source       : eth_core_i/u_qsfp2_mac/DUT/inst/i_optical_port2_gt/inst/gen_gtwizard_gtye4_top.optical_port2_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[2].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/QPLL0CLK
+Master Clock        : qpll0outclk_out[0]
+Divide By           : 16
+Generated Sources   : {eth_core_i/u_qsfp2_mac/DUT/inst/i_optical_port2_gt/inst/gen_gtwizard_gtye4_top.optical_port2_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[2].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/TXOUTCLKPCS}
+
+Generated Clock     : GTYE4_CHANNEL_TXOUTCLKPCS[1]
+Master Source       : eth_core_i/u_qsfp2_mac/DUT/inst/i_optical_port2_gt/inst/gen_gtwizard_gtye4_top.optical_port2_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[2].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[1].GTYE4_CHANNEL_PRIM_INST/QPLL0CLK
+Master Clock        : qpll0outclk_out[0]
+Divide By           : 16
+Generated Sources   : {eth_core_i/u_qsfp2_mac/DUT/inst/i_optical_port2_gt/inst/gen_gtwizard_gtye4_top.optical_port2_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[2].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[1].GTYE4_CHANNEL_PRIM_INST/TXOUTCLKPCS}
+
+Generated Clock     : GTYE4_CHANNEL_TXOUTCLKPCS[2]
+Master Source       : eth_core_i/u_qsfp2_mac/DUT/inst/i_optical_port2_gt/inst/gen_gtwizard_gtye4_top.optical_port2_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[2].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[2].GTYE4_CHANNEL_PRIM_INST/QPLL0CLK
+Master Clock        : qpll0outclk_out[0]
+Divide By           : 16
+Generated Sources   : {eth_core_i/u_qsfp2_mac/DUT/inst/i_optical_port2_gt/inst/gen_gtwizard_gtye4_top.optical_port2_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[2].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[2].GTYE4_CHANNEL_PRIM_INST/TXOUTCLKPCS}
+
+Generated Clock     : GTYE4_CHANNEL_TXOUTCLKPCS[3]
+Master Source       : eth_core_i/u_qsfp2_mac/DUT/inst/i_optical_port2_gt/inst/gen_gtwizard_gtye4_top.optical_port2_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[2].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[3].GTYE4_CHANNEL_PRIM_INST/QPLL0CLK
+Master Clock        : qpll0outclk_out[0]
+Divide By           : 16
+Generated Sources   : {eth_core_i/u_qsfp2_mac/DUT/inst/i_optical_port2_gt/inst/gen_gtwizard_gtye4_top.optical_port2_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[2].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[3].GTYE4_CHANNEL_PRIM_INST/TXOUTCLKPCS}
+
+Generated Clock     : clk_out1_demo_management_clock
+Master Source       : eth_core_i/u_management_clock/inst/mmcme4_adv_inst/CLKIN1
+Master Clock        : qsfp2_refclk_p
+Edges               : {1 2 3}
+Edge Shifts(ns)     : {0.000 1.800 3.600}
+Generated Sources   : {eth_core_i/u_management_clock/inst/mmcme4_adv_inst/CLKOUT0}
+
+Generated Clock     : clk_out1_optical_port1_clk_wiz_0
+Master Source       : eth_core_i/u_qsfp2_mac/i_CLK_GEN_0/inst/mmcme4_adv_inst/CLKIN1
+Master Clock        : clk_out1_demo_management_clock
+Multiply By         : 1
+Generated Sources   : {eth_core_i/u_qsfp2_mac/i_CLK_GEN_0/inst/mmcme4_adv_inst/CLKOUT0}
+
+Generated Clock     : clk_out1_system_clk_wiz_0_0
+Master Source       : system_i/system_i/clk_wiz_0/inst/CLK_CORE_DRP_I/clk_inst/mmcme4_adv_inst/CLKIN1
+Master Clock        : RFDAC2_CLK
+Multiply By         : 1
+Generated Sources   : {system_i/system_i/clk_wiz_0/inst/CLK_CORE_DRP_I/clk_inst/mmcme4_adv_inst/CLKOUT0}
+
+Generated Clock     : clk_out1_system_clk_wiz_adc_0
+Master Source       : system_i/system_i/clk_wiz_adc/inst/mmcme4_adv_inst/CLKIN1
+Master Clock        : pl_clk_p
+Edges               : {1 2 3}
+Edge Shifts(ns)     : {0.000 -1.300 -2.600}
+Generated Sources   : {system_i/system_i/clk_wiz_adc/inst/mmcme4_adv_inst/CLKOUT0}
+
+Generated Clock     : qpll0outclk_out[0]
+Master Source       : eth_core_i/u_qsfp2_mac/DUT/inst/i_optical_port2_gt/inst/gen_gtwizard_gtye4_top.optical_port2_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_common.gen_common_container[2].gen_enabled_common.gtye4_common_wrapper_inst/common_inst/gtye4_common_gen.GTYE4_COMMON_PRIM_INST/GTREFCLK00
+Master Clock        : qsfp2_refclk_p
+Multiply By         : 33
+Generated Sources   : {eth_core_i/u_qsfp2_mac/DUT/inst/i_optical_port2_gt/inst/gen_gtwizard_gtye4_top.optical_port2_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_common.gen_common_container[2].gen_enabled_common.gtye4_common_wrapper_inst/common_inst/gtye4_common_gen.GTYE4_COMMON_PRIM_INST/QPLL0OUTCLK}
+
+Generated Clock     : qpll0outrefclk_out[0]
+Master Source       : eth_core_i/u_qsfp2_mac/DUT/inst/i_optical_port2_gt/inst/gen_gtwizard_gtye4_top.optical_port2_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_common.gen_common_container[2].gen_enabled_common.gtye4_common_wrapper_inst/common_inst/gtye4_common_gen.GTYE4_COMMON_PRIM_INST/GTREFCLK00
+Master Clock        : qsfp2_refclk_p
+Multiply By         : 1
+Generated Sources   : {eth_core_i/u_qsfp2_mac/DUT/inst/i_optical_port2_gt/inst/gen_gtwizard_gtye4_top.optical_port2_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_common.gen_common_container[2].gen_enabled_common.gtye4_common_wrapper_inst/common_inst/gtye4_common_gen.GTYE4_COMMON_PRIM_INST/QPLL0OUTREFCLK}
+
+Generated Clock     : rx_clk
+Master Source       : rx_clk_div/I
+Master Clock        : clk_out1_system_clk_wiz_adc_0
+Divide By           : 2
+Generated Sources   : {rx_clk_div/O}
+
+Generated Clock     : rxoutclk_out[0]
+Master Source       : eth_core_i/u_qsfp2_mac/DUT/inst/i_optical_port2_gt/inst/gen_gtwizard_gtye4_top.optical_port2_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[2].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/QPLL0CLK
+Master Clock        : qpll0outclk_out[0]
+Edges               : {1 2 3}
+Edge Shifts(ns)     : {0.000 1.503 3.006}
+Generated Sources   : {eth_core_i/u_qsfp2_mac/DUT/inst/i_optical_port2_gt/inst/gen_gtwizard_gtye4_top.optical_port2_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[2].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/RXOUTCLK}
+
+Generated Clock     : tx_clk
+Master Source       : tx_clk_div/I
+Master Clock        : clk_out1_system_clk_wiz_0_0
+Divide By           : 2
+Generated Sources   : {tx_clk_div/O}
+
+Generated Clock     : txoutclk_out[0]
+Master Source       : eth_core_i/u_qsfp2_mac/DUT/inst/i_optical_port2_gt/inst/gen_gtwizard_gtye4_top.optical_port2_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[2].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/QPLL0CLK
+Master Clock        : qpll0outclk_out[0]
+Edges               : {1 2 3}
+Edge Shifts(ns)     : {0.000 1.503 3.006}
+Generated Sources   : {eth_core_i/u_qsfp2_mac/DUT/inst/i_optical_port2_gt/inst/gen_gtwizard_gtye4_top.optical_port2_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[2].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/TXOUTCLK}
+
+
+
+====================================================
+User Uncertainty
+====================================================
+
+
+
+====================================================
+User Jitter
+====================================================
+
+

@@ -1,0 +1,27 @@
+COMMAND xelab_eth_bridge xil_defaultlib.tb_eth_bridge -s tb_eth_bridge_d3b -debug typical -nolog
+Vivado Simulator v2025.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: D:/AMDDesignTools/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe xil_defaultlib.tb_eth_bridge -s tb_eth_bridge_d3b -debug typical -nolog 
+Multi-threading is on. Using 18 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.axis_async_fifo(DEPTH=131072,DAT...
+Compiling module xil_defaultlib.axis_async_fifo(DEPTH=32768,DATA...
+Compiling module xil_defaultlib.awg_eth_bridge(BUILD_ID=32'b1110...
+Compiling module xil_defaultlib.axil_arb2
+Compiling module xil_defaultlib.awg_control
+Compiling module xil_defaultlib.awg_wave_bank
+Compiling module xil_defaultlib.axis_wide_gearbox_default
+Compiling module xil_defaultlib.awg_player
+Compiling module xil_defaultlib.axis_register_slice
+Compiling module xil_defaultlib.awg_subsystem_default
+Compiling module xil_defaultlib.adc_async_fifo(WIDTH=6144)
+Compiling module xil_defaultlib.adc_capture_default
+Compiling module xil_defaultlib.tb_eth_bridge
+Built simulation snapshot tb_eth_bridge_d3b
+EXIT_CODE xelab_eth_bridge 0

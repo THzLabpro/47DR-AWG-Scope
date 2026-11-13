@@ -1,0 +1,62 @@
+{
+  "task": "D3A4_INTEGRATION",
+  "status": "NEEDS_PARENT_JUDGMENT",
+  "date": "2026-11-11",
+  "acceptance": {
+    "eth_bridge_s1_s11": {
+      "status": "PASS",
+      "pass": 115,
+      "fail": 0,
+      "s10_MBps": 59.327926,
+      "s10_min_MBps": 40.0
+    },
+    "tx_rx": {
+      "status": "PASS",
+      "tx_pass": 26,
+      "tx_fail": 0,
+      "rx_compared": 543552,
+      "rx_mismatches": 0,
+      "rx_pass_items": 26,
+      "rx_fail_items": 0
+    },
+    "control_tb": {
+      "status": "PASS",
+      "pass": 48,
+      "fail": 0
+    },
+    "system_tb_s1_s9": {
+      "status": "NEEDS_PARENT_JUDGMENT",
+      "pass": 238,
+      "fail": 4,
+      "s4_ch0_mismatches": 768,
+      "s4_ch1_mismatches": 768,
+      "s4_start_error_words": 2,
+      "s5_ch0_mismatches": 384,
+      "s5_ch1_mismatches": 384,
+      "s7_write_MBps": 45.768559,
+      "s7_read_MBps": 34.087174,
+      "s7_write_min_MBps": 40.0,
+      "s7_read_min_MBps": 30.0
+    },
+    "full_chip_synthesis": {
+      "status": "PASS",
+      "run_status": "synth_design Complete!",
+      "error_count": 0,
+      "implementation_run": false,
+      "cdc_matches_all_nonzero": true,
+      "bd_diff_unexpected": 0
+    },
+    "resources": {
+      "uram": 56,
+      "ramb36": 261,
+      "ramb18": 16,
+      "ramb36_equivalent": 269,
+      "clb_lut": 36882,
+      "clb_registers": 63239,
+      "gtye4_channel": 4,
+      "gtye4_common": 1
+    }
+  },
+  "hardware_operations": false,
+  "bitstream_generated": false
+}

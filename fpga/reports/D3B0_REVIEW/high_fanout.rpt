@@ -1,0 +1,62 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+-------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+| Date         : Wed Nov 11 23:15:14 2026
+| Host         : DESKTOP-CLMQL7K running 64-bit major release  (build 9200)
+| Command      : report_high_fanout_nets -timing -max_nets 40 -file D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/reports/D3B0_REVIEW/high_fanout.rpt
+| Design       : awg_eth_top
+| Device       : xczu47dr
+| Design State : Synthesized
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+High Fan-out Nets Information
+
+1. Summary
+----------
+
++------------------------------------------------------------------------------------------------------------------------------------------+--------+-------------+-----------------+-----------------+
+| Net Name                                                                                                                                 | Fanout | Driver Type | Worst Slack(ns) | Worst Delay(ns) |
++------------------------------------------------------------------------------------------------------------------------------------------+--------+-------------+-----------------+-----------------+
+| system_i/system_i/zynq_ultra_ps_e_0/inst/pl_clk0                                                                                         |  12977 | BUFG_PS     |             inf |           3.693 |
+| tx_i/tx_word_reg[0][511]_i_2_n_0                                                                                                         |   3584 | LUT2        |           2.360 |           0.140 |
+| rx_i/capture_fire                                                                                                                        |   2895 | LUT6        |           1.213 |           0.141 |
+| rx_i/adc_phase                                                                                                                           |   2690 | FDRE        |           1.726 |           0.140 |
+| system_i/system_i/usp_rf_data_converter_0/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/s_axi_aresetn_0                                        |   2143 | LUT1        |           8.988 |           0.186 |
+| tx_i/tx_phase_tog                                                                                                                        |   1797 | FDRE        |          -0.208 |           0.185 |
+| tx_i/tog_q_reg[0]                                                                                                                        |   1795 | FDRE        |           0.080 |           0.154 |
+| eth_core_i/u_qsfp2_mac/DUT/inst/i_optical_port2_top_0/i_HSEC_CORES/i_TX_TOP/i_TX_CORE/i_TX_STRIPER/i_TX_LBA_RESET_FLOP/reset_flop_out    |   1603 | FDRE        |           2.183 |           0.252 |
+| eth_core_i/u_qsfp2_mac/DUT/inst/i_optical_port2_top_0/i_HSEC_CORES/i_TX_TOP/i_TX_CORE/i_TX_STRIPER/i_TX_LBUS_ADAPT/stall_pipes_r_b       |   1262 | FDRE        |           1.916 |           0.150 |
+| system_i/system_i/clk_wiz_0/inst/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/rst_reg_0                                                            |   1090 | LUT2        |           8.791 |           0.186 |
+| eth_core_i/u_udp_port/u_rx_gearbox/arststages_ff_reg[3]                                                                                  |   1006 | LUT1        |           2.293 |           0.186 |
+| tx_i/uram_rd_stage0[0][3][71]_i_1_n_0                                                                                                    |    896 | LUT3        |           2.386 |           0.140 |
+| tx_i/uram_rd_stage0[1][3][71]_i_1_n_0                                                                                                    |    896 | LUT3        |           2.386 |           0.140 |
+| tx_i/uram_rd_stage0[2][3][71]_i_1_n_0                                                                                                    |    896 | LUT3        |           2.386 |           0.140 |
+| tx_i/uram_rd_stage0[3][2][71]_i_1_n_0                                                                                                    |    896 | LUT3        |           2.386 |           0.140 |
+| tx_i/uram_rd_stage0[4][3][71]_i_1_n_0                                                                                                    |    896 | LUT3        |           2.386 |           0.140 |
+| tx_i/uram_rd_stage0[5][2][71]_i_1_n_0                                                                                                    |    896 | LUT3        |           2.386 |           0.140 |
+| tx_i/uram_rd_stage0[6][2][71]_i_1_n_0                                                                                                    |    896 | LUT3        |           2.386 |           0.140 |
+| tx_i/uram_rd_stage0[7][2][71]_i_1_n_0                                                                                                    |    896 | LUT3        |           2.386 |           0.140 |
+| eth_core_i/u_qsfp2_mac/DUT/inst/i_optical_port2_top_0/i_HSEC_CORES/i_TX_TOP/i_TX_CORE/i_TX_STRIPER/i_TX_LBUS_ADAPT/stall_rr_b            |    764 | FDRE        |           1.871 |           0.154 |
+| eth_core_i/u_qsfp2_mac/DUT/inst/i_optical_port2_top_0/i_HSEC_CORES/i_TX_TOP/i_TX_CORE/i_TX_STRIPER/i_TX_LBUS_ADAPT/stall_pipes_r_b_fcs   |    716 | FDRE        |           2.163 |           0.154 |
+| eth_core_i/u_qsfp2_mac/DUT/inst/i_optical_port2_top_0/i_HSEC_CORES/i_TX_TOP/i_TX_CORE/i_TX_STRIPER/i_TX_LBUS_ADAPT/shift_ptr_p4_r_reg[1] |    475 | FDRE        |           1.844 |           0.137 |
+| eth_core_i/u_qsfp2_mac/DUT/inst/i_optical_port2_top_0/i_HSEC_CORES/i_TX_TOP/i_TX_CORE/i_TX_STRIPER/i_TX_HLV_RESET_FLOP/reset_flop_out    |    470 | FDRE        |           2.344 |           0.252 |
+| tx_i/FSM_onehot_state_reg_n_0_[4]                                                                                                        |    457 | FDRE        |           1.930 |           0.154 |
+| jtag_axi_i/inst/jtag_axi_engine_u/u_xsdb_fifo_interface/fifo_rst_xsdb                                                                    |    454 | FDRE        |             inf |           0.252 |
+| tx_i/tx_word_reg[0][511]_i_1_n_0                                                                                                         |    448 | LUT3        |           2.349 |           0.186 |
+| tx_i/uram_wr_data[0][4][71]_i_1_n_0                                                                                                      |    448 | LUT5        |           1.833 |           0.140 |
+| tx_i/tx_word_reg[3][511]_i_1_n_0                                                                                                         |    448 | LUT3        |           2.349 |           0.186 |
+| tx_i/uram_wr_data[7][4][71]_i_2_n_0                                                                                                      |    448 | LUT2        |           1.569 |           0.140 |
+| tx_i/tx_word_reg[4][511]_i_1_n_0                                                                                                         |    448 | LUT3        |           2.349 |           0.186 |
+| tx_i/tx_word_reg[5][511]_i_1_n_0                                                                                                         |    448 | LUT3        |           2.349 |           0.186 |
+| tx_i/tx_word_reg[6][511]_i_1_n_0                                                                                                         |    448 | LUT3        |           2.349 |           0.186 |
+| tx_i/uram_wr_data[2][4][71]_i_2_n_0                                                                                                      |    448 | LUT2        |           1.569 |           0.140 |
+| tx_i/tx_word_reg[2][511]_i_1_n_0                                                                                                         |    448 | LUT3        |           2.349 |           0.186 |
+| tx_i/tx_word_reg[1][511]_i_1_n_0                                                                                                         |    448 | LUT3        |           2.349 |           0.186 |
+| tx_i/uram_wr_data[6][4][71]_i_2_n_0                                                                                                      |    448 | LUT2        |           1.569 |           0.140 |
+| tx_i/uram_wr_data[5][4][71]_i_2_n_0                                                                                                      |    448 | LUT2        |           1.569 |           0.140 |
+| tx_i/uram_wr_data[3][4][71]_i_2_n_0                                                                                                      |    448 | LUT2        |           1.569 |           0.140 |
+| tx_i/uram_wr_data[1][4][71]_i_2_n_0                                                                                                      |    448 | LUT2        |           1.569 |           0.140 |
+| tx_i/uram_wr_data[4][4][71]_i_2_n_0                                                                                                      |    448 | LUT2        |           1.569 |           0.140 |
++------------------------------------------------------------------------------------------------------------------------------------------+--------+-------------+-----------------+-----------------+
+
+

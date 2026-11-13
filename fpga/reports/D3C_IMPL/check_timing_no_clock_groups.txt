@@ -1,0 +1,4 @@
+CHECK_TIMING_SECTION name=no_clock total=1132
+GROUP name=awg_eth_top/jtag_awg_axi/<hidden> count=1105
+GROUP name=jtag_axi_i/inst/jtag_axi_engine_u count=19
+GROUP name=system_i/system_i/zynq_ultra_ps_e_0 count=8

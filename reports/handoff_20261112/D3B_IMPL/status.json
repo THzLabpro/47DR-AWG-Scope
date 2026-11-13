@@ -1,0 +1,15 @@
+{
+  "task": "D3B_IMPL",
+  "status": "PASS",
+  "executor": "claude",
+  "stage1_sims": {"tx": "70/0", "rx": "29/0", "control": "48/0", "bridge": "115/0", "system": "245/0", "rx_reset_phase_latency_samples": [12, 12]},
+  "synth": {"errors": 0, "critical_warnings": 0, "replicas_ok": true},
+  "impl": {"attempt": 1, "strategy": "Vivado Implementation Defaults + phys_opt AggressiveExplore + post-route phys_opt", "wns": 0.005, "tns": 0.0, "whs": 0.005, "ths": 0.0, "unrouted": 0, "drc_errors": 0, "unsafe_clock_pairs": 0, "cdc_critical": 0},
+  "tightest_path": "rx_i/adc_pair_valid_q_reg -> rx_i/channel_bram[*].channel_write_data_q_reg CE (adc->rx_clk, +0.005 ns)",
+  "artifacts": {
+    "bit": {"path": "build/D3B_IMPL/awg_eth_v2.bit", "sha256": "F9DC662409A7071430A78BFAB17AD2FE8AB195829203DCC13EA5ECFA459BE638"},
+    "xsa": {"path": "build/D3B_IMPL/awg_eth_v2.xsa", "sha256": "50B3AFC35474332E7352BFC2163164B6B88F78693D791240EB54300A222E52D4", "includes_bit": true}
+  },
+  "notes": "build_d3.tcl failed only at the final sha256 step (Get-FileHash missing in Vivado's Windows PowerShell); hashes computed by Claude, script fixed.",
+  "hardware_operations": "none"
+}

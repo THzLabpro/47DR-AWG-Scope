@@ -1,0 +1,938 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version      : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+| Date              : Wed Nov 11 11:47:02 2026
+| Host              : DESKTOP-CLMQL7K running 64-bit major release  (build 9200)
+| Command           : report_timing -delay_type min -max_paths 20 -file D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/reports/E1R2_BRIDGE/arb_hold_paths.rpt
+| Design            : axil_arb2
+| Device            : xczu47dr-fsve1156
+| Speed File        : -2  PRODUCTION 1.32 01-31-2021
+| Design State      : Routed
+| Temperature Grade : I
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (MET) :             0.046ns  (arrival time - required time)
+  Source:                 s1_aw_hold_reg/C
+                            (rising edge-triggered cell FDRE clocked by axil_arb2_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            s1_aw_hold_reg/D
+                            (rising edge-triggered cell FDRE clocked by axil_arb2_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             axil_arb2_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (axil_arb2_clk rise@0.000ns - axil_arb2_clk rise@0.000ns)
+  Data Path Delay:        0.098ns  (logic 0.054ns (55.367%)  route 0.044ns (44.633%))
+  Logic Levels:           1  (LUT6=1)
+  Clock Path Skew:        0.006ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.018ns
+    Source Clock Delay      (SCD):    0.012ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock axil_arb2_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=388, unset)          0.012     0.012    clk
+    SLICE_X36Y92         FDRE                                         r  s1_aw_hold_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X36Y92         FDRE (Prop_BFF_SLICEL_C_Q)
+                                                      0.039     0.051 r  s1_aw_hold_reg/Q
+                         net (fo=8, routed)           0.029     0.080    s1_aw_hold_reg_n_0
+    SLICE_X36Y92         LUT6 (Prop_B6LUT_SLICEL_I3_O)
+                                                      0.015     0.095 r  s1_aw_hold_i_1/O
+                         net (fo=1, routed)           0.015     0.110    s1_aw_hold_i_1_n_0
+    SLICE_X36Y92         FDRE                                         r  s1_aw_hold_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock axil_arb2_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=388, unset)          0.018     0.018    clk
+    SLICE_X36Y92         FDRE                                         r  s1_aw_hold_reg/C
+                         clock pessimism              0.000     0.018    
+    SLICE_X36Y92         FDRE (Hold_BFF_SLICEL_C_D)
+                                                      0.046     0.064    s1_aw_hold_reg
+  -------------------------------------------------------------------
+                         required time                         -0.064    
+                         arrival time                           0.110    
+  -------------------------------------------------------------------
+                         slack                                  0.046    
+
+Slack (MET) :             0.048ns  (arrival time - required time)
+  Source:                 s1_ar_hold_reg/C
+                            (rising edge-triggered cell FDRE clocked by axil_arb2_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            s1_ar_hold_reg/D
+                            (rising edge-triggered cell FDRE clocked by axil_arb2_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             axil_arb2_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (axil_arb2_clk rise@0.000ns - axil_arb2_clk rise@0.000ns)
+  Data Path Delay:        0.100ns  (logic 0.053ns (53.119%)  route 0.047ns (46.881%))
+  Logic Levels:           1  (LUT6=1)
+  Clock Path Skew:        0.006ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.018ns
+    Source Clock Delay      (SCD):    0.012ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock axil_arb2_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=388, unset)          0.012     0.012    clk
+    SLICE_X36Y92         FDRE                                         r  s1_ar_hold_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X36Y92         FDRE (Prop_CFF_SLICEL_C_Q)
+                                                      0.039     0.051 r  s1_ar_hold_reg/Q
+                         net (fo=6, routed)           0.030     0.081    s1_ar_hold_reg_n_0
+    SLICE_X36Y92         LUT6 (Prop_C6LUT_SLICEL_I2_O)
+                                                      0.014     0.095 r  s1_ar_hold_i_1/O
+                         net (fo=1, routed)           0.017     0.112    s1_ar_hold_i_1_n_0
+    SLICE_X36Y92         FDRE                                         r  s1_ar_hold_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock axil_arb2_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=388, unset)          0.018     0.018    clk
+    SLICE_X36Y92         FDRE                                         r  s1_ar_hold_reg/C
+                         clock pessimism              0.000     0.018    
+    SLICE_X36Y92         FDRE (Hold_CFF_SLICEL_C_D)
+                                                      0.046     0.064    s1_ar_hold_reg
+  -------------------------------------------------------------------
+                         required time                         -0.064    
+                         arrival time                           0.112    
+  -------------------------------------------------------------------
+                         slack                                  0.048    
+
+Slack (MET) :             0.051ns  (arrival time - required time)
+  Source:                 s0_w_hold_reg/C
+                            (rising edge-triggered cell FDRE clocked by axil_arb2_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            s0_w_hold_reg/D
+                            (rising edge-triggered cell FDRE clocked by axil_arb2_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             axil_arb2_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (axil_arb2_clk rise@0.000ns - axil_arb2_clk rise@0.000ns)
+  Data Path Delay:        0.103ns  (logic 0.054ns (52.195%)  route 0.049ns (47.805%))
+  Logic Levels:           1  (LUT6=1)
+  Clock Path Skew:        0.006ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.019ns
+    Source Clock Delay      (SCD):    0.013ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock axil_arb2_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=388, unset)          0.013     0.013    clk
+    SLICE_X36Y91         FDRE                                         r  s0_w_hold_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X36Y91         FDRE (Prop_HFF_SLICEL_C_Q)
+                                                      0.039     0.052 r  s0_w_hold_reg/Q
+                         net (fo=9, routed)           0.032     0.084    s0_w_hold_reg_n_0
+    SLICE_X36Y91         LUT6 (Prop_H6LUT_SLICEL_I5_O)
+                                                      0.015     0.099 r  s0_w_hold_i_1/O
+                         net (fo=1, routed)           0.017     0.116    s0_w_hold_i_1_n_0
+    SLICE_X36Y91         FDRE                                         r  s0_w_hold_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock axil_arb2_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=388, unset)          0.019     0.019    clk
+    SLICE_X36Y91         FDRE                                         r  s0_w_hold_reg/C
+                         clock pessimism              0.000     0.019    
+    SLICE_X36Y91         FDRE (Hold_HFF_SLICEL_C_D)
+                                                      0.046     0.065    s0_w_hold_reg
+  -------------------------------------------------------------------
+                         required time                         -0.065    
+                         arrival time                           0.116    
+  -------------------------------------------------------------------
+                         slack                                  0.051    
+
+Slack (MET) :             0.053ns  (arrival time - required time)
+  Source:                 s1_bvalid_reg/C
+                            (rising edge-triggered cell FDRE clocked by axil_arb2_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            s1_bvalid_reg/D
+                            (rising edge-triggered cell FDRE clocked by axil_arb2_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             axil_arb2_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (axil_arb2_clk rise@0.000ns - axil_arb2_clk rise@0.000ns)
+  Data Path Delay:        0.105ns  (logic 0.061ns (58.271%)  route 0.044ns (41.729%))
+  Logic Levels:           1  (LUT6=1)
+  Clock Path Skew:        0.006ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.019ns
+    Source Clock Delay      (SCD):    0.013ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock axil_arb2_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=388, unset)          0.013     0.013    clk
+    SLICE_X36Y90         FDRE                                         r  s1_bvalid_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X36Y90         FDRE (Prop_GFF_SLICEL_C_Q)
+                                                      0.039     0.052 r  s1_bvalid_reg/Q
+                         net (fo=6, routed)           0.028     0.080    s1_bvalid
+    SLICE_X36Y90         LUT6 (Prop_G6LUT_SLICEL_I4_O)
+                                                      0.022     0.102 r  s1_bvalid_i_1/O
+                         net (fo=1, routed)           0.016     0.118    s1_bvalid_i_1_n_0
+    SLICE_X36Y90         FDRE                                         r  s1_bvalid_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock axil_arb2_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=388, unset)          0.019     0.019    clk
+    SLICE_X36Y90         FDRE                                         r  s1_bvalid_reg/C
+                         clock pessimism              0.000     0.019    
+    SLICE_X36Y90         FDRE (Hold_GFF_SLICEL_C_D)
+                                                      0.046     0.065    s1_bvalid_reg
+  -------------------------------------------------------------------
+                         required time                         -0.065    
+                         arrival time                           0.118    
+  -------------------------------------------------------------------
+                         slack                                  0.053    
+
+Slack (MET) :             0.053ns  (arrival time - required time)
+  Source:                 s1_rvalid_reg/C
+                            (rising edge-triggered cell FDRE clocked by axil_arb2_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            s1_rvalid_reg/D
+                            (rising edge-triggered cell FDRE clocked by axil_arb2_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             axil_arb2_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (axil_arb2_clk rise@0.000ns - axil_arb2_clk rise@0.000ns)
+  Data Path Delay:        0.105ns  (logic 0.052ns (49.352%)  route 0.053ns (50.648%))
+  Logic Levels:           1  (LUT6=1)
+  Clock Path Skew:        0.006ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.019ns
+    Source Clock Delay      (SCD):    0.013ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock axil_arb2_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=388, unset)          0.013     0.013    clk
+    SLICE_X35Y91         FDRE                                         r  s1_rvalid_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X35Y91         FDRE (Prop_BFF_SLICEM_C_Q)
+                                                      0.038     0.051 r  s1_rvalid_reg/Q
+                         net (fo=4, routed)           0.032     0.083    s1_rvalid
+    SLICE_X35Y91         LUT6 (Prop_B6LUT_SLICEM_I4_O)
+                                                      0.014     0.097 r  s1_rvalid_i_1/O
+                         net (fo=1, routed)           0.021     0.118    s1_rvalid_i_1_n_0
+    SLICE_X35Y91         FDRE                                         r  s1_rvalid_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock axil_arb2_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=388, unset)          0.019     0.019    clk
+    SLICE_X35Y91         FDRE                                         r  s1_rvalid_reg/C
+                         clock pessimism              0.000     0.019    
+    SLICE_X35Y91         FDRE (Hold_BFF_SLICEM_C_D)
+                                                      0.046     0.065    s1_rvalid_reg
+  -------------------------------------------------------------------
+                         required time                         -0.065    
+                         arrival time                           0.118    
+  -------------------------------------------------------------------
+                         slack                                  0.053    
+
+Slack (MET) :             0.058ns  (arrival time - required time)
+  Source:                 s1_w_hold_reg/C
+                            (rising edge-triggered cell FDRE clocked by axil_arb2_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            s1_w_hold_reg/D
+                            (rising edge-triggered cell FDRE clocked by axil_arb2_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             axil_arb2_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (axil_arb2_clk rise@0.000ns - axil_arb2_clk rise@0.000ns)
+  Data Path Delay:        0.110ns  (logic 0.061ns (55.347%)  route 0.049ns (44.653%))
+  Logic Levels:           1  (LUT6=1)
+  Clock Path Skew:        0.006ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.018ns
+    Source Clock Delay      (SCD):    0.012ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock axil_arb2_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=388, unset)          0.012     0.012    clk
+    SLICE_X36Y92         FDRE                                         r  s1_w_hold_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X36Y92         FDRE (Prop_AFF_SLICEL_C_Q)
+                                                      0.039     0.051 r  s1_w_hold_reg/Q
+                         net (fo=8, routed)           0.033     0.084    s1_w_hold_reg_n_0
+    SLICE_X36Y92         LUT6 (Prop_A6LUT_SLICEL_I0_O)
+                                                      0.022     0.106 r  s1_w_hold_i_1/O
+                         net (fo=1, routed)           0.016     0.122    s1_w_hold_i_1_n_0
+    SLICE_X36Y92         FDRE                                         r  s1_w_hold_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock axil_arb2_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=388, unset)          0.018     0.018    clk
+    SLICE_X36Y92         FDRE                                         r  s1_w_hold_reg/C
+                         clock pessimism              0.000     0.018    
+    SLICE_X36Y92         FDRE (Hold_AFF_SLICEL_C_D)
+                                                      0.046     0.064    s1_w_hold_reg
+  -------------------------------------------------------------------
+                         required time                         -0.064    
+                         arrival time                           0.122    
+  -------------------------------------------------------------------
+                         slack                                  0.058    
+
+Slack (MET) :             0.059ns  (arrival time - required time)
+  Source:                 s0_ar_hold_reg/C
+                            (rising edge-triggered cell FDRE clocked by axil_arb2_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            s0_ar_hold_reg/D
+                            (rising edge-triggered cell FDRE clocked by axil_arb2_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             axil_arb2_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (axil_arb2_clk rise@0.000ns - axil_arb2_clk rise@0.000ns)
+  Data Path Delay:        0.111ns  (logic 0.053ns (47.585%)  route 0.058ns (52.415%))
+  Logic Levels:           1  (LUT6=1)
+  Clock Path Skew:        0.006ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.019ns
+    Source Clock Delay      (SCD):    0.013ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock axil_arb2_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=388, unset)          0.013     0.013    clk
+    SLICE_X35Y91         FDRE                                         r  s0_ar_hold_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X35Y91         FDRE (Prop_DFF_SLICEM_C_Q)
+                                                      0.039     0.052 r  s0_ar_hold_reg/Q
+                         net (fo=6, routed)           0.032     0.084    s0_ar_hold_reg_n_0
+    SLICE_X35Y91         LUT6 (Prop_D6LUT_SLICEM_I5_O)
+                                                      0.014     0.098 r  s0_ar_hold_i_1/O
+                         net (fo=1, routed)           0.026     0.124    s0_ar_hold_i_1_n_0
+    SLICE_X35Y91         FDRE                                         r  s0_ar_hold_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock axil_arb2_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=388, unset)          0.019     0.019    clk
+    SLICE_X35Y91         FDRE                                         r  s0_ar_hold_reg/C
+                         clock pessimism              0.000     0.019    
+    SLICE_X35Y91         FDRE (Hold_DFF_SLICEM_C_D)
+                                                      0.046     0.065    s0_ar_hold_reg
+  -------------------------------------------------------------------
+                         required time                         -0.065    
+                         arrival time                           0.124    
+  -------------------------------------------------------------------
+                         slack                                  0.059    
+
+Slack (MET) :             0.070ns  (arrival time - required time)
+  Source:                 s1_awaddr_reg_reg[11]/C
+                            (rising edge-triggered cell FDRE clocked by axil_arb2_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            active_awaddr_reg[11]/D
+                            (rising edge-triggered cell FDRE clocked by axil_arb2_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             axil_arb2_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (axil_arb2_clk rise@0.000ns - axil_arb2_clk rise@0.000ns)
+  Data Path Delay:        0.122ns  (logic 0.087ns (71.311%)  route 0.035ns (28.689%))
+  Logic Levels:           1  (LUT3=1)
+  Clock Path Skew:        0.005ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.018ns
+    Source Clock Delay      (SCD):    0.013ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock axil_arb2_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=388, unset)          0.013     0.013    clk
+    SLICE_X36Y96         FDRE                                         r  s1_awaddr_reg_reg[11]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X36Y96         FDRE (Prop_FFF_SLICEL_C_Q)
+                                                      0.039     0.052 r  s1_awaddr_reg_reg[11]/Q
+                         net (fo=1, routed)           0.029     0.081    s1_awaddr_reg[11]
+    SLICE_X36Y96         LUT3 (Prop_C5LUT_SLICEL_I0_O)
+                                                      0.048     0.129 r  active_awaddr[11]_i_1/O
+                         net (fo=1, routed)           0.006     0.135    p_1_in[11]
+    SLICE_X36Y96         FDRE                                         r  active_awaddr_reg[11]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock axil_arb2_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=388, unset)          0.018     0.018    clk
+    SLICE_X36Y96         FDRE                                         r  active_awaddr_reg[11]/C
+                         clock pessimism              0.000     0.018    
+    SLICE_X36Y96         FDRE (Hold_CFF2_SLICEL_C_D)
+                                                      0.047     0.065    active_awaddr_reg[11]
+  -------------------------------------------------------------------
+                         required time                         -0.065    
+                         arrival time                           0.135    
+  -------------------------------------------------------------------
+                         slack                                  0.070    
+
+Slack (MET) :             0.078ns  (arrival time - required time)
+  Source:                 s0_aw_hold_reg/C
+                            (rising edge-triggered cell FDRE clocked by axil_arb2_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            s0_aw_hold_reg/D
+                            (rising edge-triggered cell FDRE clocked by axil_arb2_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             axil_arb2_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (axil_arb2_clk rise@0.000ns - axil_arb2_clk rise@0.000ns)
+  Data Path Delay:        0.130ns  (logic 0.074ns (57.108%)  route 0.056ns (42.892%))
+  Logic Levels:           1  (LUT6=1)
+  Clock Path Skew:        0.006ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.018ns
+    Source Clock Delay      (SCD):    0.012ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock axil_arb2_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=388, unset)          0.012     0.012    clk
+    SLICE_X36Y91         FDRE                                         r  s0_aw_hold_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X36Y91         FDRE (Prop_DFF_SLICEL_C_Q)
+                                                      0.039     0.051 r  s0_aw_hold_reg/Q
+                         net (fo=9, routed)           0.040     0.091    s0_aw_hold_reg_n_0
+    SLICE_X36Y91         LUT6 (Prop_D6LUT_SLICEL_I5_O)
+                                                      0.035     0.126 r  s0_aw_hold_i_1/O
+                         net (fo=1, routed)           0.016     0.142    s0_aw_hold_i_1_n_0
+    SLICE_X36Y91         FDRE                                         r  s0_aw_hold_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock axil_arb2_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=388, unset)          0.018     0.018    clk
+    SLICE_X36Y91         FDRE                                         r  s0_aw_hold_reg/C
+                         clock pessimism              0.000     0.018    
+    SLICE_X36Y91         FDRE (Hold_DFF_SLICEL_C_D)
+                                                      0.046     0.064    s0_aw_hold_reg
+  -------------------------------------------------------------------
+                         required time                         -0.064    
+                         arrival time                           0.142    
+  -------------------------------------------------------------------
+                         slack                                  0.078    
+
+Slack (MET) :             0.082ns  (arrival time - required time)
+  Source:                 s1_awaddr_reg_reg[25]/C
+                            (rising edge-triggered cell FDRE clocked by axil_arb2_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            active_awaddr_reg[25]/D
+                            (rising edge-triggered cell FDRE clocked by axil_arb2_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             axil_arb2_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (axil_arb2_clk rise@0.000ns - axil_arb2_clk rise@0.000ns)
+  Data Path Delay:        0.134ns  (logic 0.077ns (57.463%)  route 0.057ns (42.537%))
+  Logic Levels:           1  (LUT3=1)
+  Clock Path Skew:        0.005ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.018ns
+    Source Clock Delay      (SCD):    0.013ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock axil_arb2_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=388, unset)          0.013     0.013    clk
+    SLICE_X36Y94         FDRE                                         r  s1_awaddr_reg_reg[25]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X36Y94         FDRE (Prop_EFF_SLICEL_C_Q)
+                                                      0.039     0.052 r  s1_awaddr_reg_reg[25]/Q
+                         net (fo=1, routed)           0.051     0.103    s1_awaddr_reg[25]
+    SLICE_X36Y94         LUT3 (Prop_C5LUT_SLICEL_I0_O)
+                                                      0.038     0.141 r  active_awaddr[25]_i_1/O
+                         net (fo=1, routed)           0.006     0.147    p_1_in[25]
+    SLICE_X36Y94         FDRE                                         r  active_awaddr_reg[25]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock axil_arb2_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=388, unset)          0.018     0.018    clk
+    SLICE_X36Y94         FDRE                                         r  active_awaddr_reg[25]/C
+                         clock pessimism              0.000     0.018    
+    SLICE_X36Y94         FDRE (Hold_CFF2_SLICEL_C_D)
+                                                      0.047     0.065    active_awaddr_reg[25]
+  -------------------------------------------------------------------
+                         required time                         -0.065    
+                         arrival time                           0.147    
+  -------------------------------------------------------------------
+                         slack                                  0.082    
+
+Slack (MET) :             0.084ns  (arrival time - required time)
+  Source:                 s1_araddr_reg_reg[22]/C
+                            (rising edge-triggered cell FDRE clocked by axil_arb2_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            active_araddr_reg[22]/D
+                            (rising edge-triggered cell FDRE clocked by axil_arb2_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             axil_arb2_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (axil_arb2_clk rise@0.000ns - axil_arb2_clk rise@0.000ns)
+  Data Path Delay:        0.135ns  (logic 0.089ns (65.926%)  route 0.046ns (34.074%))
+  Logic Levels:           1  (LUT3=1)
+  Clock Path Skew:        0.005ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.018ns
+    Source Clock Delay      (SCD):    0.013ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock axil_arb2_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=388, unset)          0.013     0.013    clk
+    SLICE_X38Y92         FDRE                                         r  s1_araddr_reg_reg[22]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X38Y92         FDRE (Prop_FFF_SLICEL_C_Q)
+                                                      0.039     0.052 r  s1_araddr_reg_reg[22]/Q
+                         net (fo=1, routed)           0.029     0.081    s1_araddr_reg[22]
+    SLICE_X38Y92         LUT3 (Prop_C6LUT_SLICEL_I0_O)
+                                                      0.050     0.131 r  active_araddr[22]_i_1/O
+                         net (fo=1, routed)           0.017     0.148    active_araddr[22]_i_1_n_0
+    SLICE_X38Y92         FDRE                                         r  active_araddr_reg[22]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock axil_arb2_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=388, unset)          0.018     0.018    clk
+    SLICE_X38Y92         FDRE                                         r  active_araddr_reg[22]/C
+                         clock pessimism              0.000     0.018    
+    SLICE_X38Y92         FDRE (Hold_CFF_SLICEL_C_D)
+                                                      0.046     0.064    active_araddr_reg[22]
+  -------------------------------------------------------------------
+                         required time                         -0.064    
+                         arrival time                           0.148    
+  -------------------------------------------------------------------
+                         slack                                  0.084    
+
+Slack (MET) :             0.084ns  (arrival time - required time)
+  Source:                 s1_araddr_reg_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by axil_arb2_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            active_araddr_reg[2]/D
+                            (rising edge-triggered cell FDRE clocked by axil_arb2_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             axil_arb2_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (axil_arb2_clk rise@0.000ns - axil_arb2_clk rise@0.000ns)
+  Data Path Delay:        0.135ns  (logic 0.089ns (65.926%)  route 0.046ns (34.074%))
+  Logic Levels:           1  (LUT3=1)
+  Clock Path Skew:        0.005ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.018ns
+    Source Clock Delay      (SCD):    0.013ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock axil_arb2_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=388, unset)          0.013     0.013    clk
+    SLICE_X40Y91         FDRE                                         r  s1_araddr_reg_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X40Y91         FDRE (Prop_FFF_SLICEL_C_Q)
+                                                      0.039     0.052 r  s1_araddr_reg_reg[2]/Q
+                         net (fo=1, routed)           0.029     0.081    s1_araddr_reg[2]
+    SLICE_X40Y91         LUT3 (Prop_C6LUT_SLICEL_I0_O)
+                                                      0.050     0.131 r  active_araddr[2]_i_1/O
+                         net (fo=1, routed)           0.017     0.148    active_araddr[2]_i_1_n_0
+    SLICE_X40Y91         FDRE                                         r  active_araddr_reg[2]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock axil_arb2_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=388, unset)          0.018     0.018    clk
+    SLICE_X40Y91         FDRE                                         r  active_araddr_reg[2]/C
+                         clock pessimism              0.000     0.018    
+    SLICE_X40Y91         FDRE (Hold_CFF_SLICEL_C_D)
+                                                      0.046     0.064    active_araddr_reg[2]
+  -------------------------------------------------------------------
+                         required time                         -0.064    
+                         arrival time                           0.148    
+  -------------------------------------------------------------------
+                         slack                                  0.084    
+
+Slack (MET) :             0.084ns  (arrival time - required time)
+  Source:                 s1_awaddr_reg_reg[1]/C
+                            (rising edge-triggered cell FDRE clocked by axil_arb2_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            active_awaddr_reg[1]/D
+                            (rising edge-triggered cell FDRE clocked by axil_arb2_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             axil_arb2_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (axil_arb2_clk rise@0.000ns - axil_arb2_clk rise@0.000ns)
+  Data Path Delay:        0.136ns  (logic 0.078ns (57.353%)  route 0.058ns (42.647%))
+  Logic Levels:           1  (LUT3=1)
+  Clock Path Skew:        0.005ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.018ns
+    Source Clock Delay      (SCD):    0.013ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock axil_arb2_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=388, unset)          0.013     0.013    clk
+    SLICE_X36Y96         FDRE                                         r  s1_awaddr_reg_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X36Y96         FDRE (Prop_EFF_SLICEL_C_Q)
+                                                      0.039     0.052 r  s1_awaddr_reg_reg[1]/Q
+                         net (fo=1, routed)           0.052     0.104    s1_awaddr_reg[1]
+    SLICE_X36Y96         LUT3 (Prop_D5LUT_SLICEL_I0_O)
+                                                      0.039     0.143 r  active_awaddr[1]_i_1/O
+                         net (fo=1, routed)           0.006     0.149    p_1_in[1]
+    SLICE_X36Y96         FDRE                                         r  active_awaddr_reg[1]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock axil_arb2_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=388, unset)          0.018     0.018    clk
+    SLICE_X36Y96         FDRE                                         r  active_awaddr_reg[1]/C
+                         clock pessimism              0.000     0.018    
+    SLICE_X36Y96         FDRE (Hold_DFF2_SLICEL_C_D)
+                                                      0.047     0.065    active_awaddr_reg[1]
+  -------------------------------------------------------------------
+                         required time                         -0.065    
+                         arrival time                           0.149    
+  -------------------------------------------------------------------
+                         slack                                  0.084    
+
+Slack (MET) :             0.084ns  (arrival time - required time)
+  Source:                 s1_awaddr_reg_reg[30]/C
+                            (rising edge-triggered cell FDRE clocked by axil_arb2_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            active_awaddr_reg[30]/D
+                            (rising edge-triggered cell FDRE clocked by axil_arb2_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             axil_arb2_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (axil_arb2_clk rise@0.000ns - axil_arb2_clk rise@0.000ns)
+  Data Path Delay:        0.135ns  (logic 0.089ns (65.926%)  route 0.046ns (34.074%))
+  Logic Levels:           1  (LUT3=1)
+  Clock Path Skew:        0.005ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.018ns
+    Source Clock Delay      (SCD):    0.013ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock axil_arb2_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=388, unset)          0.013     0.013    clk
+    SLICE_X36Y93         FDRE                                         r  s1_awaddr_reg_reg[30]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X36Y93         FDRE (Prop_FFF_SLICEL_C_Q)
+                                                      0.039     0.052 r  s1_awaddr_reg_reg[30]/Q
+                         net (fo=1, routed)           0.029     0.081    s1_awaddr_reg[30]
+    SLICE_X36Y93         LUT3 (Prop_C6LUT_SLICEL_I0_O)
+                                                      0.050     0.131 r  active_awaddr[30]_i_1/O
+                         net (fo=1, routed)           0.017     0.148    p_1_in[30]
+    SLICE_X36Y93         FDRE                                         r  active_awaddr_reg[30]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock axil_arb2_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=388, unset)          0.018     0.018    clk
+    SLICE_X36Y93         FDRE                                         r  active_awaddr_reg[30]/C
+                         clock pessimism              0.000     0.018    
+    SLICE_X36Y93         FDRE (Hold_CFF_SLICEL_C_D)
+                                                      0.046     0.064    active_awaddr_reg[30]
+  -------------------------------------------------------------------
+                         required time                         -0.064    
+                         arrival time                           0.148    
+  -------------------------------------------------------------------
+                         slack                                  0.084    
+
+Slack (MET) :             0.084ns  (arrival time - required time)
+  Source:                 s1_awaddr_reg_reg[4]/C
+                            (rising edge-triggered cell FDRE clocked by axil_arb2_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            active_awaddr_reg[4]/D
+                            (rising edge-triggered cell FDRE clocked by axil_arb2_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             axil_arb2_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (axil_arb2_clk rise@0.000ns - axil_arb2_clk rise@0.000ns)
+  Data Path Delay:        0.135ns  (logic 0.089ns (65.926%)  route 0.046ns (34.074%))
+  Logic Levels:           1  (LUT3=1)
+  Clock Path Skew:        0.005ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.018ns
+    Source Clock Delay      (SCD):    0.013ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock axil_arb2_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=388, unset)          0.013     0.013    clk
+    SLICE_X36Y95         FDRE                                         r  s1_awaddr_reg_reg[4]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X36Y95         FDRE (Prop_FFF_SLICEL_C_Q)
+                                                      0.039     0.052 r  s1_awaddr_reg_reg[4]/Q
+                         net (fo=1, routed)           0.029     0.081    s1_awaddr_reg[4]
+    SLICE_X36Y95         LUT3 (Prop_C6LUT_SLICEL_I0_O)
+                                                      0.050     0.131 r  active_awaddr[4]_i_1/O
+                         net (fo=1, routed)           0.017     0.148    p_1_in[4]
+    SLICE_X36Y95         FDRE                                         r  active_awaddr_reg[4]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock axil_arb2_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=388, unset)          0.018     0.018    clk
+    SLICE_X36Y95         FDRE                                         r  active_awaddr_reg[4]/C
+                         clock pessimism              0.000     0.018    
+    SLICE_X36Y95         FDRE (Hold_CFF_SLICEL_C_D)
+                                                      0.046     0.064    active_awaddr_reg[4]
+  -------------------------------------------------------------------
+                         required time                         -0.064    
+                         arrival time                           0.148    
+  -------------------------------------------------------------------
+                         slack                                  0.084    
+
+Slack (MET) :             0.084ns  (arrival time - required time)
+  Source:                 s0_awaddr_reg_reg[8]/C
+                            (rising edge-triggered cell FDRE clocked by axil_arb2_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            active_awaddr_reg[8]/D
+                            (rising edge-triggered cell FDRE clocked by axil_arb2_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             axil_arb2_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (axil_arb2_clk rise@0.000ns - axil_arb2_clk rise@0.000ns)
+  Data Path Delay:        0.135ns  (logic 0.089ns (65.926%)  route 0.046ns (34.074%))
+  Logic Levels:           1  (LUT3=1)
+  Clock Path Skew:        0.005ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.018ns
+    Source Clock Delay      (SCD):    0.013ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock axil_arb2_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=388, unset)          0.013     0.013    clk
+    SLICE_X36Y97         FDRE                                         r  s0_awaddr_reg_reg[8]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X36Y97         FDRE (Prop_FFF_SLICEL_C_Q)
+                                                      0.039     0.052 r  s0_awaddr_reg_reg[8]/Q
+                         net (fo=1, routed)           0.029     0.081    s0_awaddr_reg[8]
+    SLICE_X36Y97         LUT3 (Prop_C6LUT_SLICEL_I2_O)
+                                                      0.050     0.131 r  active_awaddr[8]_i_1/O
+                         net (fo=1, routed)           0.017     0.148    p_1_in[8]
+    SLICE_X36Y97         FDRE                                         r  active_awaddr_reg[8]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock axil_arb2_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=388, unset)          0.018     0.018    clk
+    SLICE_X36Y97         FDRE                                         r  active_awaddr_reg[8]/C
+                         clock pessimism              0.000     0.018    
+    SLICE_X36Y97         FDRE (Hold_CFF_SLICEL_C_D)
+                                                      0.046     0.064    active_awaddr_reg[8]
+  -------------------------------------------------------------------
+                         required time                         -0.064    
+                         arrival time                           0.148    
+  -------------------------------------------------------------------
+                         slack                                  0.084    
+
+Slack (MET) :             0.084ns  (arrival time - required time)
+  Source:                 s0_wdata_reg_reg[16]/C
+                            (rising edge-triggered cell FDRE clocked by axil_arb2_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            active_wdata_reg[16]/D
+                            (rising edge-triggered cell FDRE clocked by axil_arb2_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             axil_arb2_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (axil_arb2_clk rise@0.000ns - axil_arb2_clk rise@0.000ns)
+  Data Path Delay:        0.135ns  (logic 0.089ns (65.926%)  route 0.046ns (34.074%))
+  Logic Levels:           1  (LUT3=1)
+  Clock Path Skew:        0.005ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.018ns
+    Source Clock Delay      (SCD):    0.013ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock axil_arb2_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=388, unset)          0.013     0.013    clk
+    SLICE_X40Y95         FDRE                                         r  s0_wdata_reg_reg[16]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X40Y95         FDRE (Prop_FFF_SLICEL_C_Q)
+                                                      0.039     0.052 r  s0_wdata_reg_reg[16]/Q
+                         net (fo=1, routed)           0.029     0.081    s0_wdata_reg[16]
+    SLICE_X40Y95         LUT3 (Prop_C6LUT_SLICEL_I2_O)
+                                                      0.050     0.131 r  active_wdata[16]_i_1/O
+                         net (fo=1, routed)           0.017     0.148    active_wdata[16]_i_1_n_0
+    SLICE_X40Y95         FDRE                                         r  active_wdata_reg[16]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock axil_arb2_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=388, unset)          0.018     0.018    clk
+    SLICE_X40Y95         FDRE                                         r  active_wdata_reg[16]/C
+                         clock pessimism              0.000     0.018    
+    SLICE_X40Y95         FDRE (Hold_CFF_SLICEL_C_D)
+                                                      0.046     0.064    active_wdata_reg[16]
+  -------------------------------------------------------------------
+                         required time                         -0.064    
+                         arrival time                           0.148    
+  -------------------------------------------------------------------
+                         slack                                  0.084    
+
+Slack (MET) :             0.084ns  (arrival time - required time)
+  Source:                 s0_wdata_reg_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by axil_arb2_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            active_wdata_reg[2]/D
+                            (rising edge-triggered cell FDRE clocked by axil_arb2_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             axil_arb2_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (axil_arb2_clk rise@0.000ns - axil_arb2_clk rise@0.000ns)
+  Data Path Delay:        0.135ns  (logic 0.089ns (65.926%)  route 0.046ns (34.074%))
+  Logic Levels:           1  (LUT3=1)
+  Clock Path Skew:        0.005ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.018ns
+    Source Clock Delay      (SCD):    0.013ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock axil_arb2_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=388, unset)          0.013     0.013    clk
+    SLICE_X40Y96         FDRE                                         r  s0_wdata_reg_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X40Y96         FDRE (Prop_FFF_SLICEL_C_Q)
+                                                      0.039     0.052 r  s0_wdata_reg_reg[2]/Q
+                         net (fo=1, routed)           0.029     0.081    s0_wdata_reg[2]
+    SLICE_X40Y96         LUT3 (Prop_C6LUT_SLICEL_I2_O)
+                                                      0.050     0.131 r  active_wdata[2]_i_1/O
+                         net (fo=1, routed)           0.017     0.148    active_wdata[2]_i_1_n_0
+    SLICE_X40Y96         FDRE                                         r  active_wdata_reg[2]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock axil_arb2_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=388, unset)          0.018     0.018    clk
+    SLICE_X40Y96         FDRE                                         r  active_wdata_reg[2]/C
+                         clock pessimism              0.000     0.018    
+    SLICE_X40Y96         FDRE (Hold_CFF_SLICEL_C_D)
+                                                      0.046     0.064    active_wdata_reg[2]
+  -------------------------------------------------------------------
+                         required time                         -0.064    
+                         arrival time                           0.148    
+  -------------------------------------------------------------------
+                         slack                                  0.084    
+
+Slack (MET) :             0.084ns  (arrival time - required time)
+  Source:                 s0_wdata_reg_reg[30]/C
+                            (rising edge-triggered cell FDRE clocked by axil_arb2_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            active_wdata_reg[30]/D
+                            (rising edge-triggered cell FDRE clocked by axil_arb2_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             axil_arb2_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (axil_arb2_clk rise@0.000ns - axil_arb2_clk rise@0.000ns)
+  Data Path Delay:        0.135ns  (logic 0.089ns (65.926%)  route 0.046ns (34.074%))
+  Logic Levels:           1  (LUT3=1)
+  Clock Path Skew:        0.005ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.018ns
+    Source Clock Delay      (SCD):    0.013ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock axil_arb2_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=388, unset)          0.013     0.013    clk
+    SLICE_X38Y95         FDRE                                         r  s0_wdata_reg_reg[30]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X38Y95         FDRE (Prop_FFF_SLICEL_C_Q)
+                                                      0.039     0.052 r  s0_wdata_reg_reg[30]/Q
+                         net (fo=1, routed)           0.029     0.081    s0_wdata_reg[30]
+    SLICE_X38Y95         LUT3 (Prop_C6LUT_SLICEL_I2_O)
+                                                      0.050     0.131 r  active_wdata[30]_i_1/O
+                         net (fo=1, routed)           0.017     0.148    active_wdata[30]_i_1_n_0
+    SLICE_X38Y95         FDRE                                         r  active_wdata_reg[30]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock axil_arb2_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=388, unset)          0.018     0.018    clk
+    SLICE_X38Y95         FDRE                                         r  active_wdata_reg[30]/C
+                         clock pessimism              0.000     0.018    
+    SLICE_X38Y95         FDRE (Hold_CFF_SLICEL_C_D)
+                                                      0.046     0.064    active_wdata_reg[30]
+  -------------------------------------------------------------------
+                         required time                         -0.064    
+                         arrival time                           0.148    
+  -------------------------------------------------------------------
+                         slack                                  0.084    
+
+Slack (MET) :             0.084ns  (arrival time - required time)
+  Source:                 s0_wdata_reg_reg[4]/C
+                            (rising edge-triggered cell FDRE clocked by axil_arb2_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            active_wdata_reg[4]/D
+                            (rising edge-triggered cell FDRE clocked by axil_arb2_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             axil_arb2_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (axil_arb2_clk rise@0.000ns - axil_arb2_clk rise@0.000ns)
+  Data Path Delay:        0.135ns  (logic 0.089ns (65.926%)  route 0.046ns (34.074%))
+  Logic Levels:           1  (LUT3=1)
+  Clock Path Skew:        0.005ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.018ns
+    Source Clock Delay      (SCD):    0.013ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock axil_arb2_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=388, unset)          0.013     0.013    clk
+    SLICE_X40Y94         FDRE                                         r  s0_wdata_reg_reg[4]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X40Y94         FDRE (Prop_FFF_SLICEL_C_Q)
+                                                      0.039     0.052 r  s0_wdata_reg_reg[4]/Q
+                         net (fo=1, routed)           0.029     0.081    s0_wdata_reg[4]
+    SLICE_X40Y94         LUT3 (Prop_C6LUT_SLICEL_I2_O)
+                                                      0.050     0.131 r  active_wdata[4]_i_1/O
+                         net (fo=1, routed)           0.017     0.148    active_wdata[4]_i_1_n_0
+    SLICE_X40Y94         FDRE                                         r  active_wdata_reg[4]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock axil_arb2_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=388, unset)          0.018     0.018    clk
+    SLICE_X40Y94         FDRE                                         r  active_wdata_reg[4]/C
+                         clock pessimism              0.000     0.018    
+    SLICE_X40Y94         FDRE (Hold_CFF_SLICEL_C_D)
+                                                      0.046     0.064    active_wdata_reg[4]
+  -------------------------------------------------------------------
+                         required time                         -0.064    
+                         arrival time                           0.148    
+  -------------------------------------------------------------------
+                         slack                                  0.084    
+
+
+
+

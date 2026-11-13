@@ -1,0 +1,138 @@
+**************************************************
+********RFEVM CH8 trxloop begin MOD RFSOM*********
+**************************************************
+Please wait...
+AWG INIT: platform initialized
+AWG INIT: LMK reset released
+AWG INIT: configuring LMK
+rf:1,total register number=128
+rf:1,lmk04828_reg[0x100]=c
+LMK configured: reference outputs 200 MHz; SYSREF divider=5760 (416.666667 kHz)
+man_dac=1600,dac_value=512
+LMK PLL status: pll1_lock=0x0 pll2_lock=0x1 consecutive=100 polls=100
+CRL_APB_BOOT_MODE_USER=2
+AWG CLOCK READY: LMK configured; waiting for matching PL programming
+AWG INIT: matching PL loaded after stable LMK clocks
+AWG INIT: initializing RF data converter
+AWG INIT: RFDC driver initialized
+AWG INIT: RFDC tiles reset
+ADC_PATHS_ENABLED=ffffffff
+DAC_PATHS_ENABLED=55555555
+tile=0,block=0,Attenuation=0.000000,Status=0
+tile=0,block=1,Attenuation=0.000000,Status=0
+tile=1,block=0,Attenuation=0.000000,Status=0
+tile=1,block=1,Attenuation=0.000000,Status=0
+tile=2,block=0,Attenuation=0.000000,Status=0
+tile=2,block=1,Attenuation=0.000000,Status=0
+tile=3,block=0,Attenuation=0.000000,Status=0
+tile=3,block=1,Attenuation=0.000000,Status=0
+ip revision=2060b00
+adc tile1 clock_dector=1
+adc tile2 clock_dector=1
+dac tile0 clock_dector=1
+dac tile2 clock_dector=1
+DAC converter samplerate=9800000000Hz
+ADC converter samplerate=5000000000Hz
+AWG INIT: RFDC configured rates ADC 5 GSPS / DAC 9.8 GSPS match (not a frequency measurement)
+AWG PLL: ADC tile 1 ref=200.000000 MHz, sample=5.000000 GSPS, refdiv=1 feedback=50 outdiv=2 lock=2
+AWG PLL: DAC tile 2 ref=200.000000 MHz, sample=9.800000 GSPS, refdiv=1 feedback=49 outdiv=1 lock=2
+AWG INIT: RFDC datapath uses bitstream configuration (DAC x1, ADC x1, mixer bypass)
+AWG INIT: starting MTS
+=== RFdc Initialized - Running Multi-tile Sync div=4===
+AWG MTS: DAC tile 0 state=15 blocks=0x5 mts=1
+AWG MTS: ADC tile 0 state=15 blocks=0x3 mts=1
+AWG MTS: DAC tile 1 state=15 blocks=0x5 mts=1
+AWG MTS: ADC tile 1 state=15 blocks=0x3 mts=1
+AWG MTS: DAC tile 2 state=15 blocks=0x5 mts=1
+AWG MTS: ADC tile 2 state=15 blocks=0x3 mts=1
+AWG MTS: DAC tile 3 state=15 blocks=0x5 mts=1
+AWG MTS: ADC tile 3 state=15 blocks=0x3 mts=1
+AWG MTS: selected DAC tiles=0xf ADC tiles=0xf
+AWG MTS: reference DAC tile=0 ADC tile=0
+LMK SYSREF continuous mode: reg[0x139]=0x03
+
+=== Run DAC Sync ===
+DAC2: #00000000000000000000000000000000000000000000000000000000000000*0000000000000000000000000000000000000000000000000000000000000000
+
+DTC Scan T1
+DAC0: 00000011322200000000000001132220000000000000113222200000*0000001#322200000000000011122200000000000001112222000000000000113222000
+DAC1: 00000000011222200000000000011322220000000000000113222000#0*000000113222000000000000011122200000000000001132220000000000000011222
+DAC2: 00000001122220000000000001112220000000000000011322200000#*0000001132200000000000001132220000000000000113222000000000000011122200
+DAC3: 00000001132220000000000000113222000000000000011322220000#*0000001132220000000000000112222000000000000111322200000000000011132220
+DAC0: Marker: - 18, 0
+DAC1: Marker: - 18, 0
+DAC2: Marker: - 18, 0
+DAC3: Marker: - 18, 0
+
+ DAC 0 DUC 0 is in bypass mode in XRFdc_GetMixerSettings
+SysRef period in terms of DAC T1s = 23520
+DAC target latency = 288
+INFO : DAC Multi-Tile-Sync completed successfully
+DAC0: Latency(T1) =288, Adjusted DelayOffset=  0
+DAC1: Latency(T1) =288, Adjusted DelayOffset=  0
+DAC2: Latency(T1) =288, Adjusted DelayOffset=  0
+DAC3: Latency(T1) =288, Adjusted DelayOffset=  0
+
+=== Run ADC Sync ===
+ADC1: #0*00111222000000000000011122200000000000001112222000000000000011322200000000000011322200000000000001113222000000000000011322200
+
+DTC Scan T1
+ADC0: 220000000000000000000000000000001112222000000000000000*000000000#000001132220000000000000000000000000000000112222000000000000000
+ADC1: 122220000000000000000000000000000000113222000000000000#00*0000000000000001132220000000000000000000000000000000113222000000000000
+ADC2: 132220000000000000000000000000000000111222200000000000#000*000000000000000113222000000000000000000000000000000011322200000000000
+ADC3: 132220000000000000000000000000000000111222200000000000#00*0000000000000001112222000000000000000000000000000000111222000000000000
+ADC0: Marker: - 8, 8
+ADC1: Marker: - 8, 8
+ADC2: Marker: - 9, 4
+ADC3: Marker: - 9, 4
+SysRef period in terms of ADC T1s = 12000
+ADC target latency = 104
+INFO : ADC Multi-Tile-Sync completed successfully
+ADC0: Latency(T1) =112, Adjusted DelayOffset=  8
+ADC1: Latency(T1) =112, Adjusted DelayOffset=  8
+ADC2: Latency(T1) =112, Adjusted DelayOffset=  0
+ADC3: Latency(T1) =112, Adjusted DelayOffset=  0
+LMK SYSREF pulsed mode: reg[0x139]=0x02
+
+
+=== Multi-Tile Sync Report ===
+DAC0: Latency(T1) =288, Adjusted DelayOffset(T1) =  0
+DAC1: Latency(T1) =288, Adjusted DelayOffset(T1) =  0
+DAC2: Latency(T1) =288, Adjusted DelayOffset(T1) =  0
+DAC3: Latency(T1) =288, Adjusted DelayOffset(T1) =  0
+ADC0: Latency(T1) =112, Adjusted DelayOffset(T1) =  8
+ADC1: Latency(T1) =112, Adjusted DelayOffset(T1) =  8
+ADC2: Latency(T1) =112, Adjusted DelayOffset(T1) =  0
+ADC3: Latency(T1) =112, Adjusted DelayOffset(T1) =  0
+RFdcDcp initial Successful
+AWG INIT: RF initialization stages complete
+The SDR model is 840(4x4) rev V3!
+The FPGA firmware version=0xaabbccdd
+The fw lasted build at bb:cc:dd
+The sw lasted build at 04:33:18 Nov 12 2026
+Xadc Setup PASSED
+MRF4 initial successful!
+fpga temperature=34.313416
+AWG READY: DAC=9800000000 real samples/s, ADC=5000000000 raw samples/s, data clocks=612500000/416666667Hz
+DAC remains at zero; load waveforms and START over QSFP2 40GbE (UDP 9100).
+fpga temp=34.5; AWG controlled over 40GbE
+fpga temp=34.7; AWG controlled over 40GbE
+fpga temp=35.2; AWG controlled over 40GbE
+fpga temp=35.6; AWG controlled over 40GbE
+fpga temp=35.5; AWG controlled over 40GbE
+fpga temp=35.5; AWG controlled over 40GbE
+fpga temp=35.3; AWG controlled over 40GbE
+fpga temp=35.3; AWG controlled over 40GbE
+fpga temp=35.7; AWG controlled over 40GbE
+fpga temp=35.7; AWG controlled over 40GbE
+fpga temp=35.7; AWG controlled over 40GbE
+fpga temp=35.6; AWG controlled over 40GbE
+fpga temp=35.9; AWG controlled over 40GbE
+fpga temp=36.1; AWG controlled over 40GbE
+fpga temp=35.6; AWG controlled over 40GbE
+fpga temp=35.9; AWG controlled over 40GbE
+fpga temp=35.9; AWG controlled over 40GbE
+fpga temp=36.0; AWG controlled over 40GbE
+fpga temp=35.8; AWG controlled over 40GbE
+fpga temp=36.5; AWG controlled over 40GbE
+

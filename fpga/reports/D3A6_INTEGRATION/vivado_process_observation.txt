@@ -1,0 +1,7 @@
+task=D3A6_INTEGRATION
+limit=3
+observation=one live Get-Process vivado snapshot during project-mode OOC synthesis
+observed_concurrent_processes=10
+observed_process_ids=13792,13348,35784,25372,27576,35652,8504,33316,12140,29896
+interpretation=one top-level Vivado process and Vivado-managed IP OOC synthesis/task-worker processes; this is a sampled count, not a measured peak
+result=process-count acceptance exceeded

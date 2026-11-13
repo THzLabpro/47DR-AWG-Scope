@@ -1,0 +1,26 @@
+{
+  "task": "D3A_INTEGRATION",
+  "date": "2026-11-11",
+  "status": "NEEDS_PARENT_JUDGMENT",
+  "stop_reason": "RX R2 CAP_TX_WORD error exceeded the fixed 16-word limit in the second run; project rule requires stopping after two attempts at the same failure.",
+  "acceptance": [
+    {"id": 1, "status": "FAIL", "detail": "TX T1-T6 PASS=26 FAIL=0; RX R1/R3/R4 pass; R2 17/20 pass, max error 17 words."},
+    {"id": 2, "status": "NOT_RUN", "detail": "awg_control_v2 unit TB not created or run."},
+    {"id": 3, "status": "NOT_RUN", "detail": "System scenarios S1-S7 not created or run."},
+    {"id": 4, "status": "NOT_RUN", "detail": "No integrated RTL elaboration, BD diff, or top-constraint validation."},
+    {"id": 5, "status": "PARTIAL", "detail": "Prior-report resource figures collected; no D3A synthesis or final integrated estimate."},
+    {"id": 6, "status": "STOPPED", "detail": "Same R2 threshold failure remains after two runs."}
+  ],
+  "files_changed": [
+    "rtl/tx/awg_tx.sv",
+    "rtl/rx/awg_rx.sv",
+    "sim/rx/tb_awg_rx.sv",
+    "reports/D3A_INTEGRATION/report.md",
+    "reports/D3A_INTEGRATION/status.json"
+  ],
+  "runs": {
+    "tx": {"pass": 26, "fail": 0, "crc": "D49307A0", "build_dir": "build/D3A_INTEGRATION/sim_tx"},
+    "rx": {"compared": 543552, "mismatches": 0, "x_count": 0, "pass_items": 21, "fail_items": 3, "r2_trials_pass": 17, "r2_trials_total": 20, "r2_max_error_words": 17, "r2_limit_words": 16, "build_dir": "build/D3A_INTEGRATION/sim_rx"}
+  },
+  "hardware_operations": false
+}

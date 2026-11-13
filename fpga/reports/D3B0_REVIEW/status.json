@@ -1,0 +1,12 @@
+{
+  "task": "D3B0_REVIEW",
+  "executor": "Claude (Codex backend unresponsive)",
+  "status": "ISSUES",
+  "blockers_before_d3b": ["S1 tx_phase_tog fanout 1797 at 612.5 MHz cross-domain", "S4 build script lacks bitstream/XSA/reports"],
+  "should": ["S2 rx adc_phase fanout 2690 and boot-dependent latency", "S3 dbg_hub constraints missing", "S5 high-fanout enables -> phys_opt"],
+  "drc_errors": 0,
+  "unsafe_clock_pairs": 0,
+  "power_w": 15.957,
+  "hardware_operations": false,
+  "implementation_run": false
+}

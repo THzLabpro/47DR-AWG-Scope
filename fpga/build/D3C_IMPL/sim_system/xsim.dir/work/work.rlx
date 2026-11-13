@@ -1,0 +1,13 @@
+0.7
+2020.2
+Nov 14 2025
+19:37:27
+D:/AMDDesignTools/2025.2/data/verilog/src/glbl.v,1756381829,systemVerilog,,,,glbl,,xpm,,,,,,
+D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/rtl/ctrl/awg_control_v2.sv,1794488087,systemVerilog,,D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/rtl/tx/awg_tx_uram_block.sv,,awg_control_v2,,xpm,,,,,,
+D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/rtl/eth/awg_eth_bridge.sv,1794443129,systemVerilog,,D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/rtl/eth/axil_arb2.sv,,awg_eth_bridge,,xpm,,,,,,
+D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/rtl/eth/axil_arb2.sv,1794424649,systemVerilog,,D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/rtl/ctrl/awg_control_v2.sv,,axil_arb2,,xpm,,,,,,
+D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/rtl/eth/vendor/verilog-ethernet/lib/axis/rtl/axis_async_fifo.v,1794414046,systemVerilog,,D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/rtl/eth/awg_eth_bridge.sv,,axis_async_fifo,,xpm,,,,,,
+D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/rtl/rx/awg_rx.sv,1794488124,systemVerilog,,D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/sim/d3/tb_d3_system.sv,,awg_rx,,xpm,,,,,,
+D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/rtl/tx/awg_tx.sv,1794470496,systemVerilog,,D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/rtl/rx/awg_rx.sv,,awg_tx,,xpm,,,,,,
+D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/rtl/tx/awg_tx_uram_block.sv,1794426080,systemVerilog,,D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/rtl/tx/awg_tx.sv,,awg_tx_uram_block,,xpm,,,,,,
+D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/sim/d3/tb_d3_system.sv,1794456967,systemVerilog,,D:/AMDDesignTools/2025.2/data/verilog/src/glbl.v,,tb_d3_system,,xpm,,,,,,

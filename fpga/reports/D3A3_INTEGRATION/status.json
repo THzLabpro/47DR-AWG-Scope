@@ -1,0 +1,20 @@
+{
+  "task": "D3A3_INTEGRATION",
+  "status": "NEEDS_PARENT_JUDGMENT",
+  "date": "2026-11-11",
+  "acceptance": {
+    "tx": {"pass": 26, "fail": 0, "crc": "D49307A0"},
+    "rx": {"pass_items": 26, "fail_items": 0, "compared": 543552, "mismatches": 0, "x_count": 0, "max_cap_tx_word_error": 17},
+    "control": {"pass": 48, "fail": 0},
+    "eth_bridge": {"s10_cycles": 110401, "s10_bytes": 65536, "s10_MBps": 59.361781, "threshold_MBps": 80.0, "status": "FAIL"},
+    "system": {"pass": 97, "fail": 133, "s7_write_MBps": 45.795104, "s7_read_MBps": 15.996798},
+    "bd_diff": {"changed": 15, "unexpected": 0},
+    "synth_design_rtl": "FAIL"
+  },
+  "needs_parent_judgment": [
+    "S10 throughput below 80 MB/s; bridge optimization reached 59.361781 MB/s.",
+    "System capture/readback and S3/S4/S5 acceptance failures remain.",
+    "Real BD/IP synth_design -rtl blocked by generated Vivado IP dependency/encrypted library errors."
+  ],
+  "hardware_operations": "NOT_PERFORMED"
+}

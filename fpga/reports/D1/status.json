@@ -1,0 +1,38 @@
+{
+  "task": "D1_TX",
+  "status": "NEEDS_PARENT_JUDGMENT",
+  "simulation": {
+    "pass": 26,
+    "fail": 0,
+    "mismatches": 0,
+    "x_count": 0,
+    "crc_rtl": "D49307A0",
+    "crc_python": "D49307A0",
+    "accepted_words": 524288,
+    "host_words_per_second": 49987033.393
+  },
+  "resources": {
+    "uram288": 56,
+    "ramb36_fifo": 0,
+    "ramb18": 0,
+    "cdc_fifo": "distributed LUTRAM"
+  },
+  "ooc_impl": {
+    "part": "xczu47dr-fsve1156-2-i",
+    "dac_clk_mhz": 612.370,
+    "tx_clk_mhz": 306.279,
+    "host_clk_mhz": 100.0,
+    "overall_wns_ns": -4.411,
+    "route_whs_ns": 0.009,
+    "route_ths_ns": 0.0,
+    "dac_wns_ns": -0.016,
+    "tx_wns_ns": -2.190,
+    "host_wns_ns": 5.406,
+    "tx_to_dac_wns_ns": 0.311,
+    "tx_to_host_wns_ns": -1.058,
+    "host_to_tx_wns_ns": -4.411,
+    "clb_registers": 21701,
+    "route_completed": true
+  },
+  "needs_parent_judgment": "OOC implementation timing does not meet WNS >= 0; no timing exceptions were added."
+}

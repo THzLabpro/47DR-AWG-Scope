@@ -1,0 +1,35 @@
+== ping
+PING OK
+== info
+{
+  "awg_id": 1096238385,
+  "protocol_version": 1,
+  "max_words": 2048,
+  "build_id": 3550748710,
+  "rx_ok": 1,
+  "rx_bad_req": 0,
+  "rx_dropped": 0,
+  "tx_replies": 1,
+  "dup_writes": 0,
+  "axi_errors": 0,
+  "axi_timeouts": 0,
+  "axi_words": 0
+}
+== status
+{
+  "running": 0,
+  "busy": 0,
+  "ps_ready": 1,
+  "fault": 0,
+  "command_result": 0,
+  "cap_busy": 0,
+  "cap_done": 0,
+  "crc_busy": 0,
+  "fault_channels": 0,
+  "length_beats": 1,
+  "channel_mask": 0,
+  "abi": 196609,
+  "tx_max_words": 4096,
+  "cap_max_words": 2730,
+  "cap_status": 0
+}

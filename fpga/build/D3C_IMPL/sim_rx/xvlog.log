@@ -1,0 +1,6 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/rtl/rx/awg_rx.sv" into library work
+INFO: [VRFC 10-311] analyzing module awg_rx
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/sim/rx/tb_awg_rx.sv" into library work
+INFO: [VRFC 10-311] analyzing module tb_awg_rx
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/AMDDesignTools/2025.2/data/verilog/src/glbl.v" into library work
+INFO: [VRFC 10-311] analyzing module glbl

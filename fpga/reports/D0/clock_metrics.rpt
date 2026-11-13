@@ -1,0 +1,13 @@
+# D0 final routed clock metrics
+clock=dac_clk expected_MHz=612.5 clocks=clk_out1_system_clk_wiz_0_0
+  WNS=-1.790 TNS=-353.964999999999
+  WHS=0.010 THS=0.0
+clock=tx_clk expected_MHz=306.25 clocks=tx_clk
+  WNS=-1.203 TNS=-2706.585999999995
+  WHS=0.022 THS=0.0
+clock=adc_clk expected_MHz=416.667 clocks=clk_out1_system_clk_wiz_adc_0
+  WNS=-2.321 TNS=-383.0180000000013
+  WHS=0.005 THS=0.0
+clock=rx_clk expected_MHz=208.333 clocks=rx_clk
+  WNS=-0.627 TNS=-646.9280000000008
+  WHS=0.001 THS=0.0

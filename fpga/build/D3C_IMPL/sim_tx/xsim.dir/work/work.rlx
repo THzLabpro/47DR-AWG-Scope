@@ -1,0 +1,8 @@
+0.7
+2020.2
+Nov 14 2025
+19:37:27
+D:/AMDDesignTools/2025.2/data/verilog/src/glbl.v,1756381829,systemVerilog,,,,glbl,,xpm,,,,,,
+D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/rtl/tx/awg_tx.sv,1794470496,systemVerilog,,D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/sim/tx/tb_awg_tx.sv,,awg_tx,,xpm,,,,,,
+D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/rtl/tx/awg_tx_uram_block.sv,1794426080,systemVerilog,,D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/rtl/tx/awg_tx.sv,,awg_tx_uram_block,,xpm,,,,,,
+D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/sim/tx/tb_awg_tx.sv,1794469744,systemVerilog,,D:/AMDDesignTools/2025.2/data/verilog/src/glbl.v,,tb_awg_tx,,xpm,,,,,,

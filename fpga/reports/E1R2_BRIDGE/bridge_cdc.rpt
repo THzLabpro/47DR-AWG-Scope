@@ -1,0 +1,74 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version      : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+| Date              : Wed Nov 11 11:44:44 2026
+| Host              : DESKTOP-CLMQL7K running 64-bit major release  (build 9200)
+| Command           : report_cdc -details -file D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/reports/E1R2_BRIDGE/bridge_cdc.rpt
+| Design            : awg_eth_bridge
+| Device            : xczu47dr-fsve1156
+| Speed File        : -2  PRODUCTION 1.32 01-31-2021
+| Design State      : Routed
+| Temperature Grade : I
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+CDC Report
+
+ID      Severity  Count  Description
+------  --------  -----  ----------------------------------------------
+CDC-3   Info         10  1-bit synchronized with ASYNC_REG property
+CDC-6   Warning       3  Multi-bit synchronized with ASYNC_REG property
+CDC-15  Warning      26  Clock enable controlled CDC structure detected
+
+Source Clock: awg_eth_bridge_host_clk
+Destination Clock: awg_eth_bridge_clk_eth
+CDC Type: No Common Primary Clock
+
+Row  ID      Severity  Description                                     Depth  Exception                Source (From)                               Destination (To)
+---  ------  --------  ----------------------------------------------  -----  -----------------------  ------------------------------------------  -------------------------------------------
+  1  CDC-6   Warning   Multi-bit synchronized with ASYNC_REG property      2  Max Delay Datapath Only  u_rx_fifo/rd_ptr_gray_reg_reg[12:0]/C       u_rx_fifo/rd_ptr_gray_sync1_reg_reg[12:0]/D
+  2  CDC-3   Info      1-bit synchronized with ASYNC_REG property          2  None                     u_rx_fifo/rd_ptr_reg_reg[13]/C              u_rx_fifo/rd_ptr_gray_sync1_reg_reg[13]/D
+  3  CDC-3   Info      1-bit synchronized with ASYNC_REG property          2  None                     u_rx_fifo/s_rst_sync1_reg_reg/C             u_rx_fifo/s_rst_sync2_reg_reg/D
+  4  CDC-3   Info      1-bit synchronized with ASYNC_REG property          2  None                     u_rx_fifo/wr_ptr_update_sync3_reg_reg/C     u_rx_fifo/wr_ptr_update_ack_sync1_reg_reg/D
+  5  CDC-3   Info      1-bit synchronized with ASYNC_REG property          2  None                     u_tx_fifo/m_rst_sync1_reg_reg/C             u_tx_fifo/m_rst_sync2_reg_reg/D
+  6  CDC-15  Warning   Clock enable controlled CDC structure detected      0  None                     u_tx_fifo/wr_ptr_sync_commit_reg_reg[0]/C   u_tx_fifo/wr_ptr_commit_sync_reg_reg[0]/D
+  7  CDC-15  Warning   Clock enable controlled CDC structure detected      0  None                     u_tx_fifo/wr_ptr_sync_commit_reg_reg[1]/C   u_tx_fifo/wr_ptr_commit_sync_reg_reg[1]/D
+  8  CDC-15  Warning   Clock enable controlled CDC structure detected      0  None                     u_tx_fifo/wr_ptr_sync_commit_reg_reg[2]/C   u_tx_fifo/wr_ptr_commit_sync_reg_reg[2]/D
+  9  CDC-15  Warning   Clock enable controlled CDC structure detected      0  None                     u_tx_fifo/wr_ptr_sync_commit_reg_reg[3]/C   u_tx_fifo/wr_ptr_commit_sync_reg_reg[3]/D
+ 10  CDC-15  Warning   Clock enable controlled CDC structure detected      0  None                     u_tx_fifo/wr_ptr_sync_commit_reg_reg[4]/C   u_tx_fifo/wr_ptr_commit_sync_reg_reg[4]/D
+ 11  CDC-15  Warning   Clock enable controlled CDC structure detected      0  None                     u_tx_fifo/wr_ptr_sync_commit_reg_reg[5]/C   u_tx_fifo/wr_ptr_commit_sync_reg_reg[5]/D
+ 12  CDC-15  Warning   Clock enable controlled CDC structure detected      0  None                     u_tx_fifo/wr_ptr_sync_commit_reg_reg[6]/C   u_tx_fifo/wr_ptr_commit_sync_reg_reg[6]/D
+ 13  CDC-15  Warning   Clock enable controlled CDC structure detected      0  None                     u_tx_fifo/wr_ptr_sync_commit_reg_reg[7]/C   u_tx_fifo/wr_ptr_commit_sync_reg_reg[7]/D
+ 14  CDC-15  Warning   Clock enable controlled CDC structure detected      0  None                     u_tx_fifo/wr_ptr_sync_commit_reg_reg[8]/C   u_tx_fifo/wr_ptr_commit_sync_reg_reg[8]/D
+ 15  CDC-15  Warning   Clock enable controlled CDC structure detected      0  None                     u_tx_fifo/wr_ptr_sync_commit_reg_reg[9]/C   u_tx_fifo/wr_ptr_commit_sync_reg_reg[9]/D
+ 16  CDC-15  Warning   Clock enable controlled CDC structure detected      0  None                     u_tx_fifo/wr_ptr_sync_commit_reg_reg[10]/C  u_tx_fifo/wr_ptr_commit_sync_reg_reg[10]/D
+ 17  CDC-15  Warning   Clock enable controlled CDC structure detected      0  None                     u_tx_fifo/wr_ptr_sync_commit_reg_reg[11]/C  u_tx_fifo/wr_ptr_commit_sync_reg_reg[11]/D
+ 18  CDC-3   Info      1-bit synchronized with ASYNC_REG property          2  None                     u_tx_fifo/wr_ptr_update_reg_reg/C           u_tx_fifo/wr_ptr_update_sync1_reg_reg/D
+
+Source Clock: awg_eth_bridge_clk_eth
+Destination Clock: awg_eth_bridge_host_clk
+CDC Type: No Common Primary Clock
+
+Row  ID      Severity  Description                                     Depth  Exception                Source (From)                               Destination (To)
+---  ------  --------  ----------------------------------------------  -----  -----------------------  ------------------------------------------  -------------------------------------------
+  1  CDC-6   Warning   Multi-bit synchronized with ASYNC_REG property      3  Max Delay Datapath Only  rx_drop_gray_eth_reg[31:0]/C                drop_gray_meta_reg[31:0]/D
+  2  CDC-3   Info      1-bit synchronized with ASYNC_REG property          2  None                     u_rx_fifo/m_rst_sync1_reg_reg/C             u_rx_fifo/m_rst_sync2_reg_reg/D
+  3  CDC-15  Warning   Clock enable controlled CDC structure detected      0  None                     u_rx_fifo/wr_ptr_sync_commit_reg_reg[0]/C   u_rx_fifo/wr_ptr_commit_sync_reg_reg[0]/D
+  4  CDC-15  Warning   Clock enable controlled CDC structure detected      0  None                     u_rx_fifo/wr_ptr_sync_commit_reg_reg[1]/C   u_rx_fifo/wr_ptr_commit_sync_reg_reg[1]/D
+  5  CDC-15  Warning   Clock enable controlled CDC structure detected      0  None                     u_rx_fifo/wr_ptr_sync_commit_reg_reg[2]/C   u_rx_fifo/wr_ptr_commit_sync_reg_reg[2]/D
+  6  CDC-15  Warning   Clock enable controlled CDC structure detected      0  None                     u_rx_fifo/wr_ptr_sync_commit_reg_reg[3]/C   u_rx_fifo/wr_ptr_commit_sync_reg_reg[3]/D
+  7  CDC-15  Warning   Clock enable controlled CDC structure detected      0  None                     u_rx_fifo/wr_ptr_sync_commit_reg_reg[4]/C   u_rx_fifo/wr_ptr_commit_sync_reg_reg[4]/D
+  8  CDC-15  Warning   Clock enable controlled CDC structure detected      0  None                     u_rx_fifo/wr_ptr_sync_commit_reg_reg[5]/C   u_rx_fifo/wr_ptr_commit_sync_reg_reg[5]/D
+  9  CDC-15  Warning   Clock enable controlled CDC structure detected      0  None                     u_rx_fifo/wr_ptr_sync_commit_reg_reg[6]/C   u_rx_fifo/wr_ptr_commit_sync_reg_reg[6]/D
+ 10  CDC-15  Warning   Clock enable controlled CDC structure detected      0  None                     u_rx_fifo/wr_ptr_sync_commit_reg_reg[7]/C   u_rx_fifo/wr_ptr_commit_sync_reg_reg[7]/D
+ 11  CDC-15  Warning   Clock enable controlled CDC structure detected      0  None                     u_rx_fifo/wr_ptr_sync_commit_reg_reg[8]/C   u_rx_fifo/wr_ptr_commit_sync_reg_reg[8]/D
+ 12  CDC-15  Warning   Clock enable controlled CDC structure detected      0  None                     u_rx_fifo/wr_ptr_sync_commit_reg_reg[9]/C   u_rx_fifo/wr_ptr_commit_sync_reg_reg[9]/D
+ 13  CDC-15  Warning   Clock enable controlled CDC structure detected      0  None                     u_rx_fifo/wr_ptr_sync_commit_reg_reg[10]/C  u_rx_fifo/wr_ptr_commit_sync_reg_reg[10]/D
+ 14  CDC-15  Warning   Clock enable controlled CDC structure detected      0  None                     u_rx_fifo/wr_ptr_sync_commit_reg_reg[11]/C  u_rx_fifo/wr_ptr_commit_sync_reg_reg[11]/D
+ 15  CDC-15  Warning   Clock enable controlled CDC structure detected      0  None                     u_rx_fifo/wr_ptr_sync_commit_reg_reg[12]/C  u_rx_fifo/wr_ptr_commit_sync_reg_reg[12]/D
+ 16  CDC-15  Warning   Clock enable controlled CDC structure detected      0  None                     u_rx_fifo/wr_ptr_sync_commit_reg_reg[13]/C  u_rx_fifo/wr_ptr_commit_sync_reg_reg[13]/D
+ 17  CDC-3   Info      1-bit synchronized with ASYNC_REG property          2  None                     u_rx_fifo/wr_ptr_update_reg_reg/C           u_rx_fifo/wr_ptr_update_sync1_reg_reg/D
+ 18  CDC-6   Warning   Multi-bit synchronized with ASYNC_REG property      2  Max Delay Datapath Only  u_tx_fifo/rd_ptr_gray_reg_reg[10:0]/C       u_tx_fifo/rd_ptr_gray_sync1_reg_reg[10:0]/D
+ 19  CDC-3   Info      1-bit synchronized with ASYNC_REG property          2  None                     u_tx_fifo/rd_ptr_reg_reg[11]/C              u_tx_fifo/rd_ptr_gray_sync1_reg_reg[11]/D
+ 20  CDC-3   Info      1-bit synchronized with ASYNC_REG property          2  None                     u_tx_fifo/s_rst_sync1_reg_reg/C             u_tx_fifo/s_rst_sync2_reg_reg/D
+ 21  CDC-3   Info      1-bit synchronized with ASYNC_REG property          2  None                     u_tx_fifo/wr_ptr_update_sync3_reg_reg/C     u_tx_fifo/wr_ptr_update_ack_sync1_reg_reg/D
+

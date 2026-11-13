@@ -1,0 +1,7 @@
+source=D:\ClaudeProject\47DR_DAAD\rf_awg_eth_v1\build\D3A6_INTEGRATION\vivado\d0_clock_probe.runs\synth_1\awg_eth_top.dcp
+source_length=30117846
+source_sha256=B3F4438353B18A739CF20A6E95104D6848D48226C0DCF2EBD7B4E560E6402838
+copy=D:\ClaudeProject\47DR_DAAD\rf_awg_eth_v1\build\D3B0_REVIEW\awg_eth_top.dcp
+copy_length=30117846
+copy_sha256=B3F4438353B18A739CF20A6E95104D6848D48226C0DCF2EBD7B4E560E6402838
+copy_match=True

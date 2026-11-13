@@ -1,0 +1,36 @@
+{
+  "regs": {
+    "id": "0x41574732",
+    "dac_fs_ksps": 9800000,
+    "adc_fs_ksps": 5000000,
+    "build_id": "0xd3c02026"
+  },
+  "load": {
+    "seconds": 0.6506293999991613,
+    "bytes": 2097152,
+    "mb_per_s": 3.223266578489542,
+    "crc_verified_channels": 8
+  },
+  "capture_s": 0.2154883999901358,
+  "loop": {
+    "channel": 0,
+    "expected_hz": 50019836.42578125,
+    "onset_sample": 487,
+    "fit": {
+      "amplitude_lsb": 7148.869691178347,
+      "dc_lsb": 1.6603786681052952,
+      "residual_rms_lsb": 55.57392176673471,
+      "sinad_db": 39.177026753376275,
+      "max_abs_residual_lsb": 768.3889937481754
+    }
+  },
+  "loop_spectrum": {
+    "rms_lsb": 5036.676384678381,
+    "min": -7748,
+    "max": 7636,
+    "peak_hz": 49984737.484737486,
+    "peak_db": 160.16924471582695,
+    "spur_hz": 33959096.45909646,
+    "sfdr_db": 49.07245340325154
+  }
+}

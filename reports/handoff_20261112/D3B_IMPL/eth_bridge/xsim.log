@@ -1,0 +1,186 @@
+COMMAND xsim_eth_bridge tb_eth_bridge_d3b -runall -nolog
+
+****** xsim v2025.2 (64-bit)
+  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
+  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+  **** Start of session at: Thu Nov 12 01:26:19 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/tb_eth_bridge_d3b/xsim_script.tcl
+# xsim {tb_eth_bridge_d3b} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+PASS S1 PING
+PASS S1 INFO
+PASS write response
+PASS write response
+PASS write response
+PASS write response
+PASS write response
+PASS write response
+PASS write response
+PASS write response
+PASS write response
+PASS write response
+PASS write response
+PASS write response
+PASS write response
+PASS write response
+PASS write response
+PASS write response
+PASS read response
+PASS read response
+PASS read response
+PASS read response
+PASS read response
+PASS read response
+PASS read response
+PASS read response
+PASS read response
+PASS read response
+PASS read response
+PASS read response
+PASS read response
+PASS read response
+PASS read response
+PASS read response
+PASS S2 waveform RAM CH0/CH7
+PASS write response
+PASS read response
+PASS S3 jumbo
+PASS write response
+PASS write response
+PASS read response
+PASS read response
+PASS S4 invalid register
+PASS S5 start
+PASS S5 running
+PASS S5 RAM locked
+PASS S5 stop
+PASS S6 arm
+PASS S6 capture done
+PASS S6 CH0 read
+PASS S6 CH0 first 96 words
+PASS S6 CH3 read
+PASS S6 CH3 first 96 words
+PASS S7 first write
+PASS S7 duplicate write
+PASS read response
+PASS S8 bad magic drop
+PASS S8 length mismatch
+PASS S8 count overflow
+PASS S8 flags
+PASS S8 alignment
+PASS S8 tuser drop
+PASS S9 drop counter equals dropped packet events
+PASS S9 successful WRITE reply
+PASS S9 successful WRITE reply
+PASS S9 successful WRITE reply
+PASS S9 successful WRITE reply
+PASS S9 successful WRITE reply
+PASS S9 successful WRITE reply
+PASS S9 successful WRITE reply
+PASS S9 successful WRITE reply
+PASS S9 unique reply sequences
+PASS read response
+PASS read response
+PASS read response
+PASS read response
+PASS read response
+PASS read response
+PASS read response
+PASS read response
+PASS S9 backpressure_cycles=0 dropped_packets=8 replies=8 readback_packets=8
+PASS S10 all replies status OK
+PASS S10 throughput >=40 MB/s
+S10 throughput cycles=110464 bytes=65536 MBps=59.327926
+S11_TRACE kind=AW addr=9020000c ready=1
+S11_TRACE kind=W data=00000020 ready=1
+S11_TRACE kind=B resp=0 ready=1
+PASS S11 JTAG write response
+S11_TRACE kind=R data=00000020 resp=0 ready=1
+PASS S11 JTAG length readback
+S11_TRACE kind=R data=00000004 resp=0 ready=1
+PASS S11 JTAG status read
+S11_TRACE kind=R data=41574731 resp=0 ready=1
+PASS S11 JTAG ID read
+S11_TRACE kind=W data=00000021 ready=1
+S11_TRACE kind=AW addr=9020000c ready=1
+S11_TRACE kind=B resp=0 ready=1
+PASS S11 JTAG write response
+S11_TRACE kind=R data=00000021 resp=0 ready=1
+PASS S11 JTAG length readback
+S11_TRACE kind=R data=00000004 resp=0 ready=1
+PASS S11 JTAG status read
+S11_TRACE kind=R data=41574731 resp=0 ready=1
+PASS S11 JTAG ID read
+S11_TRACE kind=AW addr=9020000c ready=1
+S11_TRACE kind=W data=00000022 ready=1
+S11_TRACE kind=B resp=0 ready=1
+PASS S11 JTAG write response
+S11_TRACE kind=R data=00000022 resp=0 ready=1
+PASS S11 JTAG length readback
+S11_TRACE kind=R data=00000004 resp=0 ready=1
+PASS S11 JTAG status read
+S11_TRACE kind=R data=41574731 resp=0 ready=1
+PASS S11 JTAG ID read
+S11_TRACE kind=W data=00000023 ready=1
+S11_TRACE kind=AW addr=9020000c ready=1
+S11_TRACE kind=B resp=0 ready=1
+PASS S11 JTAG write response
+S11_TRACE kind=R data=00000023 resp=0 ready=1
+PASS S11 JTAG length readback
+S11_TRACE kind=R data=00000004 resp=0 ready=1
+PASS S11 JTAG status read
+S11_TRACE kind=R data=41574731 resp=0 ready=1
+PASS S11 JTAG ID read
+S11_TRACE kind=AW addr=9020000c ready=1
+S11_TRACE kind=W data=00000024 ready=1
+S11_TRACE kind=B resp=0 ready=1
+PASS S11 JTAG write response
+S11_TRACE kind=R data=00000024 resp=0 ready=1
+PASS S11 JTAG length readback
+S11_TRACE kind=R data=00000004 resp=0 ready=1
+PASS S11 JTAG status read
+S11_TRACE kind=R data=41574731 resp=0 ready=1
+PASS S11 JTAG ID read
+S11_TRACE kind=W data=00000025 ready=1
+S11_TRACE kind=AW addr=9020000c ready=1
+S11_TRACE kind=B resp=0 ready=1
+PASS S11 JTAG write response
+S11_TRACE kind=R data=00000025 resp=0 ready=1
+PASS S11 JTAG length readback
+S11_TRACE kind=R data=00000004 resp=0 ready=1
+PASS S11 JTAG status read
+S11_TRACE kind=R data=41574731 resp=0 ready=1
+PASS S11 JTAG ID read
+S11_TRACE kind=AW addr=9020000c ready=1
+S11_TRACE kind=W data=00000026 ready=1
+S11_TRACE kind=B resp=0 ready=1
+PASS S11 JTAG write response
+S11_TRACE kind=R data=00000026 resp=0 ready=1
+PASS S11 JTAG length readback
+S11_TRACE kind=R data=00000004 resp=0 ready=1
+PASS S11 JTAG status read
+S11_TRACE kind=R data=41574731 resp=0 ready=1
+PASS S11 JTAG ID read
+S11_TRACE kind=W data=00000027 ready=1
+S11_TRACE kind=AW addr=9020000c ready=1
+S11_TRACE kind=B resp=0 ready=1
+PASS S11 JTAG write response
+S11_TRACE kind=R data=00000027 resp=0 ready=1
+PASS S11 JTAG length readback
+S11_TRACE kind=R data=00000004 resp=0 ready=1
+PASS S11 JTAG status read
+S11_TRACE kind=R data=41574731 resp=0 ready=1
+PASS S11 JTAG ID read
+PASS S11 arbitration overlap
+RESULT name=tb_eth_bridge PASS=115 FAIL=0
+$finish called at time : 5772374400 ps : File "D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/sim/eth_bridge/tb_eth_bridge.sv" Line 772
+run: Time (s): cpu = 00:00:01 ; elapsed = 00:00:55 . Memory (MB): peak = 229.117 ; gain = 0.000
+exit
+INFO: xsimkernel Simulation Memory Usage: 18868 KB (Peak: 18868 KB), Simulation CPU Usage: 54109 ms
+INFO: [Common 17-206] Exiting xsim at Thu Nov 12 01:27:16 2026...
+EXIT_CODE xsim_eth_bridge 0

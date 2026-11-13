@@ -1,0 +1,43 @@
+{
+  "task": "E1_BRIDGE",
+  "status": "NEEDS_PARENT_JUDGMENT",
+  "date": "2026-11-11",
+  "acceptance": {
+    "S1": "PASS",
+    "S2": "PASS",
+    "S3": "PASS",
+    "S4": "PASS",
+    "S5": "PASS",
+    "S6": "NEEDS_RERUN_AFTER_TESTBENCH_MODEL_FIX",
+    "S7": "PASS",
+    "S8": "PASS",
+    "S9": "PARTIAL_NO_DEADLOCK_ONLY",
+    "S10": {
+      "status": "PASS",
+      "host_clk_cycles": 51902,
+      "bytes": 65536,
+      "throughput_MBps": 126.268737,
+      "minimum_MBps": 80
+    },
+    "S11": "FAIL_JTAG_WRITE_REQUEST_TIMEOUT",
+    "bridge_ooc": "FAIL_RAM_INFERENCE_SYNTH_8_3391",
+    "arb_ooc": "NOT_RUN",
+    "critical_warning_count": 0,
+    "xvlog_errors": 0,
+    "xvlog_warnings": 0
+  },
+  "evidence": {
+    "full_simulation": "reports/E1/full_xsim.log",
+    "s11_simulation": "build/E1/xsim/s11.log",
+    "s2_simulation": "build/E1/xsim/s2.log",
+    "s3_simulation": "build/E1/xsim/s3.log",
+    "xvlog": "build/E1/xvlog/full.log",
+    "xelab": "build/E1/xsim/full_xelab.log",
+    "ooc": "reports/E1/ooc.log"
+  },
+  "notes": [
+    "S6 model indexing was corrected after a mismatch, but the corrected scenario was not rerun.",
+    "S9 testbench does not assert dropped count, unique reply sequences, or all accepted packet data.",
+    "OOC synthesis did not produce utilization, WNS, or CDC reports."
+  ]
+}

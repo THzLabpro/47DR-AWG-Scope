@@ -1,0 +1,82 @@
+{
+  "task": "D1R2_TX",
+  "status": "NEEDS_PARENT_JUDGMENT",
+  "date": "2026-11-11",
+  "acceptance": {
+    "T1_T6": {
+      "status": "PASS",
+      "pass": 26,
+      "fail": 0,
+      "mismatches": 0,
+      "x_count": 0
+    },
+    "crc": {
+      "status": "PASS",
+      "rtl": "D49307A0",
+      "python": "D49307A0",
+      "points": 131072,
+      "channel": 0
+    },
+    "ooc_timing": {
+      "status": "FAIL",
+      "overall_wns_ns": -2.941,
+      "overall_whs_ns": 0.010,
+      "intra_clock_wns_ns": {
+        "dac_clk": -1.263,
+        "tx_clk": -2.225,
+        "host_clk": 5.887
+      },
+      "inter_clock_wns_ns": {
+        "tx_clk_to_dac_clk": -1.737,
+        "host_clk_to_tx_clk": -2.301,
+        "tx_clk_to_host_clk": -2.941
+      },
+      "reason": "XDC proc/helper commands were unsupported and CDC set_max_delay/set_bus_skew constraints were not applied."
+    },
+    "cdc": {
+      "status": "FAIL",
+      "critical_cdc10": 2,
+      "warning_cdc6": 15,
+      "warning_cdc15": 65,
+      "info_cdc3": 17
+    },
+    "resources": {
+      "status": "PASS",
+      "uram288": 56,
+      "ramb36_fifo": 0,
+      "ramb18": 0,
+      "lut_logic": 3914,
+      "lut_memory": 48,
+      "clb_registers": 22087
+    },
+    "uram_read_pipeline": {
+      "status": "PASS",
+      "read_latency_b": 3,
+      "report_read_latency_ns": 3.3,
+      "oreg_b": 1,
+      "dob_reg": 1
+    },
+    "route": {
+      "status": "PASS",
+      "routed_nets": 24812,
+      "routing_errors": 0
+    },
+    "ooc_round_limit": {
+      "status": "STOPPED_AFTER_TWO_RUNS",
+      "maximum_runs": 2
+    }
+  },
+  "evidence": [
+    "reports/D1R2_TX/xsim.log",
+    "reports/D1R2_TX/crc_ref.log",
+    "reports/D1R2_TX/ooc_vivado.log",
+    "reports/D1R2_TX/ooc_impl_timing.rpt",
+    "reports/D1R2_TX/ooc_impl_cdc.rpt",
+    "reports/D1R2_TX/ooc_impl_bus_skew.rpt",
+    "reports/D1R2_TX/ooc_impl_ram_utilization.rpt",
+    "reports/D1R2_TX/ooc_impl_utilization.rpt",
+    "reports/D1R2_TX/ooc_impl_paths.rpt",
+    "reports/D1R2_TX/ooc_impl_route_status.rpt"
+  ],
+  "hardware_operations": "NOT_PERFORMED"
+}

@@ -1,0 +1,24 @@
+# D0 BD parameter diff
+# published=reports\D0R2_TIMING\published_bd_params.txt
+# v2=build\D0\bd_params_v2.txt
+# STATUS: PASS when every changed key is explicitly expected below.
+
+EXPECTED clk_wiz_0.CLKOUT1_REQUESTED_OUT_FREQ: 562.500 -> 612.500 :: DAC fabric MMCM retuned to 612.5 MHz
+EXPECTED clk_wiz_0.CLKOUT2_REQUESTED_OUT_FREQ: 416.667 -> 245.760 :: DAC fabric MMCM retuned to 612.5 MHz
+EXPECTED clk_wiz_0.CLKOUT2_USED: 0 -> false :: DAC fabric MMCM retuned to 612.5 MHz
+EXPECTED clk_wiz_0.PRIM_IN_FREQ: 562.500 -> 612.500 :: DAC fabric MMCM retuned to 612.5 MHz
+EXPECTED usp_rf_data_converter_0.DAC0_Outclk_Freq: 562.500 -> 612.500 :: DAC fabric derived clock 562.5 -> 612.5 MHz
+EXPECTED usp_rf_data_converter_0.DAC0_Refclk_Freq: 9000.000 -> 9800.000 :: DAC PLL/reference follows the 9.8 GS/s RFDC configuration
+EXPECTED usp_rf_data_converter_0.DAC0_Sampling_Rate: 9.0 -> 9.8 :: DAC 9.0 -> 9.8 GS/s (doc/01 §1)
+EXPECTED usp_rf_data_converter_0.DAC1_Outclk_Freq: 562.500 -> 612.500 :: DAC fabric derived clock 562.5 -> 612.5 MHz
+EXPECTED usp_rf_data_converter_0.DAC1_Refclk_Freq: 9000.000 -> 9800.000 :: DAC PLL/reference follows the 9.8 GS/s RFDC configuration
+EXPECTED usp_rf_data_converter_0.DAC1_Sampling_Rate: 9.0 -> 9.8 :: DAC 9.0 -> 9.8 GS/s (doc/01 §1)
+EXPECTED usp_rf_data_converter_0.DAC2_Outclk_Freq: 562.500 -> 612.500 :: DAC fabric derived clock 562.5 -> 612.5 MHz
+EXPECTED usp_rf_data_converter_0.DAC2_Sampling_Rate: 9.0 -> 9.8 :: DAC 9.0 -> 9.8 GS/s (doc/01 §1)
+EXPECTED usp_rf_data_converter_0.DAC3_Outclk_Freq: 562.500 -> 612.500 :: DAC fabric derived clock 562.5 -> 612.5 MHz
+EXPECTED usp_rf_data_converter_0.DAC3_Refclk_Freq: 9000.000 -> 9800.000 :: DAC PLL/reference follows the 9.8 GS/s RFDC configuration
+EXPECTED usp_rf_data_converter_0.DAC3_Sampling_Rate: 9.0 -> 9.8 :: DAC 9.0 -> 9.8 GS/s (doc/01 §1)
+
+changed=15
+unexpected=0
+status=PASS

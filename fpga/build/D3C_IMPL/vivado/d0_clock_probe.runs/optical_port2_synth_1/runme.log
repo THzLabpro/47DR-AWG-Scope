@@ -1,0 +1,746 @@
+
+*** Running vivado
+    with args -log optical_port2.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source optical_port2.tcl
+
+
+
+****** Vivado v2025.2 (64-bit)
+  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
+  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+  **** Start of session at: Thu Nov 12 05:16:23 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source optical_port2.tcl -notrace
+create_project: Time (s): cpu = 00:01:31 ; elapsed = 00:00:07 . Memory (MB): peak = 638.734 ; gain = 296.664
+Command: synth_design -top optical_port2 -part xczu47dr-fsve1156-2-i -incremental_mode off -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xczu47dr'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xczu47dr'
+INFO: [Device 21-403] Loading part xczu47dr-fsve1156-2-i
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 23048
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2030.129 ; gain = 384.211
+---------------------------------------------------------------------------------
+INFO: [Synth 8-11241] undeclared symbol 'gtwiz_reset_rx_data_good_in_0', assumed default net type 'wire' [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/l_ethernet_v4_0_0/optical_port2_wrapper.v:519]
+INFO: [Synth 8-11241] undeclared symbol 'drpclk_common_in_0', assumed default net type 'wire' [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/l_ethernet_v4_0_0/optical_port2_wrapper.v:607]
+INFO: [Synth 8-11241] undeclared symbol 'drpen_common_in_0', assumed default net type 'wire' [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/l_ethernet_v4_0_0/optical_port2_wrapper.v:613]
+INFO: [Synth 8-11241] undeclared symbol 'drprdy_common_out_0', assumed default net type 'wire' [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/l_ethernet_v4_0_0/optical_port2_wrapper.v:615]
+INFO: [Synth 8-11241] undeclared symbol 'drpwe_common_in_0', assumed default net type 'wire' [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/l_ethernet_v4_0_0/optical_port2_wrapper.v:617]
+INFO: [Synth 8-11241] undeclared symbol 'gt_rxusrclk2_0', assumed default net type 'wire' [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/l_ethernet_v4_0_0/optical_port2_wrapper.v:686]
+INFO: [Synth 8-6157] synthesizing module 'optical_port2' [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/optical_port2.v:62]
+INFO: [Synth 8-6157] synthesizing module 'optical_port2_wrapper' [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/l_ethernet_v4_0_0/optical_port2_wrapper.v:63]
+INFO: [Synth 8-6157] synthesizing module 'IBUFDS_GTE4' [D:/AMDDesignTools/2025.2/Vivado/scripts/rt/data/unisim_comp_diablo.v:83082]
+INFO: [Synth 8-6155] done synthesizing module 'IBUFDS_GTE4' (0#1) [D:/AMDDesignTools/2025.2/Vivado/scripts/rt/data/unisim_comp_diablo.v:83082]
+INFO: [Synth 8-6157] synthesizing module 'BUFG_GT' [D:/AMDDesignTools/2025.2/Vivado/scripts/rt/data/unisim_comp_diablo.v:2855]
+INFO: [Synth 8-6155] done synthesizing module 'BUFG_GT' (0#1) [D:/AMDDesignTools/2025.2/Vivado/scripts/rt/data/unisim_comp_diablo.v:2855]
+INFO: [Synth 8-6157] synthesizing module 'optical_port2_cdc_sync' [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/l_ethernet_v4_0_0/optical_port2_wrapper.v:1060]
+INFO: [Synth 8-6155] done synthesizing module 'optical_port2_cdc_sync' (0#1) [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/l_ethernet_v4_0_0/optical_port2_wrapper.v:1060]
+INFO: [Synth 8-6157] synthesizing module 'optical_port2_ultrascale_tx_userclk' [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/l_ethernet_v4_0_0/optical_port2_ultrascale_tx_userclk.v:71]
+INFO: [Synth 8-6155] done synthesizing module 'optical_port2_ultrascale_tx_userclk' (0#1) [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/l_ethernet_v4_0_0/optical_port2_ultrascale_tx_userclk.v:71]
+INFO: [Synth 8-6157] synthesizing module 'optical_port2_ultrascale_rx_userclk' [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/l_ethernet_v4_0_0/optical_port2_ultrascale_rx_userclk.v:71]
+INFO: [Synth 8-6155] done synthesizing module 'optical_port2_ultrascale_rx_userclk' (0#1) [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/l_ethernet_v4_0_0/optical_port2_ultrascale_rx_userclk.v:71]
+INFO: [Synth 8-6157] synthesizing module 'optical_port2_gt' [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/ip_0/synth/optical_port2_gt.v:53]
+INFO: [Synth 8-6157] synthesizing module 'optical_port2_gt_gtwizard_top' [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/ip_0/synth/optical_port2_gt_gtwizard_top.v:173]
+INFO: [Synth 8-6157] synthesizing module 'optical_port2_gt_gtwizard_gtye4' [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/ip_0/synth/optical_port2_gt_gtwizard_gtye4.v:141]
+INFO: [Synth 8-6157] synthesizing module 'optical_port2_gt_gtye4_common_wrapper' [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/ip_0/synth/optical_port2_gt_gtye4_common_wrapper.v:56]
+INFO: [Synth 8-6157] synthesizing module 'gtwizard_ultrascale_v1_7_22_gtye4_common' [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/ip_0/synth/gtwizard_ultrascale_v1_7_gtye4_common.v:53]
+INFO: [Synth 8-6157] synthesizing module 'GTYE4_COMMON' [D:/AMDDesignTools/2025.2/Vivado/scripts/rt/data/unisim_comp_diablo.v:64002]
+INFO: [Synth 8-6155] done synthesizing module 'GTYE4_COMMON' (0#1) [D:/AMDDesignTools/2025.2/Vivado/scripts/rt/data/unisim_comp_diablo.v:64002]
+INFO: [Synth 8-6155] done synthesizing module 'gtwizard_ultrascale_v1_7_22_gtye4_common' (0#1) [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/ip_0/synth/gtwizard_ultrascale_v1_7_gtye4_common.v:53]
+INFO: [Synth 8-6155] done synthesizing module 'optical_port2_gt_gtye4_common_wrapper' (0#1) [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/ip_0/synth/optical_port2_gt_gtye4_common_wrapper.v:56]
+INFO: [Synth 8-6157] synthesizing module 'optical_port2_gt_gtye4_channel_wrapper' [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/ip_0/synth/optical_port2_gt_gtye4_channel_wrapper.v:56]
+INFO: [Synth 8-6157] synthesizing module 'gtwizard_ultrascale_v1_7_22_gtye4_channel' [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/ip_0/synth/gtwizard_ultrascale_v1_7_gtye4_channel.v:53]
+INFO: [Synth 8-6157] synthesizing module 'GTYE4_CHANNEL' [D:/AMDDesignTools/2025.2/Vivado/scripts/rt/data/unisim_comp_diablo.v:62841]
+INFO: [Synth 8-6155] done synthesizing module 'GTYE4_CHANNEL' (0#1) [D:/AMDDesignTools/2025.2/Vivado/scripts/rt/data/unisim_comp_diablo.v:62841]
+INFO: [Synth 8-6155] done synthesizing module 'gtwizard_ultrascale_v1_7_22_gtye4_channel' (0#1) [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/ip_0/synth/gtwizard_ultrascale_v1_7_gtye4_channel.v:53]
+INFO: [Synth 8-6155] done synthesizing module 'optical_port2_gt_gtye4_channel_wrapper' (0#1) [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/ip_0/synth/optical_port2_gt_gtye4_channel_wrapper.v:56]
+INFO: [Synth 8-6157] synthesizing module 'gtwizard_ultrascale_v1_7_22_gtye4_delay_powergood' [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/ip_0/hdl/gtwizard_ultrascale_v1_7_gtye4_delay_powergood.v:53]
+INFO: [Synth 8-226] default block is never used [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/ip_0/hdl/gtwizard_ultrascale_v1_7_gtye4_delay_powergood.v:136]
+INFO: [Synth 8-6155] done synthesizing module 'gtwizard_ultrascale_v1_7_22_gtye4_delay_powergood' (0#1) [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/ip_0/hdl/gtwizard_ultrascale_v1_7_gtye4_delay_powergood.v:53]
+INFO: [Synth 8-6157] synthesizing module 'gtwizard_ultrascale_v1_7_22_bit_synchronizer' [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/ip_0/hdl/gtwizard_ultrascale_v1_7_bit_sync.v:53]
+INFO: [Synth 8-6155] done synthesizing module 'gtwizard_ultrascale_v1_7_22_bit_synchronizer' (0#1) [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/ip_0/hdl/gtwizard_ultrascale_v1_7_bit_sync.v:53]
+INFO: [Synth 8-6157] synthesizing module 'gtwizard_ultrascale_v1_7_22_gtwiz_reset' [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/ip_0/hdl/gtwizard_ultrascale_v1_7_gtwiz_reset.v:53]
+INFO: [Synth 8-6157] synthesizing module 'gtwizard_ultrascale_v1_7_22_reset_synchronizer' [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/ip_0/hdl/gtwizard_ultrascale_v1_7_reset_sync.v:53]
+INFO: [Synth 8-6155] done synthesizing module 'gtwizard_ultrascale_v1_7_22_reset_synchronizer' (0#1) [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/ip_0/hdl/gtwizard_ultrascale_v1_7_reset_sync.v:53]
+INFO: [Synth 8-155] case statement is not full and has no default [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/ip_0/hdl/gtwizard_ultrascale_v1_7_gtwiz_reset.v:162]
+INFO: [Synth 8-6157] synthesizing module 'gtwizard_ultrascale_v1_7_22_reset_inv_synchronizer' [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/ip_0/hdl/gtwizard_ultrascale_v1_7_reset_inv_sync.v:53]
+INFO: [Synth 8-6155] done synthesizing module 'gtwizard_ultrascale_v1_7_22_reset_inv_synchronizer' (0#1) [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/ip_0/hdl/gtwizard_ultrascale_v1_7_reset_inv_sync.v:53]
+INFO: [Synth 8-6155] done synthesizing module 'gtwizard_ultrascale_v1_7_22_gtwiz_reset' (0#1) [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/ip_0/hdl/gtwizard_ultrascale_v1_7_gtwiz_reset.v:53]
+INFO: [Synth 8-6155] done synthesizing module 'optical_port2_gt_gtwizard_gtye4' (0#1) [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/ip_0/synth/optical_port2_gt_gtwizard_gtye4.v:141]
+INFO: [Synth 8-6155] done synthesizing module 'optical_port2_gt_gtwizard_top' (0#1) [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/ip_0/synth/optical_port2_gt_gtwizard_top.v:173]
+INFO: [Synth 8-6155] done synthesizing module 'optical_port2_gt' (0#1) [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/ip_0/synth/optical_port2_gt.v:53]
+INFO: [Synth 8-6157] synthesizing module 'optical_port2_gt_pipeline' [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/l_ethernet_v4_0_0/optical_port2_wrapper.v:1116]
+INFO: [Synth 8-6155] done synthesizing module 'optical_port2_gt_pipeline' (0#1) [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/l_ethernet_v4_0_0/optical_port2_wrapper.v:1116]
+INFO: [Synth 8-6157] synthesizing module 'optical_port2_gt_pipeline__parameterized0' [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/l_ethernet_v4_0_0/optical_port2_wrapper.v:1116]
+INFO: [Synth 8-6155] done synthesizing module 'optical_port2_gt_pipeline__parameterized0' (0#1) [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/l_ethernet_v4_0_0/optical_port2_wrapper.v:1116]
+INFO: [Synth 8-6157] synthesizing module 'optical_port2_gt_pipeline__parameterized1' [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/l_ethernet_v4_0_0/optical_port2_wrapper.v:1116]
+INFO: [Synth 8-6155] done synthesizing module 'optical_port2_gt_pipeline__parameterized1' (0#1) [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/l_ethernet_v4_0_0/optical_port2_wrapper.v:1116]
+INFO: [Synth 8-6157] synthesizing module 'optical_port2_gt_pipeline__parameterized2' [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/l_ethernet_v4_0_0/optical_port2_wrapper.v:1116]
+INFO: [Synth 8-6155] done synthesizing module 'optical_port2_gt_pipeline__parameterized2' (0#1) [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/l_ethernet_v4_0_0/optical_port2_wrapper.v:1116]
+INFO: [Synth 8-6157] synthesizing module 'optical_port2_top' [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/l_ethernet_v4_0_0/optical_port2_top.v:63]
+INFO: [Synth 8-6157] synthesizing module 'RAM32M' [D:/AMDDesignTools/2025.2/Vivado/scripts/rt/data/unisim_comp_diablo.v:155279]
+INFO: [Synth 8-6155] done synthesizing module 'RAM32M' (0#1) [D:/AMDDesignTools/2025.2/Vivado/scripts/rt/data/unisim_comp_diablo.v:155279]
+INFO: [Synth 8-6157] synthesizing module 'RAMB18SDP' [D:/AMDDesignTools/2025.2/Vivado/scripts/rt/data/unisim_comp_diablo.v:160793]
+INFO: [Synth 8-6155] done synthesizing module 'RAMB18SDP' (0#1) [D:/AMDDesignTools/2025.2/Vivado/scripts/rt/data/unisim_comp_diablo.v:160793]
+INFO: [Synth 8-6157] synthesizing module 'RAMB36SDP' [D:/AMDDesignTools/2025.2/Vivado/scripts/rt/data/unisim_comp_diablo.v:162284]
+INFO: [Synth 8-6155] done synthesizing module 'RAMB36SDP' (0#1) [D:/AMDDesignTools/2025.2/Vivado/scripts/rt/data/unisim_comp_diablo.v:162284]
+INFO: [Synth 8-6155] done synthesizing module 'optical_port2_top' (0#1) [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/l_ethernet_v4_0_0/optical_port2_top.v:63]
+INFO: [Synth 8-6155] done synthesizing module 'optical_port2_wrapper' (0#1) [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/l_ethernet_v4_0_0/optical_port2_wrapper.v:63]
+INFO: [Synth 8-6155] done synthesizing module 'optical_port2' (0#1) [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/optical_port2.v:62]
+INFO: [Synth 8-4490] FSM extraction disabled for register 'rlane_fifo_waddr_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'rlane_fifo_raddr_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'waddr_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'raddr_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'rlane_fifo_waddr_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'rlane_fifo_raddr_reg' through user attribute
+INFO: [Synth 8-3848] Net drpclk_common_in_0 in module/entity optical_port2_wrapper does not have driver. [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/l_ethernet_v4_0_0/optical_port2_wrapper.v:607]
+INFO: [Synth 8-3848] Net drpen_common_in_0 in module/entity optical_port2_wrapper does not have driver. [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/l_ethernet_v4_0_0/optical_port2_wrapper.v:613]
+INFO: [Synth 8-3848] Net drpwe_common_in_0 in module/entity optical_port2_wrapper does not have driver. [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/l_ethernet_v4_0_0/optical_port2_wrapper.v:617]
+INFO: [Synth 8-7129] Port rx_sop in module l_ethernet_v4_0_0_mac_baser_256_rx_axis_adapter is either unconnected or has no load
+INFO: [Synth 8-7129] Port rd in module l_ethernet_v4_0_0_mac_baser_256_rlane_fifo_RAM_C2_P1_W408_D8 is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[127] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[126] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[125] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[124] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[123] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[122] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[121] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[120] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[119] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[118] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[117] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[116] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[115] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[114] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[113] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[112] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[111] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[110] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[109] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[108] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[107] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[106] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[105] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[104] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[103] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[102] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[101] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[100] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[99] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[98] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[97] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[96] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[95] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[94] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[93] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[92] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[91] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[90] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[89] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[88] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[87] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[86] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[85] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[84] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[83] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[82] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[81] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[80] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[79] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[78] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[77] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[76] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[75] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[74] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[73] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[72] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[71] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[70] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[69] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[68] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[67] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[66] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[65] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[64] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[63] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[62] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[61] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[60] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[59] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[58] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[57] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[56] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[55] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[54] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[53] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[52] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[51] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[50] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[49] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[48] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[47] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[46] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[45] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[44] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[43] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[42] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[41] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[40] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[39] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[38] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[37] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[36] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[35] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[34] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[33] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[32] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[31] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Synth 8-7129] Port datain_early[30] in module l_ethernet_v4_0_0_mac_baser_256_pause_parser is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 3008.871 ; gain = 1362.953
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 3008.871 ; gain = 1362.953
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 3008.871 ; gain = 1362.953
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 3008.871 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 129 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/synth/optical_port2_ooc.xdc] for cell 'inst'
+Finished Parsing XDC File [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/synth/optical_port2_ooc.xdc] for cell 'inst'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/synth/optical_port2_ooc.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/optical_port2_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/optical_port2_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/ip_0/synth/optical_port2_gt.xdc] for cell 'inst/i_optical_port2_gt/inst'
+Finished Parsing XDC File [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/ip_0/synth/optical_port2_gt.xdc] for cell 'inst/i_optical_port2_gt/inst'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/ip_0/synth/optical_port2_gt.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/optical_port2_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/optical_port2_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/synth/optical_port2_board.xdc] for cell 'inst'
+Finished Parsing XDC File [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/synth/optical_port2_board.xdc] for cell 'inst'
+Parsing XDC File [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/synth/optical_port2.xdc] for cell 'inst'
+WARNING: [Constraints 18-619] A clock with name 'gt_refclk_p' already exists, overwriting the previous clock with the same name. [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/synth/optical_port2.xdc:57]
+WARNING: [Vivado 12-508] No pins matched 'get_pins -of [get_cells -hierarchical -filter {NAME =~ */master_watchdog_*}] -filter {REF_PIN_NAME =~ S}'. [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/synth/optical_port2.xdc:66]
+WARNING: [Vivado 12-508] No pins matched 'get_pins -of [get_cells -hierarchical -filter {NAME =~ */master_watchdog_*}] -filter {REF_PIN_NAME =~ R}'. [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/synth/optical_port2.xdc:67]
+WARNING: [Timing 38-277] The instance 'inst/i_optical_port2_gt/inst/gen_gtwizard_gtye4_top.optical_port2_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[2].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST' has RXOUTCLKSEL pins that are not constant, so the corresponding mux will select the input(s) having the worst case (highest frequency) clock(s) for automatic derivation of generated clocks [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/synth/optical_port2.xdc:206]
+WARNING: [Timing 38-277] The instance 'inst/i_optical_port2_gt/inst/gen_gtwizard_gtye4_top.optical_port2_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[2].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST' has TXOUTCLKSEL pins that are not constant, so the corresponding mux will select the input(s) having the worst case (highest frequency) clock(s) for automatic derivation of generated clocks [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/synth/optical_port2.xdc:206]
+WARNING: [Timing 38-277] The instance 'inst/i_optical_port2_gt/inst/gen_gtwizard_gtye4_top.optical_port2_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[2].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[1].GTYE4_CHANNEL_PRIM_INST' has RXOUTCLKSEL pins that are not constant, so the corresponding mux will select the input(s) having the worst case (highest frequency) clock(s) for automatic derivation of generated clocks [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/synth/optical_port2.xdc:206]
+WARNING: [Timing 38-277] The instance 'inst/i_optical_port2_gt/inst/gen_gtwizard_gtye4_top.optical_port2_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[2].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[1].GTYE4_CHANNEL_PRIM_INST' has TXOUTCLKSEL pins that are not constant, so the corresponding mux will select the input(s) having the worst case (highest frequency) clock(s) for automatic derivation of generated clocks [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/synth/optical_port2.xdc:206]
+WARNING: [Timing 38-277] The instance 'inst/i_optical_port2_gt/inst/gen_gtwizard_gtye4_top.optical_port2_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[2].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[2].GTYE4_CHANNEL_PRIM_INST' has RXOUTCLKSEL pins that are not constant, so the corresponding mux will select the input(s) having the worst case (highest frequency) clock(s) for automatic derivation of generated clocks [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/synth/optical_port2.xdc:206]
+WARNING: [Timing 38-277] The instance 'inst/i_optical_port2_gt/inst/gen_gtwizard_gtye4_top.optical_port2_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[2].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[2].GTYE4_CHANNEL_PRIM_INST' has TXOUTCLKSEL pins that are not constant, so the corresponding mux will select the input(s) having the worst case (highest frequency) clock(s) for automatic derivation of generated clocks [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/synth/optical_port2.xdc:206]
+WARNING: [Timing 38-277] The instance 'inst/i_optical_port2_gt/inst/gen_gtwizard_gtye4_top.optical_port2_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[2].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[3].GTYE4_CHANNEL_PRIM_INST' has RXOUTCLKSEL pins that are not constant, so the corresponding mux will select the input(s) having the worst case (highest frequency) clock(s) for automatic derivation of generated clocks [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/synth/optical_port2.xdc:206]
+WARNING: [Timing 38-277] The instance 'inst/i_optical_port2_gt/inst/gen_gtwizard_gtye4_top.optical_port2_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[2].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[3].GTYE4_CHANNEL_PRIM_INST' has TXOUTCLKSEL pins that are not constant, so the corresponding mux will select the input(s) having the worst case (highest frequency) clock(s) for automatic derivation of generated clocks [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/synth/optical_port2.xdc:206]
+WARNING: [Timing 38-277] The instance 'inst/i_optical_port2_gt/inst/gen_gtwizard_gtye4_top.optical_port2_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[2].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST' has RXOUTCLKSEL pins that are not constant, so the corresponding mux will select the input(s) having the worst case (highest frequency) clock(s) for automatic derivation of generated clocks [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/synth/optical_port2.xdc:206]
+WARNING: [Timing 38-277] The instance 'inst/i_optical_port2_gt/inst/gen_gtwizard_gtye4_top.optical_port2_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[2].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST' has TXOUTCLKSEL pins that are not constant, so the corresponding mux will select the input(s) having the worst case (highest frequency) clock(s) for automatic derivation of generated clocks [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/synth/optical_port2.xdc:206]
+WARNING: [Timing 38-277] The instance 'inst/i_optical_port2_gt/inst/gen_gtwizard_gtye4_top.optical_port2_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[2].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[1].GTYE4_CHANNEL_PRIM_INST' has RXOUTCLKSEL pins that are not constant, so the corresponding mux will select the input(s) having the worst case (highest frequency) clock(s) for automatic derivation of generated clocks [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/synth/optical_port2.xdc:206]
+WARNING: [Timing 38-277] The instance 'inst/i_optical_port2_gt/inst/gen_gtwizard_gtye4_top.optical_port2_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[2].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[1].GTYE4_CHANNEL_PRIM_INST' has TXOUTCLKSEL pins that are not constant, so the corresponding mux will select the input(s) having the worst case (highest frequency) clock(s) for automatic derivation of generated clocks [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/synth/optical_port2.xdc:206]
+WARNING: [Timing 38-277] The instance 'inst/i_optical_port2_gt/inst/gen_gtwizard_gtye4_top.optical_port2_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[2].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[2].GTYE4_CHANNEL_PRIM_INST' has RXOUTCLKSEL pins that are not constant, so the corresponding mux will select the input(s) having the worst case (highest frequency) clock(s) for automatic derivation of generated clocks [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/synth/optical_port2.xdc:206]
+WARNING: [Timing 38-277] The instance 'inst/i_optical_port2_gt/inst/gen_gtwizard_gtye4_top.optical_port2_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[2].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[2].GTYE4_CHANNEL_PRIM_INST' has TXOUTCLKSEL pins that are not constant, so the corresponding mux will select the input(s) having the worst case (highest frequency) clock(s) for automatic derivation of generated clocks [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/synth/optical_port2.xdc:206]
+WARNING: [Timing 38-277] The instance 'inst/i_optical_port2_gt/inst/gen_gtwizard_gtye4_top.optical_port2_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[2].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[3].GTYE4_CHANNEL_PRIM_INST' has RXOUTCLKSEL pins that are not constant, so the corresponding mux will select the input(s) having the worst case (highest frequency) clock(s) for automatic derivation of generated clocks [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/synth/optical_port2.xdc:206]
+WARNING: [Timing 38-277] The instance 'inst/i_optical_port2_gt/inst/gen_gtwizard_gtye4_top.optical_port2_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[2].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[3].GTYE4_CHANNEL_PRIM_INST' has TXOUTCLKSEL pins that are not constant, so the corresponding mux will select the input(s) having the worst case (highest frequency) clock(s) for automatic derivation of generated clocks [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/synth/optical_port2.xdc:206]
+INFO: [Timing 38-2] Deriving generated clocks [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/synth/optical_port2.xdc:206]
+Finished Parsing XDC File [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/synth/optical_port2.xdc] for cell 'inst'
+WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/synth/optical_port2.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/optical_port2_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [d:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.gen/sources_1/ip/optical_port2/synth/optical_port2.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/optical_port2_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/optical_port2_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.runs/optical_port2_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.runs/optical_port2_synth_1/dont_touch.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.runs/optical_port2_synth_1/dont_touch.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/optical_port2_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/optical_port2_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.039 . Memory (MB): peak = 3008.871 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 129 instances were transformed.
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 122 instances
+  RAMB18SDP => RAMB18E2: 1 instance 
+  RAMB36SDP => RAMB36E2: 6 instances
+
+INFO: [Synth 8-802] inferred FSM for state register 'fault_state_reg' in module 'l_ethernet_v4_0_0_mac_baser_256_rx_64b66b_decoder'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'l_ethernet_v4_0_0_mac_baser_256_pause_parser'
+INFO: [Synth 8-802] inferred FSM for state register 'state0_reg' in module 'l_ethernet_v4_0_0_mac_baser_256_rx_pause_if'
+INFO: [Synth 8-802] inferred FSM for state register 'state1_reg' in module 'l_ethernet_v4_0_0_mac_baser_256_rx_pause_if'
+INFO: [Synth 8-802] inferred FSM for state register 'state2_reg' in module 'l_ethernet_v4_0_0_mac_baser_256_rx_pause_if'
+INFO: [Synth 8-802] inferred FSM for state register 'state3_reg' in module 'l_ethernet_v4_0_0_mac_baser_256_rx_pause_if'
+INFO: [Synth 8-802] inferred FSM for state register 'state4_reg' in module 'l_ethernet_v4_0_0_mac_baser_256_rx_pause_if'
+INFO: [Synth 8-802] inferred FSM for state register 'state5_reg' in module 'l_ethernet_v4_0_0_mac_baser_256_rx_pause_if'
+INFO: [Synth 8-802] inferred FSM for state register 'state6_reg' in module 'l_ethernet_v4_0_0_mac_baser_256_rx_pause_if'
+INFO: [Synth 8-802] inferred FSM for state register 'state7_reg' in module 'l_ethernet_v4_0_0_mac_baser_256_rx_pause_if'
+INFO: [Synth 8-802] inferred FSM for state register 'state8_reg' in module 'l_ethernet_v4_0_0_mac_baser_256_rx_pause_if'
+INFO: [Synth 8-4490] FSM extraction disabled for register 'rlane_fifo_waddr_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'rlane_fifo_raddr_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'rlane_fifo_waddr_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'rlane_fifo_raddr_reg' through user attribute
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+      ST_RESET_TX_BRANCH |                              000 |                              000
+         ST_RESET_TX_PLL |                              001 |                              001
+    ST_RESET_TX_DATAPATH |                              010 |                              010
+   ST_RESET_TX_WAIT_LOCK |                              011 |                              011
+ST_RESET_TX_WAIT_USERRDY |                              100 |                              100
+ST_RESET_TX_WAIT_RESETDONE |                              101 |                              101
+        ST_RESET_TX_IDLE |                              110 |                              110
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'sm_reset_tx_reg' using encoding 'sequential' in module 'gtwizard_ultrascale_v1_7_22_gtwiz_reset'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+      ST_RESET_RX_BRANCH |                              000 |                              000
+         ST_RESET_RX_PLL |                              001 |                              001
+    ST_RESET_RX_DATAPATH |                              010 |                              010
+   ST_RESET_RX_WAIT_LOCK |                              011 |                              011
+    ST_RESET_RX_WAIT_CDR |                              100 |                              100
+ST_RESET_RX_WAIT_USERRDY |                              101 |                              101
+ST_RESET_RX_WAIT_RESETDONE |                              110 |                              110
+        ST_RESET_RX_IDLE |                              111 |                              111
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'sm_reset_rx_reg' using encoding 'sequential' in module 'gtwizard_ultrascale_v1_7_22_gtwiz_reset'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+       ST_RESET_ALL_INIT |                              000 |                              000
+     ST_RESET_ALL_BRANCH |                              001 |                              001
+     ST_RESET_ALL_TX_PLL |                              010 |                              010
+ST_RESET_ALL_TX_PLL_WAIT |                              011 |                              011
+      ST_RESET_ALL_RX_DP |                              100 |                              100
+     ST_RESET_ALL_RX_PLL |                              101 |                              101
+    ST_RESET_ALL_RX_WAIT |                              110 |                              110
+                  iSTATE |                              111 |                              111
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'sm_reset_all_reg' using encoding 'sequential' in module 'gtwizard_ultrascale_v1_7_22_gtwiz_reset'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                      S0 |                              000 |                              000
+                      S1 |                              001 |                              001
+                     S1B |                              100 |                              100
+                      S2 |                              010 |                              010
+                  iSTATE |                              011 |                              011
+*
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'pause_pkt_state_8_reg' using encoding 'sequential' in module 'l_ethernet_v4_0_0_mac_baser_256_tx_pause_proc'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                      S0 |                              000 |                              000
+                      S1 |                              001 |                              001
+                     S1B |                              010 |                              100
+                      S2 |                              011 |                              010
+                  iSTATE |                              100 |                              011
+*
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'pause_pkt_state_2_reg' using encoding 'sequential' in module 'l_ethernet_v4_0_0_mac_baser_256_tx_pause_proc'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                      S0 |                              000 |                              000
+                      S1 |                              001 |                              001
+                     S1B |                              010 |                              100
+                      S2 |                              011 |                              010
+                  iSTATE |                              100 |                              011
+*
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'pause_pkt_state_3_reg' using encoding 'sequential' in module 'l_ethernet_v4_0_0_mac_baser_256_tx_pause_proc'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                      S0 |                              000 |                              000
+                      S1 |                              001 |                              001
+                     S1B |                              010 |                              100
+                      S2 |                              011 |                              010
+                  iSTATE |                              100 |                              011
+*
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'pause_pkt_state_4_reg' using encoding 'sequential' in module 'l_ethernet_v4_0_0_mac_baser_256_tx_pause_proc'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                      S0 |                              000 |                              000
+                      S1 |                              001 |                              001
+                     S1B |                              010 |                              100
+                      S2 |                              011 |                              010
+                  iSTATE |                              100 |                              011
+*
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'pause_pkt_state_5_reg' using encoding 'sequential' in module 'l_ethernet_v4_0_0_mac_baser_256_tx_pause_proc'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                      S0 |                              000 |                              000
+                      S1 |                              001 |                              001
+                     S1B |                              010 |                              100
+                      S2 |                              011 |                              010
+                  iSTATE |                              100 |                              011
+*
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'pause_pkt_state_6_reg' using encoding 'sequential' in module 'l_ethernet_v4_0_0_mac_baser_256_tx_pause_proc'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                      S0 |                              000 |                              000
+                      S1 |                              001 |                              001
+                     S1B |                              010 |                              100
+                      S2 |                              011 |                              010
+                  iSTATE |                              100 |                              011
+*
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'pause_pkt_state_7_reg' using encoding 'sequential' in module 'l_ethernet_v4_0_0_mac_baser_256_tx_pause_proc'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                      S0 |                              000 |                              000
+                      S1 |                              001 |                              001
+                     S1B |                              010 |                              100
+                      S2 |                              011 |                              010
+                  iSTATE |                              100 |                              011
+*
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'pause_pkt_state_0_reg' using encoding 'sequential' in module 'l_ethernet_v4_0_0_mac_baser_256_tx_pause_proc'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                      S0 |                              000 |                              000
+                      S1 |                              001 |                              001
+                     S1B |                              010 |                              100
+                      S2 |                              011 |                              010
+                  iSTATE |                              100 |                              011
+*
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'pause_pkt_state_1_reg' using encoding 'sequential' in module 'l_ethernet_v4_0_0_mac_baser_256_tx_pause_proc'
+INFO: [Synth 8-6904] The RAM "l_ethernet_v4_0_0_mac_baser_256_tx_lbus_adapter:/tx_1588_fifo_r_reg" of size (depth=40 x width=2) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 iSTATE1 |                              001 |                               00
+*
+                 iSTATE0 |                              010 |                               01
+                  iSTATE |                              100 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'align_status_reg' using encoding 'one-hot' in module 'l_ethernet_v4_0_0_mac_baser_256_rx_word_aligner'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  S_IDLE |                              001 |                              001
+              S_ALIGNING |                              010 |                              010
+               S_ALIGNED |                              100 |                              100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'l_ethernet_v4_0_0_mac_baser_256_rx_align_finder'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                   ST_S0 |                               00 |                               00
+                   ST_S1 |                               01 |                               01
+                  iSTATE |                               10 |                               10
+*
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'write_side_state_reg' using encoding 'sequential' in module 'l_ethernet_v4_0_0_mac_baser_256_rx_lane_aligner_buffer0'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  S_IDLE |                              001 |                              001
+              S_ALIGNING |                              010 |                              010
+               S_ALIGNED |                              100 |                              100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'l_ethernet_v4_0_0_mac_baser_256_rx_align_finder__parameterized0'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                   ST_S0 |                               00 |                               00
+                   ST_S1 |                               01 |                               01
+                  iSTATE |                               10 |                               10
+*
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'write_side_state_reg' using encoding 'sequential' in module 'l_ethernet_v4_0_0_mac_baser_256_rx_lane_aligner_buffer'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                      S0 |                               00 |                               00
+                      S1 |                               01 |                               01
+                  iSTATE |                               10 |                               10
+*
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'fault_state_reg' using encoding 'sequential' in module 'l_ethernet_v4_0_0_mac_baser_256_rx_64b66b_decoder'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                      S0 |                              000 |                              000
+                      S1 |                              001 |                              001
+                      S2 |                              010 |                              010
+                      S3 |                              011 |                              011
+                      S4 |                              100 |                              100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'l_ethernet_v4_0_0_mac_baser_256_pause_parser'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                      S0 |                               00 |                               00
+                      S1 |                               01 |                               01
+                      S2 |                               10 |                               10
+                  iSTATE |                               11 |                               11
+*
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state0_reg' using encoding 'sequential' in module 'l_ethernet_v4_0_0_mac_baser_256_rx_pause_if'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                      S0 |                               00 |                               00
+                      S1 |                               01 |                               01
+                      S2 |                               10 |                               10
+                  iSTATE |                               11 |                               11
+*
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state1_reg' using encoding 'sequential' in module 'l_ethernet_v4_0_0_mac_baser_256_rx_pause_if'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                      S0 |                               00 |                               00
+                      S1 |                               01 |                               01
+                      S2 |                               10 |                               10
+                  iSTATE |                               11 |                               11
+*
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state2_reg' using encoding 'sequential' in module 'l_ethernet_v4_0_0_mac_baser_256_rx_pause_if'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                      S0 |                               00 |                               00
+                      S1 |                               01 |                               01
+                      S2 |                               10 |                               10
+                  iSTATE |                               11 |                               11
+*
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state3_reg' using encoding 'sequential' in module 'l_ethernet_v4_0_0_mac_baser_256_rx_pause_if'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                      S0 |                               00 |                               00
+                      S1 |                               01 |                               01
+                      S2 |                               10 |                               10
+                  iSTATE |                               11 |                               11
+*
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state4_reg' using encoding 'sequential' in module 'l_ethernet_v4_0_0_mac_baser_256_rx_pause_if'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                      S0 |                               00 |                               00
+                      S1 |                               01 |                               01
+                      S2 |                               10 |                               10
+                  iSTATE |                               11 |                               11
+*
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state5_reg' using encoding 'sequential' in module 'l_ethernet_v4_0_0_mac_baser_256_rx_pause_if'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                      S0 |                               00 |                               00
+                      S1 |                               01 |                               01
+                      S2 |                               10 |                               10
+                  iSTATE |                               11 |                               11
+*
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state6_reg' using encoding 'sequential' in module 'l_ethernet_v4_0_0_mac_baser_256_rx_pause_if'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                      S0 |                               00 |                               00
+                      S1 |                               01 |                               01
+                      S2 |                               10 |                               10
+                  iSTATE |                               11 |                               11
+*
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state7_reg' using encoding 'sequential' in module 'l_ethernet_v4_0_0_mac_baser_256_rx_pause_if'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                      S0 |                               00 |                               00
+                      S1 |                               01 |                               01
+                      S2 |                               10 |                               10
+                  iSTATE |                               11 |                               11
+*
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state8_reg' using encoding 'sequential' in module 'l_ethernet_v4_0_0_mac_baser_256_rx_pause_if'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:12 ; elapsed = 00:01:11 . Memory (MB): peak = 3008.871 ; gain = 1362.953
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 4272 (col length:192)
+BRAMs: 2160 (col length: RAMB18 192 RAMB36 96)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6904] The RAM "inst/\i_optical_port2_top_0/i_HSEC_CORES /i_TX_STRIPERi_0/i_TX_LBUS_ADAPT/tx_1588_fifo_r_reg" of size (depth=40 x width=2) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "inst/\i_optical_port2_top_0/i_HSEC_CORES /i_TX_STRIPERi_0/i_TX_LBUS_ADAPT/tx_1588_fifo_r_reg" of size (depth=40 x width=2) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+WARNING: [Synth 8-3332] Sequential element (FSM_onehot_align_status_reg[0]) is unused and will be removed from module l_ethernet_v4_0_0_mac_baser_256_rx_word_aligner__3.
+WARNING: [Synth 8-3332] Sequential element (FSM_onehot_align_status_reg[0]) is unused and will be removed from module l_ethernet_v4_0_0_mac_baser_256_rx_word_aligner.
+WARNING: [Synth 8-3332] Sequential element (FSM_onehot_align_status_reg[0]) is unused and will be removed from module l_ethernet_v4_0_0_mac_baser_256_rx_word_aligner__1.
+WARNING: [Synth 8-3332] Sequential element (FSM_onehot_align_status_reg[0]) is unused and will be removed from module l_ethernet_v4_0_0_mac_baser_256_rx_word_aligner__2.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:52 ; elapsed = 00:02:53 . Memory (MB): peak = 3008.871 ; gain = 1362.953
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-565] redefining clock 'gt_refclk_p'
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:03:01 ; elapsed = 00:03:02 . Memory (MB): peak = 3211.090 ; gain = 1565.172
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:03:04 ; elapsed = 00:03:05 . Memory (MB): peak = 3291.980 ; gain = 1646.062
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:03:11 ; elapsed = 00:03:13 . Memory (MB): peak = 3310.672 ; gain = 1664.754
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:03:15 ; elapsed = 00:03:16 . Memory (MB): peak = 3449.035 ; gain = 1803.117
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:03:15 ; elapsed = 00:03:16 . Memory (MB): peak = 3449.035 ; gain = 1803.117
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:03:17 ; elapsed = 00:03:19 . Memory (MB): peak = 3449.035 ; gain = 1803.117
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:03:17 ; elapsed = 00:03:19 . Memory (MB): peak = 3449.035 ; gain = 1803.117
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:03:18 ; elapsed = 00:03:20 . Memory (MB): peak = 3449.035 ; gain = 1803.117
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:03:18 ; elapsed = 00:03:20 . Memory (MB): peak = 3449.035 ; gain = 1803.117
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+--------------+------+
+|      |Cell          |Count |
++------+--------------+------+
+|1     |BUFG_GT       |     3|
+|2     |CARRY8        |    94|
+|3     |GTYE4_CHANNEL |     4|
+|4     |GTYE4_COMMON  |     1|
+|5     |IBUFDS_GTE4   |     1|
+|6     |LUT1          |   621|
+|7     |LUT2          |  1681|
+|8     |LUT3          |  2366|
+|9     |LUT4          |  2089|
+|10    |LUT5          |  1882|
+|11    |LUT6          |  6934|
+|12    |MUXF7         |   121|
+|13    |RAM32M        |   108|
+|14    |RAM64M        |     1|
+|15    |RAMB36SDP     |     4|
+|16    |SRL16E        |   451|
+|17    |FDCE          |    36|
+|18    |FDPE          |   148|
+|19    |FDRE          | 15237|
+|20    |FDSE          |   317|
++------+--------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:03:19 ; elapsed = 00:03:20 . Memory (MB): peak = 3449.035 ; gain = 1803.117
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 5 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:02:30 ; elapsed = 00:02:58 . Memory (MB): peak = 3449.035 ; gain = 1803.117
+Synthesis Optimization Complete : Time (s): cpu = 00:03:19 ; elapsed = 00:03:21 . Memory (MB): peak = 3449.035 ; gain = 1803.117
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.495 . Memory (MB): peak = 3449.035 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 328 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Opt 31-441] Inserted BUFG_GT_SYNC inst/BUFG_GT_SYNC for BUFG_GT inst/refclk_bufg_gt_i
+INFO: [Opt 31-441] Inserted BUFG_GT_SYNC inst/i_optical_port2_gt/inst/gen_gtwizard_gtye4_top.optical_port2_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[2].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/BUFG_GT_SYNC for BUFG_GT inst/i_core_gtwiz_userclk_rx_inst_0/gen_gtwiz_userclk_rx_main.bufg_gt_usrclk_inst
+INFO: [Opt 31-441] Inserted BUFG_GT_SYNC inst/i_optical_port2_gt/inst/gen_gtwizard_gtye4_top.optical_port2_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[2].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/BUFG_GT_SYNC_1 for BUFG_GT inst/i_core_gtwiz_userclk_tx_inst_0/gen_gtwiz_userclk_tx_main.bufg_gt_usrclk_inst
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell inst/i_optical_port2_top_0/i_HSEC_CORES/i_RX_TOP/i_RX_CORE/i_RX_LANE0/i_BUFF_0/i_RAM/i_RAM_0 has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell inst/i_optical_port2_top_0/i_HSEC_CORES/i_RX_TOP/i_RX_CORE/i_RX_LANE0/i_BUFF_1/i_RAM/i_RAM_0 has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell inst/i_optical_port2_top_0/i_HSEC_CORES/i_RX_TOP/i_RX_CORE/i_RX_LANE1/i_BUFF_0/i_RAM/i_RAM_0 has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell inst/i_optical_port2_top_0/i_HSEC_CORES/i_RX_TOP/i_RX_CORE/i_RX_LANE1/i_BUFF_1/i_RAM/i_RAM_0 has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 3452.812 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 113 instances were transformed.
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 108 instances
+  RAM64M => RAM64M (RAMD64E(x4)): 1 instance 
+  RAMB36SDP => RAMB36E2: 4 instances
+
+Synth Design complete | Checksum: 3ecd5753
+INFO: [Common 17-83] Releasing license: Synthesis
+277 Infos, 25 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:03:32 ; elapsed = 00:03:34 . Memory (MB): peak = 3452.812 ; gain = 2798.367
+Write ShapeDB Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.025 . Memory (MB): peak = 3452.812 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.runs/optical_port2_synth_1/optical_port2.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP optical_port2, cache-ID = 7e7215937c2d5719
+INFO: [Coretcl 2-1174] Renamed 285 cell refs.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.027 . Memory (MB): peak = 3452.812 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/build/D3C_IMPL/vivado/d0_clock_probe.runs/optical_port2_synth_1/optical_port2.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file optical_port2_utilization_synth.rpt -pb optical_port2_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Nov 12 05:20:19 2026...

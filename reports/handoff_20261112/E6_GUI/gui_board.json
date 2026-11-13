@@ -1,0 +1,37 @@
+{
+  "download": {
+    "seconds": 0.35448069999984,
+    "mb_s": 5.91612462963695,
+    "samples": 131072,
+    "channels": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "verified": true
+  },
+  "first_capture": {
+    "trigger": "start",
+    "count": 65520,
+    "read_s": 0.0309380999970017,
+    "total_s": 0.04973040000186302,
+    "adc0": {
+      "vpp_lsb": 15200.0,
+      "rms_lsb": 4757.476,
+      "mean_lsb": 0.409,
+      "freq_hz": 99964830.214,
+      "amp_lsb": 6751.477,
+      "peak_dbfs": -13.721,
+      "sinad_db": 32.824,
+      "snr_db": 32.826,
+      "sfdr_dbc": 44.433
+    }
+  },
+  "continuous_captures_in_3s": 50,
+  "errors": []
+}

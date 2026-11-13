@@ -1,0 +1,35 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version      : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+| Date              : Wed Nov 11 10:42:12 2026
+| Host              : DESKTOP-CLMQL7K running 64-bit major release  (build 9200)
+| Command           : report_cdc -file D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/reports/D0/cdc.rpt
+| Design            : d0_probe_top
+| Device            : xczu47dr-fsve1156
+| Speed File        : -2  PRODUCTION 1.32 01-31-2021
+| Design State      : Routed
+| Temperature Grade : I
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+CDC Report
+
+Severity  Source Clock                   Destination Clock              CDC Type                 Exceptions  Endpoints  Safe  Unsafe  Unknown  No ASYNC_REG  
+--------  -----------------------------  -----------------------------  -----------------------  ----------  ---------  ----  ------  -------  ------------  
+Critical  clk_pl_0                       clk_out1_system_clk_wiz_adc_0  No Common Primary Clock  False Path         12     8       0        4             0  
+Critical  clk_out1_system_clk_wiz_0_0    clk_pl_0                       No Common Primary Clock  False Path          6     2       4        0             0  
+Critical  clk_out1_system_clk_wiz_adc_0  clk_pl_0                       No Common Primary Clock  None             3266    30     452     2784             0  
+Warning   RFADC0_CLK                     clk_pl_0                       No Common Primary Clock  False Path          8     8       0        0             0  
+Warning   RFADC1_CLK                     clk_pl_0                       No Common Primary Clock  False Path          8     8       0        0             0  
+Warning   RFADC2_CLK                     clk_pl_0                       No Common Primary Clock  False Path          8     8       0        0             0  
+Warning   RFADC3_CLK                     clk_pl_0                       No Common Primary Clock  False Path          8     8       0        0             0  
+Warning   RFDAC0_CLK                     clk_pl_0                       No Common Primary Clock  False Path          8     8       0        0             0  
+Warning   RFDAC1_CLK                     clk_pl_0                       No Common Primary Clock  False Path          8     8       0        0             0  
+Warning   RFDAC2_CLK                     clk_pl_0                       No Common Primary Clock  False Path          8     8       0        0             0  
+Warning   RFDAC3_CLK                     clk_pl_0                       No Common Primary Clock  False Path          8     8       0        0             0  
+Info      clk_pl_0                       clk_out1_system_clk_wiz_0_0    No Common Primary Clock  False Path          7     7       0        0             0  
+Info      pl_clk_p                       clk_out1_system_clk_wiz_0_0    No Common Primary Clock  None                1     1       0        0             0  
+Info      tx_clk                         clk_out1_system_clk_wiz_0_0    Safely Timed             None             2048  2048       0        0             0  
+Info      pl_clk_p                       clk_out1_system_clk_wiz_adc_0  Safely Timed             None                1     1       0        0             0  
+Info      clk_out1_system_clk_wiz_adc_0  rx_clk                         Safely Timed             None             7968  7968       0        0             0  
+Info      clk_out1_system_clk_wiz_0_0    tx_clk                         Safely Timed             None             4184  4184       0        0             0  
+

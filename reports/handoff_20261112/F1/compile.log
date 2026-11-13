@@ -1,0 +1,5 @@
+
+D:\ClaudeProject\47DR_DAAD\rf_awg_eth_v1\software\src\rfsoc\rfsoc_cfg.c: In function 'ChangeSampleFreq':
+D:\ClaudeProject\47DR_DAAD\rf_awg_eth_v1\software\src\rfsoc\rfsoc_cfg.c:133:15: warning: unused variable 'dac_sample_rate' [-Wunused-variable]
+  133 |     const u32 dac_sample_rate = 10000U;
+      |               ^~~~~~~~~~~~~~~

@@ -1,0 +1,13 @@
+{
+  "task": "F1",
+  "status": "PASS",
+  "scope": "build only; not run on hardware",
+  "executor": "claude",
+  "xsa": {"path": "build/D3B_IMPL/awg_eth_v2.xsa", "sha256": "50B3AFC35474332E7352BFC2163164B6B88F78693D791240EB54300A222E52D4"},
+  "bsp": "Vitis 2025.2 SDT standalone psu_cortexa53_0 (libxil, libxilstandalone, libxiltimer, libmetal)",
+  "rfdc_config": {"dac_gsps": 9.8, "dac_pll_tile": 2, "dac_ref_mhz": 200.0, "dac_fbdiv": 49, "dac_fabric_mhz": 612.5, "adc_gsps": 5.0, "adc_fabric_mhz": 416.667},
+  "elf": {"path": "build/F1/rf_awg_init.elf", "text": 289888, "data": 9212, "bss": 94944, "load_base": "0x0", "compile_errors": 0, "compile_warnings": 1},
+  "package": "build/F1/package (rf_awg_scope_v1.bit, psu_init.tcl, rf_awg_init.elf, init_protocol.txt)",
+  "init_protocol": {"awg_clock_ready": "0x5b140", "awg_pl_program_ack": "0x5b180", "awg_init_log": "0x4b0c0", "awg_init_log_length": "0x5b0c0", "init_stage_debug": "0x5b100"},
+  "hardware_operations": "none"
+}

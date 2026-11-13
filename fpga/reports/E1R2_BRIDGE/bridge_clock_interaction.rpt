@@ -1,0 +1,27 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version      : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+| Date              : Wed Nov 11 11:44:44 2026
+| Host              : DESKTOP-CLMQL7K running 64-bit major release  (build 9200)
+| Command           : report_clock_interaction -file D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/reports/E1R2_BRIDGE/bridge_clock_interaction.rpt
+| Design            : awg_eth_bridge
+| Device            : xczu47dr-fsve1156
+| Speed File        : -2  PRODUCTION 1.32 01-31-2021
+| Design State      : Routed
+| Temperature Grade : I
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+Clock Interaction Report
+
+Clock Interaction Table
+-----------------------
+
+                                                  WNS                            TNS Failing  TNS Total    WNS Path         Clock-Pair           Inter-Clock     
+From Clock               To Clock                 Clock Edges  WNS(ns)  TNS(ns)    Endpoints    Endpoints  Requirement(ns)  Classification       Constraints     
+-----------------------  -----------------------  -----------  -------  -------  -----------  -----------  ---------------  -------------------  --------------  
+awg_eth_bridge_clk_eth   awg_eth_bridge_clk_eth   rise - rise     0.72     0.00            0         1440             3.20  Clean                Timed           
+awg_eth_bridge_clk_eth   awg_eth_bridge_host_clk  rise - rise     0.03     0.00            0           62             0.40  No Common Clock      Timed (unsafe)  
+awg_eth_bridge_host_clk  awg_eth_bridge_clk_eth   rise - rise     0.03     0.00            0           30             0.40  No Common Clock      Timed (unsafe)  
+awg_eth_bridge_host_clk  awg_eth_bridge_host_clk  rise - rise     5.62     0.00            0         3857            10.00  Clean                Timed           
+
+

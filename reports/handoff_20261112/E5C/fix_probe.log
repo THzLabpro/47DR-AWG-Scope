@@ -1,0 +1,16 @@
+PASS BUILD_ID is D3C  0xd3c02026
+PASS A jumbo write 256 words (1048 B payload)  rx_ok+2
+PASS A jumbo write 350 words (1424 B payload)  rx_ok+2
+PASS A jumbo write 368 words (1496 B payload)  rx_ok+2
+PASS A jumbo write 512 words (2072 B payload)  rx_ok+2
+PASS A jumbo write 1024 words (4120 B payload)  rx_ok+2
+PASS A jumbo write 2048 words (8216 B payload)  rx_ok+2
+PASS A jumbo read 2048 words
+PASS B CAP_RD_CH rewinds pointer  ptr=0
+PASS C pointer reaches 32760
+PASS C past-end read returns AXI error  status=1
+PASS C bus alive after past-end read
+PASS C no AXI timeouts  axi_timeouts=0 axi_errors=4
+PASS abort clears armed capture  armed=0x5 after=0x0
+{"awg_id": 1096238385, "protocol_version": 1, "max_words": 2048, "build_id": 3552583718, "rx_ok": 276, "rx_bad_req": 0, "rx_dropped": 0, "tx_replies": 276, "dup_writes": 0, "axi_errors": 4, "axi_timeouts": 0, "axi_words": 17985}
+RESULT PASS=14 FAIL=0

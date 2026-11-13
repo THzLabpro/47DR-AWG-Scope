@@ -1,0 +1,65 @@
+
+****** xsim v2025.2 (64-bit)
+  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
+  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+  **** Start of session at: Thu Nov 12 01:26:14 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/tb_awg_control_v2_sim/xsim_script.tcl
+# xsim {tb_awg_control_v2_sim} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+PASS ID read
+PASS DAC FS read
+PASS ADC FS read
+PASS ABI read
+PASS BUILD_ID read
+PASS undefined read SLVERR
+PASS TX_LENGTH write
+PASS TX_MASK write
+PASS TX_WR_CH rewind
+PASS TX_WR_DATA write
+PASS TX_WR_DATA write
+PASS TX_WR_DATA write
+PASS TX_WR_DATA write
+PASS TX_WR_DATA write
+PASS TX_WR_DATA write
+PASS TX_WR_DATA write
+PASS TX_WR_DATA write
+PASS TX_WR_DATA write
+PASS TX_WR_DATA write
+PASS TX_WR_DATA write
+PASS TX_WR_DATA write
+PASS TX_WR_DATA write
+PASS TX_WR_DATA write
+PASS TX_WR_DATA write
+PASS TX_WR_DATA write
+PASS COMMAND start
+PASS TX_LENGTH while running SLVERR
+PASS COMMAND stop
+PASS COMMAND CRC
+PASS TX_WR_DATA holds under backpressure
+PASS TX_WR_DATA backpressure response
+PASS CAP_RD_CH write
+PASS CAP_RD_PTR write
+PASS CAP_RD_DATA read
+PASS CAP_CTRL write
+PASS COMMAND arm
+PASS COMMAND abort
+PASS CAP_CTRL while busy SLVERR
+PASS CAP_RD_DATA idle read
+PASS CAP_RD_DATA busy SLVERR
+PASS CAP_RD_CH invalid SLVERR
+PASS TX_LENGTH zero SLVERR
+PASS TX_LENGTH reserved bits SLVERR
+PASS TX_WR_CH reserved bits SLVERR
+PASS CAP_RD_PTR reserved bits SLVERR
+PASS CAP_CTRL reserved bits SLVERR
+PASS undefined write SLVERR
+PASS STATUS bit allocation
+RESULT name=tb_awg_control_v2 PASS=48 FAIL=0
+$finish called at time : 2625 ns : File "D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/sim/d3/tb_awg_control_v2.sv" Line 207
+exit
+INFO: [Common 17-206] Exiting xsim at Thu Nov 12 01:26:16 2026...

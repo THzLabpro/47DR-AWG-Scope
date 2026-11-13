@@ -1,0 +1,163 @@
+{
+  "tones_hz": {
+    "0": 50019836.42578125,
+    "1": 149760437.01171875,
+    "2": 99964904.78515625,
+    "3": 299595642.08984375,
+    "4": 449430847.16796875,
+    "5": 599415588.3789062,
+    "6": 748204040.5273438,
+    "7": 898039245.6054688
+  },
+  "regs": {
+    "id": "0x41574732",
+    "dac_fs_ksps": 9800000,
+    "adc_fs_ksps": 5000000,
+    "build_id": "0xd3c02026"
+  },
+  "load": {
+    "seconds": 0.6506293999991613,
+    "bytes": 2097152,
+    "mb_per_s": 3.223266578489542,
+    "crc_verified_channels": 8,
+    "status": {
+      "running": 0,
+      "busy": 0,
+      "ps_ready": 1,
+      "fault": 0,
+      "command_result": 0,
+      "cap_busy": 0,
+      "cap_done": 0,
+      "crc_busy": 0,
+      "fault_channels": 0,
+      "length_beats": 4096,
+      "channel_mask": 255,
+      "abi": 196609,
+      "tx_max_words": 4096,
+      "cap_max_words": 2730,
+      "cap_status": 0
+    }
+  },
+  "capture": {
+    "seconds_incl_readback": 0.2154883999901358,
+    "bytes": 1048320,
+    "cap_tx_word": 0,
+    "status_after": {
+      "running": 1,
+      "busy": 0,
+      "ps_ready": 1,
+      "fault": 0,
+      "command_result": 0,
+      "cap_busy": 0,
+      "cap_done": 1,
+      "crc_busy": 0,
+      "fault_channels": 0,
+      "length_beats": 4096,
+      "channel_mask": 255,
+      "abi": 196609,
+      "tx_max_words": 4096,
+      "cap_max_words": 2730,
+      "cap_status": 2
+    }
+  },
+  "info_counters": {
+    "awg_id": 1096238385,
+    "protocol_version": 1,
+    "max_words": 2048,
+    "build_id": 3552583718,
+    "rx_ok": 990,
+    "rx_bad_req": 0,
+    "rx_dropped": 0,
+    "tx_replies": 990,
+    "dup_writes": 0,
+    "axi_errors": 4,
+    "axi_timeouts": 0,
+    "axi_words": 804682
+  },
+  "analysis": {
+    "0": {
+      "rms_lsb": 5036.676384678381,
+      "min": -7748,
+      "max": 7636,
+      "peak_hz": 49984737.484737486,
+      "peak_db": 160.16924471582695,
+      "spur_hz": 33959096.45909646,
+      "sfdr_db": 49.07245340325154
+    },
+    "1": {
+      "rms_lsb": 23.587918599791294,
+      "min": -76,
+      "max": 108,
+      "peak_hz": 2500000000.0,
+      "peak_db": 106.92927610396147,
+      "spur_hz": 1250000000.0,
+      "sfdr_db": 14.536852924512147
+    },
+    "2": {
+      "rms_lsb": 22.97337557199781,
+      "min": -100,
+      "max": 92,
+      "peak_hz": 2500000000.0,
+      "peak_db": 107.09821837766286,
+      "spur_hz": 1250000000.0,
+      "sfdr_db": 18.72028474135113
+    },
+    "3": {
+      "rms_lsb": 23.299552982460114,
+      "min": -84,
+      "max": 108,
+      "peak_hz": 2500000000.0,
+      "peak_db": 105.91397594441501,
+      "spur_hz": 1875000000.0,
+      "sfdr_db": 12.731579382862817
+    },
+    "4": {
+      "rms_lsb": 23.705179169272572,
+      "min": -92,
+      "max": 108,
+      "peak_hz": 2500000000.0,
+      "peak_db": 109.34957958377389,
+      "spur_hz": 625000000.0,
+      "sfdr_db": 18.882177371048257
+    },
+    "5": {
+      "rms_lsb": 22.61777049077166,
+      "min": -100,
+      "max": 84,
+      "peak_hz": 2500000000.0,
+      "peak_db": 106.55333910325395,
+      "spur_hz": 625000000.0,
+      "sfdr_db": 10.409177560488503
+    },
+    "6": {
+      "rms_lsb": 24.610064682973825,
+      "min": -100,
+      "max": 108,
+      "peak_hz": 2500000000.0,
+      "peak_db": 109.2816495898341,
+      "spur_hz": 1875000000.0,
+      "sfdr_db": 10.342082797348297
+    },
+    "7": {
+      "rms_lsb": 22.357734138861808,
+      "min": -84,
+      "max": 92,
+      "peak_hz": 2500000000.0,
+      "peak_db": 105.7684754323408,
+      "spur_hz": 625000000.0,
+      "sfdr_db": 15.017443721866561
+    },
+    "loop": {
+      "channel": 0,
+      "expected_hz": 50019836.42578125,
+      "onset_sample": 487,
+      "fit": {
+        "amplitude_lsb": 7148.869691178347,
+        "dc_lsb": 1.6603786681052952,
+        "residual_rms_lsb": 55.57392176673471,
+        "sinad_db": 39.177026753376275,
+        "max_abs_residual_lsb": 768.3889937481754
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+protocol_version 1
+awg_clock_ready 0x000000000005b140
+awg_pl_program_ack 0x000000000005b180
+awg_init_log 0x000000000004b0c0
+awg_init_log_length 0x000000000005b0c0
+init_stage_debug 0x000000000005b100

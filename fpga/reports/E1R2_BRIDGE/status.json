@@ -1,0 +1,108 @@
+{
+  "task": "E1R2_BRIDGE",
+  "status": "NEEDS_PARENT_JUDGMENT",
+  "date": "2026-11-11",
+  "acceptance": {
+    "S1": "PASS",
+    "S2": "PASS",
+    "S3": "PASS",
+    "S4": "PASS",
+    "S5": "PASS",
+    "S6": "PASS_CH0_CH3_96_WORDS_EACH",
+    "S7": "PASS",
+    "S8": "PASS",
+    "S9": {
+      "status": "PASS",
+      "sent_packets": 16,
+      "dropped_packets": 8,
+      "successful_replies": 8,
+      "successful_write_readbacks": 8,
+      "unique_reply_sequences": true,
+      "rx_dropped_matches_fifo_drop_events": true,
+      "axis_ready_low_cycles": 0
+    },
+    "S10": {
+      "status": "PASS",
+      "host_clk_cycles": 12544,
+      "bytes": 65536,
+      "throughput_MBps": 522.44898,
+      "minimum_MBps": 80
+    },
+    "S11": {
+      "status": "PASS",
+      "jtag_write_transactions": 8,
+      "ethernet_write_transactions": 8,
+      "aw_w_orders": ["AW_FIRST", "W_FIRST"],
+      "b_r_owner_checks": true,
+      "deadlock": false
+    },
+    "simulation": {
+      "status": "PASS",
+      "pass_assertions": 114,
+      "fail_assertions": 0,
+      "xvlog_errors": 0,
+      "xvlog_warnings": 0
+    },
+    "bridge_ooc": {
+      "synthesis": "PASS",
+      "route": "PASS_REPORTS_GENERATED",
+      "WNS_ns": 0.028,
+      "WHS_ns": 0.004,
+      "LUT": 1550,
+      "FF": 1843,
+      "RAMB36": 27,
+      "RAMB18": 1,
+      "RAMB36_equivalent": 27.5,
+      "URAM": 0,
+      "RAMB36_equivalent_limit": 8,
+      "resource_acceptance": "FAIL",
+      "CDC_critical": 0,
+      "CDC_6_warnings": 3,
+      "CDC_15_warnings": 26,
+      "vivado_exit": "FAIL_ACCESS_VIOLATION_AFTER_REPORTS",
+      "exit_code": -1073741819
+    },
+    "arbiter_ooc": {
+      "synthesis": "PASS",
+      "route": "PASS_REPORTS_GENERATED",
+      "WNS_ns": 7.194,
+      "WHS_ns": 0.046,
+      "LUT": 99,
+      "FF": 389,
+      "RAMB36": 0,
+      "RAMB18": 0,
+      "URAM": 0,
+      "CDC": "ALL_PATHS_SAFELY_TIMED"
+    },
+    "overall": "NEEDS_PARENT_JUDGMENT"
+  },
+  "commands": [
+    {
+      "command": "& .\\sim\\eth_bridge\\run.ps1 -Mode sim",
+      "result": "PASS; RESULT name=tb_eth_bridge PASS=114 FAIL=0"
+    },
+    {
+      "command": "& .\\sim\\eth_bridge\\run.ps1 -Mode ooc",
+      "result": "Bridge and arbiter sequential OOC synthesis/route reports and routed DCPs generated; Vivado exited with access violation after completion."
+    }
+  ],
+  "evidence": {
+    "xvlog": "reports/E1R2_BRIDGE/xvlog.log",
+    "xsim": "reports/E1R2_BRIDGE/xsim.log",
+    "ooc": "reports/E1R2_BRIDGE/ooc.log",
+    "bridge_timing": "reports/E1R2_BRIDGE/bridge_timing.rpt",
+    "bridge_utilization": "reports/E1R2_BRIDGE/bridge_utilization.rpt",
+    "bridge_cdc": "reports/E1R2_BRIDGE/bridge_cdc.rpt",
+    "arb_timing": "reports/E1R2_BRIDGE/arb_timing.rpt",
+    "arb_utilization": "reports/E1R2_BRIDGE/arb_utilization.rpt",
+    "arb_cdc": "reports/E1R2_BRIDGE/arb_cdc.rpt",
+    "bridge_checkpoint": "build/E1R2_BRIDGE/ooc/bridge_routed.dcp",
+    "arb_checkpoint": "build/E1R2_BRIDGE/ooc/arb_routed.dcp"
+  },
+  "notes": [
+    "The fixed bridge BRAM target is not met; parent judgment is required.",
+    "Final routed timing meets WNS/WHS thresholds. CDC report has no Critical findings but retains CDC-6 and CDC-15 warnings.",
+    "Vivado emitted hs_err_pid22612.dmp in the repository root after report/checkpoint generation; it was left in place.",
+    "Root xsim.dir and early diagnostic files were left untouched/present; early CDC diagnostics are superseded by final bridge_cdc.rpt."
+  ]
+}

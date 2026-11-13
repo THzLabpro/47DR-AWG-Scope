@@ -1,0 +1,1177 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version      : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+| Date              : Wed Nov 11 19:10:24 2026
+| Host              : DESKTOP-CLMQL7K running 64-bit major release  (build 9200)
+| Command           : report_timing -delay_type max -max_paths 40 -from [get_clocks -quiet clk_pl_0] -to [get_clocks -quiet tx_clk] -path_type full_clock_expanded -input_pins -file D:/ClaudeProject/47DR_DAAD/rf_awg_eth_v1/reports/D3A5_INTEGRATION/host_to_tx_paths.rpt
+| Design            : awg_eth_top
+| Device            : xczu47dr-fsve1156
+| Speed File        : -2  PRODUCTION 1.32 01-31-2021
+| Design State      : Synthesized
+| Temperature Grade : I
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (VIOLATED) :        -0.894ns  (required time - arrival time)
+  Source:                 user_control_i/config_done_reg/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            tx_i/ps_ready_sync_reg[0]/D
+                            (rising edge-triggered cell FDRE clocked by tx_clk  {rise@0.000ns fall@1.633ns period=3.266ns})
+  Path Group:             tx_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            0.002ns  (tx_clk rise@970.002ns - clk_pl_0 rise@970.000ns)
+  Data Path Delay:        0.280ns  (logic 0.077ns (27.500%)  route 0.203ns (72.500%))
+  Logic Levels:           0  
+  Clock Path Skew:        -0.400ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    9.625ns = ( 979.628 - 970.002 ) 
+    Source Clock Delay      (SCD):    3.593ns = ( 973.593 - 970.000 ) 
+    Clock Pessimism Removal (CPR):    -6.433ns
+  Clock Uncertainty:      0.241ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.320ns
+    Phase Error              (PE):    0.077ns
+  Clock Domain Crossing:  Inter clock paths are considered valid unless explicitly excluded by timing constraints such as set_clock_groups or set_false_path.
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 rise edge)
+                                                    970.000   970.000 r  
+                         PS8                          0.000   970.000 r  system_i/system_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[0]
+                         net (fo=1, unplaced)         0.198   970.198    system_i/system_i/zynq_ultra_ps_e_0/inst/pl_clk_unbuffered[0]
+                                                                      r  system_i/system_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/I
+                         BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.028   970.226 r  system_i/system_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+                         net (fo=12971, unplaced)     3.367   973.593    user_control_i/fclk_100m
+                         FDRE                                         r  user_control_i/config_done_reg/C
+  -------------------------------------------------------------------    -------------------
+                         FDRE (Prop_FDRE_C_Q)         0.077   973.670 r  user_control_i/config_done_reg/Q
+                         net (fo=5, unplaced)         0.203   973.873    tx_i/ps_ready_sync_reg[0]_0[0]
+                         FDRE                                         r  tx_i/ps_ready_sync_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock tx_clk rise edge)   970.002   970.002 r  
+    RFDAC_X0Y2           RFDAC                        0.000   970.002 r  system_i/system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx2_u_dac/INTERNAL_FBRC_MUX
+    RFDAC_X0Y2           RFDAC (Prop_RFDAC_INTERNAL_FBRC_MUX_CLK_DAC)
+                                                      0.281   970.283 r  system_i/system_i/usp_rf_data_converter_0/inst/system_usp_rf_data_converter_0_0_rf_wrapper_i/tx2_u_dac/CLK_DAC
+                         net (fo=2, unplaced)         0.149   970.432    system_i/system_i/usp_rf_data_converter_0/inst/i_system_usp_rf_data_converter_0_0_bufg_gt_ctrl/dac2_bufg_gt_0
+                                                                      r  system_i/system_i/usp_rf_data_converter_0/inst/i_system_usp_rf_data_converter_0_0_bufg_gt_ctrl/dac2_bufg_gt/I
+                         BUFG_GT (Prop_BUFG_GT_I_O)
+                                                      0.114   970.546 r  system_i/system_i/usp_rf_data_converter_0/inst/i_system_usp_rf_data_converter_0_0_bufg_gt_ctrl/dac2_bufg_gt/O
+                         net (fo=1, unplaced)         2.439   972.985    system_i/system_i/clk_wiz_0/inst/CLK_CORE_DRP_I/clk_inst/clk_in1
+                                                                      r  system_i/system_i/clk_wiz_0/inst/CLK_CORE_DRP_I/clk_inst/mmcme4_adv_inst/CLKIN1
+                         MMCME4_ADV (Prop_MMCME4_ADV_CLKIN1_CLKOUT0)
+                                                      0.630   973.615 r  system_i/system_i/clk_wiz_0/inst/CLK_CORE_DRP_I/clk_inst/mmcme4_adv_inst/CLKOUT0
+                         net (fo=1, unplaced)         0.176   973.791    system_i/system_i/clk_wiz_0/inst/CLK_CORE_DRP_I/clk_inst/clk_out1_system_clk_wiz_0_0
+                                                                      r  system_i/system_i/clk_wiz_0/inst/CLK_CORE_DRP_I/clk_inst/clkout1_buf/I
+                         BUFGCE (Prop_BUFGCE_I_O)     0.024   973.815 r  system_i/system_i/clk_wiz_0/inst/CLK_CORE_DRP_I/clk_inst/clkout1_buf/O
+                         net (fo=2004, unplaced)      3.242   977.058    data_clk
+                                                                      r  tx_clk_div/I
+                         BUFGCE_DIV (Prop_BUFGCE_DIV_I_O)
+                                                      0.131   977.189 r  tx_clk_div/O
+                         net (fo=19851, unplaced)     2.439   979.628    tx_i/tx_clk
+                         FDRE                                         r  tx_i/ps_ready_sync_reg[0]/C
+                         clock pessimism             -6.433   973.195    
+                         clock uncertainty           -0.241   972.954    
+                         FDRE (Setup_FDRE_C_D)        0.025   972.979    tx_i/ps_ready_sync_reg[0]
+  -------------------------------------------------------------------
+                         required time                        972.979    
+                         arrival time                        -973.873    
+  -------------------------------------------------------------------
+                         slack                                 -0.894    
+
+Slack (MET) :             3.029ns  (required time - arrival time)
+  Source:                 tx_i/crc_ch_host_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            tx_i/crc_ch_t1_reg[0]/D
+                            (rising edge-triggered cell FDRE clocked by tx_clk  {rise@0.000ns fall@1.633ns period=3.266ns})
+  Path Group:             tx_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.266ns  (MaxDelay Path 3.266ns)
+  Data Path Delay:        0.262ns  (logic 0.077ns (29.389%)  route 0.185ns (70.611%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 3.266ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  tx_i/crc_ch_host_reg[0]/C
+                         FDRE (Prop_FDRE_C_Q)         0.077     0.077 r  tx_i/crc_ch_host_reg[0]/Q
+                         net (fo=1, unplaced)         0.185     0.262    tx_i/crc_ch_host[0]
+                         FDRE                                         r  tx_i/crc_ch_t1_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                    3.266     3.266    
+                         FDRE (Setup_FDRE_C_D)        0.025     3.291    tx_i/crc_ch_t1_reg[0]
+  -------------------------------------------------------------------
+                         required time                          3.291    
+                         arrival time                          -0.262    
+  -------------------------------------------------------------------
+                         slack                                  3.029    
+
+Slack (MET) :             3.029ns  (required time - arrival time)
+  Source:                 tx_i/crc_ch_host_reg[1]/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            tx_i/crc_ch_t1_reg[1]/D
+                            (rising edge-triggered cell FDRE clocked by tx_clk  {rise@0.000ns fall@1.633ns period=3.266ns})
+  Path Group:             tx_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.266ns  (MaxDelay Path 3.266ns)
+  Data Path Delay:        0.262ns  (logic 0.077ns (29.389%)  route 0.185ns (70.611%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 3.266ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  tx_i/crc_ch_host_reg[1]/C
+                         FDRE (Prop_FDRE_C_Q)         0.077     0.077 r  tx_i/crc_ch_host_reg[1]/Q
+                         net (fo=1, unplaced)         0.185     0.262    tx_i/crc_ch_host[1]
+                         FDRE                                         r  tx_i/crc_ch_t1_reg[1]/D
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                    3.266     3.266    
+                         FDRE (Setup_FDRE_C_D)        0.025     3.291    tx_i/crc_ch_t1_reg[1]
+  -------------------------------------------------------------------
+                         required time                          3.291    
+                         arrival time                          -0.262    
+  -------------------------------------------------------------------
+                         slack                                  3.029    
+
+Slack (MET) :             3.029ns  (required time - arrival time)
+  Source:                 tx_i/crc_ch_host_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            tx_i/crc_ch_t1_reg[2]/D
+                            (rising edge-triggered cell FDRE clocked by tx_clk  {rise@0.000ns fall@1.633ns period=3.266ns})
+  Path Group:             tx_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.266ns  (MaxDelay Path 3.266ns)
+  Data Path Delay:        0.262ns  (logic 0.077ns (29.389%)  route 0.185ns (70.611%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 3.266ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  tx_i/crc_ch_host_reg[2]/C
+                         FDRE (Prop_FDRE_C_Q)         0.077     0.077 r  tx_i/crc_ch_host_reg[2]/Q
+                         net (fo=1, unplaced)         0.185     0.262    tx_i/crc_ch_host[2]
+                         FDRE                                         r  tx_i/crc_ch_t1_reg[2]/D
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                    3.266     3.266    
+                         FDRE (Setup_FDRE_C_D)        0.025     3.291    tx_i/crc_ch_t1_reg[2]
+  -------------------------------------------------------------------
+                         required time                          3.291    
+                         arrival time                          -0.262    
+  -------------------------------------------------------------------
+                         slack                                  3.029    
+
+Slack (MET) :             3.029ns  (required time - arrival time)
+  Source:                 tx_i/length_hold_host_reg[0]/C
+                            (rising edge-triggered cell FDSE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            tx_i/length_t1_reg[0]/D
+                            (rising edge-triggered cell FDSE clocked by tx_clk  {rise@0.000ns fall@1.633ns period=3.266ns})
+  Path Group:             tx_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.266ns  (MaxDelay Path 3.266ns)
+  Data Path Delay:        0.262ns  (logic 0.077ns (29.389%)  route 0.185ns (70.611%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 3.266ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  tx_i/length_hold_host_reg[0]/C
+                         FDSE (Prop_FDSE_C_Q)         0.077     0.077 r  tx_i/length_hold_host_reg[0]/Q
+                         net (fo=1, unplaced)         0.185     0.262    tx_i/length_hold_host[0]
+                         FDSE                                         r  tx_i/length_t1_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                    3.266     3.266    
+                         FDSE (Setup_FDSE_C_D)        0.025     3.291    tx_i/length_t1_reg[0]
+  -------------------------------------------------------------------
+                         required time                          3.291    
+                         arrival time                          -0.262    
+  -------------------------------------------------------------------
+                         slack                                  3.029    
+
+Slack (MET) :             3.029ns  (required time - arrival time)
+  Source:                 tx_i/length_hold_host_reg[10]/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            tx_i/length_t1_reg[10]/D
+                            (rising edge-triggered cell FDRE clocked by tx_clk  {rise@0.000ns fall@1.633ns period=3.266ns})
+  Path Group:             tx_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.266ns  (MaxDelay Path 3.266ns)
+  Data Path Delay:        0.262ns  (logic 0.077ns (29.389%)  route 0.185ns (70.611%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 3.266ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  tx_i/length_hold_host_reg[10]/C
+                         FDRE (Prop_FDRE_C_Q)         0.077     0.077 r  tx_i/length_hold_host_reg[10]/Q
+                         net (fo=1, unplaced)         0.185     0.262    tx_i/length_hold_host[10]
+                         FDRE                                         r  tx_i/length_t1_reg[10]/D
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                    3.266     3.266    
+                         FDRE (Setup_FDRE_C_D)        0.025     3.291    tx_i/length_t1_reg[10]
+  -------------------------------------------------------------------
+                         required time                          3.291    
+                         arrival time                          -0.262    
+  -------------------------------------------------------------------
+                         slack                                  3.029    
+
+Slack (MET) :             3.029ns  (required time - arrival time)
+  Source:                 tx_i/length_hold_host_reg[11]/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            tx_i/length_t1_reg[11]/D
+                            (rising edge-triggered cell FDRE clocked by tx_clk  {rise@0.000ns fall@1.633ns period=3.266ns})
+  Path Group:             tx_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.266ns  (MaxDelay Path 3.266ns)
+  Data Path Delay:        0.262ns  (logic 0.077ns (29.389%)  route 0.185ns (70.611%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 3.266ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  tx_i/length_hold_host_reg[11]/C
+                         FDRE (Prop_FDRE_C_Q)         0.077     0.077 r  tx_i/length_hold_host_reg[11]/Q
+                         net (fo=1, unplaced)         0.185     0.262    tx_i/length_hold_host[11]
+                         FDRE                                         r  tx_i/length_t1_reg[11]/D
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                    3.266     3.266    
+                         FDRE (Setup_FDRE_C_D)        0.025     3.291    tx_i/length_t1_reg[11]
+  -------------------------------------------------------------------
+                         required time                          3.291    
+                         arrival time                          -0.262    
+  -------------------------------------------------------------------
+                         slack                                  3.029    
+
+Slack (MET) :             3.029ns  (required time - arrival time)
+  Source:                 tx_i/length_hold_host_reg[12]/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            tx_i/length_t1_reg[12]/D
+                            (rising edge-triggered cell FDRE clocked by tx_clk  {rise@0.000ns fall@1.633ns period=3.266ns})
+  Path Group:             tx_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.266ns  (MaxDelay Path 3.266ns)
+  Data Path Delay:        0.262ns  (logic 0.077ns (29.389%)  route 0.185ns (70.611%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 3.266ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  tx_i/length_hold_host_reg[12]/C
+                         FDRE (Prop_FDRE_C_Q)         0.077     0.077 r  tx_i/length_hold_host_reg[12]/Q
+                         net (fo=1, unplaced)         0.185     0.262    tx_i/length_hold_host[12]
+                         FDRE                                         r  tx_i/length_t1_reg[12]/D
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                    3.266     3.266    
+                         FDRE (Setup_FDRE_C_D)        0.025     3.291    tx_i/length_t1_reg[12]
+  -------------------------------------------------------------------
+                         required time                          3.291    
+                         arrival time                          -0.262    
+  -------------------------------------------------------------------
+                         slack                                  3.029    
+
+Slack (MET) :             3.029ns  (required time - arrival time)
+  Source:                 tx_i/length_hold_host_reg[1]/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            tx_i/length_t1_reg[1]/D
+                            (rising edge-triggered cell FDRE clocked by tx_clk  {rise@0.000ns fall@1.633ns period=3.266ns})
+  Path Group:             tx_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.266ns  (MaxDelay Path 3.266ns)
+  Data Path Delay:        0.262ns  (logic 0.077ns (29.389%)  route 0.185ns (70.611%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 3.266ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  tx_i/length_hold_host_reg[1]/C
+                         FDRE (Prop_FDRE_C_Q)         0.077     0.077 r  tx_i/length_hold_host_reg[1]/Q
+                         net (fo=1, unplaced)         0.185     0.262    tx_i/length_hold_host[1]
+                         FDRE                                         r  tx_i/length_t1_reg[1]/D
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                    3.266     3.266    
+                         FDRE (Setup_FDRE_C_D)        0.025     3.291    tx_i/length_t1_reg[1]
+  -------------------------------------------------------------------
+                         required time                          3.291    
+                         arrival time                          -0.262    
+  -------------------------------------------------------------------
+                         slack                                  3.029    
+
+Slack (MET) :             3.029ns  (required time - arrival time)
+  Source:                 tx_i/length_hold_host_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            tx_i/length_t1_reg[2]/D
+                            (rising edge-triggered cell FDRE clocked by tx_clk  {rise@0.000ns fall@1.633ns period=3.266ns})
+  Path Group:             tx_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.266ns  (MaxDelay Path 3.266ns)
+  Data Path Delay:        0.262ns  (logic 0.077ns (29.389%)  route 0.185ns (70.611%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 3.266ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  tx_i/length_hold_host_reg[2]/C
+                         FDRE (Prop_FDRE_C_Q)         0.077     0.077 r  tx_i/length_hold_host_reg[2]/Q
+                         net (fo=1, unplaced)         0.185     0.262    tx_i/length_hold_host[2]
+                         FDRE                                         r  tx_i/length_t1_reg[2]/D
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                    3.266     3.266    
+                         FDRE (Setup_FDRE_C_D)        0.025     3.291    tx_i/length_t1_reg[2]
+  -------------------------------------------------------------------
+                         required time                          3.291    
+                         arrival time                          -0.262    
+  -------------------------------------------------------------------
+                         slack                                  3.029    
+
+Slack (MET) :             3.029ns  (required time - arrival time)
+  Source:                 tx_i/length_hold_host_reg[3]/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            tx_i/length_t1_reg[3]/D
+                            (rising edge-triggered cell FDRE clocked by tx_clk  {rise@0.000ns fall@1.633ns period=3.266ns})
+  Path Group:             tx_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.266ns  (MaxDelay Path 3.266ns)
+  Data Path Delay:        0.262ns  (logic 0.077ns (29.389%)  route 0.185ns (70.611%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 3.266ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  tx_i/length_hold_host_reg[3]/C
+                         FDRE (Prop_FDRE_C_Q)         0.077     0.077 r  tx_i/length_hold_host_reg[3]/Q
+                         net (fo=1, unplaced)         0.185     0.262    tx_i/length_hold_host[3]
+                         FDRE                                         r  tx_i/length_t1_reg[3]/D
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                    3.266     3.266    
+                         FDRE (Setup_FDRE_C_D)        0.025     3.291    tx_i/length_t1_reg[3]
+  -------------------------------------------------------------------
+                         required time                          3.291    
+                         arrival time                          -0.262    
+  -------------------------------------------------------------------
+                         slack                                  3.029    
+
+Slack (MET) :             3.029ns  (required time - arrival time)
+  Source:                 tx_i/length_hold_host_reg[4]/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            tx_i/length_t1_reg[4]/D
+                            (rising edge-triggered cell FDRE clocked by tx_clk  {rise@0.000ns fall@1.633ns period=3.266ns})
+  Path Group:             tx_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.266ns  (MaxDelay Path 3.266ns)
+  Data Path Delay:        0.262ns  (logic 0.077ns (29.389%)  route 0.185ns (70.611%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 3.266ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  tx_i/length_hold_host_reg[4]/C
+                         FDRE (Prop_FDRE_C_Q)         0.077     0.077 r  tx_i/length_hold_host_reg[4]/Q
+                         net (fo=1, unplaced)         0.185     0.262    tx_i/length_hold_host[4]
+                         FDRE                                         r  tx_i/length_t1_reg[4]/D
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                    3.266     3.266    
+                         FDRE (Setup_FDRE_C_D)        0.025     3.291    tx_i/length_t1_reg[4]
+  -------------------------------------------------------------------
+                         required time                          3.291    
+                         arrival time                          -0.262    
+  -------------------------------------------------------------------
+                         slack                                  3.029    
+
+Slack (MET) :             3.029ns  (required time - arrival time)
+  Source:                 tx_i/length_hold_host_reg[5]/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            tx_i/length_t1_reg[5]/D
+                            (rising edge-triggered cell FDRE clocked by tx_clk  {rise@0.000ns fall@1.633ns period=3.266ns})
+  Path Group:             tx_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.266ns  (MaxDelay Path 3.266ns)
+  Data Path Delay:        0.262ns  (logic 0.077ns (29.389%)  route 0.185ns (70.611%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 3.266ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  tx_i/length_hold_host_reg[5]/C
+                         FDRE (Prop_FDRE_C_Q)         0.077     0.077 r  tx_i/length_hold_host_reg[5]/Q
+                         net (fo=1, unplaced)         0.185     0.262    tx_i/length_hold_host[5]
+                         FDRE                                         r  tx_i/length_t1_reg[5]/D
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                    3.266     3.266    
+                         FDRE (Setup_FDRE_C_D)        0.025     3.291    tx_i/length_t1_reg[5]
+  -------------------------------------------------------------------
+                         required time                          3.291    
+                         arrival time                          -0.262    
+  -------------------------------------------------------------------
+                         slack                                  3.029    
+
+Slack (MET) :             3.029ns  (required time - arrival time)
+  Source:                 tx_i/length_hold_host_reg[6]/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            tx_i/length_t1_reg[6]/D
+                            (rising edge-triggered cell FDRE clocked by tx_clk  {rise@0.000ns fall@1.633ns period=3.266ns})
+  Path Group:             tx_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.266ns  (MaxDelay Path 3.266ns)
+  Data Path Delay:        0.262ns  (logic 0.077ns (29.389%)  route 0.185ns (70.611%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 3.266ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  tx_i/length_hold_host_reg[6]/C
+                         FDRE (Prop_FDRE_C_Q)         0.077     0.077 r  tx_i/length_hold_host_reg[6]/Q
+                         net (fo=1, unplaced)         0.185     0.262    tx_i/length_hold_host[6]
+                         FDRE                                         r  tx_i/length_t1_reg[6]/D
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                    3.266     3.266    
+                         FDRE (Setup_FDRE_C_D)        0.025     3.291    tx_i/length_t1_reg[6]
+  -------------------------------------------------------------------
+                         required time                          3.291    
+                         arrival time                          -0.262    
+  -------------------------------------------------------------------
+                         slack                                  3.029    
+
+Slack (MET) :             3.029ns  (required time - arrival time)
+  Source:                 tx_i/length_hold_host_reg[7]/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            tx_i/length_t1_reg[7]/D
+                            (rising edge-triggered cell FDRE clocked by tx_clk  {rise@0.000ns fall@1.633ns period=3.266ns})
+  Path Group:             tx_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.266ns  (MaxDelay Path 3.266ns)
+  Data Path Delay:        0.262ns  (logic 0.077ns (29.389%)  route 0.185ns (70.611%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 3.266ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  tx_i/length_hold_host_reg[7]/C
+                         FDRE (Prop_FDRE_C_Q)         0.077     0.077 r  tx_i/length_hold_host_reg[7]/Q
+                         net (fo=1, unplaced)         0.185     0.262    tx_i/length_hold_host[7]
+                         FDRE                                         r  tx_i/length_t1_reg[7]/D
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                    3.266     3.266    
+                         FDRE (Setup_FDRE_C_D)        0.025     3.291    tx_i/length_t1_reg[7]
+  -------------------------------------------------------------------
+                         required time                          3.291    
+                         arrival time                          -0.262    
+  -------------------------------------------------------------------
+                         slack                                  3.029    
+
+Slack (MET) :             3.029ns  (required time - arrival time)
+  Source:                 tx_i/length_hold_host_reg[8]/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            tx_i/length_t1_reg[8]/D
+                            (rising edge-triggered cell FDRE clocked by tx_clk  {rise@0.000ns fall@1.633ns period=3.266ns})
+  Path Group:             tx_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.266ns  (MaxDelay Path 3.266ns)
+  Data Path Delay:        0.262ns  (logic 0.077ns (29.389%)  route 0.185ns (70.611%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 3.266ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  tx_i/length_hold_host_reg[8]/C
+                         FDRE (Prop_FDRE_C_Q)         0.077     0.077 r  tx_i/length_hold_host_reg[8]/Q
+                         net (fo=1, unplaced)         0.185     0.262    tx_i/length_hold_host[8]
+                         FDRE                                         r  tx_i/length_t1_reg[8]/D
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                    3.266     3.266    
+                         FDRE (Setup_FDRE_C_D)        0.025     3.291    tx_i/length_t1_reg[8]
+  -------------------------------------------------------------------
+                         required time                          3.291    
+                         arrival time                          -0.262    
+  -------------------------------------------------------------------
+                         slack                                  3.029    
+
+Slack (MET) :             3.029ns  (required time - arrival time)
+  Source:                 tx_i/length_hold_host_reg[9]/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            tx_i/length_t1_reg[9]/D
+                            (rising edge-triggered cell FDRE clocked by tx_clk  {rise@0.000ns fall@1.633ns period=3.266ns})
+  Path Group:             tx_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.266ns  (MaxDelay Path 3.266ns)
+  Data Path Delay:        0.262ns  (logic 0.077ns (29.389%)  route 0.185ns (70.611%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 3.266ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  tx_i/length_hold_host_reg[9]/C
+                         FDRE (Prop_FDRE_C_Q)         0.077     0.077 r  tx_i/length_hold_host_reg[9]/Q
+                         net (fo=1, unplaced)         0.185     0.262    tx_i/length_hold_host[9]
+                         FDRE                                         r  tx_i/length_t1_reg[9]/D
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                    3.266     3.266    
+                         FDRE (Setup_FDRE_C_D)        0.025     3.291    tx_i/length_t1_reg[9]
+  -------------------------------------------------------------------
+                         required time                          3.291    
+                         arrival time                          -0.262    
+  -------------------------------------------------------------------
+                         slack                                  3.029    
+
+Slack (MET) :             3.029ns  (required time - arrival time)
+  Source:                 tx_i/mask_hold_host_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            tx_i/mask_t1_reg[0]/D
+                            (rising edge-triggered cell FDRE clocked by tx_clk  {rise@0.000ns fall@1.633ns period=3.266ns})
+  Path Group:             tx_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.266ns  (MaxDelay Path 3.266ns)
+  Data Path Delay:        0.262ns  (logic 0.077ns (29.389%)  route 0.185ns (70.611%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 3.266ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  tx_i/mask_hold_host_reg[0]/C
+                         FDRE (Prop_FDRE_C_Q)         0.077     0.077 r  tx_i/mask_hold_host_reg[0]/Q
+                         net (fo=1, unplaced)         0.185     0.262    tx_i/mask_hold_host[0]
+                         FDRE                                         r  tx_i/mask_t1_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                    3.266     3.266    
+                         FDRE (Setup_FDRE_C_D)        0.025     3.291    tx_i/mask_t1_reg[0]
+  -------------------------------------------------------------------
+                         required time                          3.291    
+                         arrival time                          -0.262    
+  -------------------------------------------------------------------
+                         slack                                  3.029    
+
+Slack (MET) :             3.029ns  (required time - arrival time)
+  Source:                 tx_i/mask_hold_host_reg[1]/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            tx_i/mask_t1_reg[1]/D
+                            (rising edge-triggered cell FDRE clocked by tx_clk  {rise@0.000ns fall@1.633ns period=3.266ns})
+  Path Group:             tx_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.266ns  (MaxDelay Path 3.266ns)
+  Data Path Delay:        0.262ns  (logic 0.077ns (29.389%)  route 0.185ns (70.611%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 3.266ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  tx_i/mask_hold_host_reg[1]/C
+                         FDRE (Prop_FDRE_C_Q)         0.077     0.077 r  tx_i/mask_hold_host_reg[1]/Q
+                         net (fo=1, unplaced)         0.185     0.262    tx_i/mask_hold_host[1]
+                         FDRE                                         r  tx_i/mask_t1_reg[1]/D
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                    3.266     3.266    
+                         FDRE (Setup_FDRE_C_D)        0.025     3.291    tx_i/mask_t1_reg[1]
+  -------------------------------------------------------------------
+                         required time                          3.291    
+                         arrival time                          -0.262    
+  -------------------------------------------------------------------
+                         slack                                  3.029    
+
+Slack (MET) :             3.029ns  (required time - arrival time)
+  Source:                 tx_i/mask_hold_host_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            tx_i/mask_t1_reg[2]/D
+                            (rising edge-triggered cell FDRE clocked by tx_clk  {rise@0.000ns fall@1.633ns period=3.266ns})
+  Path Group:             tx_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.266ns  (MaxDelay Path 3.266ns)
+  Data Path Delay:        0.262ns  (logic 0.077ns (29.389%)  route 0.185ns (70.611%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 3.266ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  tx_i/mask_hold_host_reg[2]/C
+                         FDRE (Prop_FDRE_C_Q)         0.077     0.077 r  tx_i/mask_hold_host_reg[2]/Q
+                         net (fo=1, unplaced)         0.185     0.262    tx_i/mask_hold_host[2]
+                         FDRE                                         r  tx_i/mask_t1_reg[2]/D
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                    3.266     3.266    
+                         FDRE (Setup_FDRE_C_D)        0.025     3.291    tx_i/mask_t1_reg[2]
+  -------------------------------------------------------------------
+                         required time                          3.291    
+                         arrival time                          -0.262    
+  -------------------------------------------------------------------
+                         slack                                  3.029    
+
+Slack (MET) :             3.029ns  (required time - arrival time)
+  Source:                 tx_i/mask_hold_host_reg[3]/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            tx_i/mask_t1_reg[3]/D
+                            (rising edge-triggered cell FDRE clocked by tx_clk  {rise@0.000ns fall@1.633ns period=3.266ns})
+  Path Group:             tx_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.266ns  (MaxDelay Path 3.266ns)
+  Data Path Delay:        0.262ns  (logic 0.077ns (29.389%)  route 0.185ns (70.611%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 3.266ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  tx_i/mask_hold_host_reg[3]/C
+                         FDRE (Prop_FDRE_C_Q)         0.077     0.077 r  tx_i/mask_hold_host_reg[3]/Q
+                         net (fo=1, unplaced)         0.185     0.262    tx_i/mask_hold_host[3]
+                         FDRE                                         r  tx_i/mask_t1_reg[3]/D
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                    3.266     3.266    
+                         FDRE (Setup_FDRE_C_D)        0.025     3.291    tx_i/mask_t1_reg[3]
+  -------------------------------------------------------------------
+                         required time                          3.291    
+                         arrival time                          -0.262    
+  -------------------------------------------------------------------
+                         slack                                  3.029    
+
+Slack (MET) :             3.029ns  (required time - arrival time)
+  Source:                 tx_i/mask_hold_host_reg[4]/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            tx_i/mask_t1_reg[4]/D
+                            (rising edge-triggered cell FDRE clocked by tx_clk  {rise@0.000ns fall@1.633ns period=3.266ns})
+  Path Group:             tx_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.266ns  (MaxDelay Path 3.266ns)
+  Data Path Delay:        0.262ns  (logic 0.077ns (29.389%)  route 0.185ns (70.611%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 3.266ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  tx_i/mask_hold_host_reg[4]/C
+                         FDRE (Prop_FDRE_C_Q)         0.077     0.077 r  tx_i/mask_hold_host_reg[4]/Q
+                         net (fo=1, unplaced)         0.185     0.262    tx_i/mask_hold_host[4]
+                         FDRE                                         r  tx_i/mask_t1_reg[4]/D
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                    3.266     3.266    
+                         FDRE (Setup_FDRE_C_D)        0.025     3.291    tx_i/mask_t1_reg[4]
+  -------------------------------------------------------------------
+                         required time                          3.291    
+                         arrival time                          -0.262    
+  -------------------------------------------------------------------
+                         slack                                  3.029    
+
+Slack (MET) :             3.029ns  (required time - arrival time)
+  Source:                 tx_i/mask_hold_host_reg[5]/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            tx_i/mask_t1_reg[5]/D
+                            (rising edge-triggered cell FDRE clocked by tx_clk  {rise@0.000ns fall@1.633ns period=3.266ns})
+  Path Group:             tx_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.266ns  (MaxDelay Path 3.266ns)
+  Data Path Delay:        0.262ns  (logic 0.077ns (29.389%)  route 0.185ns (70.611%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 3.266ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  tx_i/mask_hold_host_reg[5]/C
+                         FDRE (Prop_FDRE_C_Q)         0.077     0.077 r  tx_i/mask_hold_host_reg[5]/Q
+                         net (fo=1, unplaced)         0.185     0.262    tx_i/mask_hold_host[5]
+                         FDRE                                         r  tx_i/mask_t1_reg[5]/D
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                    3.266     3.266    
+                         FDRE (Setup_FDRE_C_D)        0.025     3.291    tx_i/mask_t1_reg[5]
+  -------------------------------------------------------------------
+                         required time                          3.291    
+                         arrival time                          -0.262    
+  -------------------------------------------------------------------
+                         slack                                  3.029    
+
+Slack (MET) :             3.029ns  (required time - arrival time)
+  Source:                 tx_i/mask_hold_host_reg[6]/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            tx_i/mask_t1_reg[6]/D
+                            (rising edge-triggered cell FDRE clocked by tx_clk  {rise@0.000ns fall@1.633ns period=3.266ns})
+  Path Group:             tx_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.266ns  (MaxDelay Path 3.266ns)
+  Data Path Delay:        0.262ns  (logic 0.077ns (29.389%)  route 0.185ns (70.611%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 3.266ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  tx_i/mask_hold_host_reg[6]/C
+                         FDRE (Prop_FDRE_C_Q)         0.077     0.077 r  tx_i/mask_hold_host_reg[6]/Q
+                         net (fo=1, unplaced)         0.185     0.262    tx_i/mask_hold_host[6]
+                         FDRE                                         r  tx_i/mask_t1_reg[6]/D
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                    3.266     3.266    
+                         FDRE (Setup_FDRE_C_D)        0.025     3.291    tx_i/mask_t1_reg[6]
+  -------------------------------------------------------------------
+                         required time                          3.291    
+                         arrival time                          -0.262    
+  -------------------------------------------------------------------
+                         slack                                  3.029    
+
+Slack (MET) :             3.029ns  (required time - arrival time)
+  Source:                 tx_i/mask_hold_host_reg[7]/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            tx_i/mask_t1_reg[7]/D
+                            (rising edge-triggered cell FDRE clocked by tx_clk  {rise@0.000ns fall@1.633ns period=3.266ns})
+  Path Group:             tx_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.266ns  (MaxDelay Path 3.266ns)
+  Data Path Delay:        0.262ns  (logic 0.077ns (29.389%)  route 0.185ns (70.611%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 3.266ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  tx_i/mask_hold_host_reg[7]/C
+                         FDRE (Prop_FDRE_C_Q)         0.077     0.077 r  tx_i/mask_hold_host_reg[7]/Q
+                         net (fo=1, unplaced)         0.185     0.262    tx_i/mask_hold_host[7]
+                         FDRE                                         r  tx_i/mask_t1_reg[7]/D
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                    3.266     3.266    
+                         FDRE (Setup_FDRE_C_D)        0.025     3.291    tx_i/mask_t1_reg[7]
+  -------------------------------------------------------------------
+                         required time                          3.291    
+                         arrival time                          -0.262    
+  -------------------------------------------------------------------
+                         slack                                  3.029    
+
+Slack (MET) :             3.029ns  (required time - arrival time)
+  Source:                 tx_i/rewind_ch_host_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            tx_i/rewind_ch_t1_reg[0]/D
+                            (rising edge-triggered cell FDRE clocked by tx_clk  {rise@0.000ns fall@1.633ns period=3.266ns})
+  Path Group:             tx_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.266ns  (MaxDelay Path 3.266ns)
+  Data Path Delay:        0.262ns  (logic 0.077ns (29.389%)  route 0.185ns (70.611%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 3.266ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  tx_i/rewind_ch_host_reg[0]/C
+                         FDRE (Prop_FDRE_C_Q)         0.077     0.077 r  tx_i/rewind_ch_host_reg[0]/Q
+                         net (fo=1, unplaced)         0.185     0.262    tx_i/rewind_ch_host[0]
+                         FDRE                                         r  tx_i/rewind_ch_t1_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                    3.266     3.266    
+                         FDRE (Setup_FDRE_C_D)        0.025     3.291    tx_i/rewind_ch_t1_reg[0]
+  -------------------------------------------------------------------
+                         required time                          3.291    
+                         arrival time                          -0.262    
+  -------------------------------------------------------------------
+                         slack                                  3.029    
+
+Slack (MET) :             3.029ns  (required time - arrival time)
+  Source:                 tx_i/rewind_ch_host_reg[1]/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            tx_i/rewind_ch_t1_reg[1]/D
+                            (rising edge-triggered cell FDRE clocked by tx_clk  {rise@0.000ns fall@1.633ns period=3.266ns})
+  Path Group:             tx_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.266ns  (MaxDelay Path 3.266ns)
+  Data Path Delay:        0.262ns  (logic 0.077ns (29.389%)  route 0.185ns (70.611%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 3.266ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  tx_i/rewind_ch_host_reg[1]/C
+                         FDRE (Prop_FDRE_C_Q)         0.077     0.077 r  tx_i/rewind_ch_host_reg[1]/Q
+                         net (fo=1, unplaced)         0.185     0.262    tx_i/rewind_ch_host[1]
+                         FDRE                                         r  tx_i/rewind_ch_t1_reg[1]/D
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                    3.266     3.266    
+                         FDRE (Setup_FDRE_C_D)        0.025     3.291    tx_i/rewind_ch_t1_reg[1]
+  -------------------------------------------------------------------
+                         required time                          3.291    
+                         arrival time                          -0.262    
+  -------------------------------------------------------------------
+                         slack                                  3.029    
+
+Slack (MET) :             3.029ns  (required time - arrival time)
+  Source:                 tx_i/rewind_ch_host_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            tx_i/rewind_ch_t1_reg[2]/D
+                            (rising edge-triggered cell FDRE clocked by tx_clk  {rise@0.000ns fall@1.633ns period=3.266ns})
+  Path Group:             tx_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.266ns  (MaxDelay Path 3.266ns)
+  Data Path Delay:        0.262ns  (logic 0.077ns (29.389%)  route 0.185ns (70.611%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 3.266ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  tx_i/rewind_ch_host_reg[2]/C
+                         FDRE (Prop_FDRE_C_Q)         0.077     0.077 r  tx_i/rewind_ch_host_reg[2]/Q
+                         net (fo=1, unplaced)         0.185     0.262    tx_i/rewind_ch_host[2]
+                         FDRE                                         r  tx_i/rewind_ch_t1_reg[2]/D
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                    3.266     3.266    
+                         FDRE (Setup_FDRE_C_D)        0.025     3.291    tx_i/rewind_ch_t1_reg[2]
+  -------------------------------------------------------------------
+                         required time                          3.291    
+                         arrival time                          -0.262    
+  -------------------------------------------------------------------
+                         slack                                  3.029    
+
+Slack (MET) :             9.763ns  (required time - arrival time)
+  Source:                 tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_dc_inst/src_gray_ff_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_dc_inst/dest_graysync_ff_reg[0][0]/D
+                            (rising edge-triggered cell FDRE clocked by tx_clk  {rise@0.000ns fall@1.633ns period=3.266ns})
+  Path Group:             tx_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (MaxDelay Path 10.000ns)
+  Data Path Delay:        0.262ns  (logic 0.077ns (29.389%)  route 0.185ns (70.611%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 10.000ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_dc_inst/src_gray_ff_reg[0]/C
+                         FDRE (Prop_FDRE_C_Q)         0.077     0.077 r  tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_dc_inst/src_gray_ff_reg[0]/Q
+                         net (fo=1, unplaced)         0.185     0.262    tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_dc_inst/async_path[0]
+                         FDRE                                         r  tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_dc_inst/dest_graysync_ff_reg[0][0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                   10.000    10.000    
+                         FDRE (Setup_FDRE_C_D)        0.025    10.025    tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_dc_inst/dest_graysync_ff_reg[0][0]
+  -------------------------------------------------------------------
+                         required time                         10.025    
+                         arrival time                          -0.262    
+  -------------------------------------------------------------------
+                         slack                                  9.763    
+
+Slack (MET) :             9.763ns  (required time - arrival time)
+  Source:                 tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_dc_inst/src_gray_ff_reg[1]/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_dc_inst/dest_graysync_ff_reg[0][1]/D
+                            (rising edge-triggered cell FDRE clocked by tx_clk  {rise@0.000ns fall@1.633ns period=3.266ns})
+  Path Group:             tx_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (MaxDelay Path 10.000ns)
+  Data Path Delay:        0.262ns  (logic 0.077ns (29.389%)  route 0.185ns (70.611%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 10.000ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_dc_inst/src_gray_ff_reg[1]/C
+                         FDRE (Prop_FDRE_C_Q)         0.077     0.077 r  tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_dc_inst/src_gray_ff_reg[1]/Q
+                         net (fo=1, unplaced)         0.185     0.262    tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_dc_inst/async_path[1]
+                         FDRE                                         r  tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_dc_inst/dest_graysync_ff_reg[0][1]/D
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                   10.000    10.000    
+                         FDRE (Setup_FDRE_C_D)        0.025    10.025    tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_dc_inst/dest_graysync_ff_reg[0][1]
+  -------------------------------------------------------------------
+                         required time                         10.025    
+                         arrival time                          -0.262    
+  -------------------------------------------------------------------
+                         slack                                  9.763    
+
+Slack (MET) :             9.763ns  (required time - arrival time)
+  Source:                 tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_dc_inst/src_gray_ff_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_dc_inst/dest_graysync_ff_reg[0][2]/D
+                            (rising edge-triggered cell FDRE clocked by tx_clk  {rise@0.000ns fall@1.633ns period=3.266ns})
+  Path Group:             tx_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (MaxDelay Path 10.000ns)
+  Data Path Delay:        0.262ns  (logic 0.077ns (29.389%)  route 0.185ns (70.611%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 10.000ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_dc_inst/src_gray_ff_reg[2]/C
+                         FDRE (Prop_FDRE_C_Q)         0.077     0.077 r  tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_dc_inst/src_gray_ff_reg[2]/Q
+                         net (fo=1, unplaced)         0.185     0.262    tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_dc_inst/async_path[2]
+                         FDRE                                         r  tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_dc_inst/dest_graysync_ff_reg[0][2]/D
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                   10.000    10.000    
+                         FDRE (Setup_FDRE_C_D)        0.025    10.025    tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_dc_inst/dest_graysync_ff_reg[0][2]
+  -------------------------------------------------------------------
+                         required time                         10.025    
+                         arrival time                          -0.262    
+  -------------------------------------------------------------------
+                         slack                                  9.763    
+
+Slack (MET) :             9.763ns  (required time - arrival time)
+  Source:                 tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_dc_inst/src_gray_ff_reg[3]/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_dc_inst/dest_graysync_ff_reg[0][3]/D
+                            (rising edge-triggered cell FDRE clocked by tx_clk  {rise@0.000ns fall@1.633ns period=3.266ns})
+  Path Group:             tx_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (MaxDelay Path 10.000ns)
+  Data Path Delay:        0.262ns  (logic 0.077ns (29.389%)  route 0.185ns (70.611%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 10.000ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_dc_inst/src_gray_ff_reg[3]/C
+                         FDRE (Prop_FDRE_C_Q)         0.077     0.077 r  tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_dc_inst/src_gray_ff_reg[3]/Q
+                         net (fo=1, unplaced)         0.185     0.262    tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_dc_inst/async_path[3]
+                         FDRE                                         r  tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_dc_inst/dest_graysync_ff_reg[0][3]/D
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                   10.000    10.000    
+                         FDRE (Setup_FDRE_C_D)        0.025    10.025    tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_dc_inst/dest_graysync_ff_reg[0][3]
+  -------------------------------------------------------------------
+                         required time                         10.025    
+                         arrival time                          -0.262    
+  -------------------------------------------------------------------
+                         slack                                  9.763    
+
+Slack (MET) :             9.763ns  (required time - arrival time)
+  Source:                 tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_dc_inst/src_gray_ff_reg[4]/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_dc_inst/dest_graysync_ff_reg[0][4]/D
+                            (rising edge-triggered cell FDRE clocked by tx_clk  {rise@0.000ns fall@1.633ns period=3.266ns})
+  Path Group:             tx_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (MaxDelay Path 10.000ns)
+  Data Path Delay:        0.262ns  (logic 0.077ns (29.389%)  route 0.185ns (70.611%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 10.000ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_dc_inst/src_gray_ff_reg[4]/C
+                         FDRE (Prop_FDRE_C_Q)         0.077     0.077 r  tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_dc_inst/src_gray_ff_reg[4]/Q
+                         net (fo=1, unplaced)         0.185     0.262    tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_dc_inst/async_path[4]
+                         FDRE                                         r  tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_dc_inst/dest_graysync_ff_reg[0][4]/D
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                   10.000    10.000    
+                         FDRE (Setup_FDRE_C_D)        0.025    10.025    tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_dc_inst/dest_graysync_ff_reg[0][4]
+  -------------------------------------------------------------------
+                         required time                         10.025    
+                         arrival time                          -0.262    
+  -------------------------------------------------------------------
+                         slack                                  9.763    
+
+Slack (MET) :             9.763ns  (required time - arrival time)
+  Source:                 tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_dc_inst/src_gray_ff_reg[5]/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_dc_inst/dest_graysync_ff_reg[0][5]/D
+                            (rising edge-triggered cell FDRE clocked by tx_clk  {rise@0.000ns fall@1.633ns period=3.266ns})
+  Path Group:             tx_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (MaxDelay Path 10.000ns)
+  Data Path Delay:        0.262ns  (logic 0.077ns (29.389%)  route 0.185ns (70.611%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 10.000ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_dc_inst/src_gray_ff_reg[5]/C
+                         FDRE (Prop_FDRE_C_Q)         0.077     0.077 r  tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_dc_inst/src_gray_ff_reg[5]/Q
+                         net (fo=1, unplaced)         0.185     0.262    tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_dc_inst/async_path[5]
+                         FDRE                                         r  tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_dc_inst/dest_graysync_ff_reg[0][5]/D
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                   10.000    10.000    
+                         FDRE (Setup_FDRE_C_D)        0.025    10.025    tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_dc_inst/dest_graysync_ff_reg[0][5]
+  -------------------------------------------------------------------
+                         required time                         10.025    
+                         arrival time                          -0.262    
+  -------------------------------------------------------------------
+                         slack                                  9.763    
+
+Slack (MET) :             9.763ns  (required time - arrival time)
+  Source:                 tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_dc_inst/src_gray_ff_reg[6]/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_dc_inst/dest_graysync_ff_reg[0][6]/D
+                            (rising edge-triggered cell FDRE clocked by tx_clk  {rise@0.000ns fall@1.633ns period=3.266ns})
+  Path Group:             tx_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (MaxDelay Path 10.000ns)
+  Data Path Delay:        0.262ns  (logic 0.077ns (29.389%)  route 0.185ns (70.611%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 10.000ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_dc_inst/src_gray_ff_reg[6]/C
+                         FDRE (Prop_FDRE_C_Q)         0.077     0.077 r  tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_dc_inst/src_gray_ff_reg[6]/Q
+                         net (fo=1, unplaced)         0.185     0.262    tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_dc_inst/async_path[6]
+                         FDRE                                         r  tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_dc_inst/dest_graysync_ff_reg[0][6]/D
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                   10.000    10.000    
+                         FDRE (Setup_FDRE_C_D)        0.025    10.025    tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_dc_inst/dest_graysync_ff_reg[0][6]
+  -------------------------------------------------------------------
+                         required time                         10.025    
+                         arrival time                          -0.262    
+  -------------------------------------------------------------------
+                         slack                                  9.763    
+
+Slack (MET) :             9.763ns  (required time - arrival time)
+  Source:                 tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_inst/src_gray_ff_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_inst/dest_graysync_ff_reg[0][0]/D
+                            (rising edge-triggered cell FDRE clocked by tx_clk  {rise@0.000ns fall@1.633ns period=3.266ns})
+  Path Group:             tx_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (MaxDelay Path 10.000ns)
+  Data Path Delay:        0.262ns  (logic 0.077ns (29.389%)  route 0.185ns (70.611%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 10.000ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_inst/src_gray_ff_reg[0]/C
+                         FDRE (Prop_FDRE_C_Q)         0.077     0.077 r  tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_inst/src_gray_ff_reg[0]/Q
+                         net (fo=1, unplaced)         0.185     0.262    tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_inst/async_path[0]
+                         FDRE                                         r  tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_inst/dest_graysync_ff_reg[0][0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                   10.000    10.000    
+                         FDRE (Setup_FDRE_C_D)        0.025    10.025    tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_inst/dest_graysync_ff_reg[0][0]
+  -------------------------------------------------------------------
+                         required time                         10.025    
+                         arrival time                          -0.262    
+  -------------------------------------------------------------------
+                         slack                                  9.763    
+
+Slack (MET) :             9.763ns  (required time - arrival time)
+  Source:                 tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_inst/src_gray_ff_reg[1]/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_inst/dest_graysync_ff_reg[0][1]/D
+                            (rising edge-triggered cell FDRE clocked by tx_clk  {rise@0.000ns fall@1.633ns period=3.266ns})
+  Path Group:             tx_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (MaxDelay Path 10.000ns)
+  Data Path Delay:        0.262ns  (logic 0.077ns (29.389%)  route 0.185ns (70.611%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 10.000ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_inst/src_gray_ff_reg[1]/C
+                         FDRE (Prop_FDRE_C_Q)         0.077     0.077 r  tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_inst/src_gray_ff_reg[1]/Q
+                         net (fo=1, unplaced)         0.185     0.262    tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_inst/async_path[1]
+                         FDRE                                         r  tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_inst/dest_graysync_ff_reg[0][1]/D
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                   10.000    10.000    
+                         FDRE (Setup_FDRE_C_D)        0.025    10.025    tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_inst/dest_graysync_ff_reg[0][1]
+  -------------------------------------------------------------------
+                         required time                         10.025    
+                         arrival time                          -0.262    
+  -------------------------------------------------------------------
+                         slack                                  9.763    
+
+Slack (MET) :             9.763ns  (required time - arrival time)
+  Source:                 tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_inst/src_gray_ff_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_inst/dest_graysync_ff_reg[0][2]/D
+                            (rising edge-triggered cell FDRE clocked by tx_clk  {rise@0.000ns fall@1.633ns period=3.266ns})
+  Path Group:             tx_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (MaxDelay Path 10.000ns)
+  Data Path Delay:        0.262ns  (logic 0.077ns (29.389%)  route 0.185ns (70.611%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 10.000ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_inst/src_gray_ff_reg[2]/C
+                         FDRE (Prop_FDRE_C_Q)         0.077     0.077 r  tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_inst/src_gray_ff_reg[2]/Q
+                         net (fo=1, unplaced)         0.185     0.262    tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_inst/async_path[2]
+                         FDRE                                         r  tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_inst/dest_graysync_ff_reg[0][2]/D
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                   10.000    10.000    
+                         FDRE (Setup_FDRE_C_D)        0.025    10.025    tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_inst/dest_graysync_ff_reg[0][2]
+  -------------------------------------------------------------------
+                         required time                         10.025    
+                         arrival time                          -0.262    
+  -------------------------------------------------------------------
+                         slack                                  9.763    
+
+Slack (MET) :             9.763ns  (required time - arrival time)
+  Source:                 tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_inst/src_gray_ff_reg[3]/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_inst/dest_graysync_ff_reg[0][3]/D
+                            (rising edge-triggered cell FDRE clocked by tx_clk  {rise@0.000ns fall@1.633ns period=3.266ns})
+  Path Group:             tx_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (MaxDelay Path 10.000ns)
+  Data Path Delay:        0.262ns  (logic 0.077ns (29.389%)  route 0.185ns (70.611%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 10.000ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_inst/src_gray_ff_reg[3]/C
+                         FDRE (Prop_FDRE_C_Q)         0.077     0.077 r  tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_inst/src_gray_ff_reg[3]/Q
+                         net (fo=1, unplaced)         0.185     0.262    tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_inst/async_path[3]
+                         FDRE                                         r  tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_inst/dest_graysync_ff_reg[0][3]/D
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                   10.000    10.000    
+                         FDRE (Setup_FDRE_C_D)        0.025    10.025    tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_inst/dest_graysync_ff_reg[0][3]
+  -------------------------------------------------------------------
+                         required time                         10.025    
+                         arrival time                          -0.262    
+  -------------------------------------------------------------------
+                         slack                                  9.763    
+
+Slack (MET) :             9.763ns  (required time - arrival time)
+  Source:                 tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_inst/src_gray_ff_reg[4]/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_inst/dest_graysync_ff_reg[0][4]/D
+                            (rising edge-triggered cell FDRE clocked by tx_clk  {rise@0.000ns fall@1.633ns period=3.266ns})
+  Path Group:             tx_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (MaxDelay Path 10.000ns)
+  Data Path Delay:        0.262ns  (logic 0.077ns (29.389%)  route 0.185ns (70.611%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 10.000ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_inst/src_gray_ff_reg[4]/C
+                         FDRE (Prop_FDRE_C_Q)         0.077     0.077 r  tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_inst/src_gray_ff_reg[4]/Q
+                         net (fo=1, unplaced)         0.185     0.262    tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_inst/async_path[4]
+                         FDRE                                         r  tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_inst/dest_graysync_ff_reg[0][4]/D
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                   10.000    10.000    
+                         FDRE (Setup_FDRE_C_D)        0.025    10.025    tx_i/wr_fifo_i/gnuram_async_fifo.xpm_fifo_base_inst/gen_cdc_pntr.wr_pntr_cdc_inst/dest_graysync_ff_reg[0][4]
+  -------------------------------------------------------------------
+                         required time                         10.025    
+                         arrival time                          -0.262    
+  -------------------------------------------------------------------
+                         slack                                  9.763    
+
+
+
+
