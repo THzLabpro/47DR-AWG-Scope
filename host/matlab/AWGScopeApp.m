@@ -266,7 +266,12 @@ classdef AWGScopeApp < handle
             cfg=obj.settings;
             if nargin<2, entryScript=obj.EntryScript; end
             obj.Busy=true; obj.beginJob('connect'); obj.updateControls;
-            obj.log(sprintf('连接 40GbE：%s:%d，核对 D3C / ABI 与采样率…',cfg.fpga_ip,cfg.port));
+            if strcmp(cfg.transport,'remote') && isempty(entryScript)
+                entryScript=fullfile(obj.Root,'tools','awg_eth','remote_gui_bridge.py');
+                obj.log(sprintf('连接实验室远程服务：%s:%d…',cfg.remote_host,cfg.remote_port));
+            else
+                obj.log(sprintf('连接 40GbE：%s:%d，核对 D3C / ABI 与采样率…',cfg.fpga_ip,cfg.port));
+            end
             if isempty(entryScript), obj.Bridge.start(cfg); else, obj.Bridge.start(cfg,entryScript); end
         end
         function connectUART(obj)
@@ -340,6 +345,9 @@ classdef AWGScopeApp < handle
             obj.LastError=''; if ~background, obj.clearHint; end
             fields=struct; plan=struct;
             if any(strcmp(action,{'load','run'}))
+                if strcmp(obj.UI.cfg_transport.Value,'remote') && isfield(obj.Status,'running') && strcmp(obj.Status.running,'1')
+                    error('板卡正在播放，请先手动停止播放，再下载新波形。');
+                end
                 obj.prepareTx;
                 folder=fullfile(obj.DataRoot,'waveforms',char(java.util.UUID.randomUUID));
                 awg_export_real(obj.Tx.iq,folder,obj.Tx.channelMask);
@@ -358,10 +366,14 @@ classdef AWGScopeApp < handle
                 fields.mask=rxMask; fields.trigger=obj.UI.trigger.Value; fields.samples=samples;
                 plan.captureMask=rxMask; plan.captureChannels=sum(bitget(uint8(rxMask),1:8)); plan.captureSamples=samples;
             end
-            if strcmp(action,'start'), assert(obj.Uploaded,'请先下载当前波形。'); end
+            if strcmp(action,'start')
+                assert(obj.Uploaded,'请先下载当前波形。');
+                if ~isempty(obj.Chain), fields.hold='1'; end
+            end
             obj.Bridge.send(action,fields); obj.Busy=true;
             if ~background
                 obj.beginJob(action,plan);
+                if strcmp(obj.UI.cfg_transport.Value,'remote'), obj.Job.totalWords=0; end
                 obj.log(['执行：' obj.Job.label]);
             end
             obj.updateControls;
@@ -405,7 +417,7 @@ classdef AWGScopeApp < handle
             assert(obj.readChannelMask(obj.UI.adcButtons)~=0,'请至少选择一个ADC通道。');
             running=isfield(obj.Status,'running') && strcmp(obj.Status.running,'1');
             if ~running && strcmp(obj.UI.trigger.Value,'manual')
-                obj.send('start'); obj.Chain='capture';
+                obj.Chain='capture'; obj.send('start');
             else
                 obj.send('capture');
             end
@@ -574,6 +586,11 @@ classdef AWGScopeApp < handle
                 if ~isempty(obj.Job) && isfield(obj.Rx,'metadata') && isfield(obj.Rx.metadata,'samples')
                     obj.Job.captureSamples=double(obj.Rx.metadata.samples);
                 end
+            end
+            if isfield(response,'released') && strcmp(response.released,'1')
+                obj.Connected=false; obj.Uploaded=false; obj.WaitReady=[]; obj.InitFlow=false;
+                obj.Bridge.terminate;
+                obj.log('远程控制权已释放；DAC 保持当前播放状态。');
             end
             if ~background && ~strcmp(action,'connect')
                 obj.finishJob;
@@ -835,8 +852,8 @@ classdef AWGScopeApp < handle
             obj.UI.save=uibutton(left,'Text','保存接收 MAT','ButtonPushedFcn',@(~,~) obj.guard(@() obj.chooseSave));
             obj.place(obj.UI.save,14,2);
             obj.UI.workspace=uibutton(left,'Text','接收数据送入工作区','ButtonPushedFcn',@(~,~) obj.guard(@() obj.toWorkspace)); obj.span(obj.UI.workspace,15);
-            settings=uigridlayout(configTab,[18 2],'ColumnWidth',{125,'1x'}, ...
-                'RowHeight',{28,28,28,32,28,32,28,28,28,28,28,32,32,50,50,40,32,'1x'}, ...
+            settings=uigridlayout(configTab,[21 2],'ColumnWidth',{125,'1x'}, ...
+                'RowHeight',{28,28,28,32,28,32,28,28,28,28,28,32,32,50,50,40,32,28,28,28,'1x'}, ...
                 'RowSpacing',6,'Scrollable','on','Padding',[12 8 12 8]);
             uilabel(settings,'Text','板卡 IPv4'); obj.UI.cfg_fpga_ip=uieditfield(settings,'Value','192.168.42.2');
             uilabel(settings,'Text','UDP 端口'); obj.UI.cfg_port=uieditfield(settings,'numeric','Value',9100,'Limits',[1 65535],'RoundFractionalValues','on');
@@ -853,8 +870,14 @@ classdef AWGScopeApp < handle
             obj.UI.uartDisconnect=uibutton(settings,'Text','断开 UART 日志','ButtonPushedFcn',@(~,~) obj.disconnectUART);
             obj.UI.saveSettings=uibutton(settings,'Text','保存连接设置','ButtonPushedFcn',@(~,~) obj.guard(@() obj.settings(true))); obj.span(obj.UI.saveSettings,13);
             l=uilabel(settings,'Text','电脑光口网卡使用 192.168.42.20/24，不能用 .10；每包2048字需 MTU 9000。','WordWrap','on'); obj.span(l,14);
-            l=uilabel(settings,'Text','下载和回采走40GbE。JTAG仅在点击①并确认初始化时使用。MATLAB所在电脑需能直接访问光口网段。','WordWrap','on'); obj.span(l,15);
+            l=uilabel(settings,'Text','下载和回采走40GbE；远程模式通过实验室电脑转发。JTAG仅用于初始化。','WordWrap','on'); obj.span(l,15);
             l=uilabel(settings,'Text','本机设置与采集结果仅保存在此副本的 app_data，不与现役上位机共用。','WordWrap','on'); obj.span(l,16);
+            l=uilabel(settings,'Text','传输方式'); l.Layout.Row=18; l.Layout.Column=1;
+            obj.UI.cfg_transport=uidropdown(settings,'Items',{'本机直连光口','实验室远程服务'},'ItemsData',{'direct','remote'},'Value','direct'); obj.UI.cfg_transport.Layout.Row=18; obj.UI.cfg_transport.Layout.Column=2;
+            l=uilabel(settings,'Text','远程服务地址'); l.Layout.Row=19; l.Layout.Column=1;
+            obj.UI.cfg_remote_host=uieditfield(settings,'Value','127.0.0.1'); obj.UI.cfg_remote_host.Layout.Row=19; obj.UI.cfg_remote_host.Layout.Column=2;
+            l=uilabel(settings,'Text','远程服务端口'); l.Layout.Row=20; l.Layout.Column=1;
+            obj.UI.cfg_remote_port=uieditfield(settings,'numeric','Value',4748,'Limits',[1 65535],'RoundFractionalValues','on'); obj.UI.cfg_remote_port.Layout.Row=20; obj.UI.cfg_remote_port.Layout.Column=2;
             plots=uigridlayout(body,[3 1],'RowHeight',{38,'1x','1x'},'Padding',[8 4 8 4],'RowSpacing',8,'BackgroundColor',[1 1 1]);
             controls=uigridlayout(plots,[1 8],'ColumnWidth',{118,80,84,56,'1x',128,108,100},'Padding',[0 0 0 0]);
             controls.Layout.Row=1;
@@ -904,11 +927,13 @@ classdef AWGScopeApp < handle
         function cfg=settings(obj,explicit)
             if nargin<2, explicit=false; end
             cfg=struct;
-            for name={'mode','python','xsct','server','fpga_ip','uart_host'}
+            for name={'mode','python','xsct','server','fpga_ip','uart_host','transport','remote_host'}
                 cfg.(name{1})=strtrim(obj.UI.(['cfg_' name{1}]).Value);
             end
             cfg.port=obj.UI.cfg_port.Value; cfg.words_per_packet=obj.UI.cfg_words_per_packet.Value;
             cfg.uart_port=obj.UI.cfg_uart_port.Value;
+            cfg.remote_port=obj.UI.cfg_remote_port.Value;
+            assert(~isempty(cfg.remote_host),'远程服务地址不能为空。');
             assert(~isempty(cfg.fpga_ip),'板卡 IPv4 不能为空。');
             path=fullfile(obj.DataRoot,'settings.json');
             [saved,changed]=AWGScopeApp.writeText(path,jsonencode(cfg),12,0.25);
@@ -954,7 +979,8 @@ classdef AWGScopeApp < handle
                 obj.UI.dacButtons{k}.Enable=obj.on(~busy);
                 obj.UI.adcButtons{k}.Enable=obj.on(~busy);
             end
-            for key={'python','xsct','server','fpga_ip','port'}, obj.UI.(['cfg_' key{1}]).Editable=obj.on(~busy && ~obj.Connected); end
+            for key={'python','xsct','server','fpga_ip','port','remote_host','remote_port'}, obj.UI.(['cfg_' key{1}]).Editable=obj.on(~busy && ~obj.Connected); end
+            obj.UI.cfg_transport.Enable=obj.on(~busy && ~obj.Connected);
             obj.UI.cfg_words_per_packet.Enable=obj.on(~busy && ~obj.Connected);
             obj.UI.cfg_uart_host.Editable=obj.on(isempty(obj.UartSocket)); obj.UI.cfg_uart_port.Editable=obj.on(isempty(obj.UartSocket));
             obj.UI.uartConnect.Enable=obj.on(isempty(obj.UartSocket)); obj.UI.uartDisconnect.Enable=obj.on(~isempty(obj.UartSocket));
@@ -1107,7 +1133,11 @@ classdef AWGScopeApp < handle
             elseif busy
                 text='正在执行任务…';
             elseif ~obj.Connected
-                text='下一步：点 ② 连接板卡。板卡刚上电或换过 bit 时，先点 ① 初始化板卡。';
+                if strcmp(obj.UI.cfg_transport.Value,'remote')
+                    text='下一步：点 ② 连接并查看板卡状态；完成播放或采集后自动释放控制权。';
+                else
+                    text='下一步：点 ② 连接板卡。板卡刚上电或换过 bit 时，先点 ① 初始化板卡。';
+                end
             elseif ~ready
                 text='RF 未就绪：点 ① 初始化板卡。刚初始化完的话，稍等后点“刷新状态”。'; color=obj.Warn; weight='bold';
             elseif fault
