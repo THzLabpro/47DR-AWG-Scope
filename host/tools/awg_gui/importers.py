@@ -10,11 +10,11 @@ SCALE_MODES = {"auto": "自动", "peak": "归一化到峰值", "int16": "按 int
 
 def _columns(array: np.ndarray, name: str) -> dict[str, np.ndarray]:
     a = np.asarray(array)
-    if np.iscomplexobj(a):
-        a = a.real                                   # 1X real DAC: real part only
     a = np.squeeze(a)
-    if a.ndim == 0 or a.size < 2:
+    if a.ndim == 0 or a.ndim > 2 or a.size < 2:
         return {}
+    if np.iscomplexobj(a):
+        raise ValueError(f"{name} 是复数波形；请先将 I、Q 分成独立的实数列后再导入")
     if a.ndim == 1:
         return {name: a.astype(np.float64)}
     if a.ndim == 2:

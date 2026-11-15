@@ -85,11 +85,23 @@ def test_import_csv_npy_mat_and_scale(tmp_path):
     a = np.sin(np.linspace(0, 20, 640))
     np.save(tmp_path / "w.npy", a)
     (tmp_path / "w.csv").write_text("\n".join(f"{v},{-v}" for v in a), encoding="ascii")
-    savemat(tmp_path / "w.mat", {"wave": a, "iq": a + 1j * a})
+    savemat(tmp_path / "w.mat", {"wave": a, "iq": np.column_stack((a, -a)), "metadata": 1 + 2j})
     assert list(importers.load_file(tmp_path / "w.npy")) == ["w"]
     cols = importers.load_file(tmp_path / "w.csv")
     assert len(cols) == 2 and np.allclose(list(cols.values())[1], -a)
     mat = importers.load_file(tmp_path / "w.mat")
-    assert "wave" in mat and np.allclose(mat["iq"], a)
+    assert np.allclose(mat["wave"], a)
+    assert np.allclose(mat["iq[:,0]"], a)
+    assert np.allclose(mat["iq[:,1]"], -a)
     y, note = importers.scale(a * 16000.0 // 1, "auto")
     assert np.max(np.abs(y)) <= 1.0 and "int16" in note
+
+
+def test_import_complex_waveform_reports_error(tmp_path):
+    from scipy.io import savemat
+    iq = np.array([0.1 + 0.2j, 0.3 + 0.4j])
+    np.save(tmp_path / "iq.npy", iq)
+    savemat(tmp_path / "mixed.mat", {"real_wave": iq.real, "complex_wave": iq})
+    for filename, variable in [("iq.npy", "iq"), ("mixed.mat", "complex_wave")]:
+        with pytest.raises(ValueError, match=variable + " 是复数波形"):
+            importers.load_file(tmp_path / filename)

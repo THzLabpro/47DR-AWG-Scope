@@ -68,7 +68,7 @@ def test_program_then_auto_connect(app, tmp_path, monkeypatch):
             assert win.act_program.isEnabled() and not win.act_program_cancel.isEnabled()
             assert win.connect_btn.isEnabled()
             args = (tmp_path / "xsct_args.txt").read_text(encoding="utf-8", errors="replace")
-            assert str(programmer.PROGRAM_TCL) in args
+            assert str(programmer.program_tcl_for(package)) in args
             assert "-server localhost:3121" in args
             assert "-package " + str(package) in args
             assert "PROCESSOR_ARCHITECTURE=AMD64" in args
