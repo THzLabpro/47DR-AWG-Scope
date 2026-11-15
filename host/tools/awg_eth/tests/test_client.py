@@ -35,10 +35,10 @@ def test_status_errors_include_status_index_and_address():
     with FpgaEmulator().start() as emulator:
         with AwgEthClient("127.0.0.1", port=emulator.port) as client:
             try:
-                client.read32(0x90200058)
+                client.read32(0x90200068)
             except AwgEthError as exc:
                 assert exc.status == protocol.STATUS_AXI_ERR
                 assert exc.err_index == 0
-                assert exc.address == 0x90200058
+                assert exc.address == 0x90200068
             else:
                 raise AssertionError("unmapped register did not return AXI_ERR")

@@ -1,20 +1,19 @@
-"""Framed JSON client and single-owner remote 47DR service (use over Tailscale)."""
+"""V2.1 remote service: raw data transfer, exclusive leases, analysis on the client PC."""
 from __future__ import annotations
-
 import argparse
 import base64
 import json
-from pathlib import Path
 import socket
 import socketserver
 import struct
-import tempfile
 import threading
+import numpy as np
+from .awg import pool_slots
+from .device import open_device
 
-from .gui_bridge import GuiBridge, write_fields
-
+PROTOCOL = "47dr-remote-v21-1"
 MAX_FRAME = 16 * 1024 * 1024
-TIMEOUT = 300
+TIMEOUT = 120
 
 
 def _receive_exact(sock, count):
@@ -38,33 +37,37 @@ def receive(sock):
 
 
 def send(sock, obj):
-    body = json.dumps(obj, separators=(",", ":"), ensure_ascii=True).encode("ascii")
+    body = json.dumps(obj, separators=(",", ":")).encode("ascii")
     if len(body) > MAX_FRAME:
         raise ValueError("frame too large")
     sock.sendall(struct.pack("!I", len(body)) + body)
 
 
-def unpack_files(files, folder):
-    if not isinstance(files, dict) or not 1 <= len(files) <= 9:
-        raise ValueError("invalid waveform files")
-    allowed = {"waveform.meta", *(f"ch{i}.hex" for i in range(8))}
-    if "waveform.meta" not in files or not set(files).issubset(allowed):
-        raise ValueError("unexpected waveform filename")
-    for name, encoded in files.items():
-        if not isinstance(encoded, str):
-            raise ValueError("invalid waveform file")
-        (folder / name).write_bytes(base64.b64decode(encoded, validate=True))
+def encode_arrays(channels):
+    return {str(ch): base64.b64encode(np.asarray(data, dtype="<u4").tobytes()).decode("ascii")
+            for ch, data in channels.items()}
+
+
+def decode_arrays(channels):
+    if not isinstance(channels, dict) or not 1 <= len(channels) <= 8:
+        raise ValueError("expected 1..8 channels")
+    result = {}
+    for key, value in channels.items():
+        if key not in {str(ch) for ch in range(8)} or not isinstance(value, str):
+            raise ValueError("invalid channel")
+        raw = base64.b64decode(value, validate=True)
+        if not raw or len(raw) % 4:
+            raise ValueError("invalid packed samples")
+        result[int(key)] = np.frombuffer(raw, dtype="<u4")
+    return result
 
 
 class RemoteServer(socketserver.ThreadingTCPServer):
     allow_reuse_address = True
     daemon_threads = True
 
-    def __init__(self, address, *, fpga_ip, fpga_port=9100, words=256, workdir=None):
-        self.fpga_ip = fpga_ip
-        self.fpga_port = fpga_port
-        self.words = words
-        self.workdir = workdir
+    def __init__(self, address, *, fpga_ip, fpga_port=9100, words=2048):
+        self.fpga_ip, self.fpga_port, self.words = fpga_ip, fpga_port, words
         self.owner = threading.Lock()
         super().__init__(address, Handler)
 
@@ -74,75 +77,87 @@ class Handler(socketserver.BaseRequestHandler):
         sock = self.request
         sock.settimeout(TIMEOUT)
         acquired = False
-        bridge = None
+        client = awg = None
         try:
-            hello = receive(sock)
-            if hello.get("action") != "connect":
-                send(sock, {"ok": 0, "message": "expected connect"})
+            if receive(sock) != {"action": "connect", "protocol": PROTOCOL}:
+                send(sock, {"ok": 0, "message": "remote protocol mismatch; update client and service together"})
                 return
             acquired = self.server.owner.acquire(blocking=False)
             if not acquired:
                 send(sock, {"ok": 0, "message": "board is busy: another remote session owns it"})
                 return
-            with tempfile.TemporaryDirectory(prefix="remote_", dir=self.server.workdir) as temp:
-                session = Path(temp)
-                write_fields(session / "config.txt", {"fpga_ip": self.server.fpga_ip,
-                             "port": self.server.fpga_port, "words_per_packet": self.server.words})
-                bridge = GuiBridge(session)
+            try:
+                client, awg, info = open_device(self.server.fpga_ip, self.server.fpga_port, self.server.words)
+                send(sock, {"ok": 1, "protocol": PROTOCOL, "info": info})
+            except Exception as exc:
+                send(sock, {"ok": 0, "message": str(exc)})
+                return
+            while True:
+                request = receive(sock)
+                action = request.get("action")
+                if action == "disconnect":
+                    awg.close()
+                    client.close()
+                    awg = client = None
+                    self.server.owner.release()
+                    acquired = False
+                    send(sock, {"ok": 1})
+                    return
                 try:
-                    send(sock, bridge.connect())
+                    if action == "status":
+                        result = {"status": awg.status()}
+                    elif action == "load_words":
+                        channels = decode_arrays(request["channels"])
+                        samples, mask = request["samples"], request["mask"]
+                        if type(samples) is not int or type(mask) is not int or not 1 <= mask <= 255:
+                            raise ValueError("invalid samples or mask")
+                        if set(channels) != {ch for ch in range(8) if mask & (1 << ch)}:
+                            raise ValueError("channel mask does not match data")
+                        if not 32 <= samples <= awg.max_tx_samples(len(channels)) or samples % 32:
+                            raise ValueError("waveform exceeds V2.1 pooled capacity or is not 32-point aligned")
+                        if any(len(v) != samples // 2 for v in channels.values()):
+                            raise ValueError("waveform sample count mismatch")
+                        if type(request.get("verify", True)) is not bool:
+                            raise ValueError("verify must be boolean")
+                        if awg.status()["running"]:
+                            raise RuntimeError("DAC is playing; stop playback manually before downloading")
+                        st = awg.load_words(channels, samples, mask, verify=request.get("verify", True))
+                        result = {"status": st, "write_s": awg.last_write_seconds}
+                    elif action in {"start", "stop", "clear"}:
+                        result = {"status": getattr(awg, action)()}
+                    elif action == "capture_raw":
+                        count, word, data = awg.capture_raw(request.get("trigger", "manual"),
+                            request.get("mask", 1), samples=request.get("samples", 65520), slots=request.get("slots"))
+                        if count != request.get("samples", 65520):
+                            raise RuntimeError("capture sample count mismatch")
+                        result = {"count": count, "cap_tx_word": word, "channels": encode_arrays(data),
+                                  "read_s": awg.last_read_seconds, "status": awg.status()}
+                    elif action == "abort_capture":
+                        awg.abort_capture()
+                        result = {"status": awg.status()}
+                    else:
+                        raise ValueError("unsupported action")
+                    send(sock, {"ok": 1, **result})
                 except Exception as exc:
                     send(sock, {"ok": 0, "message": str(exc)})
-                    return
-                while True:
-                    request = receive(sock)
-                    action = request.get("action")
-                    if action == "disconnect":
-                        bridge.client.close()
-                        bridge.client = None
-                        self.server.owner.release()
-                        acquired = False
-                        send(sock, {"ok": 1, "message": "disconnected"})
-                        return
-                    try:
-                        if action not in {"status", "start", "stop", "clear", "load", "capture", "run"}:
-                            raise ValueError("unsupported action")
-                        fields = {key: str(request[key]) for key in ("verify", "samples", "mask", "trigger") if key in request}
-                        fields["action"] = action
-                        if action in {"load", "run"}:
-                            wave = session / "wave"
-                            wave.mkdir(exist_ok=True)
-                            for item in wave.iterdir():
-                                item.unlink()
-                            unpack_files(request.get("files"), wave)
-                            fields["directory"] = str(wave)
-                        if action in {"capture", "run"}:
-                            fields["capture"] = str(session / "capture.csv")
-                        result = bridge.dispatch(fields)
-                        if action in {"capture", "run"}:
-                            result.pop("capture", None)
-                            result["capture_csv"] = base64.b64encode((session / "capture.csv").read_bytes()).decode("ascii")
-                            result["capture_json"] = base64.b64encode((session / "capture.json").read_bytes()).decode("ascii")
-                        send(sock, result)
-                    except Exception as exc:
-                        send(sock, {"ok": 0, "message": str(exc), "state": "check board status before retrying"})
-        except (OSError, EOFError, ValueError, json.JSONDecodeError):
+        except (OSError, EOFError, ValueError, RuntimeError):
             pass
         finally:
-            if bridge and bridge.client:
-                bridge.client.close()
+            if awg:
+                awg.close()
+            if client:
+                client.close()
             if acquired:
                 self.server.owner.release()
 
 
 class RemoteClient:
-    def __init__(self, host, port):
-        self.socket = socket.create_connection((host, port), timeout=15)
+    def __init__(self, host, port=4748):
+        self.socket = socket.create_connection((host, port), timeout=10)
         self.socket.settimeout(TIMEOUT)
         try:
-            send(self.socket, {"action": "connect"})
-            self.info = receive(self.socket)
-            self._check(self.info)
+            send(self.socket, {"action": "connect", "protocol": PROTOCOL})
+            self.info = self._check(receive(self.socket))["info"]
         except BaseException:
             self.socket.close()
             raise
@@ -153,37 +168,13 @@ class RemoteClient:
             raise RuntimeError(reply.get("message", "remote operation failed"))
         return reply
 
-    def request(self, action, *, waveform=None, capture=None, **parameters):
-        if action in {"capture", "run"}:
-            if capture is None:
-                raise ValueError("capture output path is required")
-            path = Path(capture)
-            if path.exists() or path.with_suffix(".json").exists():
-                raise FileExistsError("capture output already exists")
-        request = {"action": action, **parameters}
-        if waveform is not None:
-            folder = Path(waveform)
-            names = ["waveform.meta", *(f"ch{i}.hex" for i in range(8))]
-            request["files"] = {name: base64.b64encode((folder / name).read_bytes()).decode("ascii")
-                                for name in names if (folder / name).is_file()}
-        send(self.socket, request)
-        result = self._check(receive(self.socket))
-        if "capture_csv" in result:
-            if capture is None:
-                raise ValueError("capture output path is required")
-            path = Path(capture)
-            if path.exists() or path.with_suffix(".json").exists():
-                raise FileExistsError("capture output already exists")
-            path.parent.mkdir(parents=True, exist_ok=True)
-            path.write_bytes(base64.b64decode(result.pop("capture_csv"), validate=True))
-            path.with_suffix(".json").write_bytes(base64.b64decode(result.pop("capture_json"), validate=True))
-            result["capture"] = str(path)
-        return result
+    def request(self, action, **parameters):
+        send(self.socket, {"action": action, **parameters})
+        return self._check(receive(self.socket))
 
     def close(self):
         try:
-            send(self.socket, {"action": "disconnect"})
-            receive(self.socket)
+            self.request("disconnect")
         except (OSError, EOFError, ValueError):
             pass
         finally:
@@ -196,6 +187,80 @@ class RemoteClient:
         self.close()
 
 
+class RemoteAwg:
+    """Awg-shaped proxy; release after output/single capture, retain during continuous capture."""
+    remote = True
+
+    def __init__(self, host, port=4748, progress_callback=None):
+        self.host, self.port = host, port
+        self.peer = None
+        self.progress_callback = progress_callback
+        self.last_write_seconds = self.last_read_seconds = 0.0
+        self.info = self._connect().info
+        self.release()
+
+    def _connect(self):
+        if self.peer is None:
+            self.peer = RemoteClient(self.host, self.port)
+        return self.peer
+
+    def _request(self, action, **parameters):
+        try:
+            return self._connect().request(action, **parameters)
+        except BaseException:
+            self.release()
+            raise
+
+    def release(self):
+        if self.peer:
+            peer = self.peer
+            self.peer = None
+            peer.close()
+
+    close = release
+
+    def status(self):
+        held = self.peer is not None
+        try:
+            return self._request("status")["status"]
+        finally:
+            if not held:
+                self.release()
+
+    def max_tx_samples(self, n_channels):
+        return 1048576 // pool_slots(n_channels)
+
+    def max_capture_samples(self, n_channels):
+        return 1966080 // pool_slots(n_channels)
+
+    def load_words(self, channels, samples, channel_mask, *, verify=True, cancel=None):
+        if cancel and cancel():
+            raise RuntimeError("cancelled")
+        result = self._request("load_words", channels=encode_arrays(channels), samples=samples,
+                               mask=channel_mask, verify=verify)
+        self.last_write_seconds = result["write_s"]
+        return result["status"]
+
+    def start(self):
+        return self._request("start")["status"]
+
+    def stop(self):
+        return self._request("stop")["status"]
+
+    def clear(self):
+        return self._request("clear")["status"]
+
+    def abort_capture(self):
+        return self._request("abort_capture")
+
+    def capture_raw(self, trigger="manual", channel_mask=1, *, samples=65520, slots=None, cancel=None):
+        if cancel and cancel():
+            raise RuntimeError("cancelled")
+        result = self._request("capture_raw", trigger=trigger, mask=channel_mask, samples=samples, slots=slots)
+        self.last_read_seconds = result["read_s"]
+        return result["count"], result["cap_tx_word"], decode_arrays(result["channels"])
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     sub = parser.add_subparsers(dest="mode", required=True)
@@ -204,31 +269,18 @@ def main():
     server.add_argument("--port", type=int, default=4748)
     server.add_argument("--fpga-ip", required=True)
     server.add_argument("--fpga-port", type=int, default=9100)
-    server.add_argument("--words", type=int, default=256)
     client = sub.add_parser("call")
     client.add_argument("--host", required=True)
     client.add_argument("--port", type=int, default=4748)
-    client.add_argument("action", choices=["status", "start", "stop", "clear", "load", "capture", "run"])
-    client.add_argument("--waveform")
-    client.add_argument("--capture")
-    client.add_argument("--samples", type=int, default=65520)
-    client.add_argument("--mask", type=lambda s: int(s, 0), default=255)
-    client.add_argument("--trigger", choices=["manual", "start"], default="manual")
+    client.add_argument("action", choices=["status", "stop"])
     args = parser.parse_args()
     if args.mode == "serve":
-        with RemoteServer((args.bind, args.port), fpga_ip=args.fpga_ip,
-                          fpga_port=args.fpga_port, words=args.words) as service:
-            print(f"Listening on {args.bind}:{args.port}", flush=True)
+        with RemoteServer((args.bind, args.port), fpga_ip=args.fpga_ip, fpga_port=args.fpga_port) as service:
+            print(f"V2.1 service listening on {args.bind}:{args.port}", flush=True)
             service.serve_forever()
     else:
-        if args.action in {"load", "run"} and not args.waveform:
-            parser.error("--waveform is required")
-        if args.action in {"capture", "run"} and not args.capture:
-            parser.error("--capture is required")
         with RemoteClient(args.host, args.port) as peer:
-            result = peer.request(args.action, waveform=args.waveform, capture=args.capture,
-                                  samples=args.samples, mask=args.mask, trigger=args.trigger, verify=1)
-            print(json.dumps(result, indent=2))
+            print(json.dumps(peer.request(args.action), indent=2))
 
 
 if __name__ == "__main__":

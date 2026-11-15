@@ -37,7 +37,7 @@ def test_crc_matches_independent_reference_and_14_bit_mask():
 
 def test_load_crc_verify_and_capture_format(tmp_path):
     expected = _write_waveform(tmp_path / "wave", samples=96, mask=0x05)
-    with FpgaEmulator().start() as emulator:
+    with FpgaEmulator(abi=1).start() as emulator:
         with AwgEthClient("127.0.0.1", port=emulator.port, words_per_packet=16) as client:
             awg = Awg(client)
             state = awg.load(tmp_path / "wave", verify=True)
@@ -78,7 +78,7 @@ def test_maximum_8_channel_load_with_loss_and_duplicate_injection(tmp_path):
                 crc_words.append(word)
         expected_crc.append(reference_crc32(crc_words))
 
-    with FpgaEmulator(drop_rate=0.1, duplicate_rate=0.1, seed=101).start() as emulator:
+    with FpgaEmulator(abi=1, drop_rate=0.1, duplicate_rate=0.1, seed=101).start() as emulator:
         with AwgEthClient("127.0.0.1", port=emulator.port, timeout=0.005, retries=5,
                           words_per_packet=256, window=8) as client:
             awg = Awg(client)
@@ -97,7 +97,7 @@ def test_capture_recovers_from_stale_armed_capture():
     import pytest
     from awg_eth.awg import REG_CAP_CTRL
     from awg_eth.client import AwgEthError
-    with FpgaEmulator(loopback=True).start() as emulator:
+    with FpgaEmulator(abi=1, loopback=True).start() as emulator:
         with AwgEthClient("127.0.0.1", port=emulator.port, words_per_packet=256) as client:
             awg = Awg(client)
             client.write32(REG_CAP_CTRL, (10 << 16) | 1)
@@ -115,7 +115,7 @@ def test_abort_and_past_end_read_slverr():
     import pytest
     from awg_eth.awg import REG_CAP_CTRL, REG_CAP_RD_CH, REG_CAP_RD_DATA, REG_CAP_RD_PTR
     from awg_eth.client import AwgEthError
-    with FpgaEmulator().start() as emulator:
+    with FpgaEmulator(abi=1).start() as emulator:
         with AwgEthClient("127.0.0.1", port=emulator.port, words_per_packet=16) as client:
             awg = Awg(client)
             client.write32(REG_CAP_CTRL, (10 << 16) | 1)
