@@ -1145,6 +1145,11 @@ class MainWindow(QMainWindow):
             f"全程约 1 分钟，完成后自动连接。继续？")
         if ret != QMessageBox.Yes:
             return
+        try:
+            self.programmer.reserve()
+        except (ValueError, RuntimeError) as exc:
+            QMessageBox.warning(self, "板卡占用检查未通过", str(exc))
+            return
         self.cont_btn.setChecked(False)
         self.worker.cancel.set()
         self.req_close.emit()
@@ -1154,7 +1159,12 @@ class MainWindow(QMainWindow):
         self.conn_label.setStyleSheet("color:#BA7517")
         self._program_t0 = time.monotonic()
         self._msg("开始下载 bit 并初始化…")
-        self.programmer.start(xsct, package, server)
+        try:
+            self.programmer.start(xsct, package, server)
+        except (OSError, ValueError, RuntimeError) as exc:
+            self.programmer._release_reservation()
+            self._on_program_finished(False, str(exc))
+            return
         self._start_progress("① 下载 bit 并初始化（JTAG 下载、LMK/RFDC 初始化，约 1 分钟）", indeterminate=True)
         self._update_steps()
 

@@ -18,6 +18,7 @@ from awg_eth.awg import Awg, REG_BUILD_ID, REG_FAULTS
 from awg_eth.client import AwgEthClient
 from awg_eth.device import open_device
 from awg_eth.remote import RemoteAwg
+from board_share.client import from_environment
 
 from . import measure, waveforms as wf
 
@@ -43,6 +44,7 @@ class DeviceWorker(QObject):
         sys.setswitchinterval(1e-4)
         self.client: AwgEthClient | None = None
         self.awg: Awg | None = None
+        self._share_lease = None
         self.cancel = threading.Event()
         self._continuous = False
         self._capture_args: dict = {}
@@ -118,6 +120,7 @@ class DeviceWorker(QObject):
 
     def _open(self, ip: str, port: int, words_per_packet: int) -> dict:
         self.close_device()
+        self._share_lease = from_environment("47DR", "47DR 本机直连测试")
         self.client, self.awg, info = open_device(ip, port, words_per_packet, self._progress_cb)
         st = self._read_status()
         st["max_capture_samples_1"] = self.awg.max_capture_samples(1)
@@ -188,6 +191,12 @@ class DeviceWorker(QObject):
                 pass
         self.client = None
         self.awg = None
+        lease, self._share_lease = self._share_lease, None
+        if lease:
+            try:
+                lease.close()
+            except RuntimeError:
+                self.log.emit("共用服务不可达，操作占用记录已保留；恢复连接后请核对。")
         if was and emit:
             self.disconnected.emit()
 

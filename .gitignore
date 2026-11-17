@@ -1,5 +1,6 @@
 /过程文件/
 /host/app_data/
+/host/dist/
 __pycache__/
 *.py[cod]
 .pytest_cache/

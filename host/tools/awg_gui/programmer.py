@@ -14,6 +14,7 @@ import sys
 from pathlib import Path
 
 from PySide6.QtCore import QObject, QProcess, QProcessEnvironment, Signal
+from board_share.client import from_environment
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 PACKAGE_FILES = ("rf_awg_scope_v1.bit", "rf_awg_init.elf", "psu_init.tcl", "init_protocol.txt")
@@ -106,6 +107,20 @@ class BoardProgrammer(QObject):
         self.proc: QProcess | None = None
         self._cancelled = False
         self._last_lines: list[str] = []
+        self._share_lease = None
+
+    def reserve(self):
+        """Acquire before any initialization side effects, when sharing is enabled."""
+        if self._share_lease is None:
+            self._share_lease = from_environment("47DR", "47DR 下载 bit 并初始化")
+
+    def _release_reservation(self):
+        lease, self._share_lease = self._share_lease, None
+        if lease:
+            try:
+                lease.close()
+            except RuntimeError:
+                self.line.emit("共用服务不可达，操作占用记录已保留；恢复连接后请核对。")
 
     def running(self) -> bool:
         return self.proc is not None and self.proc.state() != QProcess.NotRunning
@@ -115,7 +130,9 @@ class BoardProgrammer(QObject):
             raise RuntimeError("初始化已在进行中")
         script = Path(script) if script else program_tcl_for(package)
         if not script.is_file():
+            self._release_reservation()
             raise FileNotFoundError(f"找不到 program.tcl：{script}")
+        self.reserve()
         args = [str(script)]
         if server.strip():
             args += ["-server", server.strip()]
@@ -150,6 +167,7 @@ class BoardProgrammer(QObject):
 
     def _done(self, code: int, status):
         self._read()
+        self._release_reservation()
         if self._cancelled:
             self.finished.emit(False, "已取消（板子可能处于未初始化状态，需要重新下载）")
         elif status == QProcess.NormalExit and code == 0 and any("initializer is running" in s for s in self._last_lines):
@@ -161,5 +179,6 @@ class BoardProgrammer(QObject):
 
     def _error(self, err):
         if err == QProcess.FailedToStart:
+            self._release_reservation()
             self.finished.emit(False, "无法启动 XSCT，请在菜单「设备 → 设置 XSCT 路径」中指定 xsct.bat")
             self.proc = None

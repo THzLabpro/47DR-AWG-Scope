@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FPGA 板卡共用</title>
+<style>
+:root{font-family:"Segoe UI","Microsoft YaHei",sans-serif;color:#18354d;background:#eaf0f5;font-size:16px}
+*{box-sizing:border-box}body{margin:0}header{background:#143b60;color:white;padding:24px max(24px,calc((100% - 1080px)/2));display:flex;justify-content:space-between;align-items:center;gap:24px}h1{font-size:24px;margin:0;font-weight:600}header p{margin:7px 0 0;color:#d0dfec;font-size:14px}#connection{font-size:14px;white-space:nowrap}main{max-width:1128px;margin:30px auto;padding:0 24px}.layout{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(300px,1fr);gap:28px}section{background:white;padding:26px;border-radius:7px;margin-bottom:24px}h2{font-size:18px;margin:0 0 22px}#status{font-size:32px;margin:0 0 18px;font-weight:600;color:#143b60;overflow-wrap:anywhere}dl{display:grid;grid-template-columns:100px minmax(0,1fr);gap:13px;margin:0}dt,.muted{color:#53697b}dd{margin:0;overflow-wrap:anywhere}.hint{font-size:14px;line-height:1.7;color:#53697b;margin:20px 0 0}.operation{background:#f2f6fa;padding:12px 15px;margin-top:20px;border-left:4px solid #317258;overflow-wrap:anywhere}.late{color:#a65c14}label{display:block;font-size:14px;margin:17px 0 7px}input{font:inherit;width:100%;padding:10px 12px;border:1px solid #a8bac9;border-radius:4px}button,.button{font:inherit;border:1px solid #9aafbf;background:white;color:#143b60;padding:10px 16px;border-radius:4px;cursor:pointer;display:inline-block;text-decoration:none}button.primary{background:#143b60;border-color:#143b60;color:white}button:disabled{opacity:.45;cursor:not-allowed}button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #bd7026;outline-offset:3px}.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}.queue{padding:0;margin:0;list-style:none}.queue li{display:grid;grid-template-columns:30px 1fr;gap:10px;padding:16px 0;border-top:1px solid #d9e3eb}.queue li:first-child{border:0;padding-top:0}.queue p{margin:5px 0 0;font-size:14px;color:#53697b;overflow-wrap:anywhere}.queue strong{overflow-wrap:anywhere}.rank{color:#53697b;padding-top:2px}#message{min-height:24px;margin:0 0 18px;color:#a14d18;white-space:pre-wrap}details{margin-top:22px;font-size:14px;line-height:1.7}summary{cursor:pointer}.small{font-size:14px}footer{font-size:13px;color:#53697b;line-height:1.7} [hidden]{display:none!important}@media(max-width:760px){header{align-items:flex-start;flex-direction:column;gap:12px}.layout{grid-template-columns:1fr}main{padding:0 16px;margin-top:20px}section{padding:22px}#status{font-size:28px}}
+</style>
+<header><div><h1>FPGA 板卡共用</h1><p>先领用，再下载；实验结束后交接。</p></div><span id="connection" role="status">正在读取占用</span></header>
+<main><p id="message" role="alert"></p><div class="layout"><div>
+<section aria-labelledby="current-heading"><h2 id="current-heading">当前使用</h2><p id="status">等待连接</p><dl id="owner-details"></dl><div id="operation" class="operation" hidden></div><p class="hint">工程名称来自使用人登记。板卡实际工程尚未核验。</p></section>
+<section><h2>等待使用</h2><ol id="queue" class="queue"></ol><p id="queue-empty" class="muted">暂无排队</p></section>
+</div><div><section><h2 id="my-heading">我的使用安排</h2>
+<form id="join-form"><label for="name">使用人</label><input id="name" maxlength="40" required autocomplete="name"><label for="project">工程</label><input id="project" list="projects" maxlength="80" value="47DR" required><datalist id="projects"><option value="47DR"><option value="RF-UDP"></datalist><label for="note">实验内容</label><input id="note" maxlength="160" placeholder="例如：八通道回环" required><label for="minutes">预计用时（分钟）</label><input id="minutes" type="number" min="1" max="10080" value="60" required><div class="actions"><button id="join" class="primary" type="submit">加入队列</button></div></form>
+<p id="my-status" hidden></p><div class="actions"><button id="claim" class="primary" hidden>领用板卡</button><button id="cancel" hidden>退出队列</button><button id="release" class="primary" hidden>结束实验并交接</button><button id="extend" hidden>调整结束时间</button></div>
+<div class="actions"><button id="export" hidden>保存领用文件</button><button id="import">恢复领用文件</button><input id="ticket-file" type="file" accept=".json" hidden></div>
+<details><summary>领用和交接说明</summary><p>在各自电脑打开本面板。领用文件用于让下载和测试入口识别使用人，请只保存到自己的电脑或实验室电脑的个人目录。</p><p>预计时间到达不会停机或自动让位。交接前请自行结束测试并处理输出状态，面板不会停止 DAC。</p><p>关闭页面不释放占用。重新打开同一浏览器可继续；换浏览器时可恢复领用文件。</p><button id="recover" hidden>处理未结束的操作记录</button></details>
+</section><footer>同一时刻只允许一人领用。排队只安排顺序，不会自动下载或切换工程。未接入共用检查的 Vivado、UDP 程序仍需双方协调。</footer></div></div></main>
+<script>
+const $ = id => document.getElementById(id);
+let ticket, state=null, online=false, busy=false;
+try {
+  ticket=localStorage.getItem('board-share-ticket');
+  if(!/^[0-9a-f]{64}$/.test(ticket||'')){
+    ticket=Array.from(crypto.getRandomValues(new Uint8Array(32)), x=>x.toString(16).padStart(2,'0')).join('');
+    localStorage.setItem('board-share-ticket',ticket);
+  }
+} catch(e) { $('message').textContent='浏览器无法保存领用身份，请允许此站点使用本地存储后刷新。'; }
+function node(tag,text,cls){const e=document.createElement(tag);e.textContent=text;if(cls)e.className=cls;return e;}
+function date(t){return new Date(t*1000).toLocaleString([], {month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit'});}
+function controls(){document.querySelectorAll('button').forEach(b=>b.disabled=!online||busy||!ticket);if(state?.operation)$('release').disabled=true;}
+function draw(s){
+  state=s;online=true;$('connection').textContent='已更新 '+new Date().toLocaleTimeString();
+  const o=s.owner, mine=o&&o.id===s.mine, entry=mine?o:s.queue.find(x=>x.id===s.mine);
+  $('status').textContent=o?o.name+' 正在使用':'空闲，等待领用';
+  const dl=$('owner-details');dl.replaceChildren();
+  const values=o?[['登记工程',o.project],['实验内容',o.note],['开始时间',date(o.started)],['预计结束',date(o.expected)+(o.expected<s.now?'（已超时，请协调）':'')]]:[['下一位',s.queue[0]?.name||'尚未登记']];
+  values.forEach(([k,v])=>{dl.append(node('dt',k),node('dd',v));});
+  $('operation').hidden=!s.operation;$('operation').textContent=s.operation?'操作占用：'+s.operation.label+'（'+date(s.operation.started)+' 起）':'';
+  const q=$('queue');q.replaceChildren();s.queue.forEach((e,i)=>{const li=document.createElement('li'),content=document.createElement('div');li.append(node('span',String(i+1),'rank'));content.append(node('strong',e.name+(e.id===s.mine?'（我）':'')),node('p',e.project+' · '+e.minutes+' 分钟'),node('p',e.note));li.append(content);q.append(li);});
+  $('queue-empty').hidden=s.queue.length>0;$('join-form').hidden=!!entry;$('my-status').hidden=!entry;
+  $('my-status').textContent=mine?'你已领用板卡。实验结束后请主动交接。':entry?'你在第 '+(s.queue.findIndex(x=>x.id===s.mine)+1)+' 位。':'';
+  $('claim').hidden=!entry||mine||!!o||s.queue[0]?.id!==s.mine;
+  $('cancel').hidden=!entry||mine;$('release').hidden=!mine;$('extend').hidden=!mine;$('export').hidden=!entry;$('recover').hidden=!mine||!s.operation;
+  controls();
+}
+async function api(action,data){
+  const c=new AbortController(), timer=setTimeout(()=>c.abort(),5000);
+  try{const r=await fetch('/api/'+action,{method:data?'POST':'GET',headers:{'Authorization':'Bearer '+ticket,'Content-Type':'application/json'},body:data?JSON.stringify(data):undefined,signal:c.signal});const value=await r.json();if(!r.ok)throw Error(value.message||'操作失败，请刷新后重试。');return value;}finally{clearTimeout(timer);}
+}
+async function refresh(){if(busy)return;try{draw(await api('status'));}catch(e){online=false;$('connection').textContent='连接中断，显示上次状态';controls();}}
+async function act(action,data={}){busy=true;controls();$('message').textContent='';try{draw(await api(action,data));}catch(e){$('message').textContent=e.message;online=false;$('connection').textContent='操作未确认，请等待刷新';}finally{busy=false;controls();}}
+$('join-form').onsubmit=e=>{e.preventDefault();act('join',{name:$('name').value,project:$('project').value,note:$('note').value,minutes:Number($('minutes').value)});};
+$('claim').onclick=()=>act('claim');$('cancel').onclick=()=>act('cancel');
+$('release').onclick=()=>{if(confirm('确认实验已经结束，输出状态已处理，板卡可以交给下一位？此操作不会停止 DAC。'))act('release',{confirmed:true});};
+$('extend').onclick=()=>{const v=prompt('预计还需要多少分钟？','60');if(v!==null)act('extend',{minutes:Number(v)});};
+$('recover').onclick=()=>{const id=state?.operation?.id;if(id&&confirm('仅在确认原下载或测试进程已结束后解除记录。服务断线不代表进程已结束。确认解除？'))act('recover',{operation_id:id,confirmed:true});};
+$('export').onclick=()=>{const blob=new Blob([JSON.stringify({url:location.origin,ticket},null,2)],{type:'application/json'});const u=URL.createObjectURL(blob),a=document.createElement('a');a.href=u;a.download='board-share-ticket.json';a.click();setTimeout(()=>URL.revokeObjectURL(u),1000);};
+$('import').onclick=()=>$('ticket-file').click();
+$('ticket-file').onchange=async e=>{try{const d=JSON.parse(await e.target.files[0].text());if(!/^[0-9a-f]{64}$/.test(d.ticket)||d.url!==location.origin)throw Error('请选择本服务导出的领用文件。');if(state?.mine&&!confirm('切换浏览器身份不会释放原身份的占用或排队。确认切换？'))return;localStorage.setItem('board-share-ticket',d.ticket);ticket=d.ticket;await refresh();}catch(err){$('message').textContent=err.message;}finally{e.target.value='';}};
+controls();refresh();setInterval(refresh,3000);
+</script>
+</html>

@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import base64
 import json
+import os
 import socket
 import socketserver
 import struct
@@ -10,6 +11,7 @@ import threading
 import numpy as np
 from .awg import pool_slots
 from .device import open_device
+from board_share.client import Lease, credentials
 
 PROTOCOL = "47dr-remote-v21-1"
 MAX_FRAME = 16 * 1024 * 1024
@@ -66,8 +68,9 @@ class RemoteServer(socketserver.ThreadingTCPServer):
     allow_reuse_address = True
     daemon_threads = True
 
-    def __init__(self, address, *, fpga_ip, fpga_port=9100, words=2048):
+    def __init__(self, address, *, fpga_ip, fpga_port=9100, words=2048, board_share_url=None):
         self.fpga_ip, self.fpga_port, self.words = fpga_ip, fpga_port, words
+        self.board_share_url = board_share_url
         self.owner = threading.Lock()
         super().__init__(address, Handler)
 
@@ -78,15 +81,25 @@ class Handler(socketserver.BaseRequestHandler):
         sock.settimeout(TIMEOUT)
         acquired = False
         client = awg = None
+        lease = None
         try:
-            if receive(sock) != {"action": "connect", "protocol": PROTOCOL}:
+            hello = receive(sock)
+            if (not isinstance(hello, dict) or hello.get("action") != "connect"
+                    or hello.get("protocol") != PROTOCOL
+                    or set(hello) - {"action", "protocol", "board_ticket"}):
                 send(sock, {"ok": 0, "message": "remote protocol mismatch; update client and service together"})
+                return
+            if "board_ticket" in hello and not self.server.board_share_url:
+                send(sock, {"ok": 0, "message": "控制服务尚未启用板卡共用检查，请先配置 --board-share-url。"})
                 return
             acquired = self.server.owner.acquire(blocking=False)
             if not acquired:
                 send(sock, {"ok": 0, "message": "board is busy: another remote session owns it"})
                 return
             try:
+                if self.server.board_share_url:
+                    lease = Lease(self.server.board_share_url, hello.get("board_ticket"),
+                                  "47DR", "47DR 远程下载与测试")
                 client, awg, info = open_device(self.server.fpga_ip, self.server.fpga_port, self.server.words)
                 send(sock, {"ok": 1, "protocol": PROTOCOL, "info": info})
             except Exception as exc:
@@ -101,6 +114,9 @@ class Handler(socketserver.BaseRequestHandler):
                     awg = client = None
                     self.server.owner.release()
                     acquired = False
+                    if lease:
+                        lease.close()
+                        lease = None
                     send(sock, {"ok": 1})
                     return
                 try:
@@ -149,14 +165,24 @@ class Handler(socketserver.BaseRequestHandler):
                 client.close()
             if acquired:
                 self.server.owner.release()
+            if lease:
+                try:
+                    lease.close()
+                except RuntimeError:
+                    pass  # Durable operation remains blocked for manual reconciliation.
 
 
 class RemoteClient:
-    def __init__(self, host, port=4748):
+    def __init__(self, host, port=4748, *, board_ticket=None):
+        if board_ticket is None and os.environ.get("BOARD_SHARE_TICKET_FILE"):
+            board_ticket = credentials()["ticket"]
         self.socket = socket.create_connection((host, port), timeout=10)
         self.socket.settimeout(TIMEOUT)
         try:
-            send(self.socket, {"action": "connect", "protocol": PROTOCOL})
+            hello = {"action": "connect", "protocol": PROTOCOL}
+            if board_ticket is not None:
+                hello["board_ticket"] = board_ticket
+            send(self.socket, hello)
             self.info = self._check(receive(self.socket))["info"]
         except BaseException:
             self.socket.close()
@@ -269,13 +295,15 @@ def main():
     server.add_argument("--port", type=int, default=4748)
     server.add_argument("--fpga-ip", required=True)
     server.add_argument("--fpga-port", type=int, default=9100)
+    server.add_argument("--board-share-url", help="启用整场实验占用检查，例如 http://127.0.0.1:4749")
     client = sub.add_parser("call")
     client.add_argument("--host", required=True)
     client.add_argument("--port", type=int, default=4748)
     client.add_argument("action", choices=["status", "stop"])
     args = parser.parse_args()
     if args.mode == "serve":
-        with RemoteServer((args.bind, args.port), fpga_ip=args.fpga_ip, fpga_port=args.fpga_port) as service:
+        with RemoteServer((args.bind, args.port), fpga_ip=args.fpga_ip, fpga_port=args.fpga_port,
+                          board_share_url=args.board_share_url) as service:
             print(f"V2.1 service listening on {args.bind}:{args.port}", flush=True)
             service.serve_forever()
     else:

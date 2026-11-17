@@ -90,6 +90,8 @@ def main() -> int:
     ap.add_argument("--program", action="store_true",
                     help="启动后立即「下载 bit 并初始化」（仍会弹确认框，加 --yes 跳过），完成后自动连接")
     ap.add_argument("--yes", action="store_true", help="与 --program 一起使用：不弹确认框")
+    ap.add_argument("--shared", action="store_true", help="在现有界面内启用共享板卡、使用人和排队")
+    ap.add_argument("--share-url", help="实验室共用服务地址")
     args, qt_args = ap.parse_known_args()
     if args.selftest:
         return selftest(args.selftest_out)
@@ -104,8 +106,12 @@ def main() -> int:
     process_high_qos()                    # keep P-cores on hybrid CPUs (see perf.py)
     app = QApplication([sys.argv[0]] + qt_args)
     app.setApplicationName("47DR AWG")
-    from .main_window import MainWindow
-    win = MainWindow(args.ip, args.port)
+    if args.shared:
+        from .shared_window import SharedMainWindow
+        win = SharedMainWindow(args.ip, args.port, share_url=args.share_url)
+    else:
+        from .main_window import MainWindow
+        win = MainWindow(args.ip, args.port)
     if args.program:
         win.transport_combo.setCurrentIndex(1)
     if emulator is not None:
