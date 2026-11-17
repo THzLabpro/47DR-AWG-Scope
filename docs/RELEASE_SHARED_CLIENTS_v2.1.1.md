@@ -4,6 +4,8 @@
 
 ## 下载与使用
 
+下载入口：[GitHub v2.1.1 Assets](https://github.com/THzLabpro/47DR-AWG-Scope/releases/tag/shared-clients-v2.1.1)。两个客户端共用此发行页。`git clone` / `git pull` 和页面自动生成的 `Source code` 压缩包只获取仓库源码，不获取下面的客户端附件；RF-UDP 完整工程不在本仓库中。
+
 - `47DR_Shared_v2.1.1_win64.zip`：47DR 波形下载、播放与 ADC 回采客户端。
 - `RFUDP_Shared_v2.1.1_win64.zip`：RF-UDP 测试与遥测客户端。
 - `SHA256SUMS.txt`：两个压缩包的 SHA-256 校验值。

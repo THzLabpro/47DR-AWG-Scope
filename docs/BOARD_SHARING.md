@@ -14,6 +14,8 @@
 
 ## 客户端入口
 
+只使用客户端时，从 [v2.1.1 发行页](https://github.com/THzLabpro/47DR-AWG-Scope/releases/tag/shared-clients-v2.1.1) 下载对应 Windows ZIP，完整解压后运行 `47DR_Shared/47DR_Shared.exe` 或 `RFUDP_Shared/RFUDP_Shared.exe`。`git clone` 不下载这些附件；本仓库也不包含 RF-UDP 完整工程。不要把发行页自动生成的 `Source code` 包当作可运行客户端。
+
 47DR 源码入口：
 
 ```powershell
@@ -26,7 +28,26 @@ RF-UDP 源码入口，在 RF-UDP 工程根目录运行：
 powershell -NoProfile -ExecutionPolicy Bypass -File host\start_analyzer.ps1 -Shared
 ```
 
-两者无参数启动默认进入共享模式。指定地址时，47DR 使用 `--shared --share-url`，RF-UDP 使用 `-Shared -ShareUrl`。可直接使用 `host/dist/shared_clients_20261117_v07/` 中的 `47DR_Shared.exe` 和 `RFUDP_Shared.exe`；应复制各自完整文件夹，不单独复制 exe。客户端不需要固件包或 Vivado。
+指定地址时，47DR 使用 `--shared --share-url`，RF-UDP 使用 `-Shared -ShareUrl`。实验室已打包客户端位于 `G:\pkg\02_project\host\shared_clients_20261117_v07\`，也可从这里复制各自完整文件夹，不单独复制 exe。源码仓库中的 `host/dist/` 是本机打包输出，不随 Git 拉取。客户端不需要固件包或 Vivado。
+
+## 第一次连接和常见提示
+
+1. 在自己的电脑接入可访问实验室电脑的 Tailscale 网络；实验室电脑须开机，公共服务须运行。
+2. 打开客户端，确认服务地址 `http://100.121.70.53:4749`，填写自己的姓名。姓名用于显示使用人，复制别人客户端时也应检查并改成自己的姓名。
+3. 连接后先看状态条。查看状态不会占板；提交下载或测试后才申请使用。有人使用时，可以按显示的姓名联系交接，也可以确认排队。
+4. 轮到后自动执行提交时的任务；跨工程切换要等待固件初始化。完成实验后点“结束使用”或正常关窗。
+
+连接失败时，先检查 Tailscale、实验室电脑是否开机、地址和端口是否正确；不要改回旧端口 4748。仍失败时把完整报错交给维护者检查服务。显示“待恢复”时，交由维护者核对故障并按明确的恢复提示处理，不以反复重启板卡作为常规操作。
+
+## 完整工程在哪里
+
+| 内容 | 位置与阅读入口 |
+|---|---|
+| 47DR 客户端、公共调度源码 | 本 GitHub 仓库，先读根 `README.md` |
+| RF-UDP 独立工程 | 实验室 `G:\pkg\02_project`，开发阅读入口为 `START_HERE.md` 与 `V4_README.md` |
+| 47DR V2.1 FPGA 历史交接包 | [旧版 awg-eth-v2.1 发行页](https://github.com/THzLabpro/47DR-AWG-Scope/releases/tag/awg-eth-v2.1)，保留完整交接包；不要把本仓库的历史 `fpga/` 当成当前 D4B/F3 工程 |
+
+只运行客户端无需复制上述 FPGA 工程。修改 RTL、重编译固件属于开发工作；拷贝工程后仍需核对工具版本和路径依赖，不能把客户端运行通过视为工程重建通过。
 
 ## 实验室端配置
 
