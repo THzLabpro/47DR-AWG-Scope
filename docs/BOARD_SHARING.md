@@ -62,7 +62,7 @@ py -3 -m board_share.lab_service --config 已登记配置.json --check
 
 新服务直接调用两个硬件适配器，两个共享客户端都连接新服务。不要把 V1 的 `board_share serve` 或 `--board-share-url` 当成 V2 调度器。旧 4748 服务及其开机任务已停止和禁用；日常统一使用 4749。此机制不阻止绕过入口的 Vivado、JTAG 或直接 UDP 操作。
 
-实验室使用独立的 `FPGA_Shared_Service.exe`，无需安装 Python。当前目录为 `G:\pkg\02_project\host\shared_service_20261117_v07\`，配置为 `lab_config_v5.json`，由 SYSTEM 计划任务 `FPGA_BoardShare_v2` 开机启动。通常不必手动启动同目录的 `Start_Shared_Service.cmd`，单实例锁会拒绝重复启动。`--config 配置.json --check` 只核对文件，`--offline-check` 只加载驱动模块。
+实验室使用独立的 `FPGA_Shared_Service.exe`，无需安装 Python。当前目录为 `G:\pkg\02_project\host\shared_service_20261117_v08\`，配置为 `lab_config_v6.json`，由 SYSTEM 计划任务 `FPGA_BoardShare_v2` 开机启动。通常不必手动启动同目录的 `Start_Shared_Service.cmd`，单实例锁会拒绝重复启动。`--config 配置.json --check` 只核对文件，`--offline-check` 只加载驱动模块。
 
 ## 源码和维护
 
@@ -73,3 +73,12 @@ py -3 -m board_share.lab_service --config 已登记配置.json --check
 - `host/packaging/build_lab_service.ps1`：生成独立实验室服务，不包含固件，不自动部署。
 
 公共模块修改后须同步两处并核对哈希。离线实现与后续实验室部署、硬件访问的具体范围分别记录在验收文档中。
+
+
+## F3 切换后的光口恢复
+
+47DR 初始化完成后，服务先检查 UDP 9100/9101。仅在连接超时且配置已登记恢复脚本时，才通过 JTAG 只读核对 F3 BUILD、ABI、采样率、PS 就绪、无故障及未播放状态，再重启板卡路由实际选中的光口网卡一次，并重新验证连接。正常连接不会重启网卡；错误工程、PS 未就绪、其他 JTAG 会话、取消或恢复失败均不会反复重启。
+
+实验室 v6 配置按网卡 GUID 登记两个光口，实际选择还必须匹配到板卡的路由和主机源 IP。不会修改 IP、MTU 或其他网卡。客户端继续使用原有共享入口和日志，无需更新界面。此功能目前只用于 47DR/F3，不自动处理 RF-UDP 故障。
+
+生成新配置时，增加 `--vivado` 和可重复的 `--optical-adapter-guid` 参数；省略两者则保留原行为。新增 Tcl、PowerShell 脚本纳入固件包哈希检查，服务打包脚本同时包含这两个依赖。验收范围见 [共享服务验收记录](BOARD_SHARING_VALIDATION_20261117.md)。

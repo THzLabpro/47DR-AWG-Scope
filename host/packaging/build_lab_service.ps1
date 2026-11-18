@@ -20,8 +20,8 @@ if __name__ == '__main__':
         import model.telemetry_udp
         from pathlib import Path
         import board_share.adapters
-        script = Path(board_share.adapters.__file__).with_name('rfudp_control.tcl')
-        assert script.is_file()
+        for name in ('rfudp_control.tcl', 'awg_identity.tcl', 'recover_optical.ps1'):
+            assert Path(board_share.adapters.__file__).with_name(name).is_file()
         print(json.dumps({'passed': True, 'hardware_accessed': False}))
     elif len(sys.argv) > 1 and sys.argv[1] == 'configure':
         sys.argv.pop(1)
@@ -33,6 +33,6 @@ if __name__ == '__main__':
 '@
 [IO.File]::WriteAllText($entry,$source,[Text.UTF8Encoding]::new($false))
 $tools=Join-Path $root 'host\tools'
-& py -3 -X utf8 -m PyInstaller --noconfirm --console --name FPGA_Shared_Service --distpath $OutputDirectory --workpath (Join-Path $work 'build') --specpath $work --paths $tools --paths $RfRoot --add-data ((Join-Path $tools 'board_share\rfudp_control.tcl')+';board_share') --exclude-module PySide6.QtWebEngineCore --exclude-module PySide6.QtWebEngineWidgets $entry
+& py -3 -X utf8 -m PyInstaller --noconfirm --console --name FPGA_Shared_Service --distpath $OutputDirectory --workpath (Join-Path $work 'build') --specpath $work --paths $tools --paths $RfRoot --add-data ((Join-Path $tools 'board_share\rfudp_control.tcl')+';board_share') --add-data ((Join-Path $tools 'board_share\awg_identity.tcl')+';board_share') --add-data ((Join-Path $tools 'board_share\recover_optical.ps1')+';board_share') --exclude-module PySide6.QtWebEngineCore --exclude-module PySide6.QtWebEngineWidgets $entry
 if($LASTEXITCODE -ne 0) { throw 'Service build failed' }
 Write-Output 'SERVICE_BUILD_OK'

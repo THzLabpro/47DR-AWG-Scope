@@ -109,20 +109,65 @@ class AwgAdapter(HardwareAdapter):
             from awg_eth.device import open_device
             self.client, self.awg, self.info = open_device(self.config["fpga_ip"], self.config.get("fpga_port", 9100), 2048)
 
+    @staticmethod
+    def _link_timeout(exc):
+        from awg_eth.client import AwgEthError
+        return (isinstance(exc, TimeoutError) or
+                (isinstance(exc, AwgEthError) and str(exc).startswith("FPGA timeout")) or
+                (isinstance(exc, RuntimeError) and
+                 str(exc).startswith("V2.1 bulk port unavailable")))
+
+    def _wait_ready(self, cancel, seconds):
+        deadline = time.monotonic() + seconds
+        while True:
+            if cancel.is_set():
+                raise RuntimeError('操作已取消')
+            try:
+                self._open()
+                status = self.awg.status()
+                if status.get('fault') or status.get('fault_channels'):
+                    raise ValueError('FPGA 故障状态，不能恢复网卡')
+                if status.get('ps_ready'):
+                    return
+                raise RuntimeError('PS 初始化尚未完成')
+            except Exception as exc:
+                self._close()
+                if not self._link_timeout(exc) and str(exc) != 'PS 初始化尚未完成':
+                    raise
+                if cancel.wait(.5):
+                    raise RuntimeError('操作已取消') from exc
+                if time.monotonic() >= deadline:
+                    raise
+
+    def _recover_link(self, package, cancel):
+        # These administrator commands and helper files belong to the sealed
+        # package. No interface names or executable paths come from clients.
+        recovery = package['link_recovery']
+        self.event_buffer.emit('log', '光口连接超时，正在核对板卡工程和初始化状态。')
+        for key, marker in [('verify', 'AWG_F3_JTAG_READY'),
+                            ('restart', 'OPTICAL_ADAPTER_RESTARTED')]:
+            if cancel.is_set():
+                raise RuntimeError('操作已取消')
+            output = command(recovery[key], cancel, timeout=180,
+                             cwd=self.config.get('root'))
+            self.event_buffer.emit('log', output)
+            # A marker echoed as part of a Tcl command is not a successful probe.
+            if marker not in {line.strip() for line in output.splitlines()}:
+                raise RuntimeError('光口恢复检查未通过：' + key)
+            if key == 'verify':
+                self.event_buffer.emit('log', 'F3 已就绪，正在恢复板卡光口网卡。')
+
     def program(self, package, cancel):
         self._close()
         super().program(package, cancel)
-        deadline = time.monotonic() + 60
-        while True:
-            try:
-                self._open()
-                if not self.awg.status().get('ps_ready'):
-                    raise RuntimeError('PS 初始化尚未完成')
-                return
-            except Exception:
-                self._close()
-                if cancel.wait(.5) or time.monotonic() >= deadline:
-                    raise
+        try:
+            self._wait_ready(cancel, 60)
+        except Exception as exc:
+            if cancel.is_set() or not self._link_timeout(exc) or not package.get('link_recovery'):
+                raise
+            self._recover_link(package, cancel)
+            self._wait_ready(cancel, 30)
+            self.event_buffer.emit('log', '光口恢复完成，控制和批量端口验证通过。')
 
     def _close(self):
         if self.awg:

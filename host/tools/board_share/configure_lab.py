@@ -8,7 +8,33 @@ import json
 from pathlib import Path
 
 
-def generate(rfroot, awgroot, xsdb, xsct, output, bind, fpga_bind, serial):
+def add_awg_link_recovery(config, vivado, adapter_guids, host_ip, serial, helper_dir=None):
+    """Opt-in lab installation; include every recovery helper in package hashes."""
+    import ipaddress
+    import uuid
+    ipaddress.IPv4Address(host_ip)
+    ipaddress.IPv4Address(config['adapters']['47DR']['fpga_ip'])
+    guids = ','.join(str(uuid.UUID(g.strip('{}'))) for g in adapter_guids)
+    if not guids:
+        raise ValueError('Optical adapter GUID required')
+    directory = Path(helper_dir) if helper_dir else Path(__file__).parent
+    probe = (directory / 'awg_identity.tcl').resolve()
+    recover = (directory / 'recover_optical.ps1').resolve()
+    if not Path(vivado).is_file():
+        raise FileNotFoundError(vivado)
+    package = config['packages']['47DR-F3']
+    for file in (probe, recover):
+        package['files'][str(file)] = hashlib.sha256(file.read_bytes()).hexdigest()
+    common = ['powershell.exe', '-NoProfile', '-NonInteractive', '-ExecutionPolicy', 'Bypass',
+              '-File', str(recover), '-HostIP', host_ip, '-BoardIP', config['adapters']['47DR']['fpga_ip'],
+              '-AllowedInterfaceGuids', guids]
+    package['link_recovery'] = {
+        'verify': common + ['-Mode', 'Verify', '-Vivado', str(vivado),
+                            '-ProbeScript', str(probe), '-CableSerial', serial],
+        'restart': common + ['-Mode', 'Restart']}
+
+
+def generate(rfroot, awgroot, xsdb, xsct, output, bind, fpga_bind, serial, vivado=None, adapter_guids=()):
     root = Path(rfroot).resolve()
     awg = Path(awgroot).resolve()
     control = Path(__file__).with_name('rfudp_control.tcl').resolve()
@@ -49,6 +75,10 @@ def generate(rfroot, awgroot, xsdb, xsct, output, bind, fpga_bind, serial):
                      awgpkg / 'psu_init.tcl', awgpkg / 'init_protocol.txt', Path(xsdb), Path(xsct)]:
         if not required.is_file():
             raise FileNotFoundError(required)
+    if vivado or adapter_guids:
+        if not vivado or not adapter_guids:
+            raise ValueError('Both Vivado and optical adapter GUIDs are required')
+        add_awg_link_recovery(config, vivado, adapter_guids, fpga_bind, serial)
     with Path(output).open('x', encoding='utf-8') as f:
         json.dump(config, f, ensure_ascii=False, indent=2)
 
@@ -58,8 +88,10 @@ def main():
     for name in ('rf-root', 'awg-root', 'xsdb', 'xsct', 'output', 'bind', 'fpga-bind'):
         p.add_argument('--' + name, required=True)
     p.add_argument('--serial', default='15051A')
+    p.add_argument('--vivado')
+    p.add_argument('--optical-adapter-guid', action='append', default=[])
     a = p.parse_args()
-    generate(a.rf_root, a.awg_root, a.xsdb, a.xsct, a.output, a.bind, a.fpga_bind, a.serial)
+    generate(a.rf_root, a.awg_root, a.xsdb, a.xsct, a.output, a.bind, a.fpga_bind, a.serial, a.vivado, a.optical_adapter_guid)
 
 
 if __name__ == '__main__':
